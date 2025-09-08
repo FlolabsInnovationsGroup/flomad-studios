@@ -65,13 +65,6 @@ export default function LoginPage() {
       password: 'admin123',
       description: 'Full access to all features, user management, analytics',
       features: ['User Management', 'Analytics', 'Content Approval', 'Settings']
-    },
-    {
-      role: 'Content Creator',
-      email: 'creator@flomadstudios.com', 
-      password: 'creator123',
-      description: 'Upload and manage videos, podcasts, blog posts',
-      features: ['Upload Content', 'Content Calendar', 'Basic Analytics', 'Profile']
     }
   ];
 

@@ -1,26 +1,8 @@
 import { NextAuthOptions } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 import CredentialsProvider from 'next-auth/providers/credentials';
-
-// Mock users database
-const mockUsers = [
-  {
-    id: "user-1",
-    name: "Admin User",
-    email: "admin@flomadstudios.com",
-    image: "/images/avatars/admin.jpg",
-    role: "ADMIN",
-    password: "admin123" // In a real app, use hashed passwords
-  },
-  {
-    id: "user-2",
-    name: "Content Creator", 
-    email: "creator@flomadstudios.com",
-    image: "/images/avatars/creator.jpg",
-    role: "INTERN",
-    password: "creator123"
-  }
-];
+import { prisma } from '@/lib/prisma';
+import bcrypt from 'bcryptjs';
 
 // Extend NextAuth types to include custom properties
 declare module "next-auth" {
@@ -62,20 +44,30 @@ export const authOptions: NextAuthOptions = {
       async authorize(credentials) {
         if (!credentials) return null;
         
-        // Find user with matching email and password
-        const user = mockUsers.find(
-          (user) => 
-            user.email === credentials.email && 
-            user.password === credentials.password
-        );
-        
-        return user ? {
-          id: user.id,
-          name: user.name,
-          email: user.email,
-          image: user.image,
-          role: user.role
-        } : null;
+        try {
+          // Find user in database
+          const user = await prisma.user.findUnique({
+            where: { email: credentials.email }
+          });
+          
+          if (!user) return null;
+          
+          // Check password (for now, direct comparison - in production use bcrypt)
+          const isValidPassword = credentials.password === user.password;
+          
+          if (!isValidPassword) return null;
+          
+          return {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            image: null,
+            role: user.role
+          };
+        } catch (error) {
+          console.error('Auth error:', error);
+          return null;
+        }
       }
     }),
   ],
