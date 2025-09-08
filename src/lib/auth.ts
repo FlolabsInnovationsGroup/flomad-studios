@@ -42,21 +42,38 @@ export const authOptions: NextAuthOptions = {
         password: { label: "Password", type: "password" }
       },
       async authorize(credentials) {
-        if (!credentials) return null;
+        console.log('🔍 Authorize called with:', { email: credentials?.email, hasPassword: !!credentials?.password });
+        
+        if (!credentials) {
+          console.log('❌ No credentials provided');
+          return null;
+        }
         
         try {
           // Find user in database
+          console.log('🔍 Looking for user:', credentials.email);
           const user = await prisma.user.findUnique({
             where: { email: credentials.email }
           });
           
-          if (!user) return null;
+          console.log('👤 User lookup result:', user ? `Found user ${user.email}` : 'Not found');
+          
+          if (!user) {
+            console.log('❌ No user found with email:', credentials.email);
+            return null;
+          }
           
           // Check password (for now, direct comparison - in production use bcrypt)
           const isValidPassword = credentials.password === user.password;
+          console.log('🔐 Password check:', isValidPassword ? 'Valid' : 'Invalid');
+          console.log('Expected:', user.password, 'Received:', credentials.password);
           
-          if (!isValidPassword) return null;
+          if (!isValidPassword) {
+            console.log('❌ Invalid password for user:', credentials.email);
+            return null;
+          }
           
+          console.log('✅ User authenticated successfully:', user.email);
           return {
             id: user.id,
             name: user.name,
@@ -65,15 +82,15 @@ export const authOptions: NextAuthOptions = {
             role: user.role
           };
         } catch (error) {
-          console.error('Auth error:', error);
+          console.error('🚨 Auth error:', error);
           return null;
         }
       }
     }),
   ],
   pages: {
-    signIn: '/auth/login',
-    error: '/auth/error',
+    signIn: '/login',
+    error: '/login',
   },
   callbacks: {
     async jwt({ token, user }) {
@@ -96,4 +113,16 @@ export const authOptions: NextAuthOptions = {
     maxAge: 30 * 24 * 60 * 60, // 30 days
   },
   secret: process.env.NEXTAUTH_SECRET || "mockAuthSecret",
+  debug: true, // Enable debug logging
+  logger: {
+    error(code, metadata) {
+      console.error('🚨 NextAuth Error:', code, metadata);
+    },
+    warn(code) {
+      console.warn('⚠️ NextAuth Warning:', code);
+    },
+    debug(code, metadata) {
+      console.log('🐛 NextAuth Debug:', code, metadata);
+    }
+  },
 }; 
