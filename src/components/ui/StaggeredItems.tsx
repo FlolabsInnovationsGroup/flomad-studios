@@ -63,16 +63,16 @@ export default function StaggeredItems({
       scale: 1,
       transition: {
         duration,
-        ease: [0.22, 1, 0.36, 1],
       }
     },
   };
 
-  const Container = motion[containerTag];
-  const Item = motion[itemTag];
+  // Create motion components with proper typing
+  const MotionContainer = containerTag === 'ul' ? motion.ul : containerTag === 'ol' ? motion.ol : motion.div;
+  const MotionItem = itemTag === 'li' ? motion.li : motion.div;
 
   return (
-    <Container
+    <MotionContainer
       variants={container}
       initial="hidden"
       whileInView="show"
@@ -80,10 +80,10 @@ export default function StaggeredItems({
       className={className}
     >
       {children.map((child, index) => (
-        <Item key={index} variants={item}>
+        <MotionItem key={index} variants={item}>
           {child}
-        </Item>
+        </MotionItem>
       ))}
-    </Container>
+    </MotionContainer>
   );
 } 
