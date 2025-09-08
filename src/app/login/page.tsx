@@ -58,15 +58,7 @@ export default function LoginPage() {
     await signIn('google', { callbackUrl: '/dashboard' });
   };
 
-  const demoAccounts = [
-    {
-      role: 'Admin',
-      email: 'admin@flomadstudios.com',
-      password: 'admin123',
-      description: 'Full access to all features, user management, analytics',
-      features: ['User Management', 'Analytics', 'Content Approval', 'Settings']
-    }
-  ];
+
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-900 via-sky-900 to-slate-800 overflow-hidden relative">
@@ -251,48 +243,7 @@ export default function LoginPage() {
                 </div>
               </GlassCard>
 
-              {/* Demo Accounts */}
-              <GlassCard className="p-8" variant="accent" blur="lg">
-                <h3 className="text-2xl font-bold text-white mb-6">Demo Accounts</h3>
-                <p className="text-gray-300 text-sm mb-6">
-                  Try different user roles to explore the full dashboard experience:
-                </p>
-                <div className="space-y-4">
-                  {demoAccounts.map((account) => (
-                    <div key={account.role} className="bg-black/20 rounded-lg p-4 border border-white/10">
-                      <div className="flex justify-between items-start mb-3">
-                        <div>
-                          <h4 className="text-white font-semibold">{account.role}</h4>
-                          <p className="text-gray-400 text-sm">{account.description}</p>
-                        </div>
-                        <button
-                          onClick={() => {
-                            setEmail(account.email);
-                            setPassword(account.password);
-                          }}
-                          className="text-sky-300 hover:text-sky-200 text-xs px-3 py-1 bg-sky-500/20 rounded-full hover:bg-sky-500/30 transition-colors"
-                        >
-                          Use This Account
-                        </button>
-                      </div>
-                      <div className="mb-2">
-                        <p className="text-xs text-gray-500 mb-1">Login: {account.email}</p>
-                        <p className="text-xs text-gray-500">Password: {account.password}</p>
-                      </div>
-                      <div className="flex flex-wrap gap-1">
-                        {account.features.map((feature) => (
-                          <span key={feature} className="text-xs bg-white/10 text-gray-300 px-2 py-1 rounded">
-                            {feature}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-4 text-xs text-gray-500">
-                  💡 Click &ldquo;Use This Account&rdquo; to auto-fill credentials, then click Sign In
-                </div>
-              </GlassCard>
+
             </motion.div>
           </div>
         </div>
