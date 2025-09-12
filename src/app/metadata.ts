@@ -3,8 +3,8 @@ import { Metadata } from 'next';
 export const siteConfig = {
   name: 'Flomad Studios',
   description: 'Creative content, podcasts, videos, and more.',
-  url: 'https://flomadstudios.com',
-  ogImage: 'https://flomadstudios.com/og.jpg',
+  url: 'https://www.flomadstudios.com',
+  ogImage: 'https://www.flomadstudios.com/og.jpg',
   links: {
     twitter: 'https://twitter.com/flomadstudios',
     instagram: 'https://instagram.com/flomadstudios',

@@ -17,35 +17,41 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
         htmlElement.style.transition = 'background-color 0.3s ease, color 0.3s ease';
       }
       
-      // Apply theme-specific root variables
+      // Apply sky-themed variables
       if (isDark) {
-        // Dark mode enhanced styling
-        bodyElement.style.backgroundColor = 'rgb(15, 23, 42)'; // slate-900
-        bodyElement.style.color = 'rgb(248, 250, 252)'; // slate-50
+        // Night sky theme - deep cosmic atmosphere
+        bodyElement.style.backgroundColor = 'rgb(15, 23, 42)'; // Deep night sky
+        bodyElement.style.color = 'rgb(248, 250, 252)'; // Crisp starlight
         
         // Update meta theme color
         const metaTheme = document.querySelector('meta[name="theme-color"]');
         if (metaTheme) metaTheme.setAttribute('content', '#0f172a');
         
-        // Enhanced dark mode CSS variables
-        htmlElement.style.setProperty('--backdrop-opacity', '0.95');
-        htmlElement.style.setProperty('--glass-opacity', '0.1');
-        htmlElement.style.setProperty('--shadow-strength', '0.3');
-        htmlElement.style.setProperty('--border-opacity', '0.1');
+        // Night sky CSS variables
+        htmlElement.style.setProperty('--backdrop-opacity', '0.6');
+        htmlElement.style.setProperty('--glass-opacity', '0.4');
+        htmlElement.style.setProperty('--shadow-strength', '0.5');
+        htmlElement.style.setProperty('--border-opacity', '0.12');
+        htmlElement.style.setProperty('--sky-glow', 'rgba(79, 70, 229, 0.1)');
+        htmlElement.style.setProperty('--cosmic-glow', 'rgba(99, 102, 241, 0.05)');
       } else {
-        // Light mode enhanced styling
-        bodyElement.style.backgroundColor = 'rgb(248, 250, 252)'; // slate-50
-        bodyElement.style.color = 'rgb(15, 23, 42)'; // slate-900
+        // Day sky theme - professional atmospheric clarity
+        bodyElement.style.backgroundColor = 'rgb(248, 250, 252)'; // Soft day sky slate
+        bodyElement.style.color = 'rgb(15, 23, 42)'; // Deep readable text
         
         // Update meta theme color
         const metaTheme = document.querySelector('meta[name="theme-color"]');
         if (metaTheme) metaTheme.setAttribute('content', '#f8fafc');
         
-        // Enhanced light mode CSS variables
-        htmlElement.style.setProperty('--backdrop-opacity', '0.8');
-        htmlElement.style.setProperty('--glass-opacity', '0.05');
-        htmlElement.style.setProperty('--shadow-strength', '0.1');
-        htmlElement.style.setProperty('--border-opacity', '0.2');
+        // Day sky CSS variables - professional and atmospheric
+        htmlElement.style.setProperty('--backdrop-opacity', '0.95');
+        htmlElement.style.setProperty('--glass-opacity', '0.98');
+        htmlElement.style.setProperty('--shadow-strength', '0.06');
+        htmlElement.style.setProperty('--border-opacity', '0.12');
+        htmlElement.style.setProperty('--sky-glow', 'rgba(14, 165, 233, 0.04)');
+        htmlElement.style.setProperty('--text-contrast', '0 1px 3px rgba(255, 255, 255, 0.9)');
+        htmlElement.style.setProperty('--sky-atmosphere', 'rgba(147, 197, 253, 0.03)');
+        htmlElement.style.setProperty('--cloud-white', 'rgba(255, 255, 255, 0.8)');
       }
       
       // Force re-render of glass elements by triggering a reflow

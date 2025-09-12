@@ -13,19 +13,19 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <Section className="relative overflow-hidden py-24 md:py-32 bg-gradient-to-br from-slate-900 via-sky-900 to-slate-800">
+      <Section className="relative overflow-hidden py-24 md:py-32 bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-900 dark:via-sky-900 dark:to-slate-800">
         {/* Background Effects */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-sky-500/20 to-blue-600/15 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-l from-emerald-500/15 to-green-600/10 rounded-full blur-3xl animate-float-delay-1" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-sky-500/10 to-blue-600/5 dark:from-sky-500/20 dark:to-blue-600/15 rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-l from-emerald-500/5 to-green-600/5 dark:from-emerald-500/15 dark:to-green-600/10 rounded-full blur-3xl animate-float-delay-1" />
         </div>
 
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-          <GlassCard className="p-8 md:p-12" variant="primary" blur="xl">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
-              Let&rsquo;s Create <span className="bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">Together</span>
+          <GlassCard className="p-8 md:p-12 border border-white/20 dark:border-white/10 light:border-slate-200/50" variant="primary" blur="xl">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-slate-900 dark:text-white">
+              Let&rsquo;s Create <span className="bg-gradient-to-r from-sky-600 to-emerald-600 dark:from-sky-400 dark:to-emerald-400 bg-clip-text text-transparent">Together</span>
             </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-300 leading-relaxed">
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-slate-600 dark:text-gray-300 leading-relaxed">
               Have a project idea or want to learn more about our services? We&rsquo;d love to hear from you.
             </p>
           </GlassCard>
@@ -40,8 +40,8 @@ export default function ContactPage() {
             {/* Contact Details */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Get in Touch</h2>
-                <p className="text-xl text-gray-300 leading-relaxed mb-8">
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-6">Get in Touch</h2>
+                <p className="text-xl text-slate-600 dark:text-gray-300 leading-relaxed mb-8">
                   Whether you&rsquo;re interested in working together on a project, have questions about our services, 
                   or just want to say hello, we&rsquo;re here to help.
                 </p>
@@ -54,10 +54,10 @@ export default function ContactPage() {
                       <Mail className="w-6 h-6 text-sky-400" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-1">Email Us</h3>
-                      <p className="text-gray-300 mb-2">For project inquiries and collaboration</p>
-                      <a href="mailto:John@flomadlabs.com" className="text-sky-300 hover:text-sky-200 transition-colors">
-                        John@flomadlabs.com
+                      <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-1">Email Us</h3>
+                      <p className="text-slate-600 dark:text-gray-300 mb-2">For project inquiries and collaboration</p>
+                      <a href="mailto:studios@flomadlabs.com" className="text-sky-300 hover:text-sky-200 transition-colors">
+                        studios@flomadlabs.com
                       </a>
                     </div>
                   </div>
@@ -69,8 +69,8 @@ export default function ContactPage() {
                       <MessageCircle className="w-6 h-6 text-emerald-400" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-1">Connect on LinkedIn</h3>
-                      <p className="text-gray-300 mb-2">Follow our company updates and connect</p>
+                      <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-1">Connect on LinkedIn</h3>
+                      <p className="text-slate-600 dark:text-gray-300 mb-2">Follow our company updates and connect</p>
                       <a 
                         href="https://www.linkedin.com/company/flomad-labs-r-d" 
                         target="_blank" 
@@ -89,8 +89,8 @@ export default function ContactPage() {
                       <Clock className="w-6 h-6 text-amber-400" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-1">Response Time</h3>
-                      <p className="text-gray-300 mb-2">We&rsquo;ll get back to you</p>
+                      <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-1">Response Time</h3>
+                      <p className="text-slate-600 dark:text-gray-300 mb-2">We&rsquo;ll get back to you</p>
                       <p className="text-amber-300">
                         Usually within 24-48 hours
                       </p>
@@ -102,11 +102,11 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <GlassCard className="p-8" variant="primary" blur="lg">
-              <h3 className="text-2xl font-bold text-white mb-6">Send us a Message</h3>
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Send us a Message</h3>
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-white mb-2">
+                    <label htmlFor="firstName" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
                       First Name *
                     </label>
                     <input
@@ -114,12 +114,12 @@ export default function ContactPage() {
                       id="firstName"
                       name="firstName"
                       required
-                      className="w-full px-4 py-3 bg-black/30 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20 transition-all"
+                      className="w-full px-4 py-3 bg-white/80 dark:bg-black/30 border border-slate-300 dark:border-white/20 rounded-lg text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-gray-400 focus:border-sky-500 dark:focus:border-sky-400 focus:ring-2 focus:ring-sky-500/20 dark:focus:ring-sky-400/20 transition-all"
                       placeholder="Your first name"
                     />
                   </div>
                   <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-white mb-2">
+                    <label htmlFor="lastName" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
                       Last Name *
                     </label>
                     <input
@@ -127,14 +127,14 @@ export default function ContactPage() {
                       id="lastName"
                       name="lastName"
                       required
-                      className="w-full px-4 py-3 bg-black/30 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20 transition-all"
+                      className="w-full px-4 py-3 bg-white/80 dark:bg-black/30 border border-slate-300 dark:border-white/20 rounded-lg text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-gray-400 focus:border-sky-500 dark:focus:border-sky-400 focus:ring-2 focus:ring-sky-500/20 dark:focus:ring-sky-400/20 transition-all"
                       placeholder="Your last name"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-900 dark:text-white mb-2">
                     Email Address *
                   </label>
                   <input
@@ -142,7 +142,7 @@ export default function ContactPage() {
                     id="email"
                     name="email"
                     required
-                    className="w-full px-4 py-3 bg-black/30 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20 transition-all"
+                    className="w-full px-4 py-3 bg-white/80 dark:bg-black/30 border border-slate-300 dark:border-white/20 rounded-lg text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-gray-400 focus:border-sky-500 dark:focus:border-sky-400 focus:ring-2 focus:ring-sky-500/20 dark:focus:ring-sky-400/20 transition-all"
                     placeholder="your@email.com"
                   />
                 </div>

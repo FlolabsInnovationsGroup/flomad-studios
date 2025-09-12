@@ -20,35 +20,27 @@ import Button from '@/components/ui/Button';
 
 // Mock data for analytics
 const overviewData = {
-  totalViews: { value: 487923, previousValue: 421645, percentChange: 15.7 },
-  totalWatchTime: { value: 4527851, previousValue: 3876243, percentChange: 16.8 }, // seconds
+  totalViews: { value: 12500, previousValue: 10800, percentChange: 15.7 },
+  totalWatchTime: { value: 45280, previousValue: 38760, percentChange: 16.8 }, // seconds
   averageWatchTime: { value: 278, previousValue: 292, percentChange: -4.8 }, // seconds
   engagementRate: { value: 24.8, previousValue: 22.3, percentChange: 11.2 }, // percentage
 };
 
 const contentPerformance = [
-  { title: 'UI/UX Design Principles for Beginners', type: 'video', views: 12453, engagement: 28.3, watchTime: 345 },
-  { title: 'How to Create an Effective Design System', type: 'blog', views: 9521, engagement: 32.1, watchTime: 0 },
-  { title: 'Design Principles for Effective UX', type: 'podcast', views: 8734, engagement: 26.7, watchTime: 712 },
-  { title: 'Brand Design Process Walkthrough', type: 'video', views: 8732, engagement: 24.9, watchTime: 287 },
-  { title: 'The Future of Interactive Web Experiences', type: 'blog', views: 7645, engagement: 29.4, watchTime: 0 },
-  { title: 'Typography Trends for 2024', type: 'blog', views: 6521, engagement: 23.8, watchTime: 0 },
+  { title: 'Design System Basics', type: 'video', views: 850, engagement: 28.3, watchTime: 345 },
+  { title: 'Studio Workflow', type: 'blog', views: 620, engagement: 32.1, watchTime: 0 },
 ];
 
 const deviceData = [
   { device: 'Desktop', percentage: 46.2 },
   { device: 'Mobile', percentage: 42.5 },
-  { device: 'Tablet', percentage: 9.8 },
-  { device: 'Other', percentage: 1.5 },
+  { device: 'Tablet', percentage: 11.3 },
 ];
 
 const locationData = [
-  { country: 'United States', views: 134582, percentage: 32.5 },
-  { country: 'United Kingdom', views: 67291, percentage: 16.2 },
-  { country: 'Canada', views: 45632, percentage: 11.0 },
-  { country: 'Australia', views: 34218, percentage: 8.3 },
-  { country: 'Germany', views: 32190, percentage: 7.8 },
-  { country: 'India', views: 26540, percentage: 6.4 },
+  { country: 'United States', views: 4200, percentage: 33.6 },
+  { country: 'United Kingdom', views: 2100, percentage: 16.8 },
+  { country: 'Canada', views: 1800, percentage: 14.4 },
   { country: 'Other', views: 73859, percentage: 17.8 },
 ];
 

@@ -224,10 +224,15 @@ export default function GeometricBackground() {
     return null;
   }
   
+  // Only show geometric background in dark mode
+  if (theme !== 'dark') {
+    return null;
+  }
+  
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 w-full h-full pointer-events-none z-0 opacity-60 geometric-canvas"
+      className="fixed inset-0 w-full h-full pointer-events-none z-0 opacity-15 geometric-canvas"
     />
   );
 }

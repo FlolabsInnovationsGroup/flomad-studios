@@ -159,7 +159,7 @@ export default function DashboardPage() {
             <h1 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-sky-500 via-emerald-400 to-yellow-400 bg-clip-text text-transparent">
               Creative Dashboard
             </h1>
-            <p className="text-lg text-muted-foreground/80 max-w-2xl">
+            <p className="text-lg text-muted-foreground max-w-2xl drop-shadow-sm">
               Monitor your creative journey, track performance, and manage your content with modern analytics
             </p>
           </div>

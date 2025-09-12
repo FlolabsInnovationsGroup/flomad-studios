@@ -86,9 +86,9 @@ const BentoItem: React.FC<BentoItemProps> = ({
             )}
             {title && (
               <div>
-                <h3 className="font-semibold text-lg text-white">{title}</h3>
+                <h3 className="font-semibold text-lg text-slate-800 dark:text-white">{title}</h3>
                 {description && (
-                  <p className="text-sm text-white/70 mt-1">{description}</p>
+                  <p className="text-sm text-slate-600 dark:text-white/70 mt-1">{description}</p>
                 )}
               </div>
             )}

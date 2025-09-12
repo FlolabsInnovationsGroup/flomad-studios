@@ -140,7 +140,7 @@ const MetricCard: React.FC<MetricCardProps> = ({
                 {icon}
               </motion.div>
             )}
-            <h3 className="text-sm font-medium text-white/70">{title}</h3>
+            <h3 className="text-sm font-medium text-slate-600 dark:text-white/70">{title}</h3>
           </div>
           
           <motion.button
@@ -148,14 +148,14 @@ const MetricCard: React.FC<MetricCardProps> = ({
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <MoreHorizontal className="w-4 h-4 text-white/50" />
+            <MoreHorizontal className="w-4 h-4 text-slate-500 dark:text-white/50" />
           </motion.button>
         </div>
 
         {/* Main value */}
         <div className="mb-4">
           <motion.div
-            className="text-3xl font-bold text-white mb-2"
+            className="text-3xl font-bold text-slate-800 dark:text-white mb-2"
             key={displayValue}
             initial={{ scale: 1.2, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -180,7 +180,7 @@ const MetricCard: React.FC<MetricCardProps> = ({
               <span className="font-medium">
                 {change > 0 ? '+' : ''}{change}%
               </span>
-              <span className="text-white/50">vs last month</span>
+              <span className="text-slate-500 dark:text-white/50">vs last month</span>
             </motion.div>
           )}
         </div>
@@ -226,8 +226,8 @@ const EngagementMetrics: React.FC<{ data: DetailedMetric[] }> = ({ data }) => {
             {metric.icon}
           </div>
           <div>
-            <div className="text-xs text-white/60">{metric.label}</div>
-            <div className="text-sm font-semibold text-white">{metric.value}</div>
+            <div className="text-xs text-slate-500 dark:text-white/60">{metric.label}</div>
+            <div className="text-sm font-semibold text-slate-800 dark:text-white">{metric.value}</div>
           </div>
         </motion.div>
       ))}

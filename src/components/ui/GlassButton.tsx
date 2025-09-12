@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 interface GlassButtonProps {
   children: React.ReactNode;
   className?: string;
-  variant?: 'default' | 'primary' | 'secondary' | 'accent' | 'ghost';
+  variant?: 'default' | 'primary' | 'secondary' | 'accent' | 'ghost' | 'sky';
   size?: 'sm' | 'md' | 'lg' | 'xl';
   disabled?: boolean;
   onClick?: () => void;
@@ -25,11 +25,12 @@ const GlassButton: React.FC<GlassButtonProps> = ({
   glow = false,
 }) => {
   const variants = {
-    default: 'bg-glass-white border-white/20 text-foreground hover:bg-white/20',
-    primary: 'bg-glass-primary border-blue-500/30 text-white hover:bg-blue-500/20',
-    secondary: 'bg-glass-secondary border-cyan-500/30 text-white hover:bg-cyan-500/20',
-    accent: 'bg-glass-accent border-amber-500/30 text-white hover:bg-amber-500/20',
-    ghost: 'bg-transparent border-transparent text-foreground hover:bg-white/10',
+    default: 'glass border-border text-foreground hover:bg-primary/10',
+    primary: 'bg-glass-primary border-primary/30 text-foreground hover:bg-primary/20',
+    secondary: 'bg-glass-secondary border-secondary/30 text-foreground hover:bg-secondary/20',
+    accent: 'bg-glass-accent border-accent/30 text-foreground hover:bg-accent/20',
+    ghost: 'bg-transparent border-transparent text-foreground hover:bg-primary/10',
+    sky: 'glass-sky border-primary/20 text-foreground hover:bg-primary/10',
   };
 
   const sizes = {
@@ -50,7 +51,7 @@ const GlassButton: React.FC<GlassButtonProps> = ({
         'font-medium rounded-xl border',
         'backdrop-blur-md',
         'transition-all duration-300 ease-out',
-        'focus:outline-none focus:ring-2 focus:ring-blue-500/50',
+        'focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2',
         
         // Variant styles
         variants[variant],
@@ -58,10 +59,11 @@ const GlassButton: React.FC<GlassButtonProps> = ({
         // Size styles
         sizes[size],
         
-        // Glow effects
+        // Glow effects - enhanced for sky theme
         glow && variant === 'primary' && 'shadow-glow',
         glow && variant === 'secondary' && 'shadow-glow-secondary',
         glow && variant === 'accent' && 'shadow-glow-accent',
+        glow && variant === 'sky' && 'shadow-[0_0_20px_rgba(3,105,161,0.4)]',
         
         // Hover and active states
         'hover:scale-[1.02] hover:shadow-medium',
@@ -74,17 +76,27 @@ const GlassButton: React.FC<GlassButtonProps> = ({
         className
       )}
     >
-      {/* Glass gradient overlay */}
-      <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/10 to-white/5 pointer-events-none" />
+      {/* Enhanced glass gradient overlay for theme consistency */}
+      <div className={cn(
+        "absolute inset-0 rounded-xl pointer-events-none",
+        variant === 'sky' 
+          ? "bg-gradient-to-br from-white/15 to-primary/5 dark:from-primary-900/20 dark:to-transparent" 
+          : "bg-gradient-to-br from-white/10 to-white/5"
+      )} />
       
       {/* Content */}
       <span className="relative z-10 flex items-center gap-2">
         {children}
       </span>
       
-      {/* Shimmer effect on hover */}
+      {/* Enhanced shimmer effect */}
       <div className="absolute inset-0 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none overflow-hidden">
-        <div className="absolute inset-0 translate-x-[-100%] hover:translate-x-[100%] transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12" />
+        <div className={cn(
+          "absolute inset-0 translate-x-[-100%] hover:translate-x-[100%] transition-transform duration-1000 ease-out skew-x-12",
+          variant === 'sky' 
+            ? "bg-gradient-to-r from-transparent via-primary/20 to-transparent" 
+            : "bg-gradient-to-r from-transparent via-white/20 to-transparent"
+        )} />
       </div>
     </button>
   );

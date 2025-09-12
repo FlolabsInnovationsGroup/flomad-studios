@@ -92,7 +92,7 @@ export default function LoginPage() {
                     className="transition-transform hover:scale-105"
                   />
                   <div className="text-left">
-                    <h1 className="text-2xl font-bold text-white">Flomad Studios</h1>
+                    <h1 className="text-2xl font-bold text-slate-800 dark:text-white">Flomad Studios</h1>
                     <p className="text-sm text-sky-300">Creator Dashboard</p>
                   </div>
                 </Link>

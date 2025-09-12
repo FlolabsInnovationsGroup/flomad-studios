@@ -12,15 +12,15 @@ export default function ServicesPage() {
   return (
     <main className="fade-in">
       {/* Hero */}
-      <Section className="relative overflow-hidden py-24 md:py-32">
-        <div className="creative-gradient absolute inset-0 opacity-20" />
-        <div className="absolute top-20 left-10 w-32 h-32 bg-radial-gradient-primary rounded-full animate-pulse opacity-60" />
-        <div className="absolute bottom-20 right-10 w-24 h-24 bg-radial-gradient-secondary rounded-full animate-pulse opacity-40" />
+      <Section className="relative overflow-hidden py-24 md:py-32 bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-900 dark:via-sky-900 dark:to-slate-800">
+        <div className="absolute inset-0 bg-gradient-to-r from-sky-500/10 to-blue-600/5 dark:from-sky-500/20 dark:to-blue-600/15" />
+        <div className="absolute top-20 left-10 w-32 h-32 bg-sky-400/20 dark:bg-sky-400/30 rounded-full animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-24 h-24 bg-blue-400/15 dark:bg-blue-400/25 rounded-full animate-pulse" />
         
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-          <div className="glass-card p-8 md:p-12">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text-visible">Our Services</h1>
-            <p className="text-xl max-w-2xl mx-auto text-foreground/90 mb-8">
+          <div className="glass p-8 md:p-12 border border-white/20 dark:border-white/10 light:border-slate-200/50">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-slate-900 via-blue-900 to-slate-800 dark:from-white dark:via-sky-200 dark:to-white bg-clip-text text-transparent">Our Services</h1>
+            <p className="text-xl max-w-2xl mx-auto text-slate-700 dark:text-gray-300 mb-8">
               We offer a comprehensive range of creative services to help businesses establish a strong digital presence.
             </p>
           </div>
@@ -32,7 +32,7 @@ export default function ServicesPage() {
         <div className="creative-gradient absolute inset-0 opacity-10" />
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <div className="glass-card group hover:glass-intense transition-all duration-300">
+            <div className="glass p-6 group hover:scale-105 transition-all duration-300 border border-white/20 dark:border-white/10 light:border-slate-200/50">
               <ServiceCard
                 title="Brand & Digital Identity"
                 description="Complete brand development from logo design to brand guidelines, creating cohesive visual identities that resonate with your target audience."
@@ -40,7 +40,7 @@ export default function ServicesPage() {
                 colorScheme="primary"
               />
             </div>
-            <div className="glass-card group hover:glass-intense transition-all duration-300">
+            <div className="glass p-6 group hover:scale-105 transition-all duration-300 border border-white/20 dark:border-white/10 light:border-slate-200/50">
               <ServiceCard
                 title="Web Development & UX"
                 description="Modern, responsive websites built with cutting-edge technology. We focus on performance, user experience, and conversion optimization."
@@ -48,7 +48,7 @@ export default function ServicesPage() {
                 colorScheme="secondary"
               />
             </div>
-            <div className="glass-card group hover:glass-intense transition-all duration-300">
+            <div className="glass p-6 group hover:scale-105 transition-all duration-300 border border-white/20 dark:border-white/10 light:border-slate-200/50">
               <ServiceCard
                 title="Digital Marketing & Analytics"
                 description="Data-driven marketing strategies including SEO, content marketing, and performance analytics to grow your online presence and drive results."
@@ -56,7 +56,7 @@ export default function ServicesPage() {
                 colorScheme="accent"
               />
             </div>
-            <div className="glass-card group hover:glass-intense transition-all duration-300">
+            <div className="glass p-6 group hover:scale-105 transition-all duration-300 border border-white/20 dark:border-white/10 light:border-slate-200/50">
               <ServiceCard
                 title="Creative Content & Video"
                 description="Professional video production, photography, and creative content that tells your story and engages your audience across all platforms."
@@ -76,9 +76,9 @@ export default function ServicesPage() {
         
         <div className="relative z-10 max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
-            <div className="glass-card p-8 md:p-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text-visible">Our Process</h2>
-              <p className="text-xl max-w-2xl mx-auto text-foreground/90">
+            <div className="glass p-8 md:p-12 border border-white/20 dark:border-white/10 light:border-slate-200/50">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">Our Process</h2>
+              <p className="text-xl max-w-2xl mx-auto text-slate-700 dark:text-gray-300">
                 We follow a collaborative approach to bring your vision to life.
               </p>
             </div>
@@ -102,10 +102,10 @@ export default function ServicesPage() {
                 description: "We implement, refine, and launch your project with ongoing support to ensure success."
               }
             ].map((step, index) => (
-              <div key={index} className="glass-card p-8 hover:glass-intense transition-all duration-300 group">
-                <div className="text-4xl font-bold gradient-text-visible mb-4 group-hover:scale-110 transition-transform">{step.number}</div>
-                <h3 className="text-2xl font-bold mb-3 group-hover:gradient-text-visible transition-colors">{step.title}</h3>
-                <p className="text-foreground/80">{step.description}</p>
+              <div key={index} className="glass p-8 hover:scale-105 transition-all duration-300 group border border-white/20 dark:border-white/10 light:border-slate-200/50">
+                <div className="text-4xl font-bold text-sky-600 dark:text-sky-400 mb-4 group-hover:scale-110 transition-transform">{step.number}</div>
+                <h3 className="text-2xl font-bold mb-3 text-slate-900 dark:text-white transition-colors">{step.title}</h3>
+                <p className="text-slate-600 dark:text-gray-300">{step.description}</p>
               </div>
             ))}
           </div>
@@ -119,12 +119,12 @@ export default function ServicesPage() {
         <div className="absolute bottom-20 left-10 w-32 h-32 bg-radial-gradient-secondary rounded-full animate-pulse opacity-30" />
         
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-          <div className="glass-card p-8 md:p-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text-visible">Ready to Get Started?</h2>
-            <p className="text-xl max-w-2xl mx-auto mb-10 text-foreground/90">
+          <div className="glass p-8 md:p-12 border border-white/20 dark:border-white/10 light:border-slate-200/50">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">Ready to Get Started?</h2>
+            <p className="text-xl max-w-2xl mx-auto mb-10 text-slate-700 dark:text-gray-300">
               Let&apos;s collaborate on your next project and bring your creative vision to life.
             </p>
-            <Button className="glass-button text-lg px-8 py-4" asChild>
+            <Button className="bg-sky-500/20 hover:bg-sky-500/30 border border-sky-400/30 text-sky-700 dark:text-sky-300 hover:text-sky-600 dark:hover:text-sky-200 text-lg px-8 py-4" asChild>
               <Link href="/join">Start Your Project</Link>
             </Button>
           </div>

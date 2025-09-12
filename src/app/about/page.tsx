@@ -9,15 +9,15 @@ export default function AboutPage() {
   return (
     <main className="fade-in">
       {/* Hero */}
-      <Section className="relative overflow-hidden py-24 md:py-32">
-        <div className="creative-gradient absolute inset-0 opacity-20" />
-        <div className="absolute top-20 left-10 w-32 h-32 bg-radial-gradient-primary rounded-full animate-pulse opacity-60" />
-        <div className="absolute bottom-20 right-10 w-24 h-24 bg-radial-gradient-secondary rounded-full animate-pulse opacity-40" />
+      <Section className="relative overflow-hidden py-24 md:py-32 bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-900 dark:via-sky-900 dark:to-slate-800">
+        <div className="absolute inset-0 bg-gradient-to-r from-sky-500/10 to-blue-600/5 dark:from-sky-500/20 dark:to-blue-600/15" />
+        <div className="absolute top-20 left-10 w-32 h-32 bg-sky-400/20 dark:bg-sky-400/30 rounded-full animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-24 h-24 bg-blue-400/15 dark:bg-blue-400/25 rounded-full animate-pulse" />
         
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-          <div className="glass-card p-8 md:p-12 mb-8">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text-visible">About Flomad Studios</h1>
-            <p className="text-xl max-w-2xl mx-auto text-foreground/90">
+          <div className="glass p-8 md:p-12 mb-8 border border-white/20 dark:border-white/10 light:border-slate-200/50">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-slate-900 via-blue-900 to-slate-800 dark:from-white dark:via-sky-200 dark:to-white bg-clip-text text-transparent">About Flomad Studios</h1>
+            <p className="text-xl max-w-2xl mx-auto text-slate-700 dark:text-gray-300">
               A growing digital design agency focused on creating exceptional web experiences and helping businesses thrive in the digital landscape.
             </p>
           </div>
@@ -27,9 +27,9 @@ export default function AboutPage() {
       {/* Our Mission */}
       <Section className="py-16 md:py-24">
         <div className="text-center max-w-4xl mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 gradient-text-visible">Our Mission</h2>
-          <div className="glass-card p-8 md:p-12">
-            <p className="text-xl leading-relaxed text-foreground/90">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-slate-900 dark:text-white">Our Mission</h2>
+          <div className="glass p-8 md:p-12 border border-white/20 dark:border-white/10 light:border-slate-200/50">
+            <p className="text-xl leading-relaxed text-slate-700 dark:text-gray-300">
               At Flomad Studios, we believe great design has the power to transform businesses and connect with audiences on a deeper level.
               Our mission is to partner with growing companies to create digital experiences that not only look exceptional but drive real business results.
             </p>
@@ -43,17 +43,17 @@ export default function AboutPage() {
         <div className="absolute top-10 right-10 w-20 h-20 bg-radial-gradient-primary rounded-full animate-bounce-subtle opacity-50" />
         
         <div className="relative z-10 max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 gradient-text-visible">What We Focus On</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-slate-900 dark:text-white">What We Focus On</h2>
           <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
             {[
-              { emoji: "�", title: "Strategic Design", text: "We create visual identities and user experiences that align with your business goals and resonate with your target audience." },
-              { emoji: "�", title: "Modern Development", text: "Building fast, responsive websites with cutting-edge technology that performs well on all devices and search engines." },
+              { emoji: "🎨", title: "Strategic Design", text: "We create visual identities and user experiences that align with your business goals and resonate with your target audience." },
+              { emoji: "💻", title: "Modern Development", text: "Building fast, responsive websites with cutting-edge technology that performs well on all devices and search engines." },
               { emoji: "📈", title: "Growth-Focused", text: "Every project is designed with measurable goals in mind — whether that's increased conversions, engagement, or brand recognition." },
             ].map(({ emoji, title, text }) => (
-              <div key={title} className="glass-card p-8 text-center hover:scale-105 transition-all duration-300 hover:shadow-glow">
+              <div key={title} className="glass p-8 text-center hover:scale-105 transition-all duration-300 border border-white/20 dark:border-white/10 light:border-slate-200/50">
                 <div className="text-5xl mb-6">{emoji}</div>
-                <h3 className="text-2xl font-bold mb-4">{title}</h3>
-                <p className="text-foreground/80 leading-relaxed">{text}</p>
+                <h3 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">{title}</h3>
+                <p className="text-slate-600 dark:text-gray-300 leading-relaxed">{text}</p>
               </div>
             ))}
           </div>
@@ -63,14 +63,14 @@ export default function AboutPage() {
       {/* Flomad Labs Connection */}
       <Section className="py-16 md:py-24">
         <div className="text-center max-w-4xl mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 gradient-text-visible">Part of the Flomad Ecosystem</h2>
-          <div className="glass-card p-8 md:p-12 mb-8">
-            <p className="text-xl leading-relaxed text-foreground/90 mb-6">
-              Flomad Studios is the creative division of <strong>Flomad Labs R&D</strong>, bringing together design expertise 
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-slate-900 dark:text-white">Part of the Flomad Ecosystem</h2>
+          <div className="glass p-8 md:p-12 mb-8 border border-white/20 dark:border-white/10 light:border-slate-200/50">
+            <p className="text-xl leading-relaxed text-slate-700 dark:text-gray-300 mb-6">
+              Flomad Studios is the creative division of <strong className="text-slate-900 dark:text-white">Flomad Labs R&D</strong>, bringing together design expertise 
               with cutting-edge technology and research. This unique connection allows us to offer innovative solutions 
               that blend creativity with technical excellence.
             </p>
-            <p className="text-lg text-foreground/80 mb-6">
+            <p className="text-lg text-slate-600 dark:text-gray-400 mb-6">
               Our collaborative approach combines strategic design thinking with advanced development capabilities, 
               ensuring every project benefits from both creative vision and technical innovation.
             </p>
@@ -79,7 +79,7 @@ export default function AboutPage() {
                 href="https://www.linkedin.com/company/flomad-labs-r-d" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="glass-button px-6 py-3 inline-flex items-center justify-center hover:shadow-glow transition-all"
+                className="px-6 py-3 inline-flex items-center justify-center bg-sky-500/20 hover:bg-sky-500/30 border border-sky-400/30 rounded-lg text-sky-700 dark:text-sky-300 hover:text-sky-600 dark:hover:text-sky-200 transition-all duration-300"
               >
                 Visit Flomad Labs R&D
               </a>
@@ -87,7 +87,7 @@ export default function AboutPage() {
                 href="https://flomad.international" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="glass-button px-6 py-3 inline-flex items-center justify-center hover:shadow-glow transition-all"
+                className="px-6 py-3 inline-flex items-center justify-center bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-400/30 rounded-lg text-emerald-700 dark:text-emerald-300 hover:text-emerald-600 dark:hover:text-emerald-200 transition-all duration-300"
               >
                 Explore Flomad International
               </a>
@@ -97,15 +97,22 @@ export default function AboutPage() {
       </Section>
 
       {/* CTA */}
-      <section className="section text-center bg-gradient-to-tr from-primary-dark to-accent-dark text-white rounded-xl shadow-lg px-6">
-        <h2 className="text-3xl font-bold mb-4">Ready to Create With Us?</h2>
-        <p className="text-lg max-w-xl mx-auto mb-6 text-white/90">
-          Whether you’re a seasoned storyteller or just getting started, Flomad Studios is your launchpad.
-        </p>
-        <a href="/join" className="button button-outline border-white text-white hover:bg-white hover:text-primary">
-          Join the Studio
-        </a>
-      </section>
+      <Section className="py-16 md:py-24 bg-gradient-to-tr from-sky-500/10 to-blue-600/10 dark:from-sky-500/20 dark:to-blue-600/20">
+        <div className="text-center max-w-xl mx-auto px-6">
+          <div className="glass p-8 md:p-12 border border-white/20 dark:border-white/10 light:border-slate-200/50">
+            <h2 className="text-3xl font-bold mb-4 text-slate-900 dark:text-white">Ready to Create With Us?</h2>
+            <p className="text-lg mb-6 text-slate-600 dark:text-gray-300">
+              Whether you&apos;re a seasoned storyteller or just getting started, Flomad Studios is your launchpad.
+            </p>
+            <a 
+              href="/join" 
+              className="inline-flex items-center justify-center px-6 py-3 bg-sky-500/20 hover:bg-sky-500/30 border border-sky-400/30 rounded-lg text-sky-700 dark:text-sky-300 hover:text-sky-600 dark:hover:text-sky-200 transition-all duration-300 font-medium"
+            >
+              Join the Studio
+            </a>
+          </div>
+        </div>
+      </Section>
     </main>
   );
 }

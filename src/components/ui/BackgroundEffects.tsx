@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-// Function to generate enhanced background elements with better visibility
+// Function to generate professional sky-themed background elements
 const generateBackgroundElements = (seed = 42) => {
   // Simple pseudo-random number generator with seed
   const pseudoRandom = (seed: number) => {
@@ -18,57 +18,52 @@ const generateBackgroundElements = (seed = 42) => {
   
   return [
     {
-      className: 'floating-purple',
-      width: 600,
-      height: 600,
-      top: `${random() * 15 - 10}%`,
-      left: `${random() * 25 + 5}%`,
-      background: 'radial-gradient(circle at center, rgba(99, 102, 241, 0.35) 0%, rgba(139, 92, 246, 0.25) 40%, transparent 70%)',
-      animationName: 'floatOrganic',
-      animationDuration: 25,
-    },
-    {
-      className: 'floating-teal',
-      width: 700,
-      height: 700,
-      top: `${random() * 30 + 15}%`,
-      right: `${random() * 20 - 15}%`,
-      background: 'radial-gradient(circle at center, rgba(6, 182, 212, 0.3) 0%, rgba(14, 165, 233, 0.2) 40%, transparent 70%)',
-      animationName: 'floatOrganic',
-      animationDuration: 30,
-      animationDirection: 'reverse',
-    },
-    {
-      className: 'floating-magenta',
+      className: 'floating-sky-primary',
       width: 500,
       height: 500,
-      bottom: `${random() * 20 + 5}%`,
-      left: `${random() * 30 + 10}%`,
-      background: 'radial-gradient(circle at center, rgba(236, 72, 153, 0.3) 0%, rgba(219, 39, 119, 0.2) 40%, transparent 70%)',
+      top: `${random() * 15 + 5}%`,
+      left: `${random() * 25 + 10}%`,
+      background: 'radial-gradient(circle at center, rgba(3, 105, 161, 0.08) 0%, transparent 70%)',
+      darkBackground: 'radial-gradient(circle at center, rgba(79, 70, 229, 0.12) 0%, transparent 70%)',
       animationName: 'floatOrganic',
-      animationDuration: 35,
+      animationDuration: 45,
     },
     {
-      className: 'floating-amber',
-      width: 450,
-      height: 450,
-      top: `${random() * 25 + 50}%`,
-      right: `${random() * 25 + 30}%`,
-      background: 'radial-gradient(circle at center, rgba(245, 158, 11, 0.25) 0%, rgba(251, 191, 36, 0.15) 40%, transparent 70%)',
+      className: 'floating-sky-secondary',
+      width: 350,
+      height: 350,
+      bottom: `${random() * 20 + 10}%`,
+      right: `${random() * 30 + 15}%`,
+      background: 'radial-gradient(circle at center, rgba(8, 145, 178, 0.06) 0%, transparent 70%)',
+      darkBackground: 'radial-gradient(circle at center, rgba(99, 102, 241, 0.08) 0%, transparent 70%)',
       animationName: 'floatOrganic',
-      animationDuration: 28,
-    },
-    {
-      className: 'floating-emerald',
-      width: 380,
-      height: 380,
-      bottom: `${random() * 15 + 30}%`,
-      right: `${random() * 20 + 5}%`,
-      background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.25) 0%, rgba(34, 197, 94, 0.15) 40%, transparent 70%)',
-      animationName: 'floatOrganic',
-      animationDuration: 32,
+      animationDuration: 50,
       animationDirection: 'reverse',
     },
+    {
+      className: 'floating-sky-clouds',
+      width: 400,
+      height: 200,
+      top: `${random() * 30 + 20}%`,
+      right: `${random() * 40 + 5}%`,
+      background: 'radial-gradient(ellipse 100% 50% at center, rgba(255, 255, 255, 0.3) 0%, transparent 80%)',
+      darkBackground: 'radial-gradient(ellipse 100% 50% at center, rgba(139, 92, 246, 0.05) 0%, transparent 80%)',
+      animationName: 'floatOrganic',
+      animationDuration: 55,
+      animationDelay: 10,
+    },
+    {
+      className: 'floating-sky-accent',
+      width: 280,
+      height: 280,
+      bottom: `${random() * 35 + 30}%`,
+      left: `${random() * 20 + 70}%`,
+      background: 'radial-gradient(circle at center, rgba(245, 158, 11, 0.04) 0%, transparent 70%)',
+      darkBackground: 'radial-gradient(circle at center, rgba(167, 139, 250, 0.06) 0%, transparent 70%)',
+      animationName: 'floatOrganic',
+      animationDuration: 40,
+      animationDelay: 5,
+    }
   ];
 };
 
@@ -84,16 +79,18 @@ export default function BackgroundEffects() {
     return (
       <div className="fixed inset-0 z-[-20] pointer-events-none">
         <div className="mesh-gradient"></div>
-        <div className="glowing-dots"></div>
+        <div className="sky-atmosphere"></div>
       </div>
     );
   }
   
   return (
-    <div className="fixed inset-0 z-[-20] pointer-events-none">
+    <div className="fixed inset-0 z-[-20] pointer-events-none overflow-hidden">
+      {/* Primary atmospheric layers */}
       <div className="mesh-gradient"></div>
-      <div className="glowing-dots"></div>
+      <div className="sky-atmosphere"></div>
       
+      {/* Enhanced floating elements with theme-aware backgrounds */}
       {backgroundElements.map((element, index) => (
         <motion.div 
           key={index}
@@ -105,14 +102,16 @@ export default function BackgroundEffects() {
             left: element.left,
             right: 'right' in element ? element.right : undefined,
             bottom: 'bottom' in element ? element.bottom : undefined,
-            background: element.background,
             animationName: element.animationName,
             animationDuration: `${element.animationDuration}s`,
             animationDirection: 'animationDirection' in element ? element.animationDirection : undefined,
-            transition: 'opacity 0.5s ease, filter 0.5s ease'
+            animationDelay: 'animationDelay' in element ? `${element.animationDelay}s` : undefined,
           }}
         />
       ))}
+      
+      {/* Additional sky layer for depth */}
+      <div className="sky-depth-layer" />
     </div>
   );
 } 

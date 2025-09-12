@@ -13,20 +13,20 @@ export default function JoinPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <Section className="relative overflow-hidden py-24 md:py-32 bg-gradient-to-br from-slate-900 via-sky-900 to-slate-800">
+      <Section className="relative overflow-hidden py-24 md:py-32 bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-900 dark:via-sky-900 dark:to-slate-800">
         {/* Background Effects */}
         <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-sky-500/20 to-blue-600/15 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-l from-emerald-500/15 to-green-600/10 rounded-full blur-3xl animate-float-delay-1" />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-br from-amber-400/20 to-yellow-500/15 rounded-full blur-3xl animate-float-delay-2" />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-sky-500/10 to-blue-600/5 dark:from-sky-500/20 dark:to-blue-600/15 rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-l from-emerald-500/5 to-green-600/5 dark:from-emerald-500/15 dark:to-green-600/10 rounded-full blur-3xl animate-float-delay-1" />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-br from-amber-400/10 to-yellow-500/5 dark:from-amber-400/20 dark:to-yellow-500/15 rounded-full blur-3xl animate-float-delay-2" />
         </div>
 
         <div className="relative z-10 text-center max-w-5xl mx-auto px-4">
-          <GlassCard className="p-8 md:p-12 mb-8" variant="primary" blur="xl">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
-              Join Our <span className="bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">Creative Studio</span>
+          <GlassCard className="p-8 md:p-12 mb-8 border border-white/20 dark:border-white/10 light:border-slate-200/50" variant="primary" blur="xl">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-slate-900 dark:text-white">
+              Join Our <span className="bg-gradient-to-r from-sky-600 to-emerald-600 dark:from-sky-400 dark:to-emerald-400 bg-clip-text text-transparent">Creative Studio</span>
             </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-300 leading-relaxed mb-8">
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-slate-600 dark:text-gray-300 leading-relaxed mb-8">
               Where emerging creators learn, collaborate, and build meaningful content alongside experienced mentors and industry professionals.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -51,10 +51,10 @@ export default function JoinPage() {
       <Section className="py-20 md:py-32" id="learn-more">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
               What Makes Flomad Studios Special?
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-slate-600 dark:text-gray-300 max-w-3xl mx-auto">
               We&apos;re not just another internship program. We&apos;re a creative community that bridges 
               the gap between learning and real-world content creation.
             </p>
@@ -85,8 +85,8 @@ export default function JoinPage() {
                 <div className={`mb-6 p-3 bg-${feature.color}-500/20 rounded-xl w-fit`}>
                   <feature.icon className={`w-8 h-8 text-${feature.color}-400`} />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
-                <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">{feature.title}</h3>
+                <p className="text-slate-600 dark:text-gray-300 leading-relaxed">{feature.description}</p>
               </GlassCard>
             ))}
           </div>

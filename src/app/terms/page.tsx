@@ -23,10 +23,10 @@ export default function TermsPage() {
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <GlassCard className="p-8 md:p-12" variant="primary" blur="xl">
             <FileText className="w-16 h-16 text-emerald-400 mx-auto mb-6" />
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-slate-800 dark:text-white">
               Terms of <span className="bg-gradient-to-r from-emerald-400 to-sky-400 bg-clip-text text-transparent">Service</span>
             </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-gray-300 leading-relaxed">
+            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-slate-600 dark:text-gray-300 leading-relaxed">
               Understanding your rights and responsibilities when using our platform.
             </p>
             <p className="text-sm text-gray-400 mt-4">

@@ -5,59 +5,72 @@
 @tailwind utilities;
 
 :root {
-  /* Light mode variables */
-  --background: 248 250 252; /* slate-50 */
-  --foreground: 15 23 42; /* slate-900 */
-  --card: 255 255 255;
-  --card-foreground: 15 23 42;
+  /* Enhanced Light mode variables - Professional day sky theme */
+  --background: 248 250 252; /* slate-50 - soft day sky background */
+  --foreground: 8 8 8; /* Almost black - MAXIMUM contrast */
+  --card: 255 255 255; /* Pure white cards for clarity */
+  --card-foreground: 8 8 8; /* Almost black */
   --popover: 255 255 255;
-  --popover-foreground: 15 23 42;
-  --primary: 14 165 233; /* sky-500 */
-  --primary-foreground: 255 255 255;
-  --secondary: 241 245 249; /* slate-100 */
-  --secondary-foreground: 15 23 42;
-  --muted: 241 245 249;
-  --muted-foreground: 100 116 139; /* slate-500 */
-  --accent: 219 234 254; /* sky-100 */
-  --accent-foreground: 12 74 110; /* sky-900 */
+  --popover-foreground: 8 8 8; /* Almost black */
+  --primary: 3 105 161; /* sky-700 - professional sky blue */
+  --primary-foreground: 8 8 8; /* Dark text instead of white */
+  --secondary: 248 250 252; /* slate-50 - very light secondary */
+  --secondary-foreground: 8 8 8; /* Almost black */
+  --muted: 241 245 249; /* slate-100 - slightly darker muted */
+  --muted-foreground: 8 8 8; /* Almost black for maximum contrast */
+  --accent: 240 249 255; /* blue-50 - sky accent */
+  --accent-foreground: 8 8 8; /* Almost black */
   --destructive: 239 68 68; /* red-500 */
   --destructive-foreground: 255 255 255;
-  --border: 226 232 240; /* slate-200 */
-  --input: 226 232 240;
-  --ring: 14 165 233; /* sky-500 */
-  --radius: 0.5rem;
+  --border: 226 232 240; /* slate-200 - visible borders */
+  --input: 241 245 249; /* slate-100 */
+  --ring: 3 105 161; /* sky-700 */
+  --radius: 0.75rem;
   
-  /* Theme-specific variables */
-  --glass-bg: rgba(255, 255, 255, 0.1);
-  --glass-border: rgba(255, 255, 255, 0.2);
+  /* Professional day sky theme variables */
+  --glass-bg: rgba(255, 255, 255, 0.92);
+  --glass-border: rgba(15, 23, 42, 0.12);
   --backdrop-blur: blur(20px);
+  --shadow-color: rgba(15, 23, 42, 0.08);
+  --surface-color: rgba(255, 255, 255, 1);
+  --text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  --sky-atmosphere: rgba(14, 165, 233, 0.03);
+  --sky-clouds: rgba(255, 255, 255, 0.8);
+  --sky-horizon: rgba(147, 197, 253, 0.15);
 }
 
 .dark {
-  /* Dark mode variables */
-  --background: 15 23 42; /* slate-900 */
-  --foreground: 248 250 252; /* slate-50 */
-  --card: 30 41 59; /* slate-800 */
+  /* Enhanced Dark mode variables - elegant night sky */
+  --background: 15 23 42; /* slate-900 - deep night sky */
+  --foreground: 248 250 252; /* slate-50 - crisp starlight */
+  --card: 30 41 59; /* slate-800 - sophisticated card background */
   --card-foreground: 248 250 252;
   --popover: 15 23 42;
   --popover-foreground: 248 250 252;
-  --primary: 125 211 252; /* sky-300 */
-  --primary-foreground: 15 23 42;
-  --secondary: 51 65 85; /* slate-700 */
-  --secondary-foreground: 248 250 252;
-  --muted: 51 65 85;
-  --muted-foreground: 148 163 184; /* slate-400 */
-  --accent: 30 58 138; /* blue-900 */
-  --accent-foreground: 125 211 252;
-  --destructive: 220 38 127; /* pink-600 */
+  --primary: 99 102 241; /* indigo-500 - cosmic purple */
+  --primary-foreground: 255 255 255;
+  --secondary: 51 65 85; /* slate-700 - refined secondary */
+  --secondary-foreground: 203 213 225; /* slate-300 */
+  --muted: 51 65 85; /* slate-700 */
+  --muted-foreground: 148 163 184; /* slate-400 - good contrast */
+  --accent: 30 27 75; /* indigo-950 - deep accent */
+  --accent-foreground: 167 139 250; /* violet-400 */
+  --destructive: 239 68 68; /* red-500 */
   --destructive-foreground: 248 250 252;
-  --border: 51 65 85;
+  --border: 51 65 85; /* slate-700 - subtle borders */
   --input: 51 65 85;
-  --ring: 125 211 252;
+  --ring: 99 102 241; /* indigo-500 */
   
-  /* Dark theme-specific variables */
-  --glass-bg: rgba(0, 0, 0, 0.2);
+  /* Elegant night sky theme variables */
+  --glass-bg: rgba(0, 0, 0, 0.4);
   --glass-border: rgba(255, 255, 255, 0.1);
+  --backdrop-blur: blur(16px);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(30, 41, 59, 1);
+  --text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --sky-atmosphere: rgba(79, 70, 229, 0.05);
+  --sky-clouds: rgba(255, 255, 255, 0.05);
+  --sky-horizon: rgba(139, 92, 246, 0.03);
 }
 
 * {
@@ -69,73 +82,291 @@ body {
   color: hsl(var(--foreground));
   background: hsl(var(--background));
   transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
 }
 
-/* Enhanced Glassmorphism Base Styles */
-.glass {
-  background: rgba(255, 255, 255, 0.05);
+/* FORCE ALL TEXT TO BE DARK IN LIGHT MODE ONLY */
+html:not(.dark) * {
+  color: rgb(8, 8, 8) !important;
+}
+
+/* Exception: Allow white text only on solid dark buttons in light mode */
+html:not(.dark) .bg-primary *,
+html:not(.dark) .bg-secondary *,
+html:not(.dark) .bg-accent * {
+  color: white !important;
+}
+
+/* Ensure dark mode text stays white */
+html.dark * {
+  color: rgb(248, 250, 252) !important; /* slate-50 - light text for dark mode */
+}
+
+/* Exception: Allow dark text on light backgrounds in dark mode */
+html.dark .bg-white *,
+html.dark .bg-slate-50 *,
+html.dark .bg-slate-100 * {
+  color: rgb(15, 23, 42) !important;
+}
+
+/* Enhanced typography for better sky-themed readability */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: hsl(var(--foreground));
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9), 0 0 8px rgba(255, 255, 255, 0.4); /* Enhanced day sky text shadow */
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 0 12px rgba(79, 70, 229, 0.2); /* Night sky glow */
+}
+
+p {
+  line-height: 1.7;
+  color: hsl(var(--foreground));
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8), 0 0 4px rgba(255, 255, 255, 0.3);
+}
+
+.dark p {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 0 6px rgba(79, 70, 229, 0.1);
+}
+
+.text-muted {
+  color: hsl(var(--muted-foreground));
+}
+
+/* Professional text styling classes for consistent theming */
+.professional-text {
+  color: hsl(var(--foreground));
+  font-weight: 600; /* Bolder font weight for better visibility */
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.dark .professional-text {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.professional-heading {
+  color: hsl(var(--foreground));
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9), 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+.dark .professional-heading {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 0 12px rgba(79, 70, 229, 0.2);
+}
+
+/* Enhanced button styles for sky theme */
+.btn-sky {
+  background: linear-gradient(135deg, rgba(3, 105, 161, 0.2), rgba(8, 145, 178, 0.3));
+  color: hsl(var(--foreground));
+  border: 1px solid rgba(3, 105, 161, 0.3);
+  box-shadow: 0 4px 16px rgba(3, 105, 161, 0.2);
+  transition: all 0.3s ease;
+}
+
+.btn-sky:hover {
+  background: linear-gradient(135deg, rgb(7, 89, 133), rgb(6, 95, 114));
+  box-shadow: 0 6px 20px rgba(3, 105, 161, 0.3);
+  transform: translateY(-1px);
+}
+
+.dark .btn-sky {
+  background: linear-gradient(135deg, rgb(99, 102, 241), rgb(139, 92, 246));
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+}
+
+.dark .btn-sky:hover {
+  background: linear-gradient(135deg, rgb(79, 70, 229), rgb(124, 58, 237));
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+/* Professional card styles */
+.card-sky {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(3, 105, 161, 0.12);
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 8px 32px rgba(3, 105, 161, 0.08),
+    0 2px 8px rgba(3, 105, 161, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
-.dark .glass {
-  background: rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.dark .card-sky {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(99, 102, 241, 0.2);
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 12px 40px rgba(79, 70, 229, 0.3),
+    0 4px 12px rgba(99, 102, 241, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-/* Professional glass variations */
+/* Professional gradient text for branding */
+.gradient-text-sky {
+  /* Remove ALL gradient and border effects */
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  text-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  font-weight: 700 !important;
+}
+
+/* Light mode: dark text */
+html:not(.dark) .gradient-text-sky {
+  color: rgb(8, 8, 8) !important;
+}
+
+/* Dark mode: light text */
+html.dark .gradient-text-sky {
+  color: rgb(248, 250, 252) !important;
+}
+
+.dark .gradient-text-sky {
+  background: linear-gradient(135deg, 
+    rgb(147, 197, 253) 0%,  /* sky-300 */
+    rgb(165, 243, 252) 100% /* cyan-200 */
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: rgb(147, 197, 253);
+}
+
+/* Professional content sections */
+.content-section {
+  padding: 3rem 0;
+  position: relative;
+}
+
+.content-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(3, 105, 161, 0.2), transparent);
+}
+
+.dark .content-section::before {
+  background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.2), transparent);
+}
+
+/* Professional Glass Effects - Enhanced for day/night sky themes */
+.glass {
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 
+    0 8px 32px rgba(15, 23, 42, 0.06),
+    0 2px 8px rgba(15, 23, 42, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 0 20px rgba(14, 165, 233, 0.02); /* Subtle sky atmosphere */
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.7),
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 20px rgba(79, 70, 229, 0.05); /* Night sky cosmic glow */
+}
+
+/* Sky background optimized glass */
+.glass-sky {
+  background: rgba(255, 255, 255, 0.98);
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(3, 105, 161, 0.15);
+  box-shadow: 
+    0 8px 32px rgba(3, 105, 161, 0.08),
+    0 2px 8px rgba(3, 105, 161, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.dark .glass-sky {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  box-shadow: 
+    0 12px 40px rgba(79, 70, 229, 0.3),
+    0 4px 12px rgba(99, 102, 241, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Sky background compatibility */
+.light .glass {
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* Subtle glass for light backgrounds */
 .glass-subtle {
-  background: rgba(255, 255, 255, 0.03);
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(249, 250, 251, 0.8);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
 }
 
 .dark .glass-subtle {
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 .glass-elevated {
-  background: rgba(255, 255, 255, 0.08);
-  -webkit-backdrop-filter: blur(24px);
-  backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.98);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 
-    0 12px 40px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    0 8px 24px rgba(0, 0, 0, 0.08),
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
 .dark .glass-elevated {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 
-    0 12px 40px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    0 16px 48px rgba(0, 0, 0, 0.7),
+    0 4px 12px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
-/* Glass Background Colors */
+/* Glass Background Colors - Enhanced for better text contrast */
 .bg-glass-white {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .bg-glass-primary {
-  background: rgba(99, 102, 241, 0.1);
+  background: rgba(3, 105, 161, 0.2);
 }
 
 .bg-glass-secondary {
-  background: rgba(6, 182, 212, 0.1);
+  background: rgba(8, 145, 178, 0.2);
 }
 
 .bg-glass-accent {
-  background: rgba(245, 158, 11, 0.1);
+  background: rgba(240, 249, 255, 0.95);
+}
+
+/* Dark mode version - much darker accent background */
+.dark .bg-glass-accent {
+  background: rgba(30, 41, 59, 0.8); /* slate-800 with good opacity */
 }
 
 /* Glass Shadow Effects */
@@ -199,56 +430,47 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Updated Color Scheme - Sky Blue to Yellow */
+/* Professional gradient text */
 .gradient-text-visible {
   background: linear-gradient(135deg, 
-    rgb(14, 165, 233) 0%,    /* sky-500 */
-    rgb(34, 197, 94) 25%,    /* green-500 */
-    rgb(245, 158, 11) 50%,   /* amber-500 */
-    rgb(251, 191, 36) 75%,   /* yellow-400 */
-    rgb(255, 237, 74) 100%   /* yellow-300 */
+    rgb(59, 130, 246) 0%,    /* blue-500 */
+    rgb(99, 102, 241) 100%   /* indigo-500 */
   );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-size: 300% 300%;
-  animation: gradient-shift 8s ease-in-out infinite;
+  background-size: 200% 200%;
+  animation: gradient-shift 6s ease-in-out infinite;
   
   /* Fallback for better visibility */
-  color: rgb(14, 165, 233);
+  color: rgb(59, 130, 246);
 }
 
 .light .gradient-text-visible {
-  color: rgb(8, 145, 178); /* Darker sky blue for light mode */
+  color: rgb(29, 78, 216); /* Darker blue for light mode */
 }
 
 .dark .gradient-text-visible {
-  color: rgb(125, 211, 252); /* Lighter sky blue for dark mode */
+  color: rgb(147, 197, 253); /* Lighter blue for dark mode */
 }
 
-/* Creative Gradients */
+/* Professional Gradients */
 .creative-gradient {
   background: linear-gradient(135deg, 
-    rgba(14, 165, 233, 0.3) 0%,  /* sky-500 */
-    rgba(34, 197, 94, 0.3) 25%,  /* green-500 */
-    rgba(245, 158, 11, 0.3) 50%, /* amber-500 */
-    rgba(251, 191, 36, 0.3) 75%, /* yellow-400 */
-    rgba(255, 237, 74, 0.3) 100% /* yellow-300 */
+    rgba(59, 130, 246, 0.15) 0%,  /* blue-500 */
+    rgba(99, 102, 241, 0.1) 100%  /* indigo-500 */
   );
-  background-size: 400% 400%;
-  animation: gradient-shift 15s ease-in-out infinite;
+  background-size: 200% 200%;
+  animation: gradient-shift 20s ease-in-out infinite;
 }
 
 .creative-gradient-intense {
   background: linear-gradient(135deg, 
-    rgba(14, 165, 233, 0.6) 0%,  /* sky-500 */
-    rgba(34, 197, 94, 0.6) 25%,  /* green-500 */
-    rgba(245, 158, 11, 0.6) 50%, /* amber-500 */
-    rgba(251, 191, 36, 0.6) 75%, /* yellow-400 */
-    rgba(255, 237, 74, 0.6) 100% /* yellow-300 */
+    rgba(59, 130, 246, 0.25) 0%,  /* blue-500 */
+    rgba(99, 102, 241, 0.15) 100% /* indigo-500 */
   );
-  background-size: 400% 400%;
-  animation: gradient-shift 20s ease-in-out infinite;
+  background-size: 200% 200%;
+  animation: gradient-shift 25s ease-in-out infinite;
 }
 
 /* Geometric Background Styles */
@@ -418,70 +640,142 @@ body {
   display: none !important;
 }
 
-/* Enhanced Modern Background Effects - Sky Blue to Yellow */
+/* Sky-themed Background Effects - Enhanced atmospheric layers */
 .mesh-gradient {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  /* Day sky - professional atmospheric depth with clouds */
   background: 
-    radial-gradient(circle at 25% 25%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 75% 25%, rgba(34, 197, 94, 0.12) 0%, transparent 50%),
-    radial-gradient(circle at 25% 75%, rgba(245, 158, 11, 0.12) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(251, 191, 36, 0.08) 0%, transparent 50%),
-    linear-gradient(135deg, rgba(14, 165, 233, 0.03) 0%, rgba(255, 237, 74, 0.03) 100%);
-  animation: meshShift 20s ease-in-out infinite;
+    radial-gradient(ellipse 80% 50% at 20% 0%, rgba(14, 165, 233, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(147, 197, 253, 0.03) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 40% 60%, rgba(255, 255, 255, 0.6) 0%, transparent 50%);
+  animation: skyDrift 50s ease-in-out infinite;
 }
 
 .dark .mesh-gradient {
+  /* Night sky - deep cosmic layers with nebula effects */
   background: 
-    radial-gradient(circle at 25% 25%, rgba(14, 165, 233, 0.2) 0%, transparent 50%),
-    radial-gradient(circle at 75% 25%, rgba(34, 197, 94, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 25% 75%, rgba(245, 158, 11, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(251, 191, 36, 0.1) 0%, transparent 50%),
-    linear-gradient(135deg, rgba(14, 165, 233, 0.04) 0%, rgba(255, 237, 74, 0.04) 100%);
+    radial-gradient(ellipse 70% 50% at 30% 20%, rgba(79, 70, 229, 0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 70% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 30% at 50% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 80%);
+  animation: skyDrift 60s ease-in-out infinite;
 }
 
-.glowing-dots {
+/* Enhanced sky atmospheric effects */
+.sky-atmosphere {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  /* Light mode: floating cloud particles and atmospheric haze */
   background-image: 
-    radial-gradient(circle at 20% 30%, rgba(14, 165, 233, 0.4) 2px, transparent 2px),
-    radial-gradient(circle at 80% 60%, rgba(34, 197, 94, 0.3) 1px, transparent 1px),
-    radial-gradient(circle at 40% 80%, rgba(245, 158, 11, 0.3) 1.5px, transparent 1.5px),
-    radial-gradient(circle at 90% 20%, rgba(251, 191, 36, 0.25) 1px, transparent 1px);
-  background-size: 150px 150px, 120px 120px, 100px 100px, 180px 180px;
-  animation: dotsFloat 8s ease-in-out infinite;
+    radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+    radial-gradient(circle at 85% 75%, rgba(147, 197, 253, 0.3) 0.8px, transparent 0.8px),
+    radial-gradient(circle at 45% 10%, rgba(14, 165, 233, 0.2) 0.6px, transparent 0.6px),
+    radial-gradient(circle at 70% 90%, rgba(255, 255, 255, 0.5) 1.2px, transparent 1.2px);
+  background-size: 600px 600px, 400px 400px, 800px 800px, 300px 300px;
+  animation: skyDrift 25s ease-in-out infinite;
 }
 
-.dark .glowing-dots {
+.dark .sky-atmosphere {
+  /* Dark mode: distant stars and cosmic dust */
   background-image: 
-    radial-gradient(circle at 20% 30%, rgba(14, 165, 233, 0.5) 2px, transparent 2px),
-    radial-gradient(circle at 80% 60%, rgba(34, 197, 94, 0.4) 1px, transparent 1px),
-    radial-gradient(circle at 40% 80%, rgba(245, 158, 11, 0.4) 1.5px, transparent 1.5px),
-    radial-gradient(circle at 90% 20%, rgba(251, 191, 36, 0.3) 1px, transparent 1px);
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.6) 0.5px, transparent 0.5px),
+    radial-gradient(circle at 80% 70%, rgba(147, 197, 253, 0.4) 0.3px, transparent 0.3px),
+    radial-gradient(circle at 40% 60%, rgba(196, 181, 253, 0.3) 0.2px, transparent 0.2px),
+    radial-gradient(circle at 65% 15%, rgba(99, 102, 241, 0.5) 0.4px, transparent 0.4px),
+    radial-gradient(circle at 25% 85%, rgba(139, 92, 246, 0.2) 0.1px, transparent 0.1px);
+  background-size: 800px 800px, 600px 600px, 1000px 1000px, 400px 400px, 1200px 1200px;
+  animation: starTwinkle 4s ease-in-out infinite alternate, skyDrift 30s ease-in-out infinite;
 }
 
-/* Modern floating elements */
+/* Professional floating elements with theme-aware backgrounds */
 .floating-element {
   position: absolute;
   border-radius: 50%;
-  filter: blur(0.8px);
+  filter: blur(1px);
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   animation-fill-mode: both;
-  opacity: 0.7;
-  mix-blend-mode: normal;
+  opacity: 0.4;
+  mix-blend-mode: multiply;
+  transition: background 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
 }
 
 .dark .floating-element {
-  opacity: 0.8;
+  opacity: 0.6;
   mix-blend-mode: normal;
-  filter: blur(0.8px);
+  filter: blur(1.2px);
+}
+
+/* Sky-themed floating element backgrounds */
+.floating-sky-primary {
+  background: radial-gradient(circle at center, rgba(3, 105, 161, 0.08) 0%, transparent 70%);
+}
+
+.dark .floating-sky-primary {
+  background: radial-gradient(circle at center, rgba(79, 70, 229, 0.12) 0%, transparent 70%);
+}
+
+.floating-sky-secondary {
+  background: radial-gradient(circle at center, rgba(8, 145, 178, 0.06) 0%, transparent 70%);
+}
+
+.dark .floating-sky-secondary {
+  background: radial-gradient(circle at center, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+}
+
+.floating-sky-clouds {
+  background: radial-gradient(ellipse 100% 50% at center, rgba(255, 255, 255, 0.3) 0%, transparent 80%);
+}
+
+.dark .floating-sky-clouds {
+  background: radial-gradient(ellipse 100% 50% at center, rgba(139, 92, 246, 0.05) 0%, transparent 80%);
+}
+
+.floating-sky-accent {
+  background: radial-gradient(circle at center, rgba(245, 158, 11, 0.04) 0%, transparent 70%);
+}
+
+.dark .floating-sky-accent {
+  background: radial-gradient(circle at center, rgba(167, 139, 250, 0.06) 0%, transparent 70%);
+}
+
+/* Additional sky depth layer */
+.sky-depth-layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  background: radial-gradient(ellipse 100% 60% at 50% 0%, rgba(14, 165, 233, 0.02) 0%, transparent 100%);
+  animation: skyDrift 35s ease-in-out infinite;
+}
+
+.dark .sky-depth-layer {
+  background: radial-gradient(ellipse 100% 60% at 50% 0%, rgba(99, 102, 241, 0.03) 0%, transparent 100%);
+}
+
+/* Scroll component utilities */
+.scroll-component {
+  pointer-events: auto;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hide scroll components when modals are open */
+body:has([role="dialog"]) .scroll-component,
+body:has(.modal-open) .scroll-component {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Ensure scroll components don't interfere with navigation */
+@media (max-width: 768px) {
+  .scroll-component {
+    bottom: 5rem; /* Account for mobile navigation */
+  }
 }
 
 @keyframes floatOrganic {
@@ -499,21 +793,107 @@ body {
   }
 }
 
-@keyframes meshShift {
+@keyframes skyDrift {
   0%, 100% {
-    background-position: 0% 0%, 100% 0%, 0% 100%, 100% 100%, 0% 0%;
+    background-position: 0% 0%, 100% 100%;
   }
   50% {
-    background-position: 20% 30%, 80% 20%, 30% 80%, 70% 90%, 100% 100%;
+    background-position: 30% 20%, 70% 80%;
   }
 }
 
-@keyframes dotsFloat {
+@keyframes starTwinkle {
   0%, 100% {
-    transform: translateY(0) scale(1);
+    opacity: 0.3;
+    transform: scale(0.8);
   }
   50% {
-    transform: translateY(-10px) scale(1.1);
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes cloudFloat {
+  0% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(110%);
+  }
+}
+
+@keyframes skyParticles {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-5px) scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* Light mode text enhancement utilities */
+.text-enhanced {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.text-enhanced-strong {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.light-mode-contrast {
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+/* Professional text styling for light mode */
+.professional-text {
+  color: rgb(15 23 42); /* slate-800 */
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.dark .professional-text {
+  color: rgb(248 250 252); /* slate-50 */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.professional-heading {
+  color: rgb(15 23 42); /* slate-800 */
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.dark .professional-heading {
+  color: rgb(248 250 252); /* slate-50 */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Scroll component fade animations */
+@keyframes scrollFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes scrollFadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
   }
 }
 

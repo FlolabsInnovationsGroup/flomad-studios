@@ -54,7 +54,7 @@ export default function Header() {
             
             {/* Brand Text */}
             <div className="relative">
-              <span className="text-xl font-bold text-white drop-shadow-sm">
+              <span className="text-xl font-bold text-foreground drop-shadow-sm">
                 Flomad Studios
               </span>
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-sky-400 via-emerald-400 to-amber-400 group-hover:w-full transition-all duration-300"></span>

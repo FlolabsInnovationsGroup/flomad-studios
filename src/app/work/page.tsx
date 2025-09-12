@@ -12,17 +12,17 @@ export default function WorkPage() {
   return (
     <main className="fade-in">
       {/* Hero */}
-      <Section className="relative overflow-hidden py-24 md:py-32 section-gradient">
-        <div className="creative-bg" />
-        <div className="floating-element floating-purple" />
-        <div className="floating-element floating-teal" />
+      <Section className="relative overflow-hidden py-24 md:py-32 bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-900 dark:via-sky-900 dark:to-slate-800">
+        <div className="absolute inset-0 bg-gradient-to-r from-sky-500/10 to-blue-600/5 dark:from-sky-500/20 dark:to-blue-600/15" />
+        <div className="absolute top-20 left-10 w-32 h-32 bg-purple-400/20 dark:bg-purple-400/30 rounded-full animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-24 h-24 bg-teal-400/15 dark:bg-teal-400/25 rounded-full animate-pulse" />
         
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-          <div className="section-badge mb-6">
-            <span>SHOWCASING OUR BEST</span>
+          <div className="inline-block px-6 py-3 bg-sky-500/20 border border-sky-400/30 rounded-lg mb-6">
+            <span className="text-sm font-bold text-sky-700 dark:text-sky-300 uppercase tracking-wider">SHOWCASING OUR BEST</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text">Latest Work</h1>
-          <p className="text-xl max-w-2xl mx-auto text-foreground/90 mb-8">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-slate-900 via-blue-900 to-slate-800 dark:from-white dark:via-sky-200 dark:to-white bg-clip-text text-transparent">Latest Work</h1>
+          <p className="text-xl max-w-2xl mx-auto text-slate-700 dark:text-gray-300 mb-8">
             Explore our most recent projects and creative collaborations.
           </p>
         </div>
@@ -37,35 +37,21 @@ export default function WorkPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
             {[
               {
-                title: "Immersive Brand Experience",
+                title: "Brand Identity Design",
                 category: "Branding",
-                description: "A complete brand overhaul with immersive digital touchpoints",
+                description: "Clean, modern brand development for creative businesses",
                 image: "https://images.unsplash.com/photo-1547658719-da2b51169166",
                 color: "primary"
               },
               {
-                title: "Digital Creative Platform",
+                title: "Digital Studio Platform",
                 category: "Web Development",
-                description: "Interactive platform for creators to showcase their work",
+                description: "Responsive web platform for creative studios",
                 image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f",
                 color: "secondary"
-              },
-              {
-                title: "Motion Graphics Series",
-                category: "Animation",
-                description: "Animated series exploring abstract concepts through motion",
-                image: "https://images.unsplash.com/photo-1550108026-b327d5e8a326",
-                color: "accent"
-              },
-              {
-                title: "Interactive Installation",
-                category: "Experiential",
-                description: "Public installation that responds to viewer movements",
-                image: "https://images.unsplash.com/photo-1555778586-9743c95fcef9",
-                color: "primary"
               }
             ].map((project, index) => (
-              <div key={index} className="glass-card group h-[450px] overflow-hidden hover:shadow-glow transition-all duration-300">
+              <div key={index} className="glass group h-[450px] overflow-hidden border border-white/20 dark:border-white/10 light:border-slate-200/50 hover:scale-105 transition-all duration-300">
                 <div className="relative h-full">
                   <OptimizedImage
                     src={project.image}
@@ -73,16 +59,16 @@ export default function WorkPage() {
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent dark:from-black/90 dark:via-black/30 dark:to-transparent"></div>
                   <div className="absolute inset-0 flex flex-col justify-end p-8 z-10">
-                    <div className={`glass-button inline-block px-3 py-1 text-sm font-medium mb-4 w-fit`}>
+                    <div className="inline-block px-3 py-1 text-sm font-medium mb-4 w-fit bg-sky-500/30 border border-sky-400/50 rounded text-sky-200">
                       {project.category}
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white">{project.title}</h3>
-                    <p className="text-white/90 mb-6 max-w-md">{project.description}</p>
-                    <Button className="glass-button w-full sm:w-auto" size="md" asChild>
-                      <Link href={`/work/${project.title.toLowerCase().replace(/\s+/g, '-')}`}>
-                        View Project
+                    <h3 className="text-2xl md:text-3xl font-bold mb-3 text-slate-800 dark:text-white">{project.title}</h3>
+                    <p className="text-slate-600 dark:text-white/90 mb-6 max-w-md">{project.description}</p>
+                    <Button className="bg-white/20 hover:bg-white/30 border border-white/40 text-slate-800 dark:text-white hover:text-slate-800 dark:hover:text-white w-full sm:w-auto" size="md" asChild>
+                      <Link href="/contact">
+                        Discuss Project
                       </Link>
                     </Button>
                   </div>
@@ -100,12 +86,12 @@ export default function WorkPage() {
         <div className="absolute bottom-20 left-20 w-32 h-32 bg-radial-gradient-secondary rounded-full animate-pulse opacity-30" />
         
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-          <div className="glass-intense p-12 md:p-16 rounded-2xl">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 gradient-text-visible">Ready for Your Project?</h2>
-            <p className="text-xl max-w-2xl mx-auto mb-10 text-foreground/90">
+          <div className="glass p-12 md:p-16 rounded-2xl border border-white/20 dark:border-white/10 light:border-slate-200/50">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-slate-900 dark:text-white">Ready for Your Project?</h2>
+            <p className="text-xl max-w-2xl mx-auto mb-10 text-slate-700 dark:text-gray-300">
               Let&apos;s collaborate and bring your creative vision to life with our design and technology expertise.
             </p>
-            <Button className="glass-button text-lg px-8 py-4 hover:shadow-glow transition-all duration-300" asChild>
+            <Button className="bg-sky-500/20 hover:bg-sky-500/30 border border-sky-400/30 text-sky-700 dark:text-sky-300 hover:text-sky-600 dark:hover:text-sky-200 text-lg px-8 py-4 transition-all duration-300" asChild>
               <Link href="/contact">Start a Project</Link>
             </Button>
           </div>

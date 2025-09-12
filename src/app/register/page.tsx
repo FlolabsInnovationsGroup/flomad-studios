@@ -143,11 +143,11 @@ export default function RegisterPage() {
                     className="transition-transform hover:scale-105"
                   />
                   <div className="text-left">
-                    <h1 className="text-2xl font-bold text-white">Flomad Studios</h1>
-                    <p className="text-sm text-sky-300">Join Our Creative Community</p>
+                    <h1 className="text-2xl font-bold text-slate-800 dark:text-white">Flomad Studios</h1>
+                    <p className="text-sm text-sky-600 dark:text-sky-300">Join Our Creative Community</p>
                   </div>
                 </Link>
-                <h2 className="text-3xl font-bold text-white mb-2">Create Your Account</h2>
+                <h2 className="text-3xl font-bold text-slate-800 dark:text-white mb-2">Create Your Account</h2>
                 <p className="text-gray-300">Start your creative journey with us</p>
               </div>
 
@@ -332,30 +332,30 @@ export default function RegisterPage() {
 
               {/* Application Process */}
               <GlassCard className="p-8" variant="accent" blur="lg">
-                <h3 className="text-2xl font-bold text-white mb-6">What Happens Next?</h3>
+                <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-6">What Happens Next?</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
                     <div className="w-8 h-8 bg-sky-500/20 border border-sky-400/30 rounded-full flex items-center justify-center text-sky-300 font-semibold text-sm">
                       1
                     </div>
-                    <p className="text-white">Create your account with basic information</p>
+                    <p className="text-slate-700 dark:text-white">Create your account with basic information</p>
                   </div>
                   <div className="flex items-center gap-4">
                     <div className="w-8 h-8 bg-emerald-500/20 border border-emerald-400/30 rounded-full flex items-center justify-center text-emerald-300 font-semibold text-sm">
                       2
                     </div>
-                    <p className="text-white">Complete your creator profile and interests</p>
+                    <p className="text-slate-700 dark:text-white">Complete your creator profile and interests</p>
                   </div>
                   <div className="flex items-center gap-4">
                     <div className="w-8 h-8 bg-amber-500/20 border border-amber-400/30 rounded-full flex items-center justify-center text-amber-300 font-semibold text-sm">
                       3
                     </div>
-                    <p className="text-white">Access your dashboard and start creating</p>
+                    <p className="text-slate-700 dark:text-white">Access your dashboard and start creating</p>
                   </div>
                 </div>
                 <div className="mt-6 p-4 bg-black/20 rounded-lg border border-white/10">
-                  <p className="text-gray-300 text-sm">
-                    <strong className="text-white">Note:</strong> New accounts start as Content Creator level. 
+                  <p className="text-slate-600 dark:text-gray-300 text-sm">
+                    <strong className="text-slate-700 dark:text-white">Note:</strong> New accounts start as Content Creator level. 
                     Apply for advanced roles through your dashboard settings.
                   </p>
                 </div>
