@@ -51,11 +51,11 @@ export default function SkyBackground() {
   const [clouds, setClouds] = useState<Cloud[]>([]);
   const [constellations, setConstellations] = useState<Constellation[]>([]);
   const [nebulae, setNebulae] = useState<Nebula[]>([]);
-  const [shootingStars, setShootingStars] = useState<{id: number; x: number; y: number; active: boolean}[]>([]);
-  
+  const [shootingStars, setShootingStars] = useState<{ id: number; x: number; y: number; active: boolean }[]>([]);
+
   useEffect(() => {
     setIsMounted(true);
-    
+
     // Generate realistic star field with different types
     const generateStars = () => {
       const newStars: Star[] = [];
@@ -69,16 +69,16 @@ export default function SkyBackground() {
         'rgba(255, 229, 180, ', // Warm white
         'rgba(200, 220, 255, '  // Cool blue
       ];
-      
+
       // Create star clusters and random distribution
       for (let i = 0; i < 400; i++) {
         const starType = Math.random();
         let size, brightness, color;
-        
+
         // Create clusters in certain areas
         const isInCluster = Math.random() < 0.3;
         let x, y;
-        
+
         if (isInCluster) {
           // Cluster centers
           const clusterCenters = [
@@ -93,7 +93,7 @@ export default function SkyBackground() {
           x = Math.random() * 100;
           y = Math.random() * 100;
         }
-        
+
         if (starType < 0.5) {
           // Dim background stars
           size = Math.random() * 1.2 + 0.4;
@@ -110,7 +110,7 @@ export default function SkyBackground() {
           brightness = Math.random() * 0.3 + 0.7;
           color = starColors[Math.floor(Math.random() * starColors.length)];
         }
-        
+
         newStars.push({
           id: i,
           x,
@@ -123,7 +123,7 @@ export default function SkyBackground() {
       }
       setStars(newStars);
     };
-    
+
     // Generate simple constellations
     const generateConstellations = () => {
       const newConstellations: Constellation[] = [
@@ -163,7 +163,7 @@ export default function SkyBackground() {
       ];
       setConstellations(newConstellations);
     };
-    
+
     // Generate nebulae
     const generateNebulae = () => {
       const newNebulae: Nebula[] = [
@@ -188,11 +188,11 @@ export default function SkyBackground() {
       ];
       setNebulae(newNebulae);
     };
-    
+
     // Generate natural, balanced clouds
     const generateClouds = () => {
       const newClouds: Cloud[] = [];
-      
+
       for (let i = 0; i < 4; i++) {
         newClouds.push({
           id: i,
@@ -208,7 +208,7 @@ export default function SkyBackground() {
       }
       setClouds(newClouds);
     };
-    
+
     // Generate shooting stars
     const generateShootingStars = () => {
       setInterval(() => {
@@ -220,7 +220,7 @@ export default function SkyBackground() {
             active: true
           };
           setShootingStars(prev => [...prev, newStar]);
-          
+
           // Remove after animation
           setTimeout(() => {
             setShootingStars(prev => prev.filter(s => s.id !== newStar.id));
@@ -228,20 +228,20 @@ export default function SkyBackground() {
         }
       }, 8000); // Check every 8 seconds
     };
-    
+
     generateStars();
     generateClouds();
     generateConstellations();
     generateNebulae();
     generateShootingStars();
   }, []);
-  
+
   if (!isMounted) {
     return null;
   }
-  
+
   const isDark = theme === 'dark';
-  
+
   return (
     <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
       {isDark ? (
@@ -249,9 +249,9 @@ export default function SkyBackground() {
         <div className="absolute inset-0">
           {/* Deep space gradient background */}
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-950" />
-          
+
           {/* Enhanced Milky Way with multiple layers and depth */}
-          <div 
+          <div
             className="absolute inset-0 opacity-20"
             style={{
               background: `
@@ -262,7 +262,7 @@ export default function SkyBackground() {
               `
             }}
           />
-          
+
           {/* Aurora Borealis effect */}
           <motion.div
             className="absolute top-0 left-0 w-full h-1/2 pointer-events-none"
@@ -291,7 +291,7 @@ export default function SkyBackground() {
               }}
             />
           </motion.div>
-          
+
           {/* Deep space dust lanes */}
           <div className="absolute inset-0 opacity-8">
             <div
@@ -305,7 +305,7 @@ export default function SkyBackground() {
               }}
             />
           </div>
-          
+
           {/* Nebulae */}
           {nebulae.map((nebula) => (
             <motion.div
@@ -330,7 +330,7 @@ export default function SkyBackground() {
               }}
             />
           ))}
-          
+
           {/* Enhanced twinkling stars with realistic colors */}
           {stars.map((star) => (
             <motion.div
@@ -356,7 +356,7 @@ export default function SkyBackground() {
               }}
             />
           ))}
-          
+
           {/* Constellation lines */}
           {constellations.map((constellation) => (
             <svg
@@ -368,7 +368,7 @@ export default function SkyBackground() {
                 const fromStar = constellation.stars[connection.from];
                 const toStar = constellation.stars[connection.to];
                 if (!fromStar || !toStar) return null;
-                
+
                 return (
                   <motion.line
                     key={connectionIndex}
@@ -390,10 +390,10 @@ export default function SkyBackground() {
               })}
             </svg>
           ))}
-          
+
           {/* Enhanced Moon with craters and phases */}
           <div className="absolute top-[12%] right-[15%]">
-            <motion.div 
+            <motion.div
               className="relative w-20 h-20 rounded-full bg-gradient-to-br from-yellow-50 via-yellow-100 to-yellow-200 shadow-2xl"
               style={{
                 boxShadow: '0 0 30px rgba(255, 255, 200, 0.3), inset -8px -8px 0 rgba(0, 0, 0, 0.1)'
@@ -413,7 +413,7 @@ export default function SkyBackground() {
               <div className="absolute bottom-4 left-6 w-1 h-1 rounded-full bg-yellow-300/30" />
             </motion.div>
           </div>
-          
+
           {/* Dynamic shooting stars */}
           {shootingStars.map((shootingStar) => (
             <motion.div
@@ -425,9 +425,9 @@ export default function SkyBackground() {
                 transform: 'rotate(35deg)',
               }}
               initial={{ opacity: 0, x: -50, y: -20, scale: 0 }}
-              animate={{ 
-                opacity: [0, 1, 0], 
-                x: [0, 150, 200], 
+              animate={{
+                opacity: [0, 1, 0],
+                x: [0, 150, 200],
                 y: [0, 80, 120],
                 scale: [0, 1, 0.5]
               }}
@@ -437,7 +437,7 @@ export default function SkyBackground() {
               }}
             />
           ))}
-          
+
           {/* Atmospheric glow at horizon */}
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-indigo-900/30 to-transparent" />
         </div>
@@ -446,33 +446,33 @@ export default function SkyBackground() {
         <div className="absolute inset-0">
           {/* Enhanced realistic sky gradient with professional depth */}
           <div className="absolute inset-0 bg-gradient-to-b from-sky-300 via-sky-100 to-white" />
-          
+
           {/* Professional atmospheric depth layers */}
           <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-blue-50/20 to-slate-50/40" />
-          
+
           {/* Subtle professional gradient overlay */}
           <div className="absolute inset-0 bg-gradient-radial from-transparent via-sky-50/30 to-blue-50/20" />
-          
+
           {/* Enhanced sun with professional styling */}
           <div className="absolute top-[15%] right-[20%]">
             {/* Professional sun glow area */}
-            <div 
+            <div
               className="absolute w-40 h-40 rounded-full"
-              style={{ 
+              style={{
                 transform: 'translate(-50%, -50%)',
                 background: 'radial-gradient(circle, rgba(255, 255, 200, 0.25) 0%, rgba(255, 255, 220, 0.15) 50%, transparent 80%)',
               }}
             />
             {/* Refined sun disk */}
-            <div 
+            <div
               className="absolute w-10 h-10 rounded-full bg-gradient-to-br from-yellow-200 to-amber-300"
-              style={{ 
+              style={{
                 transform: 'translate(-50%, -50%)',
                 boxShadow: '0 0 20px rgba(255, 255, 180, 0.5), 0 0 40px rgba(255, 255, 180, 0.2)'
               }}
             />
           </div>
-          
+
           {/* Natural, fluffy clouds */}
           {clouds.map((cloud) => (
             <motion.div
@@ -498,7 +498,7 @@ export default function SkyBackground() {
               {/* Realistic cloud shape with multiple puffs */}
               <div className="relative w-full h-full">
                 {/* Main cloud body */}
-                <div 
+                <div
                   className="absolute w-3/5 h-4/5 rounded-full left-1/5 top-1/10"
                   style={{
                     background: 'radial-gradient(ellipse, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0.6) 80%, transparent)',
@@ -506,7 +506,7 @@ export default function SkyBackground() {
                   }}
                 />
                 {/* Left puff */}
-                <div 
+                <div
                   className="absolute w-2/5 h-3/5 rounded-full left-0 top-1/4"
                   style={{
                     background: 'radial-gradient(ellipse, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.4) 90%, transparent)',
@@ -514,7 +514,7 @@ export default function SkyBackground() {
                   }}
                 />
                 {/* Right puff */}
-                <div 
+                <div
                   className="absolute w-2/5 h-3/5 rounded-full right-0 top-1/5"
                   style={{
                     background: 'radial-gradient(ellipse, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.3) 90%, transparent)',
@@ -522,7 +522,7 @@ export default function SkyBackground() {
                   }}
                 />
                 {/* Top puff for volume */}
-                <div 
+                <div
                   className="absolute w-1/3 h-1/2 rounded-full left-1/3 top-0"
                   style={{
                     background: 'radial-gradient(ellipse, rgba(255, 255, 255, 0.6) 60%, transparent)',
@@ -532,10 +532,10 @@ export default function SkyBackground() {
               </div>
             </motion.div>
           ))}
-          
+
           {/* Gentle horizon haze */}
           <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-blue-50/60 via-sky-50/30 to-transparent" />
-          
+
           {/* Occasional bird silhouettes - very subtle */}
           <motion.div
             className="absolute top-[35%] left-0 z-10"

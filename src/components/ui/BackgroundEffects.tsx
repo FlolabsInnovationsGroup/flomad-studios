@@ -15,7 +15,7 @@ const generateBackgroundElements = (seed = 42) => {
   };
 
   const random = pseudoRandom(seed);
-  
+
   return [
     {
       className: 'floating-sky-primary',
@@ -70,11 +70,11 @@ const generateBackgroundElements = (seed = 42) => {
 export default function BackgroundEffects() {
   const [isMounted, setIsMounted] = useState(false);
   const [backgroundElements] = useState(() => generateBackgroundElements());
-  
+
   useEffect(() => {
     setIsMounted(true);
   }, []);
-  
+
   if (!isMounted) {
     return (
       <div className="fixed inset-0 z-[-20] pointer-events-none">
@@ -83,16 +83,50 @@ export default function BackgroundEffects() {
       </div>
     );
   }
-  
+
   return (
     <div className="fixed inset-0 z-[-20] pointer-events-none overflow-hidden">
       {/* Primary atmospheric layers */}
       <div className="mesh-gradient"></div>
       <div className="sky-atmosphere"></div>
-      
+
+      {/* Aurora ribbons */}
+      <motion.div
+        className="aurora-band aurora-band--day"
+        animate={{
+          backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+          opacity: [0.24, 0.34, 0.26],
+        }}
+        transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+      />
+      <motion.div
+        className="aurora-band aurora-band--day-secondary"
+        animate={{
+          backgroundPosition: ['100% 50%', '0% 50%', '100% 50%'],
+          opacity: [0.18, 0.28, 0.2],
+        }}
+        transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut', repeatType: 'mirror' }}
+      />
+      <motion.div
+        className="aurora-band aurora-band--night"
+        animate={{
+          backgroundPosition: ['0% 50%', '120% 50%', '-20% 50%'],
+          opacity: [0.32, 0.52, 0.38],
+        }}
+        transition={{ duration: 24, repeat: Infinity, ease: 'easeInOut' }}
+      />
+      <motion.div
+        className="aurora-band aurora-band--night-secondary"
+        animate={{
+          backgroundPosition: ['120% 50%', '-10% 50%', '120% 50%'],
+          opacity: [0.18, 0.34, 0.22],
+        }}
+        transition={{ duration: 28, repeat: Infinity, ease: 'easeInOut', repeatType: 'mirror' }}
+      />
+
       {/* Enhanced floating elements with theme-aware backgrounds */}
       {backgroundElements.map((element, index) => (
-        <motion.div 
+        <motion.div
           key={index}
           className={`floating-element ${element.className}`}
           style={{
@@ -109,7 +143,7 @@ export default function BackgroundEffects() {
           }}
         />
       ))}
-      
+
       {/* Additional sky layer for depth */}
       <div className="sky-depth-layer" />
     </div>

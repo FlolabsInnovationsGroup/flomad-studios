@@ -10,20 +10,31 @@ const config: Config = {
       // Enhanced color palette with glassmorphism support
       colors: {
         background: {
-          DEFAULT: "#0a0a0a", // Rich dark background
-          light: "#f8fafc",   // Day sky background (slate-50)
-          surface: "#111111", // Slightly lighter surface
-          "light-surface": "#ffffff", // Pure white for light mode cards
+          DEFAULT: "hsl(var(--background))",
+          light: "hsl(var(--background-light))",
+          muted: "hsl(var(--background-muted))",
+          surface: "hsl(var(--surface))",
         },
         foreground: {
-          DEFAULT: "#f0f0f0", // Crisp white text
-          dark: "#0f172a",    // Deep readable text for light mode (slate-900)
-          muted: "#888888",   // Muted text
-          "light-muted": "#64748b", // Better muted text for light mode (slate-500)
+          DEFAULT: "hsl(var(--foreground))",
+          muted: "hsl(var(--muted-foreground))",
+          dark: "#0f172a",
+          light: "#f8fafc",
         },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        ring: "hsl(var(--ring))",
+        input: "hsl(var(--input))",
         // Flomad brand colors - Professional sky-inspired palette
         primary: {
-          DEFAULT: "#0369a1", // Professional sky blue (sky-700)
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
           light: "#0ea5e9",   // Bright sky blue (sky-500)
           dark: "#0c4a6e",    // Deep sky blue (sky-800)
           50: "#f0f9ff",      // Very light sky
@@ -38,7 +49,8 @@ const config: Config = {
           900: "#0c4a6e",     // Very deep sky blue
         },
         secondary: {
-          DEFAULT: "#0891b2", // Professional cyan (cyan-600)
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
           light: "#06b6d4",   // Bright cyan (cyan-500)
           dark: "#164e63",    // Deep cyan (cyan-900)
           50: "#ecfeff",      // Very light cyan
@@ -53,7 +65,8 @@ const config: Config = {
           900: "#164e63",     // Very deep cyan
         },
         accent: {
-          DEFAULT: "#f59e0b", // Warm amber (amber-500)
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
           light: "#fbbf24",   // Light amber (amber-400)
           dark: "#d97706",    // Deep amber (amber-600)
           50: "#fffbeb",      // Very light amber
@@ -102,7 +115,7 @@ const config: Config = {
         },
         // Border colors with transparency
         border: {
-          DEFAULT: "rgba(255, 255, 255, 0.1)", // Glass border in dark mode
+          DEFAULT: "hsl(var(--border))",
           light: "rgba(15, 23, 42, 0.12)",     // Professional border in light mode
           "light-subtle": "rgba(15, 23, 42, 0.06)", // Very subtle light border
         },
@@ -115,18 +128,18 @@ const config: Config = {
         "gradient-accent": "linear-gradient(135deg, #f59e0b, #fbbf24)",
         "gradient-hero": "linear-gradient(135deg, #0369a1, #f59e0b, #0891b2)",
         "gradient-card": "linear-gradient(180deg, rgba(10,10,10,0) 0%, rgba(10,10,10,0.8) 100%)",
-        
+
         // Professional glassmorphism gradients
         "glass-gradient": "linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))",
         "glass-primary": "linear-gradient(135deg, rgba(3,105,161,0.2), rgba(3,105,161,0.05))",
         "glass-secondary": "linear-gradient(135deg, rgba(8,145,178,0.2), rgba(8,145,178,0.05))",
-        
+
         // Sky-themed gradients for atmospheric effects
         "sky-day": "linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%)",
         "sky-dawn": "linear-gradient(180deg, #fef3c7 0%, #fde68a 30%, #bae6fd 100%)",
         "sky-clouds": "radial-gradient(ellipse at top, rgba(255,255,255,0.9) 0%, rgba(147,197,253,0.1) 100%)",
         "sky-atmosphere": "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(14,165,233,0.08) 0%, transparent 70%)",
-        
+
         // Night sky gradients (enhanced)
         "sky-night": "linear-gradient(180deg, #0f172a 0%, #1e293b 50%, #334155 100%)",
         "sky-stars": "radial-gradient(ellipse at top, rgba(79,70,229,0.1) 0%, rgba(139,92,246,0.05) 100%)",

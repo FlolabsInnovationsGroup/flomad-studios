@@ -52,26 +52,26 @@ const GlassButton: React.FC<GlassButtonProps> = ({
         'backdrop-blur-md',
         'transition-all duration-300 ease-out',
         'focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2',
-        
+
         // Variant styles
         variants[variant],
-        
+
         // Size styles
         sizes[size],
-        
+
         // Glow effects - enhanced for sky theme
         glow && variant === 'primary' && 'shadow-glow',
         glow && variant === 'secondary' && 'shadow-glow-secondary',
         glow && variant === 'accent' && 'shadow-glow-accent',
         glow && variant === 'sky' && 'shadow-[0_0_20px_rgba(3,105,161,0.4)]',
-        
+
         // Hover and active states
         'hover:scale-[1.02] hover:shadow-medium',
         'active:scale-[0.98]',
-        
+
         // Disabled state
         disabled && 'opacity-50 cursor-not-allowed hover:scale-100',
-        
+
         // Custom classes
         className
       )}
@@ -79,22 +79,22 @@ const GlassButton: React.FC<GlassButtonProps> = ({
       {/* Enhanced glass gradient overlay for theme consistency */}
       <div className={cn(
         "absolute inset-0 rounded-xl pointer-events-none",
-        variant === 'sky' 
-          ? "bg-gradient-to-br from-white/15 to-primary/5 dark:from-primary-900/20 dark:to-transparent" 
+        variant === 'sky'
+          ? "bg-gradient-to-br from-white/15 to-primary/5 dark:from-primary-900/20 dark:to-transparent"
           : "bg-gradient-to-br from-white/10 to-white/5"
       )} />
-      
+
       {/* Content */}
       <span className="relative z-10 flex items-center gap-2">
         {children}
       </span>
-      
+
       {/* Enhanced shimmer effect */}
       <div className="absolute inset-0 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none overflow-hidden">
         <div className={cn(
           "absolute inset-0 translate-x-[-100%] hover:translate-x-[100%] transition-transform duration-1000 ease-out skew-x-12",
-          variant === 'sky' 
-            ? "bg-gradient-to-r from-transparent via-primary/20 to-transparent" 
+          variant === 'sky'
+            ? "bg-gradient-to-r from-transparent via-primary/20 to-transparent"
             : "bg-gradient-to-r from-transparent via-white/20 to-transparent"
         )} />
       </div>

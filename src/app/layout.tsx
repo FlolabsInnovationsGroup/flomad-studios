@@ -70,7 +70,7 @@ export default function RootLayout({
           `
         }} />
       </head>
-      <body className={cn('min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-950 dark:via-slate-900 dark:to-blue-950 text-foreground antialiased font-sans')}>
+      <body className={cn('min-h-screen bg-background text-foreground antialiased font-sans transition-colors duration-300')}>
         <ErrorBoundary>
           <AuthProvider>
             <ThemeProvider>

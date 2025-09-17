@@ -5,72 +5,96 @@
 @tailwind utilities;
 
 :root {
-  /* Enhanced Light mode variables - Professional day sky theme */
-  --background: 248 250 252; /* slate-50 - soft day sky background */
-  --foreground: 8 8 8; /* Almost black - MAXIMUM contrast */
-  --card: 255 255 255; /* Pure white cards for clarity */
-  --card-foreground: 8 8 8; /* Almost black */
-  --popover: 255 255 255;
-  --popover-foreground: 8 8 8; /* Almost black */
-  --primary: 3 105 161; /* sky-700 - professional sky blue */
-  --primary-foreground: 8 8 8; /* Dark text instead of white */
-  --secondary: 248 250 252; /* slate-50 - very light secondary */
-  --secondary-foreground: 8 8 8; /* Almost black */
-  --muted: 241 245 249; /* slate-100 - slightly darker muted */
-  --muted-foreground: 8 8 8; /* Almost black for maximum contrast */
-  --accent: 240 249 255; /* blue-50 - sky accent */
-  --accent-foreground: 8 8 8; /* Almost black */
-  --destructive: 239 68 68; /* red-500 */
-  --destructive-foreground: 255 255 255;
-  --border: 226 232 240; /* slate-200 - visible borders */
-  --input: 241 245 249; /* slate-100 */
-  --ring: 3 105 161; /* sky-700 */
+  color-scheme: light;
+  /* Core palette */
+  --background: 205 82% 97%;
+  --background-light: 204 100% 99%;
+  --background-muted: 204 64% 94%;
+  --surface: 210 40% 99%;
+  --foreground: 213 30% 22%;
+  --muted: 205 52% 92%;
+  --muted-foreground: 216 18% 40%;
+  --card: 0 0% 100%;
+  --card-foreground: 214 28% 26%;
+  --primary: 205 87% 45%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 199 89% 82%;
+  --secondary-foreground: 213 23% 26%;
+  --accent: 37 92% 72%;
+  --accent-foreground: 33 93% 18%;
+  --destructive: 0 80% 55%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 209 34% 85%;
+  --input: 209 34% 85%;
+  --ring: 205 87% 45%;
   --radius: 0.75rem;
-  
-  /* Professional day sky theme variables */
-  --glass-bg: rgba(255, 255, 255, 0.92);
+
+  /* Atmosphere + glass */
+  --glass-bg: rgba(255, 255, 255, 0.9);
   --glass-border: rgba(15, 23, 42, 0.12);
-  --backdrop-blur: blur(20px);
+  --backdrop-blur: blur(18px);
   --shadow-color: rgba(15, 23, 42, 0.08);
-  --surface-color: rgba(255, 255, 255, 1);
-  --text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
-  --sky-atmosphere: rgba(14, 165, 233, 0.03);
-  --sky-clouds: rgba(255, 255, 255, 0.8);
-  --sky-horizon: rgba(147, 197, 253, 0.15);
+  --surface-color: rgba(255, 255, 255, 0.96);
+  --heading-foreground: 215 52% 30%;
+  --heading-shadow: 0 18px 32px rgba(186, 230, 253, 0.22);
+  --text-shadow-soft: 0 1px 2px rgba(240, 249, 255, 0.5);
+  --sky-atmosphere: rgba(147, 197, 253, 0.16);
+  --sky-clouds: rgba(255, 255, 255, 0.85);
+  --sky-horizon: rgba(186, 230, 253, 0.14);
+  --body-gradient: radial-gradient(circle at 22% 16%, rgba(255, 255, 255, 0.65) 0%, transparent 58%),
+    radial-gradient(circle at 80% 12%, rgba(186, 230, 253, 0.45) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(224, 242, 254, 0.95) 0%, rgba(241, 245, 249, 0.96) 48%, rgba(255, 255, 255, 1) 100%);
+  --aurora-day-band: linear-gradient(115deg, rgba(255, 255, 255, 0.32) 0%, rgba(186, 230, 253, 0.38) 42%, rgba(254, 215, 170, 0.35) 74%, rgba(253, 164, 175, 0.32) 100%);
+  --aurora-day-secondary: linear-gradient(145deg, rgba(236, 254, 255, 0.28) 0%, rgba(190, 242, 255, 0.34) 45%, rgba(254, 249, 195, 0.30) 100%);
+  --aurora-glass: rgba(186, 230, 253, 0.25);
+  --aurora-night-primary: linear-gradient(135deg, rgba(209, 213, 255, 0.35) 0%, rgba(191, 219, 254, 0.32) 60%, rgba(221, 214, 254, 0.34) 100%);
+  --aurora-night-secondary: linear-gradient(160deg, rgba(236, 254, 255, 0.28) 0%, rgba(224, 231, 255, 0.32) 45%, rgba(255, 228, 230, 0.25) 100%);
 }
 
 .dark {
-  /* Enhanced Dark mode variables - elegant night sky */
-  --background: 15 23 42; /* slate-900 - deep night sky */
-  --foreground: 248 250 252; /* slate-50 - crisp starlight */
-  --card: 30 41 59; /* slate-800 - sophisticated card background */
-  --card-foreground: 248 250 252;
-  --popover: 15 23 42;
-  --popover-foreground: 248 250 252;
-  --primary: 99 102 241; /* indigo-500 - cosmic purple */
-  --primary-foreground: 255 255 255;
-  --secondary: 51 65 85; /* slate-700 - refined secondary */
-  --secondary-foreground: 203 213 225; /* slate-300 */
-  --muted: 51 65 85; /* slate-700 */
-  --muted-foreground: 148 163 184; /* slate-400 - good contrast */
-  --accent: 30 27 75; /* indigo-950 - deep accent */
-  --accent-foreground: 167 139 250; /* violet-400 */
-  --destructive: 239 68 68; /* red-500 */
-  --destructive-foreground: 248 250 252;
-  --border: 51 65 85; /* slate-700 - subtle borders */
-  --input: 51 65 85;
-  --ring: 99 102 241; /* indigo-500 */
-  
-  /* Elegant night sky theme variables */
-  --glass-bg: rgba(0, 0, 0, 0.4);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  color-scheme: dark;
+  /* Core palette */
+  --background: 222 47% 11%;
+  --background-light: 222 47% 11%;
+  --background-muted: 223 38% 17%;
+  --surface: 223 36% 18%;
+  --foreground: 210 40% 96%;
+  --muted: 224 30% 22%;
+  --muted-foreground: 217 19% 70%;
+  --card: 222 47% 14%;
+  --card-foreground: 210 40% 96%;
+  --primary: 228 76% 65%;
+  --primary-foreground: 216 33% 98%;
+  --secondary: 222 44% 28%;
+  --secondary-foreground: 210 40% 96%;
+  --accent: 258 92% 80%;
+  --accent-foreground: 251 67% 22%;
+  --destructive: 0 78% 60%;
+  --destructive-foreground: 216 33% 98%;
+  --border: 222 28% 28%;
+  --input: 222 28% 28%;
+  --ring: 228 76% 65%;
+
+  /* Atmosphere + glass */
+  --glass-bg: rgba(15, 23, 42, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.12);
   --backdrop-blur: blur(16px);
-  --shadow-color: rgba(0, 0, 0, 0.5);
-  --surface-color: rgba(30, 41, 59, 1);
-  --text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  --sky-atmosphere: rgba(79, 70, 229, 0.05);
-  --sky-clouds: rgba(255, 255, 255, 0.05);
-  --sky-horizon: rgba(139, 92, 246, 0.03);
+  --shadow-color: rgba(2, 6, 23, 0.65);
+  --surface-color: rgba(23, 36, 56, 0.9);
+  --heading-foreground: 217 88% 85%;
+  --heading-shadow: 0 18px 40px rgba(79, 70, 229, 0.34);
+  --text-shadow-soft: 0 2px 8px rgba(8, 16, 40, 0.55);
+  --sky-atmosphere: rgba(79, 70, 229, 0.14);
+  --sky-clouds: rgba(148, 163, 184, 0.15);
+  --sky-horizon: rgba(99, 102, 241, 0.12);
+  --body-gradient: radial-gradient(circle at 18% 18%, rgba(67, 56, 202, 0.22) 0%, transparent 58%),
+    radial-gradient(circle at 80% 10%, rgba(14, 116, 144, 0.22) 0%, transparent 60%),
+    linear-gradient(180deg, #0f172a 0%, #1e293b 42%, #0b1120 100%);
+  --aurora-day-band: linear-gradient(115deg, rgba(30, 64, 175, 0.25) 0%, rgba(59, 130, 246, 0.28) 45%, rgba(99, 102, 241, 0.32) 100%);
+  --aurora-day-secondary: linear-gradient(145deg, rgba(59, 130, 246, 0.18) 0%, rgba(129, 140, 248, 0.22) 50%, rgba(165, 180, 252, 0.25) 100%);
+  --aurora-glass: rgba(99, 102, 241, 0.35);
+  --aurora-night-primary: linear-gradient(135deg, rgba(129, 140, 248, 0.45) 0%, rgba(56, 189, 248, 0.48) 40%, rgba(192, 132, 252, 0.42) 100%);
+  --aurora-night-secondary: linear-gradient(160deg, rgba(236, 72, 153, 0.42) 0%, rgba(59, 130, 246, 0.45) 38%, rgba(14, 165, 233, 0.5) 100%);
 }
 
 * {
@@ -80,57 +104,31 @@
 
 body {
   color: hsl(var(--foreground));
-  background: hsl(var(--background));
+  background-color: hsl(var(--background));
+  background-image: var(--body-gradient);
+  background-attachment: fixed;
   transition: background-color 0.3s ease, color 0.3s ease;
   line-height: 1.6;
   letter-spacing: -0.01em;
 }
 
-/* FORCE ALL TEXT TO BE DARK IN LIGHT MODE ONLY */
-html:not(.dark) * {
-  color: rgb(8, 8, 8) !important;
-}
-
-/* Exception: Allow white text only on solid dark buttons in light mode */
-html:not(.dark) .bg-primary *,
-html:not(.dark) .bg-secondary *,
-html:not(.dark) .bg-accent * {
-  color: white !important;
-}
-
-/* Ensure dark mode text stays white */
-html.dark * {
-  color: rgb(248, 250, 252) !important; /* slate-50 - light text for dark mode */
-}
-
-/* Exception: Allow dark text on light backgrounds in dark mode */
-html.dark .bg-white *,
-html.dark .bg-slate-50 *,
-html.dark .bg-slate-100 * {
-  color: rgb(15, 23, 42) !important;
-}
-
 /* Enhanced typography for better sky-themed readability */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
-  line-height: 1.3;
+  line-height: 1.25;
   letter-spacing: -0.02em;
-  color: hsl(var(--foreground));
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9), 0 0 8px rgba(255, 255, 255, 0.4); /* Enhanced day sky text shadow */
-}
-
-.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 0 12px rgba(79, 70, 229, 0.2); /* Night sky glow */
+  color: hsl(var(--heading-foreground));
+  text-shadow: var(--heading-shadow);
 }
 
 p {
   line-height: 1.7;
   color: hsl(var(--foreground));
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8), 0 0 4px rgba(255, 255, 255, 0.3);
+  text-shadow: var(--text-shadow-soft);
 }
 
 .dark p {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 0 6px rgba(79, 70, 229, 0.1);
+  text-shadow: var(--text-shadow-soft);
 }
 
 .text-muted {
@@ -141,92 +139,110 @@ p {
 .professional-text {
   color: hsl(var(--foreground));
   font-weight: 600; /* Bolder font weight for better visibility */
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
-}
-
-.dark .professional-text {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  text-shadow: var(--text-shadow-soft);
 }
 
 .professional-heading {
-  color: hsl(var(--foreground));
+  color: hsl(var(--heading-foreground));
   font-weight: 700;
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9), 0 0 8px rgba(255, 255, 255, 0.4);
-}
-
-.dark .professional-heading {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 0 12px rgba(79, 70, 229, 0.2);
+  text-shadow: var(--heading-shadow);
 }
 
 /* Enhanced button styles for sky theme */
 .btn-sky {
-  background: linear-gradient(135deg, rgba(3, 105, 161, 0.2), rgba(8, 145, 178, 0.3));
-  color: hsl(var(--foreground));
-  border: 1px solid rgba(3, 105, 161, 0.3);
-  box-shadow: 0 4px 16px rgba(3, 105, 161, 0.2);
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(6, 182, 212, 0.28));
+  color: hsl(var(--primary-foreground));
+  border: 1px solid rgba(14, 165, 233, 0.35);
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.18);
   transition: all 0.3s ease;
 }
 
 .btn-sky:hover {
-  background: linear-gradient(135deg, rgb(7, 89, 133), rgb(6, 95, 114));
-  box-shadow: 0 6px 20px rgba(3, 105, 161, 0.3);
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.28), rgba(6, 182, 212, 0.36));
+  box-shadow: 0 12px 30px rgba(14, 165, 233, 0.22);
   transform: translateY(-1px);
 }
 
 .dark .btn-sky {
-  background: linear-gradient(135deg, rgb(99, 102, 241), rgb(139, 92, 246));
-  border: 1px solid rgba(99, 102, 241, 0.3);
-  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.85), rgba(129, 140, 248, 0.8));
+  border: 1px solid rgba(129, 140, 248, 0.4);
+  box-shadow: 0 10px 28px rgba(99, 102, 241, 0.35);
 }
 
 .dark .btn-sky:hover {
-  background: linear-gradient(135deg, rgb(79, 70, 229), rgb(124, 58, 237));
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.92), rgba(124, 58, 237, 0.88));
+  box-shadow: 0 14px 34px rgba(99, 102, 241, 0.4);
 }
 
 /* Professional card styles */
 .card-sky {
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(3, 105, 161, 0.12);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+  background: var(--surface-color);
+  border: 1px solid rgba(14, 165, 233, 0.16);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  backdrop-filter: var(--backdrop-blur);
   box-shadow: 
-    0 8px 32px rgba(3, 105, 161, 0.08),
-    0 2px 8px rgba(3, 105, 161, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 1);
+    0 12px 36px rgba(14, 165, 233, 0.12),
+    0 4px 16px rgba(14, 165, 233, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    inset 0 0 26px var(--aurora-glass);
+}
+
+.card-sky::before,
+.card-sky::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.card-sky::before {
+  background: radial-gradient(ellipse 120% 60% at 15% 0%, rgba(255, 255, 255, 0.6) 0%, transparent 65%);
+  opacity: 0.65;
+  mix-blend-mode: screen;
+}
+
+.card-sky::after {
+  background: linear-gradient(130deg, rgba(186, 230, 253, 0.32) 0%, rgba(255, 255, 255, 0.0) 60%, rgba(253, 164, 175, 0.22) 100%);
+  opacity: 0.45;
+  mix-blend-mode: screen;
+}
+
+.card-sky:hover::before {
+  opacity: 0.82;
+}
+
+.card-sky:hover::after {
+  opacity: 0.58;
 }
 
 .dark .card-sky {
-  background: rgba(15, 23, 42, 0.8);
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  background: rgba(21, 30, 50, 0.92);
+  border: 1px solid rgba(129, 140, 248, 0.28);
   box-shadow: 
-    0 12px 40px rgba(79, 70, 229, 0.3),
-    0 4px 12px rgba(99, 102, 241, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    0 18px 44px rgba(79, 70, 229, 0.32),
+    0 6px 18px rgba(99, 102, 241, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 0 26px rgba(129, 140, 248, 0.18);
+}
+
+.dark .card-sky::before {
+  background: radial-gradient(ellipse 120% 60% at 20% 0%, rgba(236, 72, 153, 0.24) 0%, transparent 65%);
+  opacity: 0.5;
+}
+
+.dark .card-sky::after {
+  background: linear-gradient(140deg, rgba(79, 70, 229, 0.28) 0%, rgba(16, 185, 255, 0.2) 45%, rgba(236, 72, 153, 0.24) 100%);
+  opacity: 0.35;
 }
 
 /* Professional gradient text for branding */
 .gradient-text-sky {
-  /* Remove ALL gradient and border effects */
-  background: none !important;
-  -webkit-background-clip: unset !important;
-  background-clip: unset !important;
-  -webkit-text-fill-color: unset !important;
-  text-shadow: none !important;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-  font-weight: 700 !important;
-}
-
-/* Light mode: dark text */
-html:not(.dark) .gradient-text-sky {
-  color: rgb(8, 8, 8) !important;
-}
-
-/* Dark mode: light text */
-html.dark .gradient-text-sky {
-  color: rgb(248, 250, 252) !important;
+  color: hsl(var(--foreground));
+  font-weight: 700;
+  text-shadow: none;
 }
 
 .dark .gradient-text-sky {
@@ -262,46 +278,69 @@ html.dark .gradient-text-sky {
 
 /* Professional Glass Effects - Enhanced for day/night sky themes */
 .glass {
-  background: rgba(255, 255, 255, 0.95);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 
-    0 8px 32px rgba(15, 23, 42, 0.06),
-    0 2px 8px rgba(15, 23, 42, 0.03),
-    inset 0 1px 0 rgba(255, 255, 255, 1),
-    inset 0 0 20px rgba(14, 165, 233, 0.02); /* Subtle sky atmosphere */
-}
-
-.dark .glass {
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 
-    0 12px 40px rgba(0, 0, 0, 0.7),
-    0 4px 12px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1),
-    inset 0 0 20px rgba(79, 70, 229, 0.05); /* Night sky cosmic glow */
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  backdrop-filter: var(--backdrop-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    0 14px 36px var(--shadow-color),
+    0 4px 14px rgba(14, 165, 233, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 0 24px var(--aurora-glass);
 }
 
 /* Sky background optimized glass */
 .glass-sky {
-  background: rgba(255, 255, 255, 0.98);
-  -webkit-backdrop-filter: blur(24px);
-  backdrop-filter: blur(24px);
-  border: 1px solid rgba(3, 105, 161, 0.15);
-  box-shadow: 
-    0 8px 32px rgba(3, 105, 161, 0.08),
-    0 2px 8px rgba(3, 105, 161, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 1);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(186, 230, 253, 0.22));
+  -webkit-backdrop-filter: blur(22px);
+  backdrop-filter: blur(22px);
+  border: 1px solid rgba(14, 165, 233, 0.18);
+  box-shadow:
+    0 12px 34px rgba(14, 165, 233, 0.14),
+    0 4px 14px rgba(14, 165, 233, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    inset 0 0 28px var(--aurora-glass);
+}
+
+.glass-sky::before,
+.glass-sky::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.glass-sky::before {
+  background: radial-gradient(circle at 15% -10%, rgba(255, 255, 255, 0.65) 0%, transparent 55%);
+  opacity: 0.7;
+}
+
+.glass-sky::after {
+  background: linear-gradient(130deg, rgba(186, 230, 253, 0.22) 0%, rgba(99, 102, 241, 0.0) 60%, rgba(255, 228, 196, 0.18) 100%);
+  opacity: 0.4;
+  mix-blend-mode: screen;
 }
 
 .dark .glass-sky {
-  background: rgba(15, 23, 42, 0.8);
-  border: 1px solid rgba(99, 102, 241, 0.2);
-  box-shadow: 
-    0 12px 40px rgba(79, 70, 229, 0.3),
-    0 4px 12px rgba(99, 102, 241, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  background: linear-gradient(145deg, rgba(21, 30, 50, 0.9), rgba(79, 70, 229, 0.18));
+  border: 1px solid rgba(129, 140, 248, 0.28);
+  box-shadow:
+    0 18px 42px rgba(79, 70, 229, 0.28),
+    0 6px 18px rgba(79, 70, 229, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 0 26px rgba(129, 140, 248, 0.2);
+}
+
+.dark .glass-sky::before {
+  background: radial-gradient(circle at 25% -10%, rgba(129, 140, 248, 0.42) 0%, transparent 60%);
+  opacity: 0.55;
+}
+
+.dark .glass-sky::after {
+  background: linear-gradient(140deg, rgba(59, 130, 246, 0.28) 0%, rgba(192, 132, 252, 0.25) 55%, rgba(14, 165, 233, 0.32) 100%);
+  opacity: 0.35;
 }
 
 /* Sky background compatibility */
@@ -314,37 +353,43 @@ html.dark .gradient-text-sky {
 
 /* Subtle glass for light backgrounds */
 .glass-subtle {
-  background: rgba(249, 250, 251, 0.8);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  background: rgba(247, 250, 252, 0.85);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow:
+    0 6px 18px rgba(15, 23, 42, 0.08),
+    inset 0 0 18px var(--aurora-glass);
 }
 
 .dark .glass-subtle {
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(129, 140, 248, 0.2);
+  box-shadow:
+    0 12px 32px rgba(2, 6, 23, 0.6),
+    inset 0 0 18px rgba(129, 140, 248, 0.25);
 }
 
 .glass-elevated {
-  background: rgba(255, 255, 255, 0.98);
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 
-    0 8px 24px rgba(0, 0, 0, 0.08),
-    0 2px 4px rgba(0, 0, 0, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 0.96);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow:
+    0 14px 36px rgba(15, 23, 42, 0.12),
+    0 6px 16px rgba(15, 23, 42, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    inset 0 0 28px var(--aurora-glass);
 }
 
 .dark .glass-elevated {
-  background: rgba(0, 0, 0, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 
-    0 16px 48px rgba(0, 0, 0, 0.7),
-    0 4px 12px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  background: rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(129, 140, 248, 0.24);
+  box-shadow:
+    0 18px 46px rgba(2, 6, 23, 0.6),
+    0 6px 18px rgba(79, 70, 229, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 0 28px rgba(129, 140, 248, 0.24);
 }
 
 /* Glass Background Colors - Enhanced for better text contrast */
@@ -640,6 +685,67 @@ html.dark .gradient-text-sky {
   display: none !important;
 }
 
+/* Aurora ribbons for day + night */
+.aurora-band {
+  position: absolute;
+  left: -20%;
+  width: 140%;
+  pointer-events: none;
+  filter: blur(28px);
+  opacity: 0.32;
+  transform: skewY(-8deg);
+  mix-blend-mode: screen;
+}
+
+.aurora-band::after {
+  content: '';
+  position: absolute;
+  inset: -12%;
+  background: inherit;
+  filter: blur(18px);
+  opacity: 0.65;
+}
+
+.aurora-band--day {
+  top: 14%;
+  height: 42%;
+  background: var(--aurora-day-band);
+}
+
+.aurora-band--day-secondary {
+  top: 46%;
+  height: 32%;
+  background: var(--aurora-day-secondary);
+  opacity: 0.28;
+}
+
+.dark .aurora-band--day,
+.dark .aurora-band--day-secondary {
+  opacity: 0;
+}
+
+.aurora-band--night {
+  top: 12%;
+  height: 40%;
+  opacity: 0;
+  background: var(--aurora-night-primary);
+}
+
+.aurora-band--night-secondary {
+  top: 44%;
+  height: 34%;
+  opacity: 0;
+  background: var(--aurora-night-secondary);
+}
+
+.dark .aurora-band--night {
+  opacity: 0.52;
+}
+
+.dark .aurora-band--night-secondary {
+  opacity: 0.36;
+}
+
 /* Sky-themed Background Effects - Enhanced atmospheric layers */
 .mesh-gradient {
   position: absolute;
@@ -650,9 +756,21 @@ html.dark .gradient-text-sky {
   /* Day sky - professional atmospheric depth with clouds */
   background: 
     radial-gradient(ellipse 80% 50% at 20% 0%, rgba(14, 165, 233, 0.04) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(147, 197, 253, 0.03) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 30% at 40% 60%, rgba(255, 255, 255, 0.6) 0%, transparent 50%);
+    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(147, 197, 253, 0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 30% at 45% 65%, rgba(255, 255, 255, 0.55) 0%, transparent 52%),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.18) 0%, rgba(186, 230, 253, 0.22) 50%, rgba(254, 215, 170, 0.18) 100%);
   animation: skyDrift 50s ease-in-out infinite;
+}
+
+.mesh-gradient::after {
+  content: '';
+  position: absolute;
+  inset: -15% 0 -10% 0;
+  background: radial-gradient(ellipse 65% 45% at 80% -10%, rgba(255, 255, 255, 0.38) 0%, transparent 65%);
+  opacity: 0.7;
+  filter: blur(18px);
+  pointer-events: none;
+  transform: translateZ(0);
 }
 
 .dark .mesh-gradient {
@@ -660,8 +778,15 @@ html.dark .gradient-text-sky {
   background: 
     radial-gradient(ellipse 70% 50% at 30% 20%, rgba(79, 70, 229, 0.12) 0%, transparent 70%),
     radial-gradient(ellipse 50% 40% at 70% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 30% at 50% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 80%);
+    radial-gradient(ellipse 60% 30% at 50% 50%, rgba(99, 102, 241, 0.06) 0%, transparent 78%),
+    linear-gradient(130deg, rgba(59, 130, 246, 0.12) 0%, rgba(129, 140, 248, 0.16) 46%, rgba(236, 72, 153, 0.12) 100%);
   animation: skyDrift 60s ease-in-out infinite;
+}
+
+.dark .mesh-gradient::after {
+  background: radial-gradient(ellipse 60% 40% at 70% -10%, rgba(99, 102, 241, 0.28) 0%, transparent 70%);
+  opacity: 0.55;
+  filter: blur(22px);
 }
 
 /* Enhanced sky atmospheric effects */
@@ -702,13 +827,13 @@ html.dark .gradient-text-sky {
   animation-timing-function: ease-in-out;
   animation-fill-mode: both;
   opacity: 0.4;
-  mix-blend-mode: multiply;
+  mix-blend-mode: screen;
   transition: background 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
 }
 
 .dark .floating-element {
   opacity: 0.6;
-  mix-blend-mode: normal;
+  mix-blend-mode: lighten;
   filter: blur(1.2px);
 }
 

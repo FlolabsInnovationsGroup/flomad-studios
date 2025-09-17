@@ -118,23 +118,22 @@ export default function MobileNavMenu() {
             <div className="mb-8">
               <h2 className="text-2xl font-bold bg-gradient-to-r from-sky-400 to-emerald-400 bg-clip-text text-transparent">Navigation</h2>
             </div>
-            
+
             <nav className="flex-1">
               <ul className="space-y-4">
                 {navLinks.map((link) => {
                   const isActive = pathname === link.href;
                   const Icon = link.icon;
-                  
+
                   return (
                     <motion.li key={link.name} variants={itemVariants}>
                       <Link
                         href={link.href}
                         onClick={toggleMenu}
-                        className={`flex items-center p-3 rounded-md text-lg transition-colors text-foreground ${
-                          isActive 
-                            ? 'bg-primary/20 border border-primary/30 text-primary font-medium' 
+                        className={`flex items-center p-3 rounded-md text-lg transition-colors text-foreground ${isActive
+                            ? 'bg-primary/20 border border-primary/30 text-primary font-medium'
                             : 'hover:bg-accent/10 hover:text-primary'
-                        }`}
+                          }`}
                       >
                         <Icon className={`mr-3 h-5 w-5 ${isActive ? 'text-primary' : 'text-foreground/70'}`} />
                         {link.name}
@@ -150,9 +149,9 @@ export default function MobileNavMenu() {
                 })}
               </ul>
             </nav>
-            
+
             <div className="mt-auto">
-              <motion.div 
+              <motion.div
                 variants={itemVariants}
                 className="p-4 rounded-lg bg-sky-500/10 border border-sky-400/20 text-sm"
               >

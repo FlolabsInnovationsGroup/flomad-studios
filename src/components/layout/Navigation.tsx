@@ -50,8 +50,8 @@ export default function Navigation() {
               href={item.href}
               className={cn(
                 'nav-link relative font-medium text-foreground hover:text-primary whitespace-nowrap transition-all duration-300 px-3 py-2 rounded-lg hover:bg-primary/10',
-                pathname === item.href 
-                  ? 'text-primary font-semibold bg-primary/15 border border-primary/20 shadow-sm' 
+                pathname === item.href
+                  ? 'text-primary font-semibold bg-primary/15 border border-primary/20 shadow-sm'
                   : 'hover:bg-primary/5'
               )}
             >

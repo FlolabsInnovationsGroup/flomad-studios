@@ -14,10 +14,10 @@ export default function HomePage() {
       <SkyBackground />
       {/* Geometric Background */}
       <ClientGeometricBackground />
-      
+
       {/* Light mode atmosphere overlay for better text readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-sky-50/20 via-transparent to-sky-100/10 dark:from-transparent dark:via-transparent dark:to-transparent pointer-events-none" />
-      
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
         {/* Modern Atmospheric Background Effects */}
@@ -27,7 +27,7 @@ export default function HomePage() {
           <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-l from-secondary/12 to-accent/8 rounded-full blur-3xl animate-float-delay-1" />
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-br from-accent/15 to-primary/10 rounded-full blur-3xl animate-float-delay-2" />
           <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-gradient-to-tl from-primary/12 to-secondary/8 rounded-full blur-3xl animate-float-delay-3" />
-          
+
           {/* Atmospheric particles */}
           <div className="absolute inset-0 overflow-hidden opacity-40 dark:opacity-60">
             <div className="absolute w-1 h-1 bg-primary rounded-full animate-float left-[10%] top-[20%]" />
@@ -91,10 +91,10 @@ export default function HomePage() {
             {/* Professional CTA Section */}
             <div className="space-y-8">
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <GlassButton 
-                  variant="primary" 
-                  size="lg" 
-                  glow 
+                <GlassButton
+                  variant="primary"
+                  size="lg"
+                  glow
                   className="group relative overflow-hidden px-10 py-4 text-lg font-semibold transform hover:scale-105 transition-all duration-300 border-sky-500/30"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-sky-500 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -103,10 +103,10 @@ export default function HomePage() {
                     <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-2" />
                   </Link>
                 </GlassButton>
-                
-                <GlassButton 
-                  variant="ghost" 
-                  size="lg" 
+
+                <GlassButton
+                  variant="ghost"
+                  size="lg"
                   className="group px-10 py-4 text-lg font-semibold border-amber-400/40 hover:border-yellow-400/60 transform hover:scale-105 transition-all duration-300"
                 >
                   <Link href="/work" className="flex items-center gap-3">
@@ -123,7 +123,7 @@ export default function HomePage() {
                 <div className="text-center max-w-2xl">
                   <div className="text-2xl md:text-3xl font-bold text-foreground mb-4">Our Mission</div>
                   <div className="text-lg text-foreground leading-relaxed">
-                    To provide a collaborative creative environment where emerging talent can learn, 
+                    To provide a collaborative creative environment where emerging talent can learn,
                     grow, and create meaningful content alongside experienced mentors and industry professionals.
                   </div>
                 </div>
@@ -178,63 +178,63 @@ export default function HomePage() {
               Digital <span className="text-foreground font-extrabold">Creative Services</span>
             </h2>
             <p className="text-xl text-foreground max-w-4xl mx-auto leading-relaxed">
-              As a division of Flomad Labs R&D, we bring together creative design and modern technology 
+              As a division of Flomad Labs R&D, we bring together creative design and modern technology
               to help businesses establish their digital presence.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">{[
-              {
-                icon: Users,
-                title: "Web Design & Development",
-                description: "Creating modern, responsive websites that effectively represent your brand and engage visitors.",
-                variant: "primary" as const
-              },
-              {
-                icon: Mic,
-                title: "Brand Identity Design",
-                description: "Developing visual identity systems that help your business stand out and connect with customers.",
-                variant: "secondary" as const
-              },
-              {
-                icon: Video,
-                title: "Digital Content Creation",
-                description: "Producing engaging video, audio, and visual content to tell your brand&apos;s story across platforms.",
-                variant: "accent" as const
-              },
-              {
-                icon: Book,
-                title: "Digital Strategy",
-                description: "Planning and implementing digital solutions that align with your business goals and growth objectives.",
-                variant: "primary" as const
-              },
-              {
-                icon: GraduationCap,
-                title: "Creative Consultation",
-                description: "Providing expert guidance on digital projects, from concept development to final implementation.",
-                variant: "secondary" as const
-              },
-              {
-                icon: Heart,
-                title: "Ongoing Support",
-                description: "Maintaining and evolving your digital presence with updates, improvements, and new features.",
-                variant: "accent" as const
-              }
-            ].map((service, index) => (
-              <GlassCard
-                key={index}
-                className="p-8 text-center group fade-in hover:scale-105 transition-all duration-300"
-                variant={service.variant}
-                blur="md"
-                hover
-              >
-                <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="w-12 h-12 mx-auto text-foreground" />
-                </div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">{service.title}</h3>
-                <p className="text-foreground leading-relaxed">{service.description}</p>
-              </GlassCard>
-            ))}
+            {
+              icon: Users,
+              title: "Web Design & Development",
+              description: "Creating modern, responsive websites that effectively represent your brand and engage visitors.",
+              variant: "primary" as const
+            },
+            {
+              icon: Mic,
+              title: "Brand Identity Design",
+              description: "Developing visual identity systems that help your business stand out and connect with customers.",
+              variant: "secondary" as const
+            },
+            {
+              icon: Video,
+              title: "Digital Content Creation",
+              description: "Producing engaging video, audio, and visual content to tell your brand&apos;s story across platforms.",
+              variant: "accent" as const
+            },
+            {
+              icon: Book,
+              title: "Digital Strategy",
+              description: "Planning and implementing digital solutions that align with your business goals and growth objectives.",
+              variant: "primary" as const
+            },
+            {
+              icon: GraduationCap,
+              title: "Creative Consultation",
+              description: "Providing expert guidance on digital projects, from concept development to final implementation.",
+              variant: "secondary" as const
+            },
+            {
+              icon: Heart,
+              title: "Ongoing Support",
+              description: "Maintaining and evolving your digital presence with updates, improvements, and new features.",
+              variant: "accent" as const
+            }
+          ].map((service, index) => (
+            <GlassCard
+              key={index}
+              className="p-8 text-center group fade-in hover:scale-105 transition-all duration-300"
+              variant={service.variant}
+              blur="md"
+              hover
+            >
+              <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
+                <service.icon className="w-12 h-12 mx-auto text-foreground" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-foreground">{service.title}</h3>
+              <p className="text-foreground leading-relaxed">{service.description}</p>
+            </GlassCard>
+          ))}
           </div>
         </div>
       </section>
@@ -248,7 +248,7 @@ export default function HomePage() {
           <div className="absolute top-40 right-20 w-16 h-16 bg-cyan-400/20 transform rotate-12" />
           <div className="absolute bottom-20 left-40 w-20 h-2 bg-pink-400/30 rounded-full" />
         </div>
-        
+
         <div className="relative z-10 text-center max-w-5xl mx-auto px-6 slide-up">
           <h2 className="text-5xl md:text-7xl font-bold mb-8">
             <span className="text-foreground font-extrabold">
@@ -256,7 +256,7 @@ export default function HomePage() {
             </span>
           </h2>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-12 text-foreground leading-relaxed">
-            Let&apos;s discuss your project and explore how we can help bring your digital vision to life. 
+            Let&apos;s discuss your project and explore how we can help bring your digital vision to life.
             Get in touch to start the conversation.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -266,7 +266,7 @@ export default function HomePage() {
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </GlassButton>
-            
+
             <GlassButton variant="ghost" size="lg" className="group hover:scale-105 transition-all duration-300">
               <Link href="/about" className="flex items-center gap-2">
                 <Lightbulb className="w-5 h-5" />

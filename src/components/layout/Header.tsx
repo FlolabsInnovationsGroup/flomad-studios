@@ -9,7 +9,7 @@ import MobileNavMenu from '../ui/MobileNavMenu';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
-  
+
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 20;
@@ -17,27 +17,27 @@ export default function Header() {
         setScrolled(isScrolled);
       }
     };
-    
+
     window.addEventListener('scroll', handleScroll);
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [scrolled]);
 
   return (
-    <header 
+    <header
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
-        scrolled 
-          ? "bg-background/80 backdrop-blur-xl shadow-glass border-b border-white/10" 
+        scrolled
+          ? "bg-background/80 backdrop-blur-xl shadow-glass border-b border-white/10"
           : "bg-background/40 backdrop-blur-lg border-b border-white/5"
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className="flex items-center gap-3 group"
           >
             {/* Your Original Logo */}
@@ -51,7 +51,7 @@ export default function Header() {
                 className="transition-transform group-hover:scale-105 drop-shadow-sm"
               />
             </div>
-            
+
             {/* Brand Text */}
             <div className="relative">
               <span className="text-xl font-bold text-foreground drop-shadow-sm">
@@ -67,9 +67,9 @@ export default function Header() {
           </div>
         </div>
       </div>
-      
+
       {/* Animated glow effect */}
-      <div 
+      <div
         className={cn(
           "absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-sky-500/50 to-transparent transition-opacity duration-300 shadow-glow",
           scrolled ? "opacity-100" : "opacity-0"
