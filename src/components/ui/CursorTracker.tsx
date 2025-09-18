@@ -155,7 +155,7 @@ export default function CursorTracker({
           }}
         >
           <motion.div 
-            className="bg-slate-800/90 dark:bg-black/70 text-slate-100 dark:text-white px-3 py-1 rounded-full backdrop-blur-sm"
+            className="bg-heading/90 dark:bg-background-muted/80 text-background dark:text-foreground px-3 py-1 rounded-full backdrop-blur-sm"
             initial={{ y: 0 }}
             animate={{ y: [0, -5, 0] }}
             transition={{

@@ -81,11 +81,8 @@ export default function RegisterPage() {
 
   if (success) {
     return (
-      <main className="min-h-screen bg-gradient-to-br from-slate-900 via-sky-900 to-slate-800 overflow-hidden relative">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-sky-500/20 to-blue-600/15 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-l from-emerald-500/15 to-green-600/10 rounded-full blur-3xl animate-float-delay-1" />
-        </div>
+      <main className="min-h-screen relative bg-background overflow-hidden">
+        <div className="section-backdrop section-backdrop--intense" aria-hidden="true" />
 
         <div className="relative z-10 container mx-auto px-4 py-8 min-h-screen flex items-center justify-center">
           <motion.div
@@ -95,14 +92,14 @@ export default function RegisterPage() {
           >
             <GlassCard className="p-12 text-center max-w-md" variant="primary" blur="xl">
               <div className="mb-6">
-                <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
-                <h2 className="text-3xl font-bold text-white mb-2">Registration Successful!</h2>
-                <p className="text-gray-300">
+                <CheckCircle className="w-16 h-16 text-secondary mx-auto mb-4" />
+                <h2 className="text-3xl font-bold text-heading mb-2">Registration Successful!</h2>
+                <p className="text-foreground/70">
                   Your account has been created. Redirecting to login...
                 </p>
               </div>
               <div className="flex justify-center">
-                <Loader2 className="w-6 h-6 animate-spin text-sky-400" />
+                <Loader2 className="w-6 h-6 animate-spin text-primary" />
               </div>
             </GlassCard>
           </motion.div>
@@ -112,13 +109,8 @@ export default function RegisterPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-sky-900 to-slate-800 overflow-hidden relative">
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-sky-500/20 to-blue-600/15 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-l from-emerald-500/15 to-green-600/10 rounded-full blur-3xl animate-float-delay-1" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-br from-amber-400/20 to-yellow-500/15 rounded-full blur-3xl animate-float-delay-2" />
-      </div>
+    <main className="min-h-screen relative bg-background overflow-hidden">
+      <div className="section-backdrop section-backdrop--intense" aria-hidden="true" />
 
       <div className="relative z-10 container mx-auto px-4 py-8 min-h-screen flex items-center">
         <div className="max-w-6xl mx-auto w-full">
@@ -143,12 +135,12 @@ export default function RegisterPage() {
                     className="transition-transform hover:scale-105"
                   />
                   <div className="text-left">
-                    <h1 className="text-2xl font-bold text-slate-800 dark:text-white">Flomad Studios</h1>
-                    <p className="text-sm text-sky-600 dark:text-sky-300">Join Our Creative Community</p>
+                    <h1 className="text-2xl font-bold text-heading">Flomad Studios</h1>
+                    <p className="text-sm text-primary">Join Our Creative Community</p>
                   </div>
                 </Link>
-                <h2 className="text-3xl font-bold text-slate-800 dark:text-white mb-2">Create Your Account</h2>
-                <p className="text-gray-300">Start your creative journey with us</p>
+                <h2 className="text-3xl font-bold text-heading mb-2">Create Your Account</h2>
+                <p className="text-foreground/70">Start your creative journey with us</p>
               </div>
 
               {/* Registration Form */}
@@ -163,11 +155,11 @@ export default function RegisterPage() {
 
                   {/* Name Field */}
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-heading mb-2">
                       Full Name
                     </label>
                     <div className="relative">
-                      <User className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                      <User className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
                       <input
                         id="name"
                         name="name"
@@ -175,7 +167,7 @@ export default function RegisterPage() {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full pl-10 pr-4 py-3 bg-black/30 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20 transition-all"
+                        className="w-full pl-10 pr-4 py-3 bg-background/90 dark:bg-background-muted/80 border border-border/60 rounded-lg text-heading placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                         placeholder="Enter your full name"
                       />
                     </div>
@@ -183,11 +175,11 @@ export default function RegisterPage() {
 
                   {/* Email Field */}
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-heading mb-2">
                       Email Address
                     </label>
                     <div className="relative">
-                      <Mail className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                      <Mail className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
                       <input
                         id="email"
                         name="email"
@@ -195,7 +187,7 @@ export default function RegisterPage() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full pl-10 pr-4 py-3 bg-black/30 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20 transition-all"
+                        className="w-full pl-10 pr-4 py-3 bg-background/90 dark:bg-background-muted/80 border border-border/60 rounded-lg text-heading placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -203,11 +195,11 @@ export default function RegisterPage() {
 
                   {/* Password Field */}
                   <div>
-                    <label htmlFor="password" className="block text-sm font-medium text-white mb-2">
+                    <label htmlFor="password" className="block text-sm font-medium text-heading mb-2">
                       Password
                     </label>
                     <div className="relative">
-                      <Lock className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                      <Lock className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
                       <input
                         id="password"
                         name="password"
@@ -215,13 +207,13 @@ export default function RegisterPage() {
                         required
                         value={formData.password}
                         onChange={handleChange}
-                        className="w-full pl-10 pr-12 py-3 bg-black/30 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20 transition-all"
+                        className="w-full pl-10 pr-12 py-3 bg-background/90 dark:bg-background-muted/80 border border-border/60 rounded-lg text-heading placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                         placeholder="Create a password"
                       />
                       <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
-                        className="absolute right-3 top-3 text-gray-400 hover:text-white transition-colors"
+                        className="absolute right-3 top-3 text-muted-foreground hover:text-heading transition-colors"
                       >
                         {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                       </button>
@@ -230,11 +222,11 @@ export default function RegisterPage() {
 
                   {/* Confirm Password Field */}
                   <div>
-                    <label htmlFor="confirmPassword" className="block text-sm font-medium text-white mb-2">
+                    <label htmlFor="confirmPassword" className="block text-sm font-medium text-heading mb-2">
                       Confirm Password
                     </label>
                     <div className="relative">
-                      <Lock className="absolute left-3 top-3 h-5 w-5 text-gray-400" />
+                      <Lock className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
                       <input
                         id="confirmPassword"
                         name="confirmPassword"
@@ -242,13 +234,13 @@ export default function RegisterPage() {
                         required
                         value={formData.confirmPassword}
                         onChange={handleChange}
-                        className="w-full pl-10 pr-12 py-3 bg-black/30 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:border-sky-400 focus:ring-2 focus:ring-sky-400/20 transition-all"
+                        className="w-full pl-10 pr-12 py-3 bg-background/90 dark:bg-background-muted/80 border border-border/60 rounded-lg text-heading placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                         placeholder="Confirm your password"
                       />
                       <button
                         type="button"
                         onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                        className="absolute right-3 top-3 text-gray-400 hover:text-white transition-colors"
+                        className="absolute right-3 top-3 text-muted-foreground hover:text-heading transition-colors"
                       >
                         {showConfirmPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                       </button>
@@ -277,11 +269,11 @@ export default function RegisterPage() {
 
                 {/* Links */}
                 <div className="mt-6 text-center space-y-2">
-                  <Link href="/login" className="text-sm text-sky-300 hover:text-sky-200 transition-colors">
+                  <Link href="/login" className="text-sm text-primary hover:text-primary/80 transition-colors">
                     Already have an account? Sign in
                   </Link>
                   <br />
-                  <Link href="/" className="text-sm text-gray-400 hover:text-white transition-colors">
+                  <Link href="/" className="text-sm text-muted-foreground hover:text-heading transition-colors">
                     ← Back to Home
                   </Link>
                 </div>
@@ -297,34 +289,34 @@ export default function RegisterPage() {
             >
               {/* Join the Community */}
               <GlassCard className="p-8" variant="secondary" blur="lg">
-                <h3 className="text-2xl font-bold text-white mb-6">Join Our Creative Community</h3>
+                <h3 className="text-2xl font-bold text-heading mb-6">Join Our Creative Community</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-sky-400 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
                     <div>
-                      <p className="text-white font-medium">Content Creation Tools</p>
-                      <p className="text-gray-400 text-sm">Access to video, podcast, and blog publishing tools</p>
+                      <p className="text-heading font-medium">Content Creation Tools</p>
+                      <p className="text-foreground/70 text-sm">Access to video, podcast, and blog publishing tools</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-secondary rounded-full mt-2"></div>
                     <div>
-                      <p className="text-white font-medium">Mentorship Program</p>
-                      <p className="text-gray-400 text-sm">Learn from experienced creators and industry professionals</p>
+                      <p className="text-heading font-medium">Mentorship Program</p>
+                      <p className="text-foreground/70 text-sm">Learn from experienced creators and industry professionals</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-amber-400 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-accent rounded-full mt-2"></div>
                     <div>
-                      <p className="text-white font-medium">Collaborative Projects</p>
-                      <p className="text-gray-400 text-sm">Work on real content with other creators</p>
+                      <p className="text-heading font-medium">Collaborative Projects</p>
+                      <p className="text-foreground/70 text-sm">Work on real content with other creators</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-purple-400 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-primary/80 rounded-full mt-2"></div>
                     <div>
-                      <p className="text-white font-medium">Analytics & Insights</p>
-                      <p className="text-gray-400 text-sm">Track your content performance and growth</p>
+                      <p className="text-heading font-medium">Analytics & Insights</p>
+                      <p className="text-foreground/70 text-sm">Track your content performance and growth</p>
                     </div>
                   </div>
                 </div>
@@ -332,30 +324,30 @@ export default function RegisterPage() {
 
               {/* Application Process */}
               <GlassCard className="p-8" variant="accent" blur="lg">
-                <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-6">What Happens Next?</h3>
+                <h3 className="text-2xl font-bold text-heading mb-6">What Happens Next?</h3>
                 <div className="space-y-4">
                   <div className="flex items-center gap-4">
-                    <div className="w-8 h-8 bg-sky-500/20 border border-sky-400/30 rounded-full flex items-center justify-center text-sky-300 font-semibold text-sm">
+                    <div className="w-8 h-8 bg-primary/15 border border-primary/25 rounded-full flex items-center justify-center text-primary font-semibold text-sm">
                       1
                     </div>
-                    <p className="text-slate-700 dark:text-white">Create your account with basic information</p>
+                    <p className="text-foreground">Create your account with basic information</p>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-8 h-8 bg-emerald-500/20 border border-emerald-400/30 rounded-full flex items-center justify-center text-emerald-300 font-semibold text-sm">
+                    <div className="w-8 h-8 bg-secondary/15 border border-secondary/25 rounded-full flex items-center justify-center text-secondary font-semibold text-sm">
                       2
                     </div>
-                    <p className="text-slate-700 dark:text-white">Complete your creator profile and interests</p>
+                    <p className="text-foreground">Complete your creator profile and interests</p>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="w-8 h-8 bg-amber-500/20 border border-amber-400/30 rounded-full flex items-center justify-center text-amber-300 font-semibold text-sm">
+                    <div className="w-8 h-8 bg-accent/15 border border-accent/25 rounded-full flex items-center justify-center text-accent font-semibold text-sm">
                       3
                     </div>
-                    <p className="text-slate-700 dark:text-white">Access your dashboard and start creating</p>
+                    <p className="text-foreground">Access your dashboard and start creating</p>
                   </div>
                 </div>
-                <div className="mt-6 p-4 bg-black/20 rounded-lg border border-white/10">
-                  <p className="text-slate-600 dark:text-gray-300 text-sm">
-                    <strong className="text-slate-700 dark:text-white">Note:</strong> New accounts start as Content Creator level. 
+                <div className="mt-6 p-4 bg-background/85 dark:bg-background-muted/80 rounded-lg border border-border/60">
+                  <p className="text-foreground/70 text-sm">
+                    <strong className="text-heading">Note:</strong> New accounts start as Content Creator level. 
                     Apply for advanced roles through your dashboard settings.
                   </p>
                 </div>

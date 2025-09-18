@@ -168,7 +168,7 @@ export default function VideoPlayer({ src, poster, className }: VideoPlayerProps
       {/* Error State */}
       {error && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-          <div className="text-center text-slate-800 dark:text-white">
+          <div className="text-center text-heading">
             <p className="text-sm">{error}</p>
             <button
               onClick={() => {
@@ -178,7 +178,7 @@ export default function VideoPlayer({ src, poster, className }: VideoPlayerProps
                   videoRef.current.load();
                 }
               }}
-              className="mt-2 px-4 py-2 bg-primary text-slate-800 dark:text-white rounded-md hover:bg-primary/90 transition-colors"
+              className="mt-2 px-4 py-2 bg-primary text-heading rounded-md hover:bg-primary/90 transition-colors"
             >
               Retry
             </button>
@@ -205,7 +205,7 @@ export default function VideoPlayer({ src, poster, className }: VideoPlayerProps
             className="p-2 rounded-full hover:bg-white/10 transition-colors"
             aria-label="Skip back 5 seconds"
           >
-            <SkipBack className="h-5 w-5 text-slate-800 dark:text-white" />
+            <SkipBack className="h-5 w-5 text-heading" />
           </button>
 
           <button
@@ -214,9 +214,9 @@ export default function VideoPlayer({ src, poster, className }: VideoPlayerProps
             aria-label={isPlaying ? 'Pause' : 'Play'}
           >
             {isPlaying ? (
-              <Pause className="h-6 w-6 text-slate-800 dark:text-white" />
+              <Pause className="h-6 w-6 text-heading" />
             ) : (
-              <Play className="h-6 w-6 text-slate-800 dark:text-white" />
+              <Play className="h-6 w-6 text-heading" />
             )}
           </button>
 
@@ -225,10 +225,10 @@ export default function VideoPlayer({ src, poster, className }: VideoPlayerProps
             className="p-2 rounded-full hover:bg-white/10 transition-colors"
             aria-label="Skip forward 5 seconds"
           >
-            <SkipForward className="h-5 w-5 text-slate-800 dark:text-white" />
+            <SkipForward className="h-5 w-5 text-heading" />
           </button>
 
-          <div className="text-slate-800 dark:text-white text-sm">
+          <div className="text-heading text-sm">
             {formatTime(currentTime)} / {formatTime(duration)}
           </div>
 
@@ -242,9 +242,9 @@ export default function VideoPlayer({ src, poster, className }: VideoPlayerProps
               aria-label={isMuted ? 'Unmute' : 'Mute'}
             >
               {isMuted ? (
-                <VolumeX className="h-6 w-6 text-slate-800 dark:text-white" />
+                <VolumeX className="h-6 w-6 text-heading" />
               ) : (
-                <Volume2 className="h-6 w-6 text-slate-800 dark:text-white" />
+                <Volume2 className="h-6 w-6 text-heading" />
               )}
             </button>
             {showVolumeSlider && (
@@ -269,9 +269,9 @@ export default function VideoPlayer({ src, poster, className }: VideoPlayerProps
             aria-label={isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}
           >
             {isFullscreen ? (
-              <Minimize className="h-6 w-6 text-slate-800 dark:text-white" />
+              <Minimize className="h-6 w-6 text-heading" />
             ) : (
-              <Maximize className="h-6 w-6 text-slate-800 dark:text-white" />
+              <Maximize className="h-6 w-6 text-heading" />
             )}
           </button>
         </div>

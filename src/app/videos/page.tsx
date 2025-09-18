@@ -103,7 +103,7 @@ export default async function VideosPage() {
                         </div>
                       )}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
-                        <div className="p-4 text-slate-800 dark:text-white">
+                        <div className="p-4 text-heading">
                           {video.category && (
                             <span className="inline-block px-3 py-1 rounded-full text-xs font-medium glass-button mb-2">
                               {video.category}

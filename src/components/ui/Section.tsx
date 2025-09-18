@@ -3,12 +3,15 @@
 import React, { useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
+type SectionBackdrop = 'default' | 'subtle' | 'intense' | 'none';
+
 interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
   className?: string;
+  backdrop?: SectionBackdrop;
 }
 
-export default function Section({ children, className, ...props }: SectionProps) {
+export default function Section({ children, className, backdrop, ...props }: SectionProps) {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -52,13 +55,24 @@ export default function Section({ children, className, ...props }: SectionProps)
     };
   }, []);
 
+  const resolvedBackdrop = backdrop && backdrop !== 'none' ? backdrop : (backdrop === 'none' ? null : 'default');
+  const backdropClass = resolvedBackdrop && resolvedBackdrop !== 'default'
+    ? `section-backdrop--${resolvedBackdrop}`
+    : undefined;
+
   return (
     <section
       ref={sectionRef}
-      className={cn('py-16 px-4 relative', className)}
+      className={cn('py-16 px-4 relative overflow-hidden', className)}
       {...props}
     >
+      {resolvedBackdrop && (
+        <div
+          aria-hidden="true"
+          className={cn('section-backdrop', backdropClass)}
+        />
+      )}
       {children}
     </section>
   );
-} 
+}

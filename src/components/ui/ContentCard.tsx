@@ -145,7 +145,7 @@ const ContentCard: React.FC<ContentCardProps> = ({
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <MoreVertical className="w-4 h-4 text-slate-800 dark:text-white" />
+            <MoreVertical className="w-4 h-4 text-heading" />
           </motion.button>
 
           <AnimatePresence>
@@ -159,7 +159,7 @@ const ContentCard: React.FC<ContentCardProps> = ({
                 {onEdit && (
                   <button
                     onClick={() => onEdit(id)}
-                    className="w-full px-4 py-2 text-left text-sm text-slate-800 dark:text-white hover:bg-white/10 transition-colors flex items-center gap-2"
+                    className="w-full px-4 py-2 text-left text-sm text-heading hover:bg-white/10 transition-colors flex items-center gap-2"
                   >
                     <Edit3 className="w-4 h-4" />
                     Edit
@@ -168,7 +168,7 @@ const ContentCard: React.FC<ContentCardProps> = ({
                 {onShare && (
                   <button
                     onClick={() => onShare(id)}
-                    className="w-full px-4 py-2 text-left text-sm text-slate-800 dark:text-white hover:bg-white/10 transition-colors flex items-center gap-2"
+                    className="w-full px-4 py-2 text-left text-sm text-heading hover:bg-white/10 transition-colors flex items-center gap-2"
                   >
                     <Share2 className="w-4 h-4" />
                     Share
@@ -176,7 +176,7 @@ const ContentCard: React.FC<ContentCardProps> = ({
                 )}
                 <Link
                   href={`/${type}s/${id}`}
-                  className="w-full px-4 py-2 text-left text-sm text-slate-800 dark:text-white hover:bg-white/10 transition-colors flex items-center gap-2"
+                  className="w-full px-4 py-2 text-left text-sm text-heading hover:bg-white/10 transition-colors flex items-center gap-2"
                 >
                   <ExternalLink className="w-4 h-4" />
                   View
@@ -209,7 +209,7 @@ const ContentCard: React.FC<ContentCardProps> = ({
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <Play className="w-8 h-8 text-slate-800 dark:text-white fill-current" />
+                <Play className="w-8 h-8 text-heading fill-current" />
               </motion.button>
             </motion.div>
           )}
@@ -220,11 +220,11 @@ const ContentCard: React.FC<ContentCardProps> = ({
       <div className="relative z-10 p-6">
         {/* Title and description */}
         <div className="mb-4">
-          <h3 className="text-lg font-semibold text-slate-800 dark:text-white mb-2 line-clamp-2">
+          <h3 className="text-lg font-semibold text-heading mb-2 line-clamp-2">
             {title}
           </h3>
           {description && (
-            <p className="text-sm text-slate-600 dark:text-white/70 line-clamp-2">
+            <p className="text-sm text-muted-foreground line-clamp-2">
               {description}
             </p>
           )}
@@ -232,7 +232,7 @@ const ContentCard: React.FC<ContentCardProps> = ({
 
         {/* Metrics */}
         {Object.keys(metrics).length > 0 && (
-          <div className="flex items-center gap-4 mb-4 text-sm text-slate-500 dark:text-white/60">
+          <div className="flex items-center gap-4 mb-4 text-sm text-muted-foreground">
             {metrics.views && (
               <div className="flex items-center gap-1">
                 <Eye className="w-4 h-4" />
@@ -269,13 +269,13 @@ const ContentCard: React.FC<ContentCardProps> = ({
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.1 }}
-                className="px-2 py-1 text-xs bg-slate-200/50 dark:bg-white/10 rounded-md text-slate-600 dark:text-white/80"
+                className="px-2 py-1 text-xs bg-slate-200/50 dark:bg-white/10 rounded-md text-foreground/70 dark:text-foreground/80"
               >
                 {tag}
               </motion.span>
             ))}
             {tags.length > 3 && (
-              <span className="px-2 py-1 text-xs bg-slate-200/50 dark:bg-white/10 rounded-md text-slate-500 dark:text-white/60">
+              <span className="px-2 py-1 text-xs bg-slate-200/50 dark:bg-white/10 rounded-md text-muted-foreground">
                 +{tags.length - 3}
               </span>
             )}
@@ -283,7 +283,7 @@ const ContentCard: React.FC<ContentCardProps> = ({
         )}
 
         {/* Footer */}
-        <div className="flex items-center justify-between text-xs text-slate-500 dark:text-white/50">
+        <div className="flex items-center justify-between text-xs text-muted-foreground">
           <div className="flex items-center gap-1">
             <Calendar className="w-3 h-3" />
             <span>{new Date(publishDate).toLocaleDateString()}</span>

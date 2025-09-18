@@ -21,6 +21,9 @@ const config: Config = {
           dark: "#0f172a",
           light: "#f8fafc",
         },
+        heading: {
+          DEFAULT: "hsl(var(--heading-foreground))",
+        },
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",

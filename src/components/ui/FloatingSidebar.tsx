@@ -83,10 +83,10 @@ const FloatingSidebar: React.FC<FloatingSidebarProps> = ({ className }) => {
             className="h-full relative"
           >
             {/* Glass background */}
-            <div className="absolute inset-0 bg-slate-100/80 dark:bg-black/20 backdrop-blur-xl rounded-2xl border border-slate-200/50 dark:border-white/10 shadow-2xl" />
+            <div className="absolute inset-0 bg-background/70 dark:bg-background-muted/70 backdrop-blur-xl rounded-2xl border border-border/60 shadow-2xl" />
             
             {/* Header */}
-            <div className="relative z-10 p-4 border-b border-slate-200/50 dark:border-white/10">
+            <div className="relative z-10 p-4 border-b border-border/60">
               <div className="flex items-center justify-between">
                 {!isCollapsed && (
                   <motion.div
@@ -95,20 +95,20 @@ const FloatingSidebar: React.FC<FloatingSidebarProps> = ({ className }) => {
                     className="flex items-center gap-2"
                   >
                     <Zap className="w-6 h-6 text-primary" />
-                    <span className="font-bold text-slate-800 dark:text-white">Studio</span>
+                    <span className="font-bold text-heading">Studio</span>
                   </motion.div>
                 )}
                 
                 <motion.button
                   onClick={() => setIsCollapsed(!isCollapsed)}
-                  className="p-2 rounded-lg bg-slate-200/50 dark:bg-white/10 hover:bg-slate-300/50 dark:hover:bg-white/20 transition-colors"
+                  className="p-2 rounded-lg bg-background/60 dark:bg-background-muted/60 hover:bg-background/80 dark:hover:bg-background-muted/80 transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   {isCollapsed ? (
-                    <ChevronRight className="w-4 h-4 text-slate-800 dark:text-white" />
+                    <ChevronRight className="w-4 h-4 text-heading" />
                   ) : (
-                    <ChevronLeft className="w-4 h-4 text-slate-800 dark:text-white" />
+                    <ChevronLeft className="w-4 h-4 text-heading" />
                   )}
                 </motion.button>
               </div>
@@ -131,7 +131,7 @@ const FloatingSidebar: React.FC<FloatingSidebarProps> = ({ className }) => {
                       href={item.href}
                       className={cn(
                         'group relative flex items-center gap-3 p-3 rounded-xl transition-all duration-300',
-                        'hover:bg-slate-200/50 dark:hover:bg-white/10 hover:scale-105',
+                        'hover:bg-background/70 dark:hover:bg-background-muted/70 hover:scale-105',
                         isActive && 'bg-primary/20 text-primary shadow-lg'
                       )}
                     >
@@ -147,7 +147,7 @@ const FloatingSidebar: React.FC<FloatingSidebarProps> = ({ className }) => {
                       {/* Icon */}
                       <div className={cn(
                         'flex items-center justify-center w-8 h-8 rounded-lg transition-colors',
-                        isActive ? 'text-primary' : 'text-slate-600 dark:text-white/70 group-hover:text-slate-700 dark:group-hover:text-white'
+                        isActive ? 'text-primary' : 'text-muted-foreground group-hover:text-heading dark:group-hover:text-foreground'
                       )}>
                         <Icon className="w-5 h-5" />
                       </div>
@@ -161,13 +161,13 @@ const FloatingSidebar: React.FC<FloatingSidebarProps> = ({ className }) => {
                         >
                           <span className={cn(
                             'font-medium transition-colors',
-                            isActive ? 'text-primary' : 'text-slate-700 dark:text-white/90 group-hover:text-slate-800 dark:group-hover:text-white'
+                            isActive ? 'text-primary' : 'text-heading/90 group-hover:text-heading dark:text-foreground/90 dark:group-hover:text-foreground'
                           )}>
                             {item.label}
                           </span>
                           
                           {item.badge && (
-                            <span className="px-2 py-1 text-xs bg-accent rounded-full text-slate-800 dark:text-white font-medium">
+                            <span className="px-2 py-1 text-xs bg-accent rounded-full text-heading font-medium">
                               {item.badge}
                             </span>
                           )}
@@ -176,10 +176,10 @@ const FloatingSidebar: React.FC<FloatingSidebarProps> = ({ className }) => {
 
                       {/* Tooltip for collapsed state */}
                       {isCollapsed && (
-                        <div className="absolute left-full ml-4 px-3 py-2 bg-slate-800 dark:bg-black/80 text-slate-100 dark:text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                        <div className="absolute left-full ml-4 px-3 py-2 bg-heading/90 dark:bg-background-muted/90 text-background dark:text-foreground text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
                           {item.label}
                           {item.badge && (
-                            <span className="ml-2 px-1.5 py-0.5 text-xs bg-accent rounded text-slate-800 dark:text-white">
+                            <span className="ml-2 px-1.5 py-0.5 text-xs bg-accent rounded text-heading">
                               {item.badge}
                             </span>
                           )}
@@ -197,7 +197,7 @@ const FloatingSidebar: React.FC<FloatingSidebarProps> = ({ className }) => {
                 <motion.div
                   variants={itemVariants}
                   animate={isCollapsed ? 'collapsed' : 'expanded'}
-                  className="text-center text-xs text-slate-500 dark:text-white/50"
+                  className="text-center text-xs text-muted-foreground"
                 >
                   Flomad Studios v1.0
                 </motion.div>

@@ -156,7 +156,7 @@ export default function MobileNavMenu() {
                 className="p-4 rounded-lg bg-sky-500/10 border border-sky-400/20 text-sm"
               >
                 <p className="font-medium mb-1 text-foreground">Need help?</p>
-                <p className="text-slate-600 dark:text-gray-300">Contact our support team anytime</p>
+                <p className="text-foreground/70">Contact our support team anytime</p>
               </motion.div>
             </div>
           </motion.div>

@@ -276,6 +276,69 @@ p {
   background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.2), transparent);
 }
 
+/* Shared section backdrops for day/night cohesion */
+.section-backdrop {
+  position: absolute;
+  inset: -12% -10% -18% -10%;
+  background:
+    radial-gradient(ellipse 110% 70% at 18% -5%, rgba(186, 230, 253, 0.42) 0%, transparent 70%),
+    radial-gradient(ellipse 90% 60% at 82% 10%, rgba(253, 219, 199, 0.35) 0%, transparent 75%),
+    linear-gradient(135deg, rgba(240, 249, 255, 0.92) 0%, rgba(224, 242, 254, 0.88) 50%, rgba(255, 255, 255, 0.9) 100%);
+  opacity: 0.8;
+  filter: blur(0px);
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: normal;
+  transition: opacity 0.4s ease;
+}
+
+.section-backdrop::after {
+  content: '';
+  position: absolute;
+  inset: -20% -15% -10% -5%;
+  background: var(--aurora-day-band);
+  opacity: 0.4;
+  filter: blur(30px);
+}
+
+.dark .section-backdrop {
+  background:
+    radial-gradient(ellipse 95% 60% at 20% 0%, rgba(55, 48, 163, 0.45) 0%, transparent 75%),
+    radial-gradient(ellipse 80% 55% at 80% 20%, rgba(8, 47, 73, 0.38) 0%, transparent 70%),
+    linear-gradient(145deg, rgba(15, 23, 42, 0.92) 0%, rgba(17, 24, 39, 0.96) 45%, rgba(30, 41, 59, 0.94) 100%);
+  opacity: 0.9;
+}
+
+.dark .section-backdrop::after {
+  background: var(--aurora-night-primary);
+  opacity: 0.55;
+  filter: blur(40px);
+}
+
+.section-backdrop--subtle {
+  opacity: 0.55;
+}
+
+.section-backdrop--subtle::after {
+  opacity: 0.28;
+}
+
+.dark .section-backdrop--subtle {
+  opacity: 0.7;
+}
+
+.section-backdrop--intense {
+  opacity: 0.95;
+}
+
+.section-backdrop--intense::after {
+  opacity: 0.65;
+}
+
+.dark .section-backdrop--intense {
+  opacity: 1;
+}
+
 /* Professional Glass Effects - Enhanced for day/night sky themes */
 .glass {
   background: var(--glass-bg);
