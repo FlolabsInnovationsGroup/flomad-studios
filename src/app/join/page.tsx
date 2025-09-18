@@ -30,12 +30,6 @@ const variantStyles = {
 
 type VariantKey = keyof typeof variantStyles;
 
-const dotVariants: Record<VariantKey, string> = {
-  primary: 'bg-primary',
-  secondary: 'bg-secondary',
-  accent: 'bg-accent',
-};
-
 export default function JoinPage() {
   return (
     <main className="min-h-screen">
