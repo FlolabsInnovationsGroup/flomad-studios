@@ -1,5 +1,5 @@
 'use client';
-// Enhanced sky background with realistic 3D clouds - v2.2
+
 
 import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
