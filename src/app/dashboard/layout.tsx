@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
-import { Loader2, LayoutDashboard, Video, Podcast, FileText, Calendar, Settings, LogOut, BarChart2, Users } from 'lucide-react';
+import { Loader2, LayoutDashboard, Video, Podcast, FileText, Calendar, Settings, LogOut, BarChart2, Users, Mail, UserPlus } from 'lucide-react';
 
 // Navigation items
 const navItems = [
@@ -14,6 +14,8 @@ const navItems = [
   { name: 'Blog', href: '/dashboard/blog', icon: <FileText className="h-4 w-4" /> },
   { name: 'Content Calendar', href: '/dashboard/calendar', icon: <Calendar className="h-4 w-4" /> },
   { name: 'Analytics', href: '/dashboard/analytics', icon: <BarChart2 className="h-4 w-4" /> },
+  { name: 'Contact Messages', href: '/dashboard/contacts', icon: <Mail className="h-4 w-4" /> },
+  { name: 'Newsletter', href: '/dashboard/newsletter', icon: <UserPlus className="h-4 w-4" /> },
   { name: 'Users', href: '/dashboard/users', icon: <Users className="h-4 w-4" /> },
   { name: 'Settings', href: '/dashboard/settings', icon: <Settings className="h-4 w-4" /> },
 ];
@@ -66,9 +68,9 @@ export default function DashboardLayout({
             {session.user?.image && (
               <div className="flex items-center gap-3 mb-6 p-3 rounded-lg bg-background-surface">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src={session.user.image} 
-                  alt={session.user?.name || 'User'} 
+                <img
+                  src={session.user.image}
+                  alt={session.user?.name || 'User'}
                   className="h-10 w-10 rounded-full border border-border"
                 />
                 <div>
@@ -84,11 +86,10 @@ export default function DashboardLayout({
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className={`flex items-center gap-3 px-4 py-2.5 rounded-md transition-colors ${
-                        isActive(item.href)
+                      className={`flex items-center gap-3 px-4 py-2.5 rounded-md transition-colors ${isActive(item.href)
                           ? 'bg-primary/10 text-primary font-medium'
                           : 'hover:bg-muted/50 text-foreground/80'
-                      }`}
+                        }`}
                     >
                       {item.icon}
                       <span>{item.name}</span>
@@ -100,7 +101,7 @@ export default function DashboardLayout({
           </div>
 
           <div className="absolute bottom-0 w-full p-4 border-t border-border">
-            <button 
+            <button
               className="flex items-center gap-3 px-4 py-2.5 rounded-md w-full hover:bg-red-500/10 hover:text-red-500 transition-colors text-foreground/70"
               onClick={() => {
                 // Handle logout

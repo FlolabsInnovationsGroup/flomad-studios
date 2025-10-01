@@ -1,5 +1,6 @@
 import GlassCard from '@/components/ui/GlassCard';
 import GlassButton from '@/components/ui/GlassButton';
+import CaseStudyCard from '@/components/ui/CaseStudyCard';
 import ClientGeometricBackground from '@/components/ui/ClientGeometricBackground';
 import SkyBackground from '@/components/ui/SkyBackground';
 import ScrollIndicator from '@/components/ui/ScrollIndicator';
@@ -84,7 +85,7 @@ export default function HomePage() {
                 Creative Digital Studio
               </p>
               <p className="text-base md:text-lg text-foreground max-w-3xl mx-auto leading-relaxed">
-                A division of Flomad Labs R&D, we help businesses bring their digital visions to life through thoughtful design, modern development, and creative content solutions.
+                The creative division of Flomad Labs R&D, where we create content and experiences for cutting-edge technology projects in AI, robotics, and emerging tech platforms.
               </p>
             </div>
 
@@ -164,8 +165,130 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Portfolio Showcase Section */}
       <section className="relative py-32 creative-gradient">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-20 slide-up">
+            <GlassCard className="inline-block px-6 py-3 mb-8 glow-effect" variant="secondary" blur="md">
+              <div className="flex items-center gap-2">
+                <Rocket className="w-5 h-5 text-blue-400" />
+                <span className="text-sm font-semibold text-foreground">OUR WORK</span>
+              </div>
+            </GlassCard>
+            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-8 text-enhanced-strong">
+              Websites & <span className="text-foreground font-extrabold">Digital Experiences</span>
+            </h2>
+            <p className="text-xl text-foreground max-w-4xl mx-auto leading-relaxed">
+              Real projects we&apos;ve designed and developed for the Flomad Labs ecosystem, from AI platforms to robotics marketplaces.
+            </p>
+          </div>
+
+          {/* Portfolio Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <CaseStudyCard
+              title="Flomad Labs R&D"
+              description="Main company website showcasing AI & robotics research with modern design and professional portfolio presentation."
+              category="Corporate Website"
+              image="/images/flomadlabs.png"
+              url="https://flomadlabs.com"
+              status="live"
+              tools={["Next.js", "Figma", "Tailwind CSS", "TypeScript"]}
+              features={["Responsive Design", "SEO Optimized", "Performance Focused"]}
+              date="2024"
+            />
+
+            <CaseStudyCard
+              title="RoboCollective.ai"
+              description="Premium robot marketplace with e-commerce functionality, product showcases, and customer testimonials."
+              category="E-commerce Platform"
+              image="/images/robocollective.png"
+              url="https://robocollective.ai"
+              status="live"
+              tools={["WordPress", "Canva", "WooCommerce", "Custom CSS"]}
+              features={["Product Catalog", "Shopping Cart", "Blog Integration"]}
+              metrics={[
+                { label: "Products", value: "50+" },
+                { label: "Categories", value: "3" }
+              ]}
+            />
+
+            <CaseStudyCard
+              title="Flomad International"
+              description="Educational platform for AI & robotics programs with course information and application system."
+              category="Educational Website"
+              image="/images/flomadinternational.png"
+              url="https://flomad.international"
+              status="live"
+              tools={["WordPress", "Figma", "Canva", "Custom Plugins"]}
+              features={["Course Catalog", "Application System", "Student Portal"]}
+            />
+
+            <CaseStudyCard
+              title="CAIPO.ai"
+              description="AI assistant platform landing page with modern design and early access signup functionality."
+              category="AI Platform"
+              image="/images/caipoai.png"
+              url="https://caipo.ai"
+              status="in-development"
+              tools={["Next.js", "Figma", "Framer Motion", "Tailwind CSS"]}
+              features={["Waitlist System", "Interactive Design", "Mobile Optimized"]}
+            />
+
+            <CaseStudyCard
+              title="MoodChanger.ai"
+              description="AI mood management platform with comprehensive brand design and user experience planning."
+              category="AI Platform"
+              image="/images/moodchanger.png"
+              url="https://moodchanger.ai"
+              status="coming-soon"
+              tools={["Canva", "Figma", "Brand Guidelines", "Presentation Design"]}
+              features={["Brand Identity", "Pitch Deck", "UI/UX Mockups"]}
+            />
+
+            <CaseStudyCard
+              title="MoodChanger for Pets"
+              description="Specialized AI health monitoring for pets with custom branding and presentation materials."
+              category="Presentation Design"
+              image="/images/moodchanger.png"
+              status="coming-soon"
+              tools={["Canva", "Figma", "Illustration", "Brand Design"]}
+              features={["Custom Graphics", "Pet-focused UI", "Health Tracking"]}
+            />
+          </div>
+
+          {/* Design Tools Section */}
+          <div className="text-center">
+            <GlassCard className="inline-block px-8 py-6 mb-8" variant="primary" blur="lg">
+              <h3 className="text-2xl font-bold text-foreground mb-4">Our Design Arsenal</h3>
+              <div className="flex flex-wrap justify-center gap-4 text-foreground">
+                <span className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg">
+                  <span className="w-3 h-3 bg-blue-500 rounded"></span>
+                  Figma
+                </span>
+                <span className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg">
+                  <span className="w-3 h-3 bg-purple-500 rounded"></span>
+                  Canva Pro
+                </span>
+                <span className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg">
+                  <span className="w-3 h-3 bg-green-500 rounded"></span>
+                  Next.js
+                </span>
+                <span className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg">
+                  <span className="w-3 h-3 bg-blue-600 rounded"></span>
+                  WordPress
+                </span>
+                <span className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg">
+                  <span className="w-3 h-3 bg-cyan-500 rounded"></span>
+                  Tailwind CSS
+                </span>
+              </div>
+            </GlassCard>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="relative py-32">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20 slide-up">
             <GlassCard className="inline-block px-6 py-3 mb-8 glow-effect" variant="secondary" blur="md">
@@ -178,8 +301,7 @@ export default function HomePage() {
               Digital <span className="text-foreground font-extrabold">Creative Services</span>
             </h2>
             <p className="text-xl text-foreground max-w-4xl mx-auto leading-relaxed">
-              As a division of Flomad Labs R&D, we bring together creative design and modern technology
-              to help businesses establish their digital presence.
+              Professional design and development services powered by industry-standard tools and creative expertise.
             </p>
           </div>
 
@@ -239,6 +361,142 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Podcast Spotlight Section */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20"></div>
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-12">
+            <GlassCard className="inline-block px-6 py-3 mb-8 glow-effect" variant="accent" blur="md">
+              <div className="flex items-center gap-2">
+                <Mic className="w-5 h-5 text-purple-400" />
+                <span className="text-sm font-semibold text-foreground">THE FLOMAD FREQUENCY</span>
+              </div>
+            </GlassCard>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Our Podcast <span className="gradient-text-sky">Coming Soon</span>
+            </h2>
+            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+              Deep conversations about AI, robotics, creativity, and the future of technology. 
+              Season 1 launches soon with industry experts and innovative minds.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <GlassCard className="p-8" variant="primary" blur="lg">
+                <div className="aspect-square bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center mb-6">
+                  <div className="text-center">
+                    <Mic className="w-16 h-16 text-purple-400 mx-auto mb-4" />
+                    <div className="text-lg font-semibold text-foreground">Season 1</div>
+                    <div className="text-sm text-foreground/60">Launching Soon</div>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-foreground mb-2">The Flomad Frequency</h3>
+                  <p className="text-foreground/70 mb-4">
+                    Technology conversations that matter. From AI breakthroughs to creative innovation.
+                  </p>
+                  <GlassButton variant="secondary" size="sm" className="w-full">
+                    <Link href="/podcasts" className="flex items-center justify-center gap-2">
+                      <Play className="w-4 h-4" />
+                      Get Notified
+                    </Link>
+                  </GlassButton>
+                </div>
+              </GlassCard>
+            </div>
+
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-2xl font-bold text-foreground mb-4">What to Expect</h3>
+                <div className="space-y-4">
+                  {[
+                    "AI & Robotics Industry Insights",
+                    "Creative Technology Processes", 
+                    "Startup Stories & Lessons",
+                    "Future of Digital Design"
+                  ].map((topic, index) => (
+                    <div key={index} className="flex items-center gap-3 text-foreground/80">
+                      <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
+                      {topic}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <GlassCard className="p-6" variant="secondary" blur="md">
+                <h4 className="text-lg font-semibold text-foreground mb-3">Produced With</h4>
+                <div className="flex flex-wrap gap-3">
+                  {["Professional Audio", "Video Recording", "Post-Production", "Multi-Platform"].map((feature) => (
+                    <span key={feature} className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">
+                      {feature}
+                    </span>
+                  ))}
+                </div>
+              </GlassCard>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Ecosystem Ribbon */}
+      <section className="relative py-16 bg-gradient-to-r from-sky-50/50 via-blue-50/30 to-emerald-50/50 dark:from-slate-900/50 dark:via-slate-800/30 dark:to-slate-900/50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              Part of the <span className="text-primary">Flomad Labs Ecosystem</span>
+            </h3>
+            <p className="text-foreground/70 max-w-2xl mx-auto">
+              Flomad Studios works alongside other innovative platforms in the Flomad Labs network
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              {
+                name: "Flomad Labs",
+                description: "AI & Robotics R&D",
+                url: "https://flomadlabs.com",
+                color: "bg-blue-500/10 border-blue-400/30 hover:bg-blue-500/20"
+              },
+              {
+                name: "Flomad International", 
+                description: "Education Programs",
+                url: "https://flomad.international",
+                color: "bg-emerald-500/10 border-emerald-400/30 hover:bg-emerald-500/20"
+              },
+              {
+                name: "Flomad Travel",
+                description: "AI-Powered Travel",
+                url: "https://flomadtravel.com",
+                color: "bg-purple-500/10 border-purple-400/30 hover:bg-purple-500/20"
+              },
+              {
+                name: "CAIPO",
+                description: "AI Productivity Officer",
+                url: "https://caipo.ai",
+                color: "bg-amber-500/10 border-amber-400/30 hover:bg-amber-500/20"
+              }
+            ].map((platform) => (
+              <a
+                key={platform.name}
+                href={platform.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`p-4 rounded-lg border transition-all duration-300 text-center group ${platform.color}`}
+              >
+                <div className="font-semibold text-foreground group-hover:scale-105 transition-transform">
+                  {platform.name}
+                </div>
+                <div className="text-sm text-foreground/60 mt-1">
+                  {platform.description}
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden opacity-10">
@@ -261,17 +519,17 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <GlassButton variant="primary" size="lg" glow className="group hover:scale-105 transition-all duration-300">
-              <Link href="/join" className="flex items-center gap-2">
+              <a href="https://flomad.international" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 <span>Join the Studio</span>
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </Link>
+              </a>
             </GlassButton>
 
             <GlassButton variant="ghost" size="lg" className="group hover:scale-105 transition-all duration-300">
-              <Link href="/about" className="flex items-center gap-2">
+              <a href="https://flomad.international" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 <Lightbulb className="w-5 h-5" />
-                <span>Learn About Our Mission</span>
-              </Link>
+                <span>Apply to Programs</span>
+              </a>
             </GlassButton>
           </div>
         </div>

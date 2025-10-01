@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: "Our Services | Flomad Studios",
-  description: "Explore the comprehensive range of creative services we offer to elevate your brand.",
+  description: "Learn about our technology content creation services - from AI research documentation to robotics project storytelling.",
 };
 
 export default function ServicesPage() {
@@ -17,7 +17,7 @@ export default function ServicesPage() {
           <div className="glass p-8 md:p-12 border border-border/60">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-slate-900 via-blue-900 to-slate-800 dark:from-white dark:via-sky-200 dark:to-white bg-clip-text text-transparent">Our Services</h1>
             <p className="text-xl max-w-2xl mx-auto text-foreground/80 mb-8">
-              We offer a comprehensive range of creative services to help businesses establish a strong digital presence.
+              We specialize in creating content and experiences that make cutting-edge technology accessible and engaging.
             </p>
           </div>
         </div>
@@ -29,32 +29,32 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             <div className="glass p-6 group hover:scale-105 transition-all duration-300 border border-border/60">
               <ServiceCard
-                title="Brand & Digital Identity"
-                description="Complete brand development from logo design to brand guidelines, creating cohesive visual identities that resonate with your target audience."
+                title="AI & Robotics Documentation"
+                description="Technical documentation, user guides, and educational content that makes complex AI and robotics systems understandable and accessible to diverse audiences."
                 iconName="Palette"
                 colorScheme="primary"
               />
             </div>
             <div className="glass p-6 group hover:scale-105 transition-all duration-300 border border-border/60">
               <ServiceCard
-                title="Web Development & UX"
-                description="Modern, responsive websites built with cutting-edge technology. We focus on performance, user experience, and conversion optimization."
+                title="Technology Video Production"
+                description="Professional video content including research demonstrations, tutorial series, and technology showcases that bring complex concepts to life."
                 iconName="Code"
                 colorScheme="secondary"
               />
             </div>
             <div className="glass p-6 group hover:scale-105 transition-all duration-300 border border-border/60">
               <ServiceCard
-                title="Digital Marketing & Analytics"
-                description="Data-driven marketing strategies including SEO, content marketing, and performance analytics to grow your online presence and drive results."
+                title="Research Communication"
+                description="Transforming technical research into compelling narratives through podcasts, articles, and multimedia content that reaches broader audiences."
                 iconName="BarChart"
                 colorScheme="accent"
               />
             </div>
             <div className="glass p-6 group hover:scale-105 transition-all duration-300 border border-border/60">
               <ServiceCard
-                title="Creative Content & Video"
-                description="Professional video production, photography, and creative content that tells your story and engages your audience across all platforms."
+                title="Technology Platform Content"
+                description="Content creation for technology platforms, interfaces, and user experiences that support emerging tech products and research initiatives."
                 iconName="Video"
                 colorScheme="primary"
               />
@@ -74,7 +74,7 @@ export default function ServicesPage() {
               </p>
             </div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
@@ -112,7 +112,7 @@ export default function ServicesPage() {
               Let&apos;s collaborate on your next project and bring your creative vision to life.
             </p>
             <Button className="bg-sky-500/20 hover:bg-sky-500/30 border border-sky-400/30 text-sky-700 dark:text-sky-300 hover:text-sky-600 dark:hover:text-sky-200 text-lg px-8 py-4" asChild>
-              <Link href="/join">Start Your Project</Link>
+              <a href="https://flomad.international" target="_blank" rel="noopener noreferrer">Apply to Join</a>
             </Button>
           </div>
         </div>

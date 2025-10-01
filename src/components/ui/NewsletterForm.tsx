@@ -16,21 +16,28 @@ export default function NewsletterForm() {
     setMessage('');
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // TODO: Replace with actual API call
-      if (email.includes('@')) {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
         setStatus('success');
-        setMessage('Thanks for subscribing!');
+        setMessage(result.message);
         setEmail('');
       } else {
-        throw new Error('Invalid email');
+        setStatus('error');
+        setMessage(result.error || 'Something went wrong. Please try again.');
       }
     } catch (error) {
       console.error('Newsletter subscription error:', error);
       setStatus('error');
-      setMessage('Something went wrong. Please try again.');
+      setMessage('Network error. Please check your connection and try again.');
     }
   };
 

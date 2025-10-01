@@ -17,23 +17,50 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
         htmlElement.style.transition = 'background-color 0.3s ease, color 0.3s ease';
       }
 
-      // Apply sky-themed variables
+      // Apply enhanced sky-themed variables with smoother transitions
       if (isDark) {
         // Night sky theme - deep cosmic atmosphere
         bodyElement.style.backgroundColor = '#0f172a';
         bodyElement.style.color = '#f8fafc';
+        
+        // Add night-specific CSS properties
+        bodyElement.style.setProperty('--sky-transition-duration', '0.8s');
+        bodyElement.style.setProperty('--particle-visibility', '1');
+        bodyElement.style.setProperty('--star-visibility', '1');
+        bodyElement.style.setProperty('--day-particle-visibility', '0');
 
         // Update meta theme color
         const metaTheme = document.querySelector('meta[name="theme-color"]');
         if (metaTheme) metaTheme.setAttribute('content', '#0f172a');
       } else {
-        // Day sky theme - professional atmospheric clarity
-        bodyElement.style.backgroundColor = '#edf6ff';
-        bodyElement.style.color = '#10223a';
+        // Day sky theme - realistic sky blue colors
+        const hour = new Date().getHours();
+        let bgColor = '#e0f2fe'; // Light sky blue
+        let textColor = '#0c2340';
+        
+        // Subtle time-based variations
+        if (hour >= 5 && hour < 8) {
+          // Dawn - very subtle warm tint
+          bgColor = '#f0f9ff';
+          textColor = '#0c2340';
+        } else if (hour >= 17 && hour < 20) {
+          // Dusk - very subtle warm tint
+          bgColor = '#f8fafc';
+          textColor = '#0c2340';
+        }
+        
+        bodyElement.style.backgroundColor = bgColor;
+        bodyElement.style.color = textColor;
+        
+        // Add day-specific CSS properties
+        bodyElement.style.setProperty('--sky-transition-duration', '0.6s');
+        bodyElement.style.setProperty('--particle-visibility', '0');
+        bodyElement.style.setProperty('--star-visibility', '0');
+        bodyElement.style.setProperty('--day-particle-visibility', '1');
 
         // Update meta theme color
         const metaTheme = document.querySelector('meta[name="theme-color"]');
-        if (metaTheme) metaTheme.setAttribute('content', '#edf6ff');
+        if (metaTheme) metaTheme.setAttribute('content', bgColor);
       }
 
       // Force re-render of glass elements by triggering a reflow

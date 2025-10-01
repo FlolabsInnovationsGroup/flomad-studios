@@ -90,22 +90,38 @@ export default function BackgroundEffects() {
       <div className="mesh-gradient"></div>
       <div className="sky-atmosphere"></div>
 
-      {/* Aurora ribbons */}
+      {/* Enhanced Aurora ribbons with better daytime effects */}
       <motion.div
         className="aurora-band aurora-band--day"
         animate={{
           backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-          opacity: [0.24, 0.34, 0.26],
+          opacity: [0.28, 0.42, 0.32],
         }}
-        transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+        transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
         className="aurora-band aurora-band--day-secondary"
         animate={{
           backgroundPosition: ['100% 50%', '0% 50%', '100% 50%'],
-          opacity: [0.18, 0.28, 0.2],
+          opacity: [0.22, 0.35, 0.25],
         }}
-        transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut', repeatType: 'mirror' }}
+        transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut', repeatType: 'mirror' }}
+      />
+      
+      {/* Additional atmospheric layer for daytime depth */}
+      <motion.div
+        className="aurora-band"
+        style={{
+          top: '25%',
+          height: '35%',
+          background: 'linear-gradient(125deg, rgba(255, 255, 255, 0.18) 0%, rgba(173, 216, 230, 0.25) 45%, rgba(255, 248, 220, 0.15) 100%)',
+          opacity: 0,
+        }}
+        animate={{
+          backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+          opacity: [0, 0.3, 0.15, 0.25, 0],
+        }}
+        transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
         className="aurora-band aurora-band--night"
