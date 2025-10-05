@@ -1,7 +1,6 @@
 import Section from '@/components/ui/Section';
 import ServiceCard from '@/components/ui/ServiceCard';
 import Button from '@/components/ui/Button';
-import Link from 'next/link';
 
 export const metadata = {
   title: "Our Services | Flomad Studios",

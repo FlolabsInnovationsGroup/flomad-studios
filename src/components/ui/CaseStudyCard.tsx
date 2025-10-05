@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import OptimizedImage from './Image';
-import { ExternalLink, Eye, Calendar, Users } from 'lucide-react';
+import Image from 'next/image';
+import { ExternalLink, Calendar } from 'lucide-react';
 import GlassCard from './GlassCard';
 
 interface CaseStudyCardProps {
@@ -86,10 +86,11 @@ export default function CaseStudyCard({
       >
         {/* Image Section */}
         <div className="relative h-48 flex-shrink-0 overflow-hidden">
-          <img
+          <Image
             src={image}
             alt={title}
-            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            fill
+            className="object-cover transition-transform duration-700 group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
           
