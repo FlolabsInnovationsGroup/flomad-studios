@@ -10,7 +10,7 @@ import { Play, Users, Mic, Video, Book, GraduationCap, Heart, ArrowRight, Sparkl
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-background-light dark:bg-background relative overflow-hidden">
+    <main className="min-h-screen bg-background-light dark:bg-background relative">
       {/* Sky Background Effects */}
       <SkyBackground />
       {/* Geometric Background */}
@@ -20,7 +20,7 @@ export default function HomePage() {
       <div className="absolute inset-0 bg-gradient-to-b from-sky-50/20 via-transparent to-sky-100/10 dark:from-transparent dark:via-transparent dark:to-transparent pointer-events-none" />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
+      <section className="relative min-h-screen flex items-center justify-center px-6">
         {/* Modern Atmospheric Background Effects */}
         <div className="absolute inset-0">
           {/* Professional sky-themed gradient orbs */}
@@ -362,7 +362,7 @@ export default function HomePage() {
       </section>
 
       {/* Podcast Spotlight Section */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-24">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20"></div>
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="text-center mb-12">
@@ -498,8 +498,8 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden opacity-10">
+      <section className="relative py-32">
+        <div className="absolute inset-0 opacity-10">
           {/* Creative studio themed pattern */}
           <div className="absolute top-20 left-20 w-32 h-32 border-2 border-sky-400/30 rotate-45" />
           <div className="absolute bottom-32 right-32 w-24 h-24 border-2 border-blue-400/30 rounded-full" />

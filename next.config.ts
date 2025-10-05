@@ -1,28 +1,55 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Disable caching during development
-  ...(process.env.NODE_ENV === 'development' && {
-    headers: async () => [
+  // Turbopack configuration
+  experimental: {
+    turbo: {
+      root: '.',
+    },
+  },
+  
+  // Security headers for production
+  async headers() {
+    return [
       {
         source: '/(.*)',
         headers: [
+          // Security headers
           {
-            key: 'Cache-Control',
-            value: 'no-cache, no-store, must-revalidate',
+            key: 'X-Frame-Options',
+            value: 'DENY',
           },
           {
-            key: 'Pragma',
-            value: 'no-cache',
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
           },
           {
-            key: 'Expires',
-            value: '0',
+            key: 'X-XSS-Protection',
+            value: '1; mode=block',
           },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
+          },
+          // Cache control for development
+          ...(process.env.NODE_ENV === 'development' ? [
+            {
+              key: 'Cache-Control',
+              value: 'no-cache, no-store, must-revalidate',
+            },
+            {
+              key: 'Pragma',
+              value: 'no-cache',
+            },
+            {
+              key: 'Expires',
+              value: '0',
+            },
+          ] : []),
         ],
       },
-    ],
-  }),
+    ];
+  },
   images: {
     remotePatterns: [
       {

@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and API routes
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /login
+Disallow: /register
+Disallow: /setup
+
+# Sitemap
+Sitemap: https://www.flomadstudios.com/sitemap.xml
