@@ -1,0 +1,17 @@
+<!-- This is a placeholder file to indicate where the OpenGraph image should be placed -->
+<!-- Replace this with an actual 1200x630 PNG or JPG image for social media sharing -->
+<!-- Recommended specifications:
+- Size: 1200x630 pixels
+- Format: PNG or JPG
+- File size: Under 1MB
+- Content: Flomad Studios branding/logo with clean background
+-->
+
+<!-- To create the actual OG image, use the Flomad Studios branding and include:
+1. Company logo
+2. "Flomad Studios" text
+3. Tagline: "Creative Digital Studio" 
+4. Clean, professional background matching the website theme
+-->
+
+OpenGraph Image Placeholder - Replace with actual 1200x630 image
