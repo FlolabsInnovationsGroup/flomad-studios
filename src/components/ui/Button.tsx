@@ -14,7 +14,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = 'default', size = 'md', isLoading, asChild = false, children, ...props }, ref) => {
     const Comp = asChild ? Slot : 'button';
-    const baseStyles = 'inline-flex items-center justify-center rounded-md font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50';
+    const baseStyles = 'inline-flex items-center justify-center rounded-md font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 touch-manipulation select-none';
 
     const variants = {
       default: 'bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 hover:shadow-md active:scale-[0.98]',
@@ -25,10 +25,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     } as const;
 
     const sizes = {
-      sm: 'h-8 px-3 text-sm',
-      md: 'h-10 px-4 text-base',
-      lg: 'h-12 px-6 text-lg',
-      icon: 'h-9 w-9 p-0',
+      sm: 'h-8 px-3 text-sm min-h-[32px]',
+      md: 'h-10 px-4 text-base min-h-[40px]',
+      lg: 'h-12 px-6 text-lg min-h-[48px]',
+      icon: 'h-9 w-9 p-0 min-h-[36px] min-w-[36px]',
     };
 
     const content = (
