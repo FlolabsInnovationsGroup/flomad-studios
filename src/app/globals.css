@@ -1205,7 +1205,7 @@ body:has(.modal-open) .scroll-component {
 /* Touch device optimizations */
 @media (hover: none) and (pointer: coarse) {
   /* Remove hover effects on touch devices */
-  .hover\\:scale-105:hover {
+  .hover\:scale-105:hover {
     transform: none;
   }
   
