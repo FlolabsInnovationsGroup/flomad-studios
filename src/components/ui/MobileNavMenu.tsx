@@ -63,7 +63,7 @@ export default function MobileNavMenu() {
       {/* Toggle Button */}
       <button
         onClick={toggleMenu}
-        className="p-2 z-50 relative text-foreground hover:text-primary transition-colors"
+        className="p-3 z-50 relative text-foreground hover:text-primary transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center touch-manipulation"
         aria-label={isOpen ? "Close menu" : "Open menu"}
       >
         <AnimatePresence mode="wait">
@@ -130,7 +130,7 @@ export default function MobileNavMenu() {
                       <Link
                         href={link.href}
                         onClick={toggleMenu}
-                        className={`flex items-center p-3 rounded-md text-lg transition-colors text-foreground ${isActive
+                        className={`flex items-center p-4 rounded-md text-lg transition-colors text-foreground min-h-[48px] touch-manipulation ${isActive
                             ? 'bg-primary/20 border border-primary/30 text-primary font-medium'
                             : 'hover:bg-accent/10 hover:text-primary'
                           }`}
