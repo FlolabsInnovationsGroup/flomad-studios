@@ -1199,7 +1199,6 @@ body:has(.modal-open) .scroll-component {
   /* Smoother mobile scrolling */
   html {
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
   }
 }
 
