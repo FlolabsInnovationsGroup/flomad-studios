@@ -1,9 +1,8 @@
 import Section from '@/components/ui/Section';
 import Button from '@/components/ui/Button';
-import Link from 'next/link';
 import CaseStudyCard from '@/components/ui/CaseStudyCard';
 import GlassCard from '@/components/ui/GlassCard';
-import { ExternalLink, Play, Palette, Code, Video, Presentation, Globe } from 'lucide-react';
+import { ExternalLink, Palette, Code, Presentation, Globe } from 'lucide-react';
 
 export const metadata = {
   title: "Our Work | Flomad Studios",

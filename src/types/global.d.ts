@@ -1,28 +1,28 @@
 // Global type declarations for FlomadStudios
 
 declare module '*.css' {
-  const content: any;
+  const content: { [className: string]: string };
   export default content;
 }
 
 declare module '*.scss' {
-  const content: any;
+  const content: { [className: string]: string };
   export default content;
 }
 
 declare module '*.sass' {
-  const content: any;
+  const content: { [className: string]: string };
   export default content;
 }
 
 declare module '*.less' {
-  const content: any;
+  const content: { [className: string]: string };
   export default content;
 }
 
 // SVG module declarations
 declare module '*.svg' {
-  import React = require('react');
+  import React from 'react';
   export const ReactComponent: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   const src: string;
   export default src;
