@@ -11,17 +11,20 @@ import { Play, Users, Mic, Video, Book, GraduationCap, Heart, ArrowRight, Sparkl
 export default function HomePage() {
   return (
     <main className="min-h-[100dvh] bg-background-light dark:bg-background relative overflow-x-hidden">
-      {/* Sky Background Effects - Fixed positioning for mobile */}
-      <div className="absolute inset-0 w-full h-full">
+      {/* Sky Background Effects - Hidden on mobile for better performance */}
+      <div className="hidden md:block absolute inset-0 w-full h-full">
         <SkyBackground />
       </div>
-      {/* Geometric Background */}
-      <div className="absolute inset-0 w-full h-full">
+      {/* Geometric Background - Hidden on mobile */}
+      <div className="hidden md:block absolute inset-0 w-full h-full">
         <ClientGeometricBackground />
       </div>
 
-      {/* Light mode atmosphere overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-sky-50/20 via-transparent to-sky-100/10 dark:from-transparent dark:via-transparent dark:to-transparent pointer-events-none z-0" />
+      {/* Simple mobile background */}
+      <div className="md:hidden absolute inset-0 bg-gradient-to-b from-sky-100 via-blue-50 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 pointer-events-none z-0" />
+
+      {/* Light mode atmosphere overlay for better text readability - Desktop only */}
+      <div className="hidden md:block absolute inset-0 bg-gradient-to-b from-sky-50/20 via-transparent to-sky-100/10 dark:from-transparent dark:via-transparent dark:to-transparent pointer-events-none z-0" />
 
       {/* Hero Section */}
       <section className="relative min-h-[100dvh] flex items-center justify-center px-6 z-10">

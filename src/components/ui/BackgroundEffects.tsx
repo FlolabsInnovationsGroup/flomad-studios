@@ -95,8 +95,13 @@ export default function BackgroundEffects() {
     );
   }
 
+  // Don't render complex effects on mobile
+  if (isMobile) {
+    return null;
+  }
+
   return (
-    <div className={`${isMobile ? 'absolute' : 'fixed'} inset-0 z-[-20] pointer-events-none overflow-hidden`}>
+    <div className="fixed inset-0 z-[-20] pointer-events-none overflow-hidden">
       {/* Primary atmospheric layers */}
       <div className="mesh-gradient"></div>
       <div className="sky-atmosphere"></div>

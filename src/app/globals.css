@@ -1238,28 +1238,36 @@ body:has(.modal-open) .scroll-component {
     position: absolute !important;
   }
   
-  /* Reduce background complexity on mobile for performance */
+  /* COMPLETELY disable complex backgrounds on mobile for performance */
   .mesh-gradient,
-  .sky-atmosphere {
-    opacity: 0.5;
-    will-change: auto;
+  .sky-atmosphere,
+  .floating-element,
+  .aurora-band {
+    display: none !important;
   }
   
-  /* Simplify animations on mobile */
+  /* Disable ALL animations on mobile */
   .animate-float,
   .animate-float-delay-1,
   .animate-float-delay-2,
-  .animate-float-delay-3 {
-    animation-duration: 8s;
-    animation-iteration-count: infinite;
+  .animate-float-delay-3,
+  .animate-gradient-x,
+  .animate-spin-slow {
+    animation: none !important;
   }
   
-  /* Disable complex gradients on mobile for better performance and visibility */
+  /* Disable complex gradients on mobile */
   .creative-gradient,
   .creative-gradient-intense {
-    background: rgba(59, 130, 246, 0.05) !important;
+    background: transparent !important;
     animation: none !important;
     background-size: auto !important;
+  }
+  
+  /* Disable framer-motion on mobile */
+  [data-framer-name] {
+    transform: none !important;
+    animation: none !important;
   }
   
   /* Fix mobile content visibility */
@@ -1310,19 +1318,62 @@ body:has(.modal-open) .scroll-component {
     width: 100%;
   }
   
-  /* Temporary mobile debugging - add visible borders to sections */
+  /* Mobile-specific background override */
+  body {
+    background-image: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%) !important;
+    background-attachment: scroll !important;
+  }
+  
+  .dark body {
+    background-image: linear-gradient(180deg, #0f172a 0%, #1e293b 100%) !important;
+  }
+  
+  /* Ensure sections have solid backgrounds on mobile */
   section {
-    border: 1px solid rgba(255, 0, 0, 0.1);
-    margin: 10px 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 1px;
   }
   
-  /* Make text more visible on mobile */
-  h1, h2, h3, h4, h5, h6, p, span, div {
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+  .dark section {
+    background-color: rgba(15, 23, 42, 0.95);
   }
   
-  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6, .dark p, .dark span, .dark div {
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+  /* Override any transform effects that might cause content to disappear */
+  section,
+  div,
+  article,
+  main {
+    transform: none !important;
+    will-change: auto !important;
+  }
+  
+  /* Force content visibility */
+  main * {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  /* Remove any blur effects that might cause rendering issues */
+  .backdrop-blur-xl,
+  .backdrop-blur-lg,
+  .backdrop-blur-md {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+  
+  /* Simplify glass effects */
+  .glass,
+  .glass-card,
+  .glass-sky {
+    background: rgba(255, 255, 255, 0.95) !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+  
+  .dark .glass,
+  .dark .glass-card,
+  .dark .glass-sky {
+    background: rgba(15, 23, 42, 0.95) !important;
   }
 }
 
