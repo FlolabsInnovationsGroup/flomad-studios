@@ -57,8 +57,8 @@ export default function DashboardLayout({
   return (
     <div className="min-h-screen bg-background">
       <div className="flex h-screen">
-        {/* Sidebar */}
-        <aside className="w-64 h-screen border-r border-border bg-card overflow-y-auto fixed">
+        {/* Sidebar - Hidden on mobile, shown on desktop */}
+        <aside className="hidden md:block w-64 h-screen border-r border-border bg-card overflow-y-auto fixed">
           <div className="p-6 border-b border-border">
             <h2 className="text-xl font-bold">Flomad Studios</h2>
             <p className="text-sm text-foreground/60 mt-1">Content Dashboard</p>
@@ -114,9 +114,32 @@ export default function DashboardLayout({
           </div>
         </aside>
 
-        {/* Main Content */}
-        <main className="ml-64 flex-1 overflow-y-auto">
-          <div className="p-8 max-w-7xl">
+        {/* Main Content - Responsive layout */}
+        <main className="md:ml-64 flex-1 overflow-y-auto w-full">
+          {/* Mobile Header */}
+          <div className="md:hidden bg-card border-b border-border p-4 sticky top-0 z-50">
+            <div className="flex items-center justify-between">
+              <div>
+                <h2 className="text-lg font-bold">Flomad Studios</h2>
+                <p className="text-xs text-foreground/60">Dashboard</p>
+              </div>
+              <button
+                className="p-2 hover:bg-muted rounded-md"
+                title="Open navigation menu"
+                aria-label="Open navigation menu"
+                onClick={() => {
+                  // TODO: Add mobile menu toggle functionality
+                  alert('Mobile menu - implement with state management');
+                }}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          
+          <div className="p-4 md:p-8 max-w-7xl">
             {children}
           </div>
         </main>
