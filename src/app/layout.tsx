@@ -87,8 +87,10 @@ export default function RootLayout({
                     <AnimatedCursor />
                   </div>
                   
-                  {/* Enhanced background effects */}
-                  <BackgroundEffects />
+                  {/* Enhanced background effects - Desktop only */}
+                  <div className="hidden md:block">
+                    <BackgroundEffects />
+                  </div>
                   
                   {/* Subtle overlay for better readability */}
                   <div className="fixed inset-0 z-[-10] bg-white/5 dark:bg-black/10 backdrop-blur-[1px]" />
