@@ -11,12 +11,12 @@ import { Play, Users, Mic, Video, Book, GraduationCap, Heart, ArrowRight, Sparkl
 export default function HomePage() {
   return (
     <main className="min-h-[100dvh] bg-background-light dark:bg-background relative overflow-x-hidden">
-      {/* Sky Background Effects - Hidden on mobile for better performance */}
-      <div className="hidden md:block absolute inset-0 w-full h-full">
+      {/* Sky Background Effects - Temporarily disabled for debugging */}
+      <div className="hidden absolute inset-0 w-full h-full">
         <SkyBackground />
       </div>
-      {/* Geometric Background - Completely disabled on mobile */}
-      <div className="hidden lg:block absolute inset-0 w-full h-full">
+      {/* Geometric Background - Completely disabled */}
+      <div className="hidden absolute inset-0 w-full h-full">
         <ClientGeometricBackground />
       </div>
 
@@ -175,7 +175,7 @@ export default function HomePage() {
       {/* Portfolio Showcase Section */}
       <section className="relative py-16 md:py-32 creative-gradient z-10 bg-white/5 dark:bg-black/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-20">
-          <div className="text-center mb-12 md:mb-20 slide-up">
+          <div className="text-center mb-12 md:mb-20">
             <GlassCard className="inline-block px-6 py-3 mb-8 glow-effect" variant="secondary" blur="md">
               <div className="flex items-center gap-2">
                 <Rocket className="w-5 h-5 text-blue-400" />

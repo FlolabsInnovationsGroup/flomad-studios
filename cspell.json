@@ -51,7 +51,16 @@
     "uuidv",
     "Bento",
     "Uncategorized",
-    "quicktime"
+    "quicktime",
+    "flomadlabs",
+    "robocollective",
+    "caipoai",
+    "moodchanger",
+    "CAIPO",
+    "Canva",
+    "flomadinternational",
+    "Robo",
+    "Waitlist"
   ],
   "ignorePaths": [
     "node_modules/**",

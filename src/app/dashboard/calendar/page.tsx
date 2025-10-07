@@ -182,7 +182,6 @@ export default function ContentCalendarPage() {
           className="flex items-center gap-2"
           onClick={() => {
             // TODO: Implement new event modal
-            console.log('Schedule content clicked');
           }}
         >
           <Plus size={16} />

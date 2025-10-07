@@ -74,9 +74,8 @@ export default function StaggeredItems({
   return (
     <MotionContainer
       variants={container}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.1 }}
+      initial="show"
+      animate="show"
       className={className}
     >
       {children.map((child, index) => (

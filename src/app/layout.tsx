@@ -7,7 +7,6 @@ import AuthProvider from '@/components/auth/Provider';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import ErrorBoundary from "@/components/ErrorBoundary";
-import PageTransition from '@/components/ui/PageTransition';
 import AnimatedCursor from "@/components/ui/AnimatedCursor";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import BackgroundEffects from "@/components/ui/BackgroundEffects";
@@ -87,8 +86,8 @@ export default function RootLayout({
                     <AnimatedCursor />
                   </div>
                   
-                  {/* Enhanced background effects - Desktop only */}
-                  <div className="hidden md:block">
+                  {/* Enhanced background effects - Temporarily disabled */}
+                  <div className="hidden">
                     <BackgroundEffects />
                   </div>
                   
@@ -96,9 +95,7 @@ export default function RootLayout({
                   <div className="fixed inset-0 z-[-10] bg-white/5 dark:bg-black/10 backdrop-blur-[1px]" />
                   
                   <Header />
-                  <PageTransition>
-                    {children}
-                  </PageTransition>
+                  {children}
                   <Footer />
                   <ScrollToTop />
                   <Analytics />
