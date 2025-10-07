@@ -68,7 +68,6 @@ interface Nebula {
 export default function SkyBackground() {
   const { theme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
   const [stars, setStars] = useState<Star[]>([]);
   const [clouds, setClouds] = useState<Cloud[]>([]);
   const [constellations, setConstellations] = useState<Constellation[]>([]);
@@ -80,14 +79,6 @@ export default function SkyBackground() {
 
   useEffect(() => {
     setIsMounted(true);
-    
-    // Detect mobile device
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
 
     // Generate realistic star field with different types
     const generateStars = () => {
@@ -380,10 +371,6 @@ export default function SkyBackground() {
     generateDayParticles();
     generateSunRays();
     determineTimeOfDay();
-    
-    return () => {
-      window.removeEventListener('resize', checkMobile);
-    };
   }, []);
 
   if (!isMounted) {
@@ -528,7 +515,7 @@ export default function SkyBackground() {
                     y2={`${toStar.y}%`}
                     stroke="rgba(147, 197, 253, 0.3)"
                     strokeWidth="0.5"
-                    initial={{ pathLength: 0, opacity: 0 }}
+                    initial={{ pathLength: 1, opacity: 0.6 }}
                     animate={{ pathLength: 1, opacity: 0.6 }}
                     transition={{
                       duration: 2,
@@ -574,12 +561,12 @@ export default function SkyBackground() {
                 top: `${shootingStar.y}%`,
                 transform: 'rotate(35deg)',
               }}
-              initial={{ opacity: 0, x: -50, y: -20, scale: 0 }}
+              initial={{ opacity: 1, x: 0, y: 0, scale: 1 }}
               animate={{
-                opacity: [0, 1, 0],
+                opacity: [1, 1, 1],
                 x: [0, 150, 200],
                 y: [0, 80, 120],
-                scale: [0, 1, 0.5]
+                scale: [1, 1, 0.5]
               }}
               transition={{
                 duration: 1.8,

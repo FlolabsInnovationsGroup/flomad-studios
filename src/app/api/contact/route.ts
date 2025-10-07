@@ -16,11 +16,13 @@ async function sendNotificationEmail(contact: {
   // - Resend
   // - AWS SES
 
-  console.log('📧 New contact submission notification:', {
-    from: `${contact.firstName} ${contact.lastName} <${contact.email}>`,
-    subject: contact.subject,
-    preview: contact.message.substring(0, 100) + '...'
-  });
+  // Log contact submission for monitoring (production: integrate with proper logging service)
+  if (process.env.NODE_ENV === 'development') {
+    console.log('📧 New contact submission:', {
+      from: `${contact.firstName} ${contact.lastName} <${contact.email}>`,
+      subject: contact.subject
+    });
+  }
 
   // For now, just log the notification
   // In production, you would send an actual email to admin@flomadlabs.com
