@@ -15,8 +15,8 @@ export default function HomePage() {
       <div className="hidden md:block absolute inset-0 w-full h-full">
         <SkyBackground />
       </div>
-      {/* Geometric Background - Hidden on mobile */}
-      <div className="hidden md:block absolute inset-0 w-full h-full">
+      {/* Geometric Background - Completely disabled on mobile */}
+      <div className="hidden lg:block absolute inset-0 w-full h-full">
         <ClientGeometricBackground />
       </div>
 
@@ -48,8 +48,8 @@ export default function HomePage() {
             <div className="absolute w-1 h-1 bg-secondary/60 rounded-full animate-float-delay-3 left-[90%] top-[10%]" />
           </div>
 
-          {/* Professional grid pattern */}
-          <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]">
+          {/* Professional grid pattern - Hidden on mobile */}
+          <div className="hidden md:block absolute inset-0 opacity-[0.02] dark:opacity-[0.05]">
             <div className="h-full w-full bg-[linear-gradient(rgb(3,105,161,0.1)_1px,transparent_1px),linear-gradient(90deg,rgb(8,145,178,0.1)_1px,transparent_1px)] bg-[size:80px_80px]" />
           </div>
         </div>
