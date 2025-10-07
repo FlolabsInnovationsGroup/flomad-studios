@@ -170,9 +170,9 @@ export default function HomePage() {
       </section>
 
       {/* Portfolio Showcase Section */}
-      <section className="relative py-32 creative-gradient z-10">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20 slide-up">
+      <section className="relative py-16 md:py-32 creative-gradient z-10 bg-white/5 dark:bg-black/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-20">
+          <div className="text-center mb-12 md:mb-20 slide-up">
             <GlassCard className="inline-block px-6 py-3 mb-8 glow-effect" variant="secondary" blur="md">
               <div className="flex items-center gap-2">
                 <Rocket className="w-5 h-5 text-blue-400" />

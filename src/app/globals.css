@@ -1254,6 +1254,14 @@ body:has(.modal-open) .scroll-component {
     animation-iteration-count: infinite;
   }
   
+  /* Disable complex gradients on mobile for better performance and visibility */
+  .creative-gradient,
+  .creative-gradient-intense {
+    background: rgba(59, 130, 246, 0.05) !important;
+    animation: none !important;
+    background-size: auto !important;
+  }
+  
   /* Fix mobile content visibility */
   .relative {
     transform: translateZ(0); /* Force hardware acceleration */
@@ -1272,6 +1280,49 @@ body:has(.modal-open) .scroll-component {
   
   .dark main > section {
     background: rgba(0, 0, 0, 0.01);
+  }
+  
+  /* Force all content sections to be visible on mobile */
+  section > div {
+    position: relative;
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.001);
+  }
+  
+  .dark section > div {
+    background: rgba(0, 0, 0, 0.001);
+  }
+  
+  /* Aggressive mobile visibility fix */
+  section {
+    min-height: 200px;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  /* Ensure content containers are visible */
+  .max-w-7xl,
+  .container {
+    position: relative;
+    z-index: 10;
+    display: block;
+    width: 100%;
+  }
+  
+  /* Temporary mobile debugging - add visible borders to sections */
+  section {
+    border: 1px solid rgba(255, 0, 0, 0.1);
+    margin: 10px 0;
+  }
+  
+  /* Make text more visible on mobile */
+  h1, h2, h3, h4, h5, h6, p, span, div {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6, .dark p, .dark span, .dark div {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
   }
 }
 
