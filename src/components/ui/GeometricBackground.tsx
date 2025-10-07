@@ -7,10 +7,19 @@ export default function GeometricBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const { theme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   
-  // Prevent any server-side rendering
+  // Prevent any server-side rendering and check for mobile
   useEffect(() => {
     setIsMounted(true);
+    setIsMobile(window.innerWidth <= 768);
+    
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
   
   useEffect(() => {
@@ -224,8 +233,8 @@ export default function GeometricBackground() {
     return null;
   }
   
-  // Only show geometric background in dark mode
-  if (theme !== 'dark') {
+  // Only show geometric background in dark mode and on desktop
+  if (theme !== 'dark' || isMobile) {
     return null;
   }
   

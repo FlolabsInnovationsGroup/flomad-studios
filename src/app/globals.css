@@ -1246,6 +1246,11 @@ body:has(.modal-open) .scroll-component {
     display: none !important;
   }
   
+  /* Hide geometric background on mobile */
+  .geometric-canvas {
+    display: none !important;
+  }
+  
   /* Disable ALL animations on mobile */
   .animate-float,
   .animate-float-delay-1,
@@ -1264,9 +1269,8 @@ body:has(.modal-open) .scroll-component {
     background-size: auto !important;
   }
   
-  /* Disable framer-motion on mobile */
+  /* Disable framer-motion on mobile but preserve desktop functionality */
   [data-framer-name] {
-    transform: none !important;
     animation: none !important;
   }
   
@@ -1338,11 +1342,10 @@ body:has(.modal-open) .scroll-component {
     background-color: rgba(15, 23, 42, 0.95);
   }
   
-  /* Override any transform effects that might cause content to disappear */
-  section,
-  div,
-  article,
-  main {
+  /* Override any transform effects that might cause content to disappear - but preserve intended animations */
+  section > div,
+  article > div,
+  main > section {
     transform: none !important;
     will-change: auto !important;
   }
@@ -1374,6 +1377,40 @@ body:has(.modal-open) .scroll-component {
   .dark .glass-card,
   .dark .glass-sky {
     background: rgba(15, 23, 42, 0.95) !important;
+  }
+}
+
+/* Desktop-specific styles to ensure normal functionality */
+@media (min-width: 769px) {
+  /* Re-enable transforms and animations on desktop */
+  .animate-float,
+  .animate-float-delay-1,
+  .animate-float-delay-2,
+  .animate-float-delay-3,
+  .animate-gradient-x,
+  .animate-spin-slow {
+    animation: revert !important;
+  }
+  
+  /* Re-enable complex backgrounds on desktop */
+  .creative-gradient,
+  .creative-gradient-intense {
+    background: revert !important;
+    animation: revert !important;
+    background-size: revert !important;
+  }
+  
+  /* Re-enable geometric background */
+  .geometric-canvas {
+    display: block !important;
+  }
+  
+  /* Allow normal transforms on desktop */
+  section > div,
+  article > div,
+  main > section {
+    transform: revert !important;
+    will-change: revert !important;
   }
 }
 
