@@ -69,10 +69,21 @@ const generateBackgroundElements = (seed = 42) => {
 
 export default function BackgroundEffects() {
   const [isMounted, setIsMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [backgroundElements] = useState(() => generateBackgroundElements());
 
   useEffect(() => {
     setIsMounted(true);
+    
+    // Detect mobile device
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   if (!isMounted) {
@@ -85,7 +96,7 @@ export default function BackgroundEffects() {
   }
 
   return (
-    <div className="fixed inset-0 z-[-20] pointer-events-none overflow-hidden">
+    <div className={`${isMobile ? 'absolute' : 'fixed'} inset-0 z-[-20] pointer-events-none overflow-hidden`}>
       {/* Primary atmospheric layers */}
       <div className="mesh-gradient"></div>
       <div className="sky-atmosphere"></div>

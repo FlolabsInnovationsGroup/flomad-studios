@@ -118,10 +118,15 @@ body {
   color: hsl(var(--foreground));
   background-color: hsl(var(--background));
   background-image: var(--body-gradient);
-  background-attachment: fixed;
+  background-attachment: scroll; /* Changed from fixed to scroll for mobile compatibility */
   transition: background-color 0.3s ease, color 0.3s ease;
   line-height: 1.6;
   letter-spacing: -0.01em;
+  /* Ensure proper mobile scrolling */
+  overflow-x: hidden;
+  /* Fix mobile viewport issues */
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for mobile */
 }
 
 /* Enhanced typography for better sky-themed readability */
@@ -1148,6 +1153,10 @@ body:has(.modal-open) .scroll-component {
   /* Improved mobile typography scaling */
   html {
     font-size: 16px; /* Ensure minimum readable font size */
+    /* Fix viewport height issues on mobile */
+    height: 100%;
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile */
   }
   
   /* Enhanced mobile spacing */
@@ -1191,14 +1200,78 @@ body:has(.modal-open) .scroll-component {
     padding: 12px 16px;
   }
   
-  /* Prevent horizontal scroll */
+  /* Prevent horizontal scroll and ensure proper content flow */
   body {
     overflow-x: hidden;
+    /* Fix background attachment for mobile */
+    background-attachment: scroll !important;
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
   }
   
   /* Smoother mobile scrolling */
   html {
     scroll-behavior: smooth;
+  }
+  
+  /* Fix main content on mobile */
+  main {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Ensure sections are properly positioned on mobile */
+  section {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-height: fit-content;
+  }
+  
+  /* Fix background effects on mobile */
+  .fixed {
+    position: absolute !important;
+  }
+  
+  /* Reduce background complexity on mobile for performance */
+  .mesh-gradient,
+  .sky-atmosphere {
+    opacity: 0.5;
+    will-change: auto;
+  }
+  
+  /* Simplify animations on mobile */
+  .animate-float,
+  .animate-float-delay-1,
+  .animate-float-delay-2,
+  .animate-float-delay-3 {
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+  }
+  
+  /* Fix mobile content visibility */
+  .relative {
+    transform: translateZ(0); /* Force hardware acceleration */
+  }
+  
+  /* Ensure proper stacking context on mobile */
+  section {
+    contain: layout style;
+    transform: translateZ(0);
+  }
+  
+  /* Prevent content from being hidden behind backgrounds */
+  main > section {
+    background: rgba(255, 255, 255, 0.01); /* Minimal background to force layer */
+  }
+  
+  .dark main > section {
+    background: rgba(0, 0, 0, 0.01);
   }
 }
 

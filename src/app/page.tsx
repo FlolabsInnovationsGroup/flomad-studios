@@ -10,17 +10,21 @@ import { Play, Users, Mic, Video, Book, GraduationCap, Heart, ArrowRight, Sparkl
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-background-light dark:bg-background relative">
-      {/* Sky Background Effects */}
-      <SkyBackground />
+    <main className="min-h-[100dvh] bg-background-light dark:bg-background relative overflow-x-hidden">
+      {/* Sky Background Effects - Fixed positioning for mobile */}
+      <div className="absolute inset-0 w-full h-full">
+        <SkyBackground />
+      </div>
       {/* Geometric Background */}
-      <ClientGeometricBackground />
+      <div className="absolute inset-0 w-full h-full">
+        <ClientGeometricBackground />
+      </div>
 
       {/* Light mode atmosphere overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-sky-50/20 via-transparent to-sky-100/10 dark:from-transparent dark:via-transparent dark:to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-sky-50/20 via-transparent to-sky-100/10 dark:from-transparent dark:via-transparent dark:to-transparent pointer-events-none z-0" />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6">
+      <section className="relative min-h-[100dvh] flex items-center justify-center px-6 z-10">
         {/* Modern Atmospheric Background Effects */}
         <div className="absolute inset-0">
           {/* Professional sky-themed gradient orbs */}
@@ -48,7 +52,7 @@ export default function HomePage() {
         </div>
 
         {/* Main Content - Optimized for mobile readability */}
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+        <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <div className="text-center max-w-6xl mx-auto">
             {/* Professional badge */}
             <div className="mb-8 animate-float">
@@ -166,7 +170,7 @@ export default function HomePage() {
       </section>
 
       {/* Portfolio Showcase Section */}
-      <section className="relative py-32 creative-gradient">
+      <section className="relative py-32 creative-gradient z-10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20 slide-up">
             <GlassCard className="inline-block px-6 py-3 mb-8 glow-effect" variant="secondary" blur="md">
@@ -288,7 +292,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="relative py-32">
+      <section className="relative py-32 z-10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20 slide-up">
             <GlassCard className="inline-block px-6 py-3 mb-8 glow-effect" variant="secondary" blur="md">
@@ -362,7 +366,7 @@ export default function HomePage() {
       </section>
 
       {/* Podcast Spotlight Section */}
-      <section className="relative py-24">
+      <section className="relative py-24 z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20"></div>
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="text-center mb-12">
@@ -440,7 +444,7 @@ export default function HomePage() {
       </section>
 
       {/* Ecosystem Ribbon */}
-      <section className="relative py-16 bg-gradient-to-r from-sky-50/50 via-blue-50/30 to-emerald-50/50 dark:from-slate-900/50 dark:via-slate-800/30 dark:to-slate-900/50">
+      <section className="relative py-16 bg-gradient-to-r from-sky-50/50 via-blue-50/30 to-emerald-50/50 dark:from-slate-900/50 dark:via-slate-800/30 dark:to-slate-900/50 z-10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
@@ -498,7 +502,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-32">
+      <section className="relative py-32 z-10">
         <div className="absolute inset-0 opacity-10">
           {/* Creative studio themed pattern */}
           <div className="absolute top-20 left-20 w-32 h-32 border-2 border-sky-400/30 rotate-45" />

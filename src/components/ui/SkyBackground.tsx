@@ -68,6 +68,7 @@ interface Nebula {
 export default function SkyBackground() {
   const { theme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [stars, setStars] = useState<Star[]>([]);
   const [clouds, setClouds] = useState<Cloud[]>([]);
   const [constellations, setConstellations] = useState<Constellation[]>([]);
@@ -79,6 +80,14 @@ export default function SkyBackground() {
 
   useEffect(() => {
     setIsMounted(true);
+    
+    // Detect mobile device
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
 
     // Generate realistic star field with different types
     const generateStars = () => {
@@ -371,6 +380,10 @@ export default function SkyBackground() {
     generateDayParticles();
     generateSunRays();
     determineTimeOfDay();
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
   }, []);
 
   if (!isMounted) {
