@@ -2,7 +2,7 @@ import GlassCard from '@/components/ui/GlassCard';
 import GlassButton from '@/components/ui/GlassButton';
 import CaseStudyCard from '@/components/ui/CaseStudyCard';
 import ClientGeometricBackground from '@/components/ui/ClientGeometricBackground';
-import SkyBackground from '@/components/ui/SkyBackground';
+
 import ScrollIndicator from '@/components/ui/ScrollIndicator';
 import FloatingScrollIndicator from '@/components/ui/FloatingScrollIndicator';
 import Link from 'next/link';
@@ -10,21 +10,15 @@ import { Play, Users, Mic, Video, Book, GraduationCap, Heart, ArrowRight, Sparkl
 
 export default function HomePage() {
   return (
-    <main className="min-h-[100dvh] bg-background-light dark:bg-background relative overflow-x-hidden">
-      {/* Sky Background Effects - Temporarily disabled for debugging */}
-      <div className="hidden absolute inset-0 w-full h-full">
-        <SkyBackground />
-      </div>
+    <main className="min-h-[100dvh] relative overflow-x-hidden">
+
       {/* Geometric Background - Completely disabled */}
       <div className="hidden absolute inset-0 w-full h-full">
         <ClientGeometricBackground />
       </div>
 
-      {/* Simple mobile background */}
-      <div className="md:hidden absolute inset-0 bg-gradient-to-b from-sky-100 via-blue-50 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 pointer-events-none z-0" />
-
-      {/* Light mode atmosphere overlay for better text readability - Desktop only */}
-      <div className="hidden md:block absolute inset-0 bg-gradient-to-b from-sky-50/20 via-transparent to-sky-100/10 dark:from-transparent dark:via-transparent dark:to-transparent pointer-events-none z-0" />
+      {/* Enhanced mobile readability overlay - works with full sky background */}
+      <div className="md:hidden absolute inset-0 bg-white/[0.03] dark:bg-black/[0.12] pointer-events-none z-0" />
 
       {/* Hero Section */}
       <section className="relative min-h-[100dvh] flex items-center justify-center px-6 z-10">
@@ -54,44 +48,44 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Main Content - Optimized for mobile readability */}
-        <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+        {/* Main Content - Enhanced mobile responsiveness */}
+        <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
           <div className="text-center max-w-6xl mx-auto">
-            {/* Professional badge */}
-            <div className="mb-8 animate-float">
-              <GlassCard className="inline-block px-8 py-4 glow-effect group" variant="sky" blur="xl">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 bg-primary/30 rounded-full group-hover:rotate-12 transition-transform duration-300">
-                    <Sparkles className="w-5 h-5 text-primary dark:text-primary-300" />
+            {/* Professional badge - Mobile optimized */}
+            <div className="mb-6 sm:mb-8 animate-float">
+              <GlassCard className="inline-block px-6 sm:px-8 py-3 sm:py-4 glow-effect group" variant="sky" blur="xl">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="p-1.5 sm:p-2 bg-primary/30 rounded-full group-hover:rotate-12 transition-transform duration-300">
+                    <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-primary dark:text-primary-300" />
                   </div>
-                  <span className="text-sm font-bold tracking-wider text-foreground uppercase">Digital Design Studio</span>
+                  <span className="text-xs sm:text-sm font-bold tracking-wider text-foreground uppercase">Digital Design Studio</span>
                 </div>
               </GlassCard>
             </div>
 
-            {/* Professional themed heading - Mobile optimized */}
+            {/* Professional themed heading - Mobile optimized with enhanced readability */}
             <div className="mb-6 sm:mb-8 space-y-2 sm:space-y-4">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight sm:leading-none tracking-tight">
                 <div className="relative inline-block mb-2">
                   <span className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/15 blur-2xl rounded-2xl animate-pulse" />
-                  <span className="relative professional-heading transform hover:scale-105 transition-transform duration-300 inline-block">
+                  <span className="relative professional-heading text-enhanced-strong transform hover:scale-105 transition-transform duration-300 inline-block">
                     Flomad
                   </span>
                 </div>
               </h1>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight sm:leading-none tracking-tight">
-                <span className="gradient-text-sky font-extrabold drop-shadow-2xl transform hover:scale-105 transition-transform duration-300 inline-block">
+                <span className="gradient-text-sky font-extrabold drop-shadow-2xl text-enhanced-strong transform hover:scale-105 transition-transform duration-300 inline-block">
                   Studios
                 </span>
               </h1>
             </div>
 
-            {/* Professional Subtitle - Mobile optimized spacing */}
+            {/* Professional Subtitle - Mobile optimized spacing with enhanced readability */}
             <div className="mb-8 sm:mb-12 max-w-4xl mx-auto">
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold professional-text leading-relaxed mb-3 sm:mb-4">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold professional-text text-enhanced-readable leading-relaxed mb-3 sm:mb-4">
                 Creative Digital Studio
               </p>
-              <p className="text-sm sm:text-base md:text-lg text-foreground max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
+              <p className="text-sm sm:text-base md:text-lg text-foreground text-enhanced-readable max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
                 The creative division of Flomad Labs R&D, where we create content and experiences for cutting-edge technology projects in AI, robotics, and emerging tech platforms.
               </p>
             </div>
@@ -103,10 +97,9 @@ export default function HomePage() {
                   variant="primary"
                   size="lg"
                   glow
-                  className="group relative overflow-hidden px-10 py-4 text-lg font-semibold transform hover:scale-105 transition-all duration-300 border-sky-500/30 min-h-[48px] min-w-[44px] touch-manipulation"
+                  className="group px-10 py-4 text-lg font-semibold transform hover:scale-105 transition-all duration-300 border-sky-500/30 min-h-[48px] min-w-[44px] touch-manipulation"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-sky-500 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <Link href="/contact" className="relative flex items-center gap-3">
+                  <Link href="/contact" className="flex items-center gap-3">
                     <span>Let&apos;s Talk</span>
                     <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-2" />
                   </Link>
@@ -175,17 +168,17 @@ export default function HomePage() {
       {/* Portfolio Showcase Section */}
       <section className="relative py-16 md:py-32 creative-gradient z-10 bg-white/5 dark:bg-black/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-20">
-          <div className="text-center mb-12 md:mb-20">
-            <GlassCard className="inline-block px-6 py-3 mb-8 glow-effect" variant="secondary" blur="md">
+          <div className="text-center mb-8 sm:mb-12 md:mb-20">
+            <GlassCard className="inline-block px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8 glow-effect" variant="secondary" blur="md">
               <div className="flex items-center gap-2">
-                <Rocket className="w-5 h-5 text-blue-400" />
-                <span className="text-sm font-semibold text-foreground">OUR WORK</span>
+                <Rocket className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
+                <span className="text-xs sm:text-sm font-semibold text-foreground">OUR WORK</span>
               </div>
             </GlassCard>
-            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-8 text-enhanced-strong">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 sm:mb-8 text-enhanced-strong px-2">
               Websites & <span className="text-foreground font-extrabold">Digital Experiences</span>
             </h2>
-            <p className="text-xl text-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-foreground max-w-4xl mx-auto leading-relaxed px-4">
               Real projects we&apos;ve designed and developed for the Flomad Labs ecosystem, from AI platforms to robotics marketplaces.
             </p>
           </div>
@@ -266,7 +259,7 @@ export default function HomePage() {
           {/* Design Tools Section */}
           <div className="text-center">
             <GlassCard className="inline-block px-8 py-6 mb-8" variant="primary" blur="lg">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Our Design Arsenal</h3>
+              <h3 className="text-2xl font-bold text-foreground text-enhanced-readable mb-4">Our Design Arsenal</h3>
               <div className="flex flex-wrap justify-center gap-4 text-foreground">
                 <span className="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg">
                   <span className="w-3 h-3 bg-blue-500 rounded"></span>
@@ -295,19 +288,19 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="relative py-32 z-10">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-20 slide-up">
-            <GlassCard className="inline-block px-6 py-3 mb-8 glow-effect" variant="secondary" blur="md">
+      <section className="relative py-16 sm:py-24 md:py-32 z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20 slide-up">
+            <GlassCard className="inline-block px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8 glow-effect" variant="secondary" blur="md">
               <div className="flex items-center gap-2">
-                <Rocket className="w-5 h-5 text-blue-400" />
-                <span className="text-sm font-semibold text-foreground">WHAT WE DO</span>
+                <Rocket className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
+                <span className="text-xs sm:text-sm font-semibold text-foreground">WHAT WE DO</span>
               </div>
             </GlassCard>
-            <h2 className="text-5xl md:text-6xl font-bold text-foreground mb-8 text-enhanced-strong">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 sm:mb-8 text-enhanced-strong px-2">
               Digital <span className="text-foreground font-extrabold">Creative Services</span>
             </h2>
-            <p className="text-xl text-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-foreground max-w-4xl mx-auto leading-relaxed px-4">
               Professional design and development services powered by industry-standard tools and creative expertise.
             </p>
           </div>
@@ -369,20 +362,20 @@ export default function HomePage() {
       </section>
 
       {/* Podcast Spotlight Section */}
-      <section className="relative py-24 z-10">
+      <section className="relative py-12 sm:py-18 md:py-24 z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-blue-900/20"></div>
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-12">
-            <GlassCard className="inline-block px-6 py-3 mb-8 glow-effect" variant="accent" blur="md">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="text-center mb-8 sm:mb-12">
+            <GlassCard className="inline-block px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8 glow-effect" variant="accent" blur="md">
               <div className="flex items-center gap-2">
-                <Mic className="w-5 h-5 text-purple-400" />
-                <span className="text-sm font-semibold text-foreground">THE FLOMAD FREQUENCY</span>
+                <Mic className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400" />
+                <span className="text-xs sm:text-sm font-semibold text-foreground">THE FLOMAD FREQUENCY</span>
               </div>
             </GlassCard>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground text-enhanced-strong mb-4 sm:mb-6 px-2">
               Our Podcast <span className="gradient-text-sky">Coming Soon</span>
             </h2>
-            <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto px-4">
               Deep conversations about AI, robotics, creativity, and the future of technology. 
               Season 1 launches soon with industry experts and innovative minds.
             </p>
@@ -505,22 +498,22 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-32 z-10">
+      <section className="relative py-16 sm:py-24 md:py-32 z-10">
         <div className="absolute inset-0 opacity-10">
-          {/* Creative studio themed pattern */}
-          <div className="absolute top-20 left-20 w-32 h-32 border-2 border-sky-400/30 rotate-45" />
-          <div className="absolute bottom-32 right-32 w-24 h-24 border-2 border-blue-400/30 rounded-full" />
-          <div className="absolute top-40 right-20 w-16 h-16 bg-cyan-400/20 transform rotate-12" />
-          <div className="absolute bottom-20 left-40 w-20 h-2 bg-pink-400/30 rounded-full" />
+          {/* Creative studio themed pattern - Hidden on mobile for cleaner look */}
+          <div className="hidden sm:block absolute top-20 left-20 w-32 h-32 border-2 border-sky-400/30 rotate-45" />
+          <div className="hidden sm:block absolute bottom-32 right-32 w-24 h-24 border-2 border-blue-400/30 rounded-full" />
+          <div className="hidden md:block absolute top-40 right-20 w-16 h-16 bg-cyan-400/20 transform rotate-12" />
+          <div className="hidden md:block absolute bottom-20 left-40 w-20 h-2 bg-pink-400/30 rounded-full" />
         </div>
 
-        <div className="relative z-10 text-center max-w-5xl mx-auto px-6 slide-up">
-          <h2 className="text-5xl md:text-7xl font-bold mb-8">
-            <span className="text-foreground font-extrabold">
+        <div className="relative z-10 text-center max-w-5xl mx-auto px-4 sm:px-6 slide-up">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 px-2">
+            <span className="text-foreground font-extrabold text-enhanced-strong">
               Ready to Work Together?
             </span>
           </h2>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-12 text-foreground leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto mb-8 sm:mb-10 md:mb-12 text-foreground leading-relaxed px-4">
             Let&apos;s discuss your project and explore how we can help bring your digital vision to life.
             Get in touch to start the conversation.
           </p>

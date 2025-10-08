@@ -42,16 +42,16 @@
   --shadow-color: rgba(15, 23, 42, 0.08);
   --surface-color: rgba(255, 255, 255, 0.96);
   --heading-foreground: 215 52% 30%;
-  --heading-shadow: 0 18px 32px rgba(186, 230, 253, 0.22);
-  --text-shadow-soft: 0 1px 2px rgba(240, 249, 255, 0.5);
+  --heading-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), 0 8px 32px rgba(186, 230, 253, 0.22);
+  --text-shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(240, 249, 255, 0.5);
   --sky-atmosphere: rgba(147, 197, 253, 0.16);
   --sky-clouds: rgba(255, 255, 255, 0.85);
   --sky-horizon: rgba(186, 230, 253, 0.14);
   --body-gradient: radial-gradient(circle at 22% 16%, rgba(255, 255, 255, 0.65) 0%, transparent 58%),
     radial-gradient(circle at 80% 12%, rgba(186, 230, 253, 0.45) 0%, transparent 60%),
     linear-gradient(180deg, rgba(224, 242, 254, 0.95) 0%, rgba(241, 245, 249, 0.96) 48%, rgba(255, 255, 255, 1) 100%);
-  --aurora-day-band: linear-gradient(115deg, rgba(255, 255, 255, 0.32) 0%, rgba(186, 230, 253, 0.38) 42%, rgba(254, 215, 170, 0.35) 74%, rgba(253, 164, 175, 0.32) 100%);
-  --aurora-day-secondary: linear-gradient(145deg, rgba(236, 254, 255, 0.28) 0%, rgba(190, 242, 255, 0.34) 45%, rgba(254, 249, 195, 0.30) 100%);
+  --aurora-day-band: linear-gradient(115deg, rgba(255, 255, 255, 0.55) 0%, rgba(186, 230, 253, 0.65) 42%, rgba(254, 215, 170, 0.60) 74%, rgba(253, 164, 175, 0.55) 100%);
+  --aurora-day-secondary: linear-gradient(145deg, rgba(236, 254, 255, 0.45) 0%, rgba(190, 242, 255, 0.55) 45%, rgba(254, 249, 195, 0.50) 100%);
   --aurora-glass: rgba(186, 230, 253, 0.25);
   --aurora-night-primary: linear-gradient(135deg, rgba(209, 213, 255, 0.35) 0%, rgba(191, 219, 254, 0.32) 60%, rgba(221, 214, 254, 0.34) 100%);
   --aurora-night-secondary: linear-gradient(160deg, rgba(236, 254, 255, 0.28) 0%, rgba(224, 231, 255, 0.32) 45%, rgba(255, 228, 230, 0.25) 100%);
@@ -94,8 +94,8 @@
   --shadow-color: rgba(2, 6, 23, 0.65);
   --surface-color: rgba(23, 36, 56, 0.9);
   --heading-foreground: 217 88% 85%;
-  --heading-shadow: 0 18px 40px rgba(79, 70, 229, 0.34);
-  --text-shadow-soft: 0 2px 8px rgba(8, 16, 40, 0.55);
+  --heading-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(79, 70, 229, 0.34);
+  --text-shadow-soft: 0 1px 4px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(8, 16, 40, 0.55);
   --sky-atmosphere: rgba(79, 70, 229, 0.14);
   --sky-clouds: rgba(148, 163, 184, 0.15);
   --sky-horizon: rgba(99, 102, 241, 0.12);
@@ -116,10 +116,8 @@
 
 body {
   color: hsl(var(--foreground));
-  background-color: hsl(var(--background));
-  background-image: var(--body-gradient);
-  background-attachment: scroll; /* Changed from fixed to scroll for mobile compatibility */
-  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Removed background properties to allow SkyBackground component to show */
+  transition: color 0.3s ease;
   line-height: 1.6;
   letter-spacing: -0.01em;
   /* Ensure proper mobile scrolling */
@@ -163,6 +161,25 @@ p {
   color: hsl(var(--heading-foreground));
   font-weight: 700;
   text-shadow: var(--heading-shadow);
+}
+
+/* Enhanced readability classes for text over sky/clouds */
+.text-enhanced-strong {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), 0 4px 16px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+}
+
+.text-enhanced-readable {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.08);
+  font-weight: 600;
+}
+
+.dark .text-enhanced-strong {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6), 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.dark .text-enhanced-readable {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Enhanced button styles for sky theme */
@@ -796,13 +813,14 @@ p {
   top: 14%;
   height: 42%;
   background: var(--aurora-day-band);
+  opacity: 0.65;
 }
 
 .aurora-band--day-secondary {
   top: 46%;
   height: 32%;
   background: var(--aurora-day-secondary);
-  opacity: 0.28;
+  opacity: 0.45;
 }
 
 .dark .aurora-band--day,
@@ -1808,6 +1826,71 @@ body:has(.modal-open) .scroll-component {
 }
 
 /* Additional Mobile Optimization - Consolidated from duplicate queries */
+
+/* Sky Elements - Sun and Moon */
+.sun-element {
+  position: absolute;
+  top: 15%;
+  right: 20%;
+}
+
+.sun-element > div {
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(254, 215, 170, 0.6), 0 0 60px rgba(251, 191, 36, 0.4);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.moon-element {
+  position: absolute;
+  top: 12%;
+  right: 25%;
+}
+
+.moon-element > div {
+  width: 3.5rem;
+  height: 3.5rem;
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(203, 213, 225, 0.5), 0 0 40px rgba(148, 163, 184, 0.3);
+  position: relative;
+}
+
+.moon-element .moon-crater-1 {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.75rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #94a3b8;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.moon-element .moon-crater-2 {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.5rem;
+  width: 0.375rem;
+  height: 0.375rem;
+  background: #94a3b8;
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+@media (min-width: 768px) {
+  .sun-element > div {
+    width: 5rem;
+    height: 5rem;
+  }
+  
+  .moon-element > div {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+}
 
 /* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {

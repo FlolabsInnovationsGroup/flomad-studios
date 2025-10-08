@@ -1160,37 +1160,7 @@ export default function SkyBackground() {
           {/* Gentle horizon haze */}
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-blue-100/80 via-sky-50/40 to-transparent" />
 
-          {/* Realistic birds flying - more natural */}
-          <motion.div
-            className="absolute top-[40%] left-0 z-10"
-            animate={{
-              x: ['-5%', '105%'],
-              y: [0, -8, 5, -3, 0],
-            }}
-            transition={{
-              x: { duration: 45, repeat: Infinity, ease: "linear" },
-              y: { duration: 8, repeat: Infinity, ease: "easeInOut" },
-            }}
-          >
-            <div className="flex gap-2">
-              {[...Array(3)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="w-1 h-0.5 bg-gray-600/60 rounded-full"
-                  animate={{
-                    scaleX: [1, 1.2, 1],
-                    opacity: [0.6, 1, 0.6],
-                  }}
-                  transition={{
-                    duration: 2 + Math.random(),
-                    repeat: Infinity,
-                    delay: i * 0.3,
-                    ease: "easeInOut",
-                  }}
-                />
-              ))}
-            </div>
-          </motion.div>
+
 
           {/* Subtle wind effect through atmosphere */}
           <motion.div

@@ -27,8 +27,14 @@ export default function AnimatedCursor({
   const [isVisible, setIsVisible] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [isActiveClickable, setIsActiveClickable] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const outerCircleRef = useRef<HTMLDivElement>(null);
   const mouseRef = useRef({ x: 0, y: 0 });
+
+  // Prevent hydration issues by only rendering on client
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Get theme-appropriate color
   const getColor = () => {
@@ -174,6 +180,11 @@ export default function AnimatedCursor({
     : isActive 
       ? "active" 
       : "default";
+
+  // Don't render on server to prevent hydration issues
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <>
