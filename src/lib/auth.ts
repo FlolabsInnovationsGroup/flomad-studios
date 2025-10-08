@@ -57,9 +57,9 @@ export const authOptions: NextAuthOptions = {
             return null;
           }
           
-          // Check password using bcrypt for security
-          const bcrypt = await import('bcrypt');
-          const isValidPassword = await bcrypt.compare(credentials.password, user.password);
+          // Check password using bcryptjs for security
+          const { compare } = await import('bcryptjs');
+          const isValidPassword = await compare(credentials.password, user.password);
           
           if (!isValidPassword) {
             return null;
