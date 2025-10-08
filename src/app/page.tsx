@@ -1,10 +1,11 @@
 import GlassCard from '@/components/ui/GlassCard';
 import GlassButton from '@/components/ui/GlassButton';
 import CaseStudyCard from '@/components/ui/CaseStudyCard';
-import ScrollIndicator from '@/components/ui/ScrollIndicator';
-import FloatingScrollIndicator from '@/components/ui/FloatingScrollIndicator';
+import EnhancedHero from '@/components/ui/EnhancedHero';
+import { EnhancedGrid, FeatureCard } from '@/components/ui/EnhancedGrid';
+import { SkyButton, GhostButton } from '@/components/ui/EnhancedButton';
 import Link from 'next/link';
-import { Play, Users, Mic, Video, Book, GraduationCap, Heart, ArrowRight, Sparkles, Rocket, Lightbulb } from 'lucide-react';
+import { Play, Users, Mic, Video, Book, GraduationCap, Heart, ArrowRight, Rocket, Lightbulb } from 'lucide-react';
 
 export default function HomePage() {
   return (
@@ -12,150 +13,21 @@ export default function HomePage() {
       {/* Enhanced mobile readability overlay - works with full sky background */}
       <div className="md:hidden absolute inset-0 bg-white/[0.03] dark:bg-black/[0.12] pointer-events-none z-0" />
 
-      {/* Hero Section */}
-      <section className="relative min-h-[100dvh] flex items-center justify-center px-6 z-10">
-        {/* Modern Atmospheric Background Effects */}
-        <div className="absolute inset-0">
-          {/* Professional sky-themed gradient orbs */}
-          <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-gradient-to-r from-primary/15 to-secondary/10 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-l from-secondary/12 to-accent/8 rounded-full blur-3xl animate-float-delay-1" />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-br from-accent/15 to-primary/10 rounded-full blur-3xl animate-float-delay-2" />
-          <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-gradient-to-tl from-primary/12 to-secondary/8 rounded-full blur-3xl animate-float-delay-3" />
-
-          {/* Atmospheric particles */}
-          <div className="absolute inset-0 overflow-hidden opacity-40 dark:opacity-60">
-            <div className="absolute w-1 h-1 bg-primary rounded-full animate-float left-[10%] top-[20%]" />
-            <div className="absolute w-1 h-1 bg-secondary rounded-full animate-float-delay-1 left-[80%] top-[30%]" />
-            <div className="absolute w-1 h-1 bg-accent rounded-full animate-float-delay-2 left-[25%] top-[70%]" />
-            <div className="absolute w-1 h-1 bg-primary/80 rounded-full animate-float-delay-3 left-[75%] top-[60%]" />
-            <div className="absolute w-1 h-1 bg-secondary/80 rounded-full animate-float left-[45%] top-[15%]" />
-            <div className="absolute w-1 h-1 bg-accent/80 rounded-full animate-float-delay-1 left-[60%] top-[80%]" />
-            <div className="absolute w-1 h-1 bg-primary/60 rounded-full animate-float-delay-2 left-[15%] top-[50%]" />
-            <div className="absolute w-1 h-1 bg-secondary/60 rounded-full animate-float-delay-3 left-[90%] top-[10%]" />
-          </div>
-
-          {/* Professional grid pattern - Hidden on mobile */}
-          <div className="hidden md:block absolute inset-0 opacity-[0.02] dark:opacity-[0.05]">
-            <div className="h-full w-full bg-[linear-gradient(rgb(3,105,161,0.1)_1px,transparent_1px),linear-gradient(90deg,rgb(8,145,178,0.1)_1px,transparent_1px)] bg-[size:80px_80px]" />
-          </div>
-        </div>
-
-        {/* Main Content - Enhanced mobile responsiveness */}
-        <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
-          <div className="text-center max-w-6xl mx-auto">
-            {/* Professional badge - Mobile optimized */}
-            <div className="mb-6 sm:mb-8 animate-float">
-              <GlassCard className="inline-block px-6 sm:px-8 py-3 sm:py-4 glow-effect group" variant="sky" blur="xl">
-                <div className="flex items-center gap-2 sm:gap-3">
-                  <div className="p-1.5 sm:p-2 bg-primary/30 rounded-full group-hover:rotate-12 transition-transform duration-300">
-                    <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-primary dark:text-primary-300" />
-                  </div>
-                  <span className="text-xs sm:text-sm font-bold tracking-wider text-foreground uppercase">Digital Design Studio</span>
-                </div>
-              </GlassCard>
-            </div>
-
-            {/* Professional themed heading - Mobile optimized with enhanced readability */}
-            <div className="mb-6 sm:mb-8 space-y-2 sm:space-y-4">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight sm:leading-none tracking-tight">
-                <div className="relative inline-block mb-2">
-                  <span className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/15 blur-2xl rounded-2xl animate-pulse" />
-                  <span className="relative professional-heading text-enhanced-strong transform hover:scale-105 transition-transform duration-300 inline-block">
-                    Flomad
-                  </span>
-                </div>
-              </h1>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight sm:leading-none tracking-tight">
-                <span className="gradient-text-sky font-extrabold drop-shadow-2xl text-enhanced-strong transform hover:scale-105 transition-transform duration-300 inline-block">
-                  Studios
-                </span>
-              </h1>
-            </div>
-
-            {/* Professional Subtitle - Mobile optimized spacing with enhanced readability */}
-            <div className="mb-8 sm:mb-12 max-w-4xl mx-auto">
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold professional-text text-enhanced-readable leading-relaxed mb-3 sm:mb-4">
-                Creative Digital Studio
-              </p>
-              <p className="text-sm sm:text-base md:text-lg text-foreground text-enhanced-readable max-w-3xl mx-auto leading-relaxed px-2 sm:px-0">
-                The creative division of Flomad Labs R&D, where we create content and experiences for cutting-edge technology projects in AI, robotics, and emerging tech platforms.
-              </p>
-            </div>
-
-            {/* Professional CTA Section - Optimized for Mobile Touch */}
-            <div className="space-y-8">
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <GlassButton
-                  variant="primary"
-                  size="lg"
-                  glow
-                  className="group px-10 py-4 text-lg font-semibold transform hover:scale-105 transition-all duration-300 border-sky-500/30 min-h-[48px] min-w-[44px] touch-manipulation"
-                >
-                  <Link href="/contact" className="flex items-center gap-3">
-                    <span>Let&apos;s Talk</span>
-                    <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-2" />
-                  </Link>
-                </GlassButton>
-
-                <GlassButton
-                  variant="ghost"
-                  size="lg"
-                  className="group px-10 py-4 text-lg font-semibold border-amber-400/40 hover:border-yellow-400/60 transform hover:scale-105 transition-all duration-300 min-h-[48px] min-w-[44px] touch-manipulation"
-                >
-                  <Link href="/work" className="flex items-center gap-3">
-                    <div className="p-2 bg-white/10 rounded-full group-hover:bg-white/20 transition-colors duration-300">
-                      <Play className="w-5 h-5" />
-                    </div>
-                    <span>View Our Work</span>
-                  </Link>
-                </GlassButton>
-              </div>
-
-              {/* Mission Statement */}
-              <div className="flex flex-wrap justify-center gap-12 mt-16 pt-8 border-t border-sky-300/20">
-                <div className="text-center max-w-2xl">
-                  <div className="text-2xl md:text-3xl font-bold text-foreground mb-4">Our Mission</div>
-                  <div className="text-lg text-foreground leading-relaxed">
-                    To provide a collaborative creative environment where emerging talent can learn,
-                    grow, and create meaningful content alongside experienced mentors and industry professionals.
-                  </div>
-                </div>
-              </div>
-
-              {/* Trust Indicators with Sky Blue to Yellow Theme */}
-              <div className="mt-12 pt-6">
-                <p className="text-foreground text-sm lg:text-base mb-6 text-center">Building authentic content for creative professionals</p>
-                <div className="flex flex-wrap justify-center gap-6 lg:gap-8 text-foreground text-sm">
-                  <span className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-sky-400 rounded-full animate-pulse"></div>
-                    Professional Quality
-                  </span>
-                  <span className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                    Creative Excellence
-                  </span>
-                  <span className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse"></div>
-                    Timely Delivery
-                  </span>
-                  <span className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
-                    Collaborative Learning
-                  </span>
-                </div>
-              </div>
-
-              {/* Enhanced Scroll Indicator - positioned higher for better visibility */}
-              <ScrollIndicator text="Discover Our Services" hideAfterScroll={true} />
-            </div>
-          </div>
-        </div>
-
-        {/* Floating Scroll Indicator - Only show on larger screens and hide quickly */}
-        <div className="hidden lg:block">
-          <FloatingScrollIndicator hideAfterScroll={true} />
-        </div>
-      </section>
+      {/* Enhanced Hero Section */}
+      <EnhancedHero
+        subtitle="Digital Design Studio"
+        title="Flomad Studios"
+        description="The creative division of Flomad Labs R&D, where we create content and experiences for cutting-edge technology projects in AI, robotics, and emerging tech platforms."
+        primaryAction={{
+          label: "Let's Talk",
+          href: '/contact'
+        }}
+        secondaryAction={{
+          label: "View Our Work",
+          href: '/work'
+        }}
+        className="relative z-10"
+      />
 
       {/* Portfolio Showcase Section */}
       <section className="relative py-16 md:py-32 creative-gradient z-10 bg-white/5 dark:bg-black/5">
@@ -297,59 +169,38 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">{[
-            {
-              icon: Users,
-              title: "Web Design & Development",
-              description: "Creating modern, responsive websites that effectively represent your brand and engage visitors.",
-              variant: "primary" as const
-            },
-            {
-              icon: Mic,
-              title: "Brand Identity Design",
-              description: "Developing visual identity systems that help your business stand out and connect with customers.",
-              variant: "secondary" as const
-            },
-            {
-              icon: Video,
-              title: "Digital Content Creation",
-              description: "Producing engaging video, audio, and visual content to tell your brand&apos;s story across platforms.",
-              variant: "accent" as const
-            },
-            {
-              icon: Book,
-              title: "Digital Strategy",
-              description: "Planning and implementing digital solutions that align with your business goals and growth objectives.",
-              variant: "primary" as const
-            },
-            {
-              icon: GraduationCap,
-              title: "Creative Consultation",
-              description: "Providing expert guidance on digital projects, from concept development to final implementation.",
-              variant: "secondary" as const
-            },
-            {
-              icon: Heart,
-              title: "Ongoing Support",
-              description: "Maintaining and evolving your digital presence with updates, improvements, and new features.",
-              variant: "accent" as const
-            }
-          ].map((service, index) => (
-            <GlassCard
-              key={index}
-              className="p-8 text-center group fade-in hover:scale-105 transition-all duration-300"
-              variant={service.variant}
-              blur="md"
-              hover
-            >
-              <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                <service.icon className="w-12 h-12 mx-auto text-foreground" />
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-foreground">{service.title}</h3>
-              <p className="text-foreground leading-relaxed">{service.description}</p>
-            </GlassCard>
-          ))}
-          </div>
+          <EnhancedGrid columns={3} gap="lg" staggered hover3d>
+            <FeatureCard
+              title="Web Design & Development"
+              description="Creating modern, responsive websites that effectively represent your brand and engage visitors."
+              icon={<Users className="w-12 h-12" />}
+            />
+            <FeatureCard
+              title="Brand Identity Design"
+              description="Developing visual identity systems that help your business stand out and connect with customers."
+              icon={<Mic className="w-12 h-12" />}
+            />
+            <FeatureCard
+              title="Digital Content Creation"
+              description="Producing engaging video, audio, and visual content to tell your brand's story across platforms."
+              icon={<Video className="w-12 h-12" />}
+            />
+            <FeatureCard
+              title="Digital Strategy"
+              description="Planning and implementing digital solutions that align with your business goals and growth objectives."
+              icon={<Book className="w-12 h-12" />}
+            />
+            <FeatureCard
+              title="Creative Consultation"
+              description="Providing expert guidance on digital projects, from concept development to final implementation."
+              icon={<GraduationCap className="w-12 h-12" />}
+            />
+            <FeatureCard
+              title="Ongoing Support"
+              description="Maintaining and evolving your digital presence with updates, improvements, and new features."
+              icon={<Heart className="w-12 h-12" />}
+            />
+          </EnhancedGrid>
         </div>
       </section>
 
@@ -510,19 +361,25 @@ export default function HomePage() {
             Get in touch to start the conversation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center max-w-lg sm:max-w-none mx-auto">
-            <GlassButton variant="primary" size="lg" glow className="group hover:scale-105 transition-all duration-300 w-full sm:w-auto min-h-[48px] touch-manipulation">
-              <a href="https://flomad.international" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 py-1">
+            <Link href="https://flomad.international" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <SkyButton 
+                size="lg" 
+                className="w-full sm:w-auto"
+              >
                 <span>Join the Studio</span>
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </a>
-            </GlassButton>
+                <ArrowRight className="w-5 h-5" />
+              </SkyButton>
+            </Link>
 
-            <GlassButton variant="ghost" size="lg" className="group hover:scale-105 transition-all duration-300 w-full sm:w-auto min-h-[48px] touch-manipulation">
-              <a href="https://flomad.international" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 py-1">
+            <Link href="https://flomad.international" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+              <GhostButton 
+                size="lg"
+                className="w-full sm:w-auto"
+              >
                 <Lightbulb className="w-5 h-5" />
                 <span>Apply to Programs</span>
-              </a>
-            </GlassButton>
+              </GhostButton>
+            </Link>
           </div>
         </div>
       </section>

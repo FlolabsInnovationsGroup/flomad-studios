@@ -1,34 +1,31 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ArrowUp, ArrowDown, Plus, Video, Podcast, FileText, Calendar, BarChart2, TrendingUp, Users, Clock } from 'lucide-react';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
+import { EnhancedGrid } from '@/components/ui/EnhancedGrid';
+import EnhancedCard from '@/components/ui/EnhancedCard';
 import Link from 'next/link';
 
-// Mock analytics data with enhanced metrics
-const analyticsData = {
-  totalViews: {
-    value: 487923,
-    change: 12.5,
-    trend: 'up' as const
-  },
-  subscribers: {
-    value: 15782,
-    change: 8.3,
-    trend: 'up' as const
-  },
-  averageWatchTime: {
-    value: '4:35',
-    change: -2.1,
-    trend: 'down' as const
-  },
-  engagementRate: {
-    value: '24.8%',
-    change: 5.7,
-    trend: 'up' as const
-  }
-};
+// Types for API data
+interface AnalyticsData {
+  totalViews: { value: number; change: number; trend: 'up' | 'down' };
+  subscribers: { value: number; change: number; trend: 'up' | 'down' };
+  averageWatchTime: { value: string; change: number; trend: 'up' | 'down' };
+  engagementRate: { value: string; change: number; trend: 'up' | 'down' };
+  totalContent: number;
+  publishedContent: number;
+  totalUsers: number;
+}
+
+interface ContentItem {
+  id: string;
+  title: string;
+  createdAt: string;
+  published: boolean;
+  user?: { name: string | null; email: string };
+}
 
 // Weekly views data for chart
 const weeklyViewsData = [
@@ -100,28 +97,7 @@ const recentPodcasts = [
   },
 ];
 
-const recentBlogPosts = [
-  { 
-    id: '1', 
-    title: 'How to Create an Effective Design System', 
-    description: 'Step-by-step guide to building scalable design systems',
-    type: 'blog' as const,
-    publishDate: '2023-11-28',
-    status: 'published' as const,
-    metrics: { views: 2567, likes: 89, readTime: '8 min read' },
-    tags: ['Design System', 'Guidelines', 'Process']
-  },
-  { 
-    id: '2', 
-    title: 'The Future of Interactive Web Experiences', 
-    description: 'Exploring emerging technologies in web interaction',
-    type: 'blog' as const,
-    publishDate: '2023-10-15',
-    status: 'published' as const,
-    metrics: { views: 1845, likes: 67, readTime: '12 min read' },
-    tags: ['Web', 'Interactive', 'Future']
-  },
-];
+
 
 // Helper functions
 const getTrendColor = (trend: string) => {
@@ -142,12 +118,81 @@ const getBarHeight = (views: number) => {
 };
 
 export default function DashboardPage() {
+  const [analyticsData, setAnalyticsData] = useState<AnalyticsData | null>(null);
+  const [recentVideos, setRecentVideos] = useState<ContentItem[]>([]);
+  const [recentPodcasts, setRecentPodcasts] = useState<ContentItem[]>([]);
+  const [recentPosts, setRecentPosts] = useState<ContentItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchDashboardData = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch('/api/analytics');
+        
+        if (!response.ok) {
+          throw new Error('Failed to fetch dashboard data');
+        }
+        
+        const data = await response.json();
+        setAnalyticsData(data.analytics);
+        setRecentVideos(data.recentContent.videos);
+        setRecentPodcasts(data.recentContent.podcasts);
+        setRecentPosts(data.recentContent.posts);
+      } catch (err) {
+        console.error('Error fetching dashboard data:', err);
+        setError('Failed to load dashboard data. Please try again later.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDashboardData();
+  }, []);
   const [timeRange, setTimeRange] = useState<'week' | 'month' | 'year'>('week');
   
   // Handler functions for timeRange buttons
   const handleTimeRangeChange = (range: 'week' | 'month' | 'year') => {
     setTimeRange(range);
   };
+
+  if (loading) {
+    return (
+      <div className="space-y-8">
+        <div className="flex justify-between items-center">
+          <div>
+            <h1 className="text-3xl font-bold text-foreground">Dashboard</h1>
+            <p className="text-foreground/70">Loading dashboard data...</p>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[...Array(4)].map((_, i) => (
+            <Card key={i} variant="glass-elevated" className="p-6 animate-pulse">
+              <div className="h-20 bg-muted/20 rounded"></div>
+            </Card>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="space-y-8">
+        <div className="flex justify-between items-center">
+          <div>
+            <h1 className="text-3xl font-bold text-foreground">Dashboard</h1>
+            <p className="text-red-500">{error}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!analyticsData) {
+    return null;
+  }
   
   return (
     <div className="min-h-screen relative">
@@ -188,83 +233,75 @@ export default function DashboardPage() {
         </div>
       
       {/* Enhanced Analytics Cards with modern glass design */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-        <Card variant="glass-elevated" className="p-4 sm:p-6 group">
-          <div className="flex flex-col">
-            <div className="flex items-center justify-between mb-3 sm:mb-4">
-              <span className="text-xs sm:text-sm font-medium text-muted-foreground text-enhanced-readable">Total Views</span>
-              <div className="p-1.5 sm:p-2 rounded-lg bg-blue-500/20 text-blue-600 dark:text-blue-400 group-hover:bg-blue-500/30 transition-colors">
-                <BarChart2 className="h-4 w-4 sm:h-5 sm:w-5" />
-              </div>
+      <EnhancedGrid columns={4} gap="md" staggered hover3d>
+        <EnhancedCard variant="interactive" hover3D glowOnHover className="p-6">
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-sm font-medium text-white/60">Total Views</span>
+            <div className="p-2 rounded-lg bg-blue-500/20 text-blue-400">
+              <BarChart2 className="h-5 w-5" />
             </div>
-            <div className="flex items-baseline justify-between">
-              <span className="text-2xl sm:text-3xl font-bold text-foreground text-enhanced-strong">{analyticsData.totalViews.value.toLocaleString()}</span>
-              <div className={`flex items-center gap-1 text-xs sm:text-sm font-medium ${getTrendColor(analyticsData.totalViews.trend)}`}>
-                {getTrendIcon(analyticsData.totalViews.trend)}
-                <span>{analyticsData.totalViews.change}%</span>
-              </div>
-            </div>
-            <p className="text-xs text-muted-foreground mt-1 sm:mt-2 text-enhanced-readable">+2.4k from last week</p>
           </div>
-        </Card>
+          <div className="flex items-baseline justify-between mb-2">
+            <span className="text-3xl font-bold text-white">{analyticsData.totalViews.value.toLocaleString()}</span>
+            <div className={`flex items-center gap-1 text-sm font-medium ${getTrendColor(analyticsData.totalViews.trend)}`}>
+              {getTrendIcon(analyticsData.totalViews.trend)}
+              <span>{analyticsData.totalViews.change}%</span>
+            </div>
+          </div>
+          <p className="text-xs text-white/50">+2.4k from last week</p>
+        </EnhancedCard>
         
-        <Card variant="glass-elevated" className="p-4 sm:p-6 group">
-          <div className="flex flex-col">
-            <div className="flex items-center justify-between mb-3 sm:mb-4">
-              <span className="text-xs sm:text-sm font-medium text-muted-foreground text-enhanced-readable">Subscribers</span>
-              <div className="p-1.5 sm:p-2 rounded-lg bg-sky-500/20 text-sky-600 dark:text-sky-400 group-hover:bg-sky-500/30 transition-colors">
-                <Users className="h-4 w-4 sm:h-5 sm:w-5" />
-              </div>
+        <EnhancedCard variant="interactive" hover3D glowOnHover className="p-6">
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-sm font-medium text-white/60">Subscribers</span>
+            <div className="p-2 rounded-lg bg-sky-500/20 text-sky-400">
+              <Users className="h-5 w-5" />
             </div>
-            <div className="flex items-baseline justify-between">
-              <span className="text-2xl sm:text-3xl font-bold text-foreground text-enhanced-strong">{analyticsData.subscribers.value.toLocaleString()}</span>
-              <div className={`flex items-center gap-1 text-xs sm:text-sm font-medium ${getTrendColor(analyticsData.subscribers.trend)}`}>
-                {getTrendIcon(analyticsData.subscribers.trend)}
-                <span>{analyticsData.subscribers.change}%</span>
-              </div>
-            </div>
-            <p className="text-xs text-muted-foreground mt-1 sm:mt-2 text-enhanced-readable">+180 new this week</p>
           </div>
-        </Card>
+          <div className="flex items-baseline justify-between mb-2">
+            <span className="text-3xl font-bold text-white">{analyticsData.subscribers.value.toLocaleString()}</span>
+            <div className={`flex items-center gap-1 text-sm font-medium ${getTrendColor(analyticsData.subscribers.trend)}`}>
+              {getTrendIcon(analyticsData.subscribers.trend)}
+              <span>{analyticsData.subscribers.change}%</span>
+            </div>
+          </div>
+          <p className="text-xs text-white/50">+180 new this week</p>
+        </EnhancedCard>
         
-        <Card variant="glass-elevated" className="p-6 group">
-          <div className="flex flex-col">
-            <div className="flex items-center justify-between mb-4">
-              <span className="text-sm font-medium text-muted-foreground">Avg. Watch Time</span>
-              <div className="p-2 rounded-lg bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 group-hover:bg-emerald-500/30 transition-colors">
-                <Clock className="h-5 w-5" />
-              </div>
+        <EnhancedCard variant="interactive" hover3D glowOnHover className="p-6">
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-sm font-medium text-white/60">Avg. Watch Time</span>
+            <div className="p-2 rounded-lg bg-emerald-500/20 text-emerald-400">
+              <Clock className="h-5 w-5" />
             </div>
-            <div className="flex items-baseline justify-between">
-              <span className="text-3xl font-bold text-foreground">{analyticsData.averageWatchTime.value}</span>
-              <div className={`flex items-center gap-1 text-sm font-medium ${getTrendColor(analyticsData.averageWatchTime.trend)}`}>
-                {getTrendIcon(analyticsData.averageWatchTime.trend)}
-                <span>{Math.abs(analyticsData.averageWatchTime.change)}%</span>
-              </div>
-            </div>
-            <p className="text-xs text-muted-foreground mt-2">Audience retention</p>
           </div>
-        </Card>
+          <div className="flex items-baseline justify-between mb-2">
+            <span className="text-3xl font-bold text-white">{analyticsData.averageWatchTime.value}</span>
+            <div className={`flex items-center gap-1 text-sm font-medium ${getTrendColor(analyticsData.averageWatchTime.trend)}`}>
+              {getTrendIcon(analyticsData.averageWatchTime.trend)}
+              <span>{Math.abs(analyticsData.averageWatchTime.change)}%</span>
+            </div>
+          </div>
+          <p className="text-xs text-white/50">Audience retention</p>
+        </EnhancedCard>
         
-        <Card variant="glass-elevated" className="p-6 group">
-          <div className="flex flex-col">
-            <div className="flex items-center justify-between mb-4">
-              <span className="text-sm font-medium text-muted-foreground">Engagement Rate</span>
-              <div className="p-2 rounded-lg bg-pink-500/20 text-pink-600 dark:text-pink-400 group-hover:bg-pink-500/30 transition-colors">
-                <TrendingUp className="h-5 w-5" />
-              </div>
+        <EnhancedCard variant="interactive" hover3D glowOnHover className="p-6">
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-sm font-medium text-white/60">Engagement Rate</span>
+            <div className="p-2 rounded-lg bg-pink-500/20 text-pink-400">
+              <TrendingUp className="h-5 w-5" />
             </div>
-            <div className="flex items-baseline justify-between">
-              <span className="text-3xl font-bold text-foreground">{analyticsData.engagementRate.value}</span>
-              <div className={`flex items-center gap-1 text-sm font-medium ${getTrendColor(analyticsData.engagementRate.trend)}`}>
-                {getTrendIcon(analyticsData.engagementRate.trend)}
-                <span>{analyticsData.engagementRate.change}%</span>
-              </div>
-            </div>
-            <p className="text-xs text-muted-foreground mt-2">Likes, comments, shares</p>
           </div>
-        </Card>
-      </div>
+          <div className="flex items-baseline justify-between mb-2">
+            <span className="text-3xl font-bold text-white">{analyticsData.engagementRate.value}</span>
+            <div className={`flex items-center gap-1 text-sm font-medium ${getTrendColor(analyticsData.engagementRate.trend)}`}>
+              {getTrendIcon(analyticsData.engagementRate.trend)}
+              <span>{analyticsData.engagementRate.change}%</span>
+            </div>
+          </div>
+          <p className="text-xs text-white/50">Likes, comments, shares</p>
+        </EnhancedCard>
+      </EnhancedGrid>
       
       {/* Views Overview */}
       <Card className="p-6">
@@ -338,13 +375,13 @@ export default function DashboardPage() {
               <div key={video.id} className="p-2 hover:bg-muted/5 rounded-lg">
                 <div className="flex justify-between mb-1">
                   <h3 className="font-medium text-sm truncate">{video.title}</h3>
-                  <span className={`text-xs px-2 py-0.5 rounded-full ${video.status === 'published' ? 'bg-green-500/10 text-green-500' : 'bg-amber-500/10 text-amber-500'}`}>
-                    {video.status === 'published' ? 'Published' : 'Draft'}
+                  <span className={`text-xs px-2 py-0.5 rounded-full ${video.published ? 'bg-green-500/10 text-green-500' : 'bg-amber-500/10 text-amber-500'}`}>
+                    {video.published ? 'Published' : 'Draft'}
                   </span>
                 </div>
                 <div className="flex justify-between text-xs text-foreground/60">
-                  <span>{video.status === 'published' && video.metrics.views ? `${video.metrics.views.toLocaleString()} views` : 'Not published'}</span>
-                  <span>{new Date(video.publishDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                  <span>By {video.user?.name || 'Unknown'}</span>
+                  <span>{new Date(video.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                 </div>
               </div>
             ))}
@@ -377,13 +414,13 @@ export default function DashboardPage() {
               <div key={podcast.id} className="p-2 hover:bg-muted/5 rounded-lg">
                 <div className="flex justify-between mb-1">
                   <h3 className="font-medium text-sm truncate">{podcast.title}</h3>
-                  <span className={`text-xs px-2 py-0.5 rounded-full ${podcast.status === 'published' ? 'bg-green-500/10 text-green-500' : podcast.status === 'scheduled' ? 'bg-blue-500/10 text-blue-500' : 'bg-amber-500/10 text-amber-500'}`}>
-                    {podcast.status === 'published' ? 'Published' : podcast.status === 'scheduled' ? 'Scheduled' : 'Draft'}
+                  <span className={`text-xs px-2 py-0.5 rounded-full ${podcast.published ? 'bg-green-500/10 text-green-500' : 'bg-amber-500/10 text-amber-500'}`}>
+                    {podcast.published ? 'Published' : 'Draft'}
                   </span>
                 </div>
                 <div className="flex justify-between text-xs text-foreground/60">
-                  <span>{podcast.status === 'published' && podcast.metrics.views ? `${podcast.metrics.views.toLocaleString()} plays` : 'Not published'}</span>
-                  <span>{new Date(podcast.publishDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                  <span>By {podcast.user?.name || 'Unknown'}</span>
+                  <span>{new Date(podcast.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                 </div>
               </div>
             ))}
@@ -412,17 +449,17 @@ export default function DashboardPage() {
           </div>
           
           <div className="space-y-3">
-            {recentBlogPosts.map(post => (
+            {recentPosts.map(post => (
               <div key={post.id} className="p-2 hover:bg-muted/5 rounded-lg">
                 <div className="flex justify-between mb-1">
                   <h3 className="font-medium text-sm truncate">{post.title}</h3>
-                  <span className={`text-xs px-2 py-0.5 rounded-full ${post.status === 'published' ? 'bg-green-500/10 text-green-500' : 'bg-amber-500/10 text-amber-500'}`}>
-                    {post.status === 'published' ? 'Published' : 'Draft'}
+                  <span className={`text-xs px-2 py-0.5 rounded-full ${post.published ? 'bg-green-500/10 text-green-500' : 'bg-amber-500/10 text-amber-500'}`}>
+                    {post.published ? 'Published' : 'Draft'}
                   </span>
                 </div>
                 <div className="flex justify-between text-xs text-foreground/60">
-                  <span>{post.status === 'published' && post.metrics.views ? `${post.metrics.views.toLocaleString()} views` : 'Not published'}</span>
-                  <span>{new Date(post.publishDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                  <span>By {post.user?.name || 'Unknown'}</span>
+                  <span>{new Date(post.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
                 </div>
               </div>
             ))}

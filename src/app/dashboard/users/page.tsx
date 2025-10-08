@@ -1,58 +1,22 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { UserPlus, MoreVertical, Edit, Trash2, Mail, User as UserIcon, CheckCircle, X } from 'lucide-react';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 
-// Mock data for users
-const mockUsers = [
-  {
-    id: '1',
-    name: 'Alex Johnson',
-    email: 'alex@flomadstudios.com',
-    role: 'Admin',
-    avatar: 'https://ui-avatars.com/api/?name=Alex+Johnson&background=0080ff&color=fff',
-    status: 'active',
-    lastActive: '2023-12-28T14:32:00Z',
-  },
-  {
-    id: '2',
-    name: 'Sarah Miller',
-    email: 'sarah@flomadstudios.com',
-    role: 'Content Manager',
-    avatar: 'https://ui-avatars.com/api/?name=Sarah+Miller&background=6b46c1&color=fff',
-    status: 'active',
-    lastActive: '2023-12-27T11:15:00Z',
-  },
-  {
-    id: '3',
-    name: 'David Chen',
-    email: 'david@flomadstudios.com',
-    role: 'Editor',
-    avatar: 'https://ui-avatars.com/api/?name=David+Chen&background=22c55e&color=fff',
-    status: 'active',
-    lastActive: '2023-12-28T09:45:00Z',
-  },
-  {
-    id: '4',
-    name: 'Emily Rodriguez',
-    email: 'emily@flomadstudios.com',
-    role: 'Contributor',
-    avatar: 'https://ui-avatars.com/api/?name=Emily+Rodriguez&background=f97316&color=fff',
-    status: 'pending',
-    lastActive: null,
-  },
-  {
-    id: '5',
-    name: 'Michael Taylor',
-    email: 'michael@flomadstudios.com',
-    role: 'Content Manager',
-    avatar: 'https://ui-avatars.com/api/?name=Michael+Taylor&background=ec4899&color=fff',
-    status: 'active',
-    lastActive: '2023-12-26T16:20:00Z',
-  },
-];
+// Interface for user data
+interface User {
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+  avatar?: string;
+  status: 'active' | 'inactive' | 'pending';
+  lastActive?: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
 
 // Available user roles
 const userRoles = [
@@ -64,12 +28,35 @@ const userRoles = [
 ];
 
 export default function UsersPage() {
-  const [users, setUsers] = useState(mockUsers);
+  const [users, setUsers] = useState<User[]>([]);
+  const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [showMenu, setShowMenu] = useState<string | null>(null);
   const [showInviteModal, setShowInviteModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
-  const [selectedUser, setSelectedUser] = useState<typeof mockUsers[0] | null>(null);
+  const [selectedUser, setSelectedUser] = useState<User | null>(null);
+
+  // Load users from API
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch('/api/users');
+        if (response.ok) {
+          const userData = await response.json();
+          setUsers(userData);
+        } else {
+          console.error('Failed to fetch users');
+        }
+      } catch (error) {
+        console.error('Error fetching users:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUsers();
+  }, []);
   
   // Invite form state
   const [inviteForm, setInviteForm] = useState({
@@ -97,7 +84,7 @@ export default function UsersPage() {
   };
   
   // Handle edit user
-  const handleEditUser = (user: typeof mockUsers[0]) => {
+  const handleEditUser = (user: User) => {
     setSelectedUser(user);
     setShowEditModal(true);
     setShowMenu(null);
@@ -114,7 +101,7 @@ export default function UsersPage() {
     e.preventDefault();
     
     // Simulate API call
-    const newUser = {
+    const newUser: User = {
       id: (users.length + 1).toString(),
       name: inviteForm.email.split('@')[0], // Temporary name from email
       email: inviteForm.email,
@@ -122,6 +109,8 @@ export default function UsersPage() {
       avatar: `https://ui-avatars.com/api/?name=${inviteForm.email.split('@')[0]}&background=6b46c1&color=fff`,
       status: 'pending',
       lastActive: null,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
     };
     
     setUsers([...users, newUser]);
@@ -250,7 +239,7 @@ export default function UsersPage() {
                     </span>
                   </td>
                   <td className="p-4 text-foreground/70">
-                    {formatDate(user.lastActive)}
+                    {formatDate(user.lastActive || null)}
                   </td>
                   <td className="p-4 text-right">
                     <div className="relative inline-block">
