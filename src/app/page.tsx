@@ -420,7 +420,7 @@ export default function HomePage() {
                 <h4 className="text-lg font-semibold text-foreground mb-3">Produced With</h4>
                 <div className="flex flex-wrap gap-3">
                   {["Professional Audio", "Video Recording", "Post-Production", "Multi-Platform"].map((feature) => (
-                    <span key={feature} className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">
+                    <span key={feature} className="px-4 py-2 bg-blue-100 dark:bg-purple-500/20 text-blue-800 dark:text-purple-300 rounded-full text-sm font-medium tracking-wide">
                       {feature}
                     </span>
                   ))}
@@ -443,31 +443,31 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-4 lg:gap-6">
             {[
               {
                 name: "Flomad Labs",
                 description: "AI & Robotics R&D",
                 url: "https://flomadlabs.com",
-                color: "bg-blue-500/10 border-blue-400/30 hover:bg-blue-500/20"
+                color: "bg-blue-100/80 dark:bg-blue-500/10 border-blue-500/50 dark:border-blue-400/30 hover:bg-blue-200/80 dark:hover:bg-blue-500/20 text-blue-900 dark:text-blue-100"
               },
               {
                 name: "Flomad International", 
                 description: "Education Programs",
                 url: "https://flomad.international",
-                color: "bg-emerald-500/10 border-emerald-400/30 hover:bg-emerald-500/20"
+                color: "bg-emerald-100/80 dark:bg-emerald-500/10 border-emerald-600/50 dark:border-emerald-400/30 hover:bg-emerald-200/80 dark:hover:bg-emerald-500/20 text-emerald-900 dark:text-emerald-100"
               },
               {
                 name: "Flomad Travel",
                 description: "AI-Powered Travel",
                 url: "https://flomadtravel.com",
-                color: "bg-purple-500/10 border-purple-400/30 hover:bg-purple-500/20"
+                color: "bg-indigo-100/80 dark:bg-purple-500/10 border-indigo-600/50 dark:border-purple-400/30 hover:bg-indigo-200/80 dark:hover:bg-purple-500/20 text-indigo-900 dark:text-purple-100"
               },
               {
                 name: "CAIPO",
                 description: "AI Productivity Officer",
                 url: "https://caipo.ai",
-                color: "bg-amber-500/10 border-amber-400/30 hover:bg-amber-500/20"
+                color: "bg-amber-100/80 dark:bg-amber-500/10 border-amber-600/50 dark:border-amber-400/30 hover:bg-amber-200/80 dark:hover:bg-amber-500/20 text-amber-900 dark:text-amber-100"
               }
             ].map((platform) => (
               <a
@@ -475,12 +475,12 @@ export default function HomePage() {
                 href={platform.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`p-4 rounded-lg border transition-all duration-300 text-center group ${platform.color}`}
+                className={`p-6 sm:p-4 md:p-6 rounded-xl border-2 transition-all duration-300 text-center group hover:scale-105 hover:shadow-lg ${platform.color}`}
               >
-                <div className="font-semibold text-foreground group-hover:scale-105 transition-transform">
+                <div className="font-bold group-hover:scale-105 transition-transform mb-2 text-base sm:text-sm md:text-base leading-relaxed tracking-wide">
                   {platform.name}
                 </div>
-                <div className="text-sm text-foreground/60 mt-1">
+                <div className="text-sm opacity-80 leading-relaxed tracking-wide px-1 sm:px-2">
                   {platform.description}
                 </div>
               </a>
