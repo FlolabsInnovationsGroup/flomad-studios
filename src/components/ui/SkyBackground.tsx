@@ -232,14 +232,14 @@ export default function SkyBackground() {
         });
       }
 
-      // Wispy cirrus clouds - high altitude, more visible
+      // Wispy cirrus clouds - high altitude, more visible with better mobile proportions
       for (let i = 5; i < 9; i++) {
         newClouds.push({
           id: i,
           x: Math.random() * 130 - 30,
           y: Math.random() * 20 + 5, // Higher in sky
           width: Math.random() * 35 + 25, // Larger for visibility
-          height: Math.random() * 8 + 4,
+          height: Math.random() * 12 + 8, // Increased height for better mobile appearance
           opacity: Math.random() * 0.5 + 0.4, // More visible
           speed: Math.random() * 0.04 + 0.025,
           type: 'cirrus',
@@ -881,9 +881,9 @@ export default function SkyBackground() {
 
                 {cloud.type === 'cirrus' && (
                   <>
-                    {/* Main cirrus streak - no blur, sharp feathery edges */}
+                    {/* Main cirrus streak - improved mobile appearance */}
                     <div
-                      className="absolute w-4/5 h-1/8 left-1/10 top-2/5"
+                      className="absolute w-4/5 h-1/4 sm:h-1/6 md:h-1/8 left-1/10 top-2/5"
                       style={{
                         background: `
                           linear-gradient(88deg, 
@@ -904,7 +904,7 @@ export default function SkyBackground() {
                     
                     {/* Feathery tendrils */}
                     <div
-                      className="absolute w-3/5 h-1/12 left-1/5 top-1/3"
+                      className="absolute w-3/5 h-1/6 sm:h-1/8 md:h-1/12 left-1/5 top-1/3"
                       style={{
                         background: `
                           linear-gradient(82deg, 
@@ -923,7 +923,7 @@ export default function SkyBackground() {
                     
                     {/* Wispy trails */}
                     <div
-                      className="absolute w-1/2 h-1/16 left-2/5 top-3/5"
+                      className="absolute w-1/2 h-1/8 sm:h-1/12 md:h-1/16 left-2/5 top-3/5"
                       style={{
                         background: `
                           linear-gradient(75deg, 

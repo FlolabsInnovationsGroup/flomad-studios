@@ -24,9 +24,9 @@ export default function Navigation() {
       return (
         <div className="flex items-center space-x-3">
           <GlassButton variant="secondary" size="sm" className="border-primary/30 hover:border-primary/50 hover:bg-primary/10">
-            <Link href="/dashboard" className="text-primary-foreground hover:text-primary">Dashboard</Link>
+            <Link href="/dashboard" className="text-primary-foreground hover:text-primary tracking-wide px-1">Dashboard</Link>
           </GlassButton>
-          <GlassButton variant="ghost" size="sm" onClick={() => signOut()} className="border-accent/30 hover:border-accent/50 hover:bg-accent/10 text-foreground hover:text-accent-foreground">
+          <GlassButton variant="ghost" size="sm" onClick={() => signOut()} className="border-accent/30 hover:border-accent/50 hover:bg-accent/10 text-foreground hover:text-accent-foreground tracking-wide">
             Logout
           </GlassButton>
         </div>
@@ -34,7 +34,7 @@ export default function Navigation() {
     }
     return (
       <GlassButton variant="primary" size="sm" glow className="border-primary/30 bg-gradient-to-r from-primary/20 to-secondary/20 hover:from-primary/30 hover:to-secondary/30">
-        <Link href="/login" className="text-foreground font-medium">Login</Link>
+        <Link href="/login" className="text-foreground font-medium tracking-wide px-1">Login</Link>
       </GlassButton>
     );
   };
@@ -49,7 +49,7 @@ export default function Navigation() {
               key={item.name}
               href={item.href}
               className={cn(
-                'nav-link relative font-medium text-foreground hover:text-primary whitespace-nowrap transition-all duration-300 px-3 py-2 rounded-lg hover:bg-primary/10',
+                'nav-link relative font-medium text-foreground hover:text-primary whitespace-nowrap transition-all duration-300 px-4 py-3 rounded-lg hover:bg-primary/10 tracking-wide min-h-[44px] flex items-center',
                 pathname === item.href
                   ? 'text-primary font-semibold bg-primary/15 border border-primary/20 shadow-sm'
                   : 'hover:bg-primary/5'

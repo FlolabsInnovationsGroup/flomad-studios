@@ -34,10 +34,10 @@ const GlassButton: React.FC<GlassButtonProps> = ({
   };
 
   const sizes = {
-    sm: 'px-3 py-1.5 text-sm min-h-[32px]',
-    md: 'px-4 py-2 text-base min-h-[40px]',
-    lg: 'px-6 py-3 text-lg min-h-[48px]',
-    xl: 'px-8 py-4 text-xl min-h-[56px]',
+    sm: 'px-4 py-2.5 text-sm min-h-[32px] gap-2',
+    md: 'px-6 py-3.5 text-base min-h-[40px] gap-2',
+    lg: 'px-8 py-4.5 text-lg min-h-[48px] gap-3',
+    xl: 'px-10 py-5 text-xl min-h-[56px] gap-3',
   };
 
   return (
@@ -54,6 +54,7 @@ const GlassButton: React.FC<GlassButtonProps> = ({
         'focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2',
         'touch-manipulation',
         'select-none',
+        'tracking-wide',
 
         // Variant styles
         variants[variant],
