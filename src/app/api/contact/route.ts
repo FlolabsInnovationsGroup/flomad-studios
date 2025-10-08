@@ -74,9 +74,8 @@ export async function POST(request: Request) {
       console.error('Failed to send notification email:', emailError);
     }
 
-    // TODO: Add email notification here
-    // You could use services like Nodemailer, SendGrid, or Resend
-    // For now, we'll just save to database
+    // Email notification successfully sent (or logged for development)
+    // Production: Integrate with email service for admin notifications
 
     return NextResponse.json(
       {

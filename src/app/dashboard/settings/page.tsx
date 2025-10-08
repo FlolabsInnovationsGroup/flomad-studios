@@ -1,26 +1,29 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSession } from 'next-auth/react';
 import { User, Bell, Lock, Save, Trash2 } from 'lucide-react';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 
 export default function SettingsPage() {
+  const { data: session } = useSession();
   const [activeTab, setActiveTab] = useState('profile');
   const [saving, setSaving] = useState(false);
+  const [loading, setLoading] = useState(true);
   
-  // Mock profile data
+  // Profile data from session/API
   const [profileData, setProfileData] = useState({
-    name: 'Alex Johnson',
-    email: 'alex@flomadstudios.com',
-    role: 'Content Manager',
-    bio: 'UI/UX designer with 5+ years of experience in creating engaging digital experiences.',
-    website: 'https://alexjohnson.design',
-    twitter: '@alexjdesign',
-    location: 'San Francisco, CA'
+    name: '',
+    email: '',
+    role: '',
+    bio: '',
+    website: '',
+    twitter: '',
+    location: ''
   });
   
-  // Mock notification settings
+  // User preferences
   const [notificationSettings, setNotificationSettings] = useState({
     emailDigest: true,
     contentComments: true,
@@ -30,12 +33,28 @@ export default function SettingsPage() {
     marketingEmails: false
   });
   
-  // Mock appearance settings
+  // Appearance settings
   const [appearanceSettings, setAppearanceSettings] = useState({
     theme: 'system',
     compactMode: false,
     animationsEnabled: true
   });
+
+  // Load user data from session
+  useEffect(() => {
+    if (session?.user) {
+      setProfileData({
+        name: session.user.name || '',
+        email: session.user.email || '',
+        role: (session.user as { role?: string }).role || 'User',
+        bio: '',
+        website: '',
+        twitter: '',
+        location: ''
+      });
+      setLoading(false);
+    }
+  }, [session]);
   
   // Update profile data
   const handleProfileChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

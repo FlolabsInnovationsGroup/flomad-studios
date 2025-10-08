@@ -1,42 +1,57 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MoreVertical, Edit, Trash2, Eye, Plus, Search } from 'lucide-react';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 import Link from 'next/link';
 
-// Mock data for blog posts
-const mockBlogPosts = [
-  {
-    id: '1',
-    title: 'Design System Fundamentals',
-    excerpt: 'Essential principles for creating scalable design systems.',
-    coverImage: 'https://images.unsplash.com/photo-1561070791-2526d30994b5',
-    readTime: '8 min read',
-    views: 1250,
-    published: true,
-    date: '2023-11-28',
-    category: 'Design',
-  },
-  {
-    id: '2',
-    title: 'Modern Web Design Trends',
-    excerpt: 'Current trends shaping digital experiences.',
-    coverImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
-    readTime: '6 min read',
-    views: 890,
-    published: false,
-    date: '2023-10-15',
-    category: 'Web Design',
-  },
-];
+// Define the Post type
+interface PostData {
+  id: string;
+  title: string;
+  content: string;
+  published: boolean;
+  createdAt: string;
+  updatedAt: string;
+  userId: string;
+  user?: {
+    name: string | null;
+    email: string;
+  };
+}
 
 export default function BlogPage() {
-  const [blogPosts, setBlogPosts] = useState(mockBlogPosts);
+  const [blogPosts, setBlogPosts] = useState<PostData[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [filter, setFilter] = useState('all'); // 'all', 'published', 'drafts'
   const [showActionMenu, setShowActionMenu] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Fetch posts from the API
+    const fetchPosts = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch('/api/posts');
+        
+        if (!response.ok) {
+          throw new Error('Failed to fetch posts');
+        }
+        
+        const data = await response.json();
+        setBlogPosts(data);
+      } catch (err) {
+        console.error('Error fetching posts:', err);
+        setError('Failed to load posts. Please try again later.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPosts();
+  }, []);
 
   const filteredBlogPosts = blogPosts
     .filter(post => {
@@ -47,19 +62,55 @@ export default function BlogPage() {
     })
     .filter(post => 
       post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      post.category.toLowerCase().includes(searchQuery.toLowerCase())
+      post.content.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-  const handleDelete = (id: string) => {
-    setBlogPosts(blogPosts.filter(post => post.id !== id));
-    setShowActionMenu(null);
+  const handleDelete = async (id: string) => {
+    try {
+      const response = await fetch(`/api/posts/${id}`, {
+        method: 'DELETE',
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to delete post');
+      }
+
+      setBlogPosts(blogPosts.filter(post => post.id !== id));
+      setShowActionMenu(null);
+    } catch (err) {
+      console.error('Error deleting post:', err);
+      alert('Failed to delete post. Please try again.');
+    }
   };
 
-  const togglePublish = (id: string) => {
-    setBlogPosts(blogPosts.map(post => 
-      post.id === id ? { ...post, published: !post.published } : post
-    ));
-    setShowActionMenu(null);
+  const togglePublish = async (id: string) => {
+    const post = blogPosts.find(p => p.id === id);
+    if (!post) return;
+
+    try {
+      const response = await fetch(`/api/posts/${id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          published: !post.published
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to update post');
+      }
+
+      const updatedPost = await response.json();
+      setBlogPosts(blogPosts.map(p => 
+        p.id === id ? updatedPost : p
+      ));
+      setShowActionMenu(null);
+    } catch (err) {
+      console.error('Error updating post:', err);
+      alert('Failed to update post. Please try again.');
+    }
   };
 
   return (
@@ -77,6 +128,20 @@ export default function BlogPage() {
         </Button>
       </div>
 
+      {loading && (
+        <Card variant="glass" className="p-8 text-center">
+          <p className="text-foreground/70">Loading posts...</p>
+        </Card>
+      )}
+
+      {error && (
+        <Card variant="glass" className="p-8 text-center">
+          <p className="text-red-500">{error}</p>
+        </Card>
+      )}
+
+      {!loading && !error && (
+        <>
       {/* Filters and Search */}
       <div className="flex flex-col sm:flex-row gap-4 justify-between">
         <div className="flex gap-2">
@@ -121,11 +186,10 @@ export default function BlogPage() {
             <thead>
               <tr className="border-b border-border text-left">
                 <th className="p-4 font-medium">Post</th>
-                <th className="p-4 font-medium">Category</th>
-                <th className="p-4 font-medium">Read Time</th>
-                <th className="p-4 font-medium">Views</th>
+                <th className="p-4 font-medium">Author</th>
                 <th className="p-4 font-medium">Status</th>
-                <th className="p-4 font-medium">Date</th>
+                <th className="p-4 font-medium">Created</th>
+                <th className="p-4 font-medium">Updated</th>
                 <th className="p-4 font-medium text-right">Actions</th>
               </tr>
             </thead>
@@ -133,29 +197,16 @@ export default function BlogPage() {
               {filteredBlogPosts.map((post) => (
                 <tr key={post.id} className="border-b border-border hover:bg-muted/5">
                   <td className="p-4">
-                    <div className="flex items-center gap-3">
-                      <div className="relative w-12 h-12 bg-muted rounded overflow-hidden">
-                        <div 
-                          className="absolute inset-0 bg-cover bg-center" 
-                          style={{ 
-                            backgroundImage: `url(${post.coverImage})`,
-                            // Dynamic content requires inline styles
-                          }}
-                        />
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="font-medium truncate max-w-[250px]">{post.title}</span>
-                        <span className="text-xs text-foreground/60 truncate max-w-[250px]">{post.excerpt}</span>
-                      </div>
+                    <div className="flex flex-col">
+                      <span className="font-medium truncate max-w-[250px]">{post.title}</span>
+                      <span className="text-xs text-foreground/60 truncate max-w-[300px]">
+                        {post.content.slice(0, 80)}...
+                      </span>
                     </div>
                   </td>
-                  <td className="p-4">
-                    <span className="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">
-                      {post.category}
-                    </span>
+                  <td className="p-4 text-foreground/70">
+                    {post.user?.name || 'Unknown'}
                   </td>
-                  <td className="p-4 text-foreground/70">{post.readTime}</td>
-                  <td className="p-4 text-foreground/70">{post.views.toLocaleString()}</td>
                   <td className="p-4">
                     <span className={`px-2 py-1 rounded-full text-xs ${
                       post.published 
@@ -165,7 +216,12 @@ export default function BlogPage() {
                       {post.published ? 'Published' : 'Draft'}
                     </span>
                   </td>
-                  <td className="p-4 text-foreground/70">{post.date}</td>
+                  <td className="p-4 text-foreground/70">
+                    {new Date(post.createdAt).toLocaleDateString()}
+                  </td>
+                  <td className="p-4 text-foreground/70">
+                    {new Date(post.updatedAt).toLocaleDateString()}
+                  </td>
                   <td className="p-4 text-right">
                     <div className="relative inline-block">
                       <button 
@@ -208,7 +264,7 @@ export default function BlogPage() {
               
               {filteredBlogPosts.length === 0 && (
                 <tr>
-                  <td colSpan={7} className="p-8 text-center text-foreground/50">
+                  <td colSpan={6} className="p-8 text-center text-foreground/50">
                     {searchQuery 
                       ? "No blog posts match your search" 
                       : filter !== 'all' 
@@ -221,6 +277,8 @@ export default function BlogPage() {
           </table>
         </div>
       </Card>
+        </>
+      )}
     </div>
   );
 } 

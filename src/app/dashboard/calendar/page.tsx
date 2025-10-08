@@ -1,69 +1,19 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Calendar, Video, Podcast, FileText, ChevronLeft, ChevronRight, Plus, MoreVertical, Edit, Trash2 } from 'lucide-react';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
 
-// Mock data for scheduled content
-const mockScheduledContent = [
-  {
-    id: '1',
-    title: 'How to Create an Effective Design System',
-    date: '2024-01-02',
-    time: '09:00',
-    type: 'blog',
-    status: 'scheduled',
-  },
-  {
-    id: '2',
-    title: 'Brand Design Process Walkthrough',
-    date: '2024-01-04',
-    time: '14:30',
-    type: 'video',
-    status: 'scheduled',
-  },
-  {
-    id: '3',
-    title: 'Design Principles for Effective UX',
-    date: '2024-01-08',
-    time: '11:00',
-    type: 'podcast',
-    status: 'scheduled',
-  },
-  {
-    id: '4',
-    title: 'UI/UX Design Principles for Beginners',
-    date: '2024-01-10',
-    time: '16:00',
-    type: 'video',
-    status: 'scheduled',
-  },
-  {
-    id: '5',
-    title: 'The Future of Interactive Web Experiences',
-    date: '2024-01-12',
-    time: '10:30',
-    type: 'blog',
-    status: 'draft',
-  },
-  {
-    id: '6',
-    title: 'Client Communication Masterclass',
-    date: '2024-01-15',
-    time: '13:00',
-    type: 'podcast',
-    status: 'draft',
-  },
-  {
-    id: '7',
-    title: 'Latest Web Design Trends 2024',
-    date: '2024-01-18',
-    time: '15:00',
-    type: 'video',
-    status: 'draft',
-  },
-];
+// Interface for scheduled content
+interface ScheduledContent {
+  id: string;
+  title: string;
+  date: string;
+  time: string;
+  type: 'blog' | 'video' | 'podcast';
+  status: 'draft' | 'scheduled' | 'published' | 'recording';
+}
 
 // Helper to get all days in a month
 const getDaysInMonth = (year: number, month: number) => {
@@ -107,8 +57,28 @@ export default function ContentCalendarPage() {
   const currentDate = new Date();
   const [selectedMonth, setSelectedMonth] = useState(currentDate.getMonth());
   const [selectedYear, setSelectedYear] = useState(currentDate.getFullYear());
-  const [scheduledContent, setScheduledContent] = useState(mockScheduledContent);
+  const [scheduledContent, setScheduledContent] = useState<ScheduledContent[]>([]);
+  const [loading, setLoading] = useState(true);
   const [showEventMenu, setShowEventMenu] = useState<string | null>(null);
+
+  // Load scheduled content on component mount
+  useEffect(() => {
+    const fetchScheduledContent = async () => {
+      try {
+        setLoading(true);
+        // TODO: Implement API endpoint for scheduled content
+        // For now, using empty array until scheduling feature is fully implemented
+        setScheduledContent([]);
+      } catch (error) {
+        console.error('Error fetching scheduled content:', error);
+        setScheduledContent([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchScheduledContent();
+  }, []);
 
   // Names of months and days
   const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -169,7 +139,7 @@ export default function ContentCalendarPage() {
   // Filter events by content type
   const filteredEvents = selectedType === 'All'
     ? scheduledContent
-    : scheduledContent.filter(event => event.type === selectedType.toLowerCase());
+    : scheduledContent.filter((event: ScheduledContent) => event.type === selectedType.toLowerCase());
 
   return (
     <div className="space-y-6">
@@ -181,7 +151,8 @@ export default function ContentCalendarPage() {
         <Button
           className="flex items-center gap-2"
           onClick={() => {
-            // TODO: Implement new event modal
+            // New event modal functionality can be implemented when needed
+            console.log('Schedule content clicked - implement modal functionality as needed');
           }}
         >
           <Plus size={16} />

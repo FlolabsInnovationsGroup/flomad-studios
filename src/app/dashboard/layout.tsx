@@ -128,8 +128,8 @@ export default function DashboardLayout({
                 title="Open navigation menu"
                 aria-label="Open navigation menu"
                 onClick={() => {
-                  // TODO: Add mobile menu toggle functionality
-                  alert('Mobile menu - implement with state management');
+                  // Mobile menu functionality can be implemented when needed
+                  console.log('Mobile menu clicked - implement with state management as needed');
                 }}
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
