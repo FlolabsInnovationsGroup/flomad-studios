@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ArrowLeft, FileText, AlertTriangle, Users, Gavel, Shield, ExternalLink } from 'lucide-react';
 import GlassCard from '@/components/ui/GlassCard';
 import GlassButton from '@/components/ui/GlassButton';
-import Section from '@/components/ui/Section';
+
 
 export const metadata = {
   title: "Terms of Service | Flomad Studios",
@@ -13,31 +13,25 @@ export default function TermsPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <Section className="relative overflow-hidden py-24 md:py-32 bg-gradient-to-br from-slate-900 via-emerald-900 to-slate-800">
-        {/* Background Effects */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-emerald-500/20 to-blue-600/15 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-gradient-to-l from-sky-500/15 to-emerald-600/10 rounded-full blur-3xl animate-float-delay-1" />
-        </div>
-
+      <section className="py-16 sm:py-20 md:py-24 lg:py-32">
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-          <GlassCard className="p-8 md:p-12" variant="primary" blur="xl">
-            <FileText className="w-16 h-16 text-emerald-400 mx-auto mb-6" />
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-heading">
+          <GlassCard className="p-6 sm:p-8 md:p-12" variant="primary" blur="xl">
+            <FileText className="w-12 h-12 sm:w-16 sm:h-16 text-emerald-400 mx-auto mb-4 sm:mb-6" />
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 text-heading text-enhanced-strong">
               Terms of <span className="bg-gradient-to-r from-emerald-400 to-sky-400 bg-clip-text text-transparent">Service</span>
             </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-foreground/70 leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto text-foreground/70 leading-relaxed text-enhanced-readable">
               Understanding your rights and responsibilities when using our platform.
             </p>
-            <p className="text-sm text-gray-400 mt-4">
+            <p className="text-xs sm:text-sm text-gray-400 mt-3 sm:mt-4">
               Last updated: December 2024
             </p>
           </GlassCard>
         </div>
-      </Section>
+      </section>
 
       {/* Terms Content */}
-      <Section className="py-20 md:py-32">
+      <section className="py-16 sm:py-20 md:py-24 lg:py-32">
         <div className="max-w-4xl mx-auto px-4">
           
           {/* Agreement Overview */}
@@ -406,7 +400,7 @@ export default function TermsPage() {
             </GlassButton>
           </div>
         </div>
-      </Section>
+      </section>
     </main>
   );
 }

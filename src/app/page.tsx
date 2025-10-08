@@ -1,8 +1,6 @@
 import GlassCard from '@/components/ui/GlassCard';
 import GlassButton from '@/components/ui/GlassButton';
 import CaseStudyCard from '@/components/ui/CaseStudyCard';
-import ClientGeometricBackground from '@/components/ui/ClientGeometricBackground';
-
 import ScrollIndicator from '@/components/ui/ScrollIndicator';
 import FloatingScrollIndicator from '@/components/ui/FloatingScrollIndicator';
 import Link from 'next/link';
@@ -11,12 +9,6 @@ import { Play, Users, Mic, Video, Book, GraduationCap, Heart, ArrowRight, Sparkl
 export default function HomePage() {
   return (
     <main className="min-h-[100dvh] relative overflow-x-hidden">
-
-      {/* Geometric Background - Completely disabled */}
-      <div className="hidden absolute inset-0 w-full h-full">
-        <ClientGeometricBackground />
-      </div>
-
       {/* Enhanced mobile readability overlay - works with full sky background */}
       <div className="md:hidden absolute inset-0 bg-white/[0.03] dark:bg-black/[0.12] pointer-events-none z-0" />
 

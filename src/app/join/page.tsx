@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, Users, Lightbulb, Zap, Heart, Video, Mic, BookOpen, Calendar } from 'lucide-react';
 import GlassCard from '@/components/ui/GlassCard';
 import GlassButton from '@/components/ui/GlassButton';
-import Section from '@/components/ui/Section';
+
 import { cn } from '@/lib/utils';
 
 export const metadata = {
@@ -34,7 +34,7 @@ export default function JoinPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <Section className="py-24 md:py-32">
+      <section className="py-24 md:py-32">
         <div className="relative z-10 text-center max-w-5xl mx-auto px-4">
           <GlassCard className="p-8 md:p-12 mb-8 border border-border/60" variant="primary" blur="xl">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-heading">
@@ -59,10 +59,10 @@ export default function JoinPage() {
             </div>
           </GlassCard>
         </div>
-      </Section>
+      </section>
 
       {/* What We Offer Section */}
-      <Section backdrop="subtle" className="py-20 md:py-32" id="learn-more">
+      <section className="py-20 md:py-32" id="learn-more">
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-heading mb-6">
@@ -107,10 +107,10 @@ export default function JoinPage() {
             })}
           </div>
         </div>
-      </Section>
+      </section>
 
       {/* Content Areas Section */}
-      <Section backdrop="intense" className="py-20 md:py-32">
+      <section className="py-20 md:py-32">
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-heading mb-6">
@@ -176,10 +176,10 @@ export default function JoinPage() {
             })}
           </div>
         </div>
-      </Section>
+      </section>
 
       {/* Application Process Section */}
-      <Section backdrop="subtle" className="py-20 md:py-32">
+      <section className="py-20 md:py-32">
         <div className="relative z-10 max-w-5xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-heading mb-6">
@@ -241,10 +241,10 @@ export default function JoinPage() {
             })}
           </div>
         </div>
-      </Section>
+      </section>
 
       {/* FAQ Section */}
-      <Section backdrop="intense" className="py-20 md:py-32">
+      <section className="py-20 md:py-32">
         <div className="relative z-10 max-w-4xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-heading mb-6">
@@ -282,10 +282,10 @@ export default function JoinPage() {
             ))}
           </div>
         </div>
-      </Section>
+      </section>
 
       {/* Final CTA Section */}
-      <Section backdrop="intense" className="py-20 md:py-32">
+      <section className="py-20 md:py-32">
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <GlassCard className="p-12" variant="primary" blur="xl" glow>
             <h2 className="text-4xl md:text-5xl font-bold text-heading mb-6">
@@ -313,7 +313,7 @@ export default function JoinPage() {
             </div>
           </GlassCard>
         </div>
-      </Section>
+      </section>
     </main>
   );
 }

@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Play, Calendar } from 'lucide-react';
 import { prisma } from '@/lib/prisma';
-import Section from '@/components/ui/Section';
+
 import Button from '@/components/ui/Button';
 import OptimizedImage from '@/components/ui/Image';
 
@@ -47,7 +47,7 @@ export default async function VideosPage() {
   return (
     <main className="min-h-screen fade-in">
       {/* Header */}
-      <Section className="relative overflow-hidden py-24 md:py-32">
+      <section className="relative overflow-hidden py-24 md:py-32">
         <div className="creative-gradient absolute inset-0 opacity-20" />
         <div className="absolute top-20 left-10 w-32 h-32 bg-radial-gradient-primary rounded-full animate-pulse opacity-60" />
         <div className="absolute bottom-20 right-10 w-24 h-24 bg-radial-gradient-secondary rounded-full animate-pulse opacity-40" />
@@ -60,10 +60,10 @@ export default async function VideosPage() {
             </p>
           </div>
         </div>
-      </Section>
+      </section>
 
       {/* Video Grid */}
-      <Section className="py-16 md:py-24">
+      <section className="py-16 md:py-24">
         {videos.length === 0 ? (
           <div className="glass-card p-12 text-center max-w-2xl mx-auto">
             <h2 className="text-3xl font-bold mb-4 gradient-text-visible">No videos available yet</h2>
@@ -167,10 +167,10 @@ export default async function VideosPage() {
             })}
           </div>
         )}
-      </Section>
+      </section>
 
       {/* CTA Section */}
-      <Section className="relative overflow-hidden py-16 md:py-24">
+      <section className="relative overflow-hidden py-16 md:py-24">
         <div className="creative-gradient absolute inset-0 opacity-20" />
         <div className="absolute top-10 right-20 w-40 h-40 bg-radial-gradient-primary rounded-full animate-pulse opacity-40" />
         <div className="absolute bottom-10 left-20 w-32 h-32 bg-radial-gradient-secondary rounded-full animate-pulse opacity-30" />
@@ -191,7 +191,7 @@ export default async function VideosPage() {
             </Link>
           </div>
         </div>
-      </Section>
+      </section>
     </main>
   );
 }

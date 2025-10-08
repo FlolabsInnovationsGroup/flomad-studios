@@ -154,33 +154,33 @@ export default function DashboardPage() {
       {/* Main content with enhanced spacing and modern design */}
       <div className="space-y-8 relative z-10">
         {/* Enhanced header section with gradients and modern styling */}
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-10">
-          <div className="space-y-3">
-            <h1 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-sky-500 via-emerald-400 to-yellow-400 bg-clip-text text-transparent">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 sm:gap-6 mb-8 sm:mb-10">
+          <div className="space-y-2 sm:space-y-3">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-sky-500 via-emerald-400 to-yellow-400 bg-clip-text text-transparent text-enhanced-strong">
               Creative Dashboard
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl drop-shadow-sm">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl drop-shadow-sm text-enhanced-readable">
               Monitor your creative journey, track performance, and manage your content with modern analytics
             </p>
           </div>
           
           {/* Enhanced action buttons with glass effects */}
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-2 sm:gap-3">
             <Link href="/dashboard/videos/upload">
-              <Button className="glass-elevated hover:scale-105 hover:shadow-lg transition-all duration-300 bg-gradient-to-r from-sky-500 to-emerald-500 border-0">
-                <Video className="mr-2 h-4 w-4" />
+              <Button className="glass-elevated hover:scale-105 hover:shadow-lg transition-all duration-300 bg-gradient-to-r from-sky-500 to-emerald-500 border-0 text-sm sm:text-base px-3 sm:px-4 py-2 sm:py-3">
+                <Video className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
                 Upload Video
               </Button>
             </Link>
             <Link href="/dashboard/podcasts/upload">
-              <Button variant="outline" className="glass-subtle hover:scale-105 hover:shadow-md transition-all duration-300 border-white/20 hover:bg-white/10">
-                <Podcast className="mr-2 h-4 w-4" />
+              <Button variant="outline" className="glass-subtle hover:scale-105 hover:shadow-md transition-all duration-300 border-white/20 hover:bg-white/10 text-sm sm:text-base px-3 sm:px-4 py-2 sm:py-3">
+                <Podcast className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
                 New Podcast
               </Button>
             </Link>
             <Link href="/dashboard/blog/new">
-              <Button variant="outline" className="glass-subtle hover:scale-105 hover:shadow-md transition-all duration-300 border-white/20 hover:bg-white/10">
-                <FileText className="mr-2 h-4 w-4" />
+              <Button variant="outline" className="glass-subtle hover:scale-105 hover:shadow-md transition-all duration-300 border-white/20 hover:bg-white/10 text-sm sm:text-base px-3 sm:px-4 py-2 sm:py-3">
+                <FileText className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
                 Write Article
               </Button>
             </Link>
@@ -188,42 +188,42 @@ export default function DashboardPage() {
         </div>
       
       {/* Enhanced Analytics Cards with modern glass design */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card variant="glass-elevated" className="p-6 group">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <Card variant="glass-elevated" className="p-4 sm:p-6 group">
           <div className="flex flex-col">
-            <div className="flex items-center justify-between mb-4">
-              <span className="text-sm font-medium text-muted-foreground">Total Views</span>
-              <div className="p-2 rounded-lg bg-blue-500/20 text-blue-600 dark:text-blue-400 group-hover:bg-blue-500/30 transition-colors">
-                <BarChart2 className="h-5 w-5" />
+            <div className="flex items-center justify-between mb-3 sm:mb-4">
+              <span className="text-xs sm:text-sm font-medium text-muted-foreground text-enhanced-readable">Total Views</span>
+              <div className="p-1.5 sm:p-2 rounded-lg bg-blue-500/20 text-blue-600 dark:text-blue-400 group-hover:bg-blue-500/30 transition-colors">
+                <BarChart2 className="h-4 w-4 sm:h-5 sm:w-5" />
               </div>
             </div>
             <div className="flex items-baseline justify-between">
-              <span className="text-3xl font-bold text-foreground">{analyticsData.totalViews.value.toLocaleString()}</span>
-              <div className={`flex items-center gap-1 text-sm font-medium ${getTrendColor(analyticsData.totalViews.trend)}`}>
+              <span className="text-2xl sm:text-3xl font-bold text-foreground text-enhanced-strong">{analyticsData.totalViews.value.toLocaleString()}</span>
+              <div className={`flex items-center gap-1 text-xs sm:text-sm font-medium ${getTrendColor(analyticsData.totalViews.trend)}`}>
                 {getTrendIcon(analyticsData.totalViews.trend)}
                 <span>{analyticsData.totalViews.change}%</span>
               </div>
             </div>
-            <p className="text-xs text-muted-foreground mt-2">+2.4k from last week</p>
+            <p className="text-xs text-muted-foreground mt-1 sm:mt-2 text-enhanced-readable">+2.4k from last week</p>
           </div>
         </Card>
         
-        <Card variant="glass-elevated" className="p-6 group">
+        <Card variant="glass-elevated" className="p-4 sm:p-6 group">
           <div className="flex flex-col">
-            <div className="flex items-center justify-between mb-4">
-              <span className="text-sm font-medium text-muted-foreground">Subscribers</span>
-              <div className="p-2 rounded-lg bg-sky-500/20 text-sky-600 dark:text-sky-400 group-hover:bg-sky-500/30 transition-colors">
-                <Users className="h-5 w-5" />
+            <div className="flex items-center justify-between mb-3 sm:mb-4">
+              <span className="text-xs sm:text-sm font-medium text-muted-foreground text-enhanced-readable">Subscribers</span>
+              <div className="p-1.5 sm:p-2 rounded-lg bg-sky-500/20 text-sky-600 dark:text-sky-400 group-hover:bg-sky-500/30 transition-colors">
+                <Users className="h-4 w-4 sm:h-5 sm:w-5" />
               </div>
             </div>
             <div className="flex items-baseline justify-between">
-              <span className="text-3xl font-bold text-foreground">{analyticsData.subscribers.value.toLocaleString()}</span>
-              <div className={`flex items-center gap-1 text-sm font-medium ${getTrendColor(analyticsData.subscribers.trend)}`}>
+              <span className="text-2xl sm:text-3xl font-bold text-foreground text-enhanced-strong">{analyticsData.subscribers.value.toLocaleString()}</span>
+              <div className={`flex items-center gap-1 text-xs sm:text-sm font-medium ${getTrendColor(analyticsData.subscribers.trend)}`}>
                 {getTrendIcon(analyticsData.subscribers.trend)}
                 <span>{analyticsData.subscribers.change}%</span>
               </div>
             </div>
-            <p className="text-xs text-muted-foreground mt-2">+180 new this week</p>
+            <p className="text-xs text-muted-foreground mt-1 sm:mt-2 text-enhanced-readable">+180 new this week</p>
           </div>
         </Card>
         
@@ -318,13 +318,13 @@ export default function DashboardPage() {
       </Card>
       
       {/* Content Sections */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
         {/* Videos */}
-        <Card className="p-5">
-          <div className="flex items-center justify-between mb-4">
+        <Card className="p-4 sm:p-5">
+          <div className="flex items-center justify-between mb-3 sm:mb-4">
             <div className="flex items-center gap-2">
-              <Video className="h-5 w-5 text-blue-500" />
-              <h2 className="text-lg font-bold">Recent Videos</h2>
+              <Video className="h-4 w-4 sm:h-5 sm:w-5 text-blue-500" />
+              <h2 className="text-base sm:text-lg font-bold text-enhanced-strong">Recent Videos</h2>
             </div>
             <Button asChild size="sm" variant="outline" className="flex items-center gap-1">
               <Link href="/dashboard/videos">
