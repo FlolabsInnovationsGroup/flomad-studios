@@ -65,33 +65,7 @@ export default function EnhancedHero({
       )}
       onMouseMove={handleMouseMove}
     >
-      {/* Floating particles - only render after mount to avoid hydration mismatch */}
-      {animated && isMounted && (
-        <div className="absolute inset-0 pointer-events-none">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-2 h-2 bg-gray-600/30 dark:bg-white/20 rounded-full"
-              initial={{ 
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight,
-                opacity: 0
-              }}
-              animate={{
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight,
-                opacity: [0, 1, 0]
-              }}
-              transition={{
-                duration: Math.random() * 10 + 10,
-                repeat: Infinity,
-                repeatType: "reverse",
-                ease: "linear"
-              }}
-            />
-          ))}
-        </div>
-      )}
+
 
       {/* Interactive light beam - only render after mount to avoid hydration mismatch */}
       {animated && isMounted && (
