@@ -163,6 +163,22 @@ p {
   text-shadow: var(--heading-shadow);
 }
 
+/* Fix purple text visibility in light mode */
+.light .text-primary {
+  color: rgb(37, 99, 235) !important; /* blue-600 for better contrast */
+}
+
+.light .text-primary-foreground {
+  color: rgb(15, 23, 42) !important; /* slate-800 for better contrast */
+}
+
+/* Ensure button text has proper contrast */
+.light button .text-primary,
+.light .btn .text-primary,
+.light [role="button"] .text-primary {
+  color: rgb(29, 78, 216) !important; /* blue-700 for even better contrast in buttons */
+}
+
 /* Enhanced readability classes for text over sky/clouds */
 .text-enhanced-strong {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), 0 4px 16px rgba(0, 0, 0, 0.1);

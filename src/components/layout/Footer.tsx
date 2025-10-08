@@ -14,24 +14,24 @@ export default function Footer() {
             </p>
             <div className="mb-6">
               <p className="text-sm text-foreground/70 mb-4">Part of the Flomad Network:</p>
-              <div className="flex flex-col space-y-4 text-sm">
+              <div className="flex flex-col space-y-3 text-sm">
                 <a 
                   href="https://flomadlabs.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="footer-link flex items-center text-primary hover:text-primary/80 py-2 px-1 -mx-1 rounded transition-all"
+                  className="footer-link flex items-center text-blue-600 dark:text-primary hover:text-blue-800 dark:hover:text-primary/80 py-3 px-4 rounded-lg transition-all hover:bg-blue-50 dark:hover:bg-primary/10 border border-transparent hover:border-blue-200 dark:hover:border-primary/20"
                 >
-                  <span className="tracking-wide">Flomad Labs R&D</span>
-                  <ExternalLink className="h-3 w-3 ml-2 flex-shrink-0" />
+                  <span className="tracking-wide font-medium flex-1 mr-3">Flomad Labs R&D</span>
+                  <ExternalLink className="h-4 w-4 flex-shrink-0 opacity-70" />
                 </a>
                 <a 
                   href="https://flomad.international" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="footer-link flex items-center text-primary hover:text-primary/80 py-2 px-1 -mx-1 rounded transition-all"
+                  className="footer-link flex items-center text-blue-600 dark:text-primary hover:text-blue-800 dark:hover:text-primary/80 py-3 px-4 rounded-lg transition-all hover:bg-blue-50 dark:hover:bg-primary/10 border border-transparent hover:border-blue-200 dark:hover:border-primary/20"
                 >
-                  <span className="tracking-wide">Flomad International</span>
-                  <ExternalLink className="h-3 w-3 ml-2 flex-shrink-0" />
+                  <span className="tracking-wide font-medium flex-1 mr-3">Flomad International</span>
+                  <ExternalLink className="h-4 w-4 flex-shrink-0 opacity-70" />
                 </a>
               </div>
             </div>
