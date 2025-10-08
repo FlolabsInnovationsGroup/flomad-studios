@@ -119,7 +119,7 @@ body {
   /* Removed background properties to allow SkyBackground component to show */
   transition: color 0.3s ease;
   line-height: 1.6;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.01em; /* Improved letter spacing for better readability */
   /* Ensure proper mobile scrolling */
   overflow-x: hidden;
   /* Fix mobile viewport issues */
@@ -130,8 +130,8 @@ body {
 /* Enhanced typography for better sky-themed readability */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
+  line-height: 1.3; /* Improved line height for better spacing */
+  letter-spacing: 0.02em; /* Improved letter spacing for better readability */
   color: hsl(var(--heading-foreground));
   text-shadow: var(--heading-shadow);
 }
@@ -1049,6 +1049,8 @@ body:has(.modal-open) .scroll-component {
     min-height: 48px !important;
     min-width: 48px !important;
     font-size: 1rem !important;
+    letter-spacing: 0.025em !important;
+    line-height: 1.4 !important;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
     touch-action: manipulation;
   }
@@ -1093,6 +1095,27 @@ body:has(.modal-open) .scroll-component {
     display: inline-flex;
     align-items: center;
     touch-action: manipulation;
+    letter-spacing: 0.01em !important;
+    line-height: 1.5 !important;
+    padding: 0.25rem 0 !important;
+  }
+  
+  /* Enhanced text spacing for all text elements on mobile */
+  span, 
+  p,
+  div,
+  li {
+    letter-spacing: 0.015em !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Button text specific improvements */
+  button span,
+  .btn span,
+  [role="button"] span {
+    letter-spacing: 0.02em !important;
+    line-height: 1.4 !important;
+    padding: 0.125rem 0.25rem !important;
   }
   
   /* Scroll components positioning */
@@ -1240,7 +1263,7 @@ body:has(.modal-open) .scroll-component {
   }
   
   .site-footer .grid {
-    gap: 2.5rem !important;
+    gap: 3rem !important;
     grid-template-columns: 1fr !important;
   }
   
@@ -1248,6 +1271,7 @@ body:has(.modal-open) .scroll-component {
     font-size: 1.25rem !important;
     margin-bottom: 1.5rem !important;
     line-height: 1.3 !important;
+    letter-spacing: 0.025em !important;
   }
   
   .site-footer ul {
@@ -1255,23 +1279,34 @@ body:has(.modal-open) .scroll-component {
   }
   
   .site-footer li {
-    margin-bottom: 1rem !important;
+    margin-bottom: 1.25rem !important;
   }
   
   .site-footer .footer-text {
     line-height: 1.7 !important;
     margin-bottom: 1.5rem !important;
     font-size: 0.95rem !important;
+    letter-spacing: 0.01em !important;
   }
   
-  .site-footer .flex.space-x-4 {
+  .site-footer .footer-link {
+    letter-spacing: 0.015em !important;
+    line-height: 1.5 !important;
+    padding: 0.5rem 0 !important;
+    min-height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  
+  .site-footer .flex.space-x-4,
+  .site-footer .flex[class*="space-x"] {
     gap: 1.5rem !important;
     justify-content: flex-start !important;
     flex-wrap: wrap !important;
   }
   
   .site-footer .flex.space-x-6 {
-    gap: 1.5rem !important;
+    gap: 2rem !important;
     flex-direction: column !important;
     align-items: flex-start !important;
   }
@@ -1284,9 +1319,25 @@ body:has(.modal-open) .scroll-component {
   
   /* Enhanced mobile footer border and divider */
   .site-footer .border-t {
-    margin-top: 2rem !important;
-    padding-top: 1.5rem !important;
+    margin-top: 2.5rem !important;
+    padding-top: 2rem !important;
     border-color: rgba(148, 163, 184, 0.2) !important;
+  }
+  
+  /* External link spacing improvements */
+  .site-footer a[target="_blank"] {
+    padding: 0.75rem 0.5rem !important;
+    margin: 0.25rem 0 !important;
+    min-height: 48px !important;
+    border-radius: 0.5rem !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  /* Copyright text improvements */
+  .site-footer .copyright-text {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+    letter-spacing: 0.01em !important;
   }
   
   /* Complex backgrounds handled by SkyBackground component */
