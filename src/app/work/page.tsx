@@ -1,4 +1,4 @@
-import Section from '@/components/ui/Section';
+
 import Button from '@/components/ui/Button';
 import CaseStudyCard from '@/components/ui/CaseStudyCard';
 import GlassCard from '@/components/ui/GlassCard';
@@ -13,39 +13,39 @@ export default function WorkPage() {
   return (
     <main className="fade-in">
       {/* Hero */}
-      <Section backdrop="default" className="py-24 md:py-32">
+      <section className="py-16 sm:py-20 md:py-24 lg:py-32">
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-          <div className="inline-block px-6 py-3 bg-sky-500/20 border border-sky-400/30 rounded-lg mb-6">
-            <span className="text-sm font-bold text-sky-700 dark:text-sky-300 uppercase tracking-wider">PORTFOLIO SHOWCASE</span>
+          <div className="inline-block px-4 sm:px-6 py-2 sm:py-3 bg-sky-500/20 border border-sky-400/30 rounded-lg mb-4 sm:mb-6">
+            <span className="text-xs sm:text-sm font-bold text-sky-700 dark:text-sky-300 uppercase tracking-wider">PORTFOLIO SHOWCASE</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-slate-900 via-blue-900 to-slate-800 dark:from-white dark:via-sky-200 dark:to-white bg-clip-text text-transparent">Our Work</h1>
-          <p className="text-xl max-w-2xl mx-auto text-foreground/80 mb-8">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-slate-900 via-blue-900 to-slate-800 dark:from-white dark:via-sky-200 dark:to-white bg-clip-text text-transparent text-enhanced-strong">Our Work</h1>
+          <p className="text-lg sm:text-xl max-w-2xl mx-auto text-foreground/80 mb-6 sm:mb-8 text-enhanced-readable">
             Real projects, websites, and digital experiences we&apos;ve designed and developed for AI, robotics, and emerging technology platforms.
           </p>
         </div>
-      </Section>
+      </section>
 
       {/* Portfolio Stats */}
-      <Section backdrop="subtle" className="py-16">
+      <section className="py-12 sm:py-16">
         <div className="relative z-10 max-w-4xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
             {[
               { number: "5+", label: "Websites Designed" },
               { number: "3+", label: "Platforms Built" }, 
               { number: "10+", label: "Presentations Created" },
               { number: "2", label: "Years Experience" }
             ].map((stat, index) => (
-              <GlassCard key={index} className="p-6 text-center" variant="sky" blur="md">
-                <div className="text-3xl font-bold text-primary mb-2">{stat.number}</div>
-                <div className="text-sm text-foreground/70">{stat.label}</div>
+              <GlassCard key={index} className="p-4 sm:p-6 text-center" variant="sky" blur="md">
+                <div className="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2 text-enhanced-strong">{stat.number}</div>
+                <div className="text-xs sm:text-sm text-foreground/70 text-enhanced-readable">{stat.label}</div>
               </GlassCard>
             ))}
           </div>
         </div>
-      </Section>
+      </section>
 
       {/* Featured Websites */}
-      <Section backdrop="subtle" className="py-16 md:py-24">
+      <section className="py-16 md:py-24">
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-3 mb-6">
@@ -130,10 +130,10 @@ export default function WorkPage() {
             />
           </div>
         </div>
-      </Section>
+      </section>
 
       {/* Presentations & Creative Work */}
-      <Section backdrop="default" className="py-16 md:py-24">
+      <section className="py-16 md:py-24">
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-3 mb-6">
@@ -169,10 +169,10 @@ export default function WorkPage() {
             />
           </div>
         </div>
-      </Section>
+      </section>
 
       {/* Design Process */}
-      <Section backdrop="subtle" className="py-16 md:py-24">
+      <section className="py-16 md:py-24">
         <div className="relative z-10 max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Our Design Process</h2>
@@ -238,10 +238,10 @@ export default function WorkPage() {
             </div>
           </GlassCard>
         </div>
-      </Section>
+      </section>
 
       {/* CTA */}
-      <Section backdrop="intense" className="py-32">
+      <section className="py-32">
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <div className="glass p-12 md:p-16 rounded-2xl border border-border/60">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-heading">Interested in This Work?</h2>
@@ -253,7 +253,7 @@ export default function WorkPage() {
             </Button>
           </div>
         </div>
-      </Section>
+      </section>
     </main>
   );
 } 

@@ -60,8 +60,8 @@ export default function DashboardLayout({
         {/* Sidebar - Hidden on mobile, shown on desktop */}
         <aside className="hidden md:block w-64 h-screen border-r border-border bg-card overflow-y-auto fixed">
           <div className="p-6 border-b border-border">
-            <h2 className="text-xl font-bold">Flomad Studios</h2>
-            <p className="text-sm text-foreground/60 mt-1">Content Dashboard</p>
+            <h2 className="text-xl font-bold text-enhanced-strong">Flomad Studios</h2>
+            <p className="text-sm text-foreground/60 mt-1 text-enhanced-readable">Content Dashboard</p>
           </div>
 
           <div className="p-4">
@@ -117,11 +117,11 @@ export default function DashboardLayout({
         {/* Main Content - Responsive layout */}
         <main className="md:ml-64 flex-1 overflow-y-auto w-full">
           {/* Mobile Header */}
-          <div className="md:hidden bg-card border-b border-border p-4 sticky top-0 z-50">
+          <div className="md:hidden bg-card border-b border-border p-3 sm:p-4 sticky top-0 z-50">
             <div className="flex items-center justify-between">
               <div>
-                <h2 className="text-lg font-bold">Flomad Studios</h2>
-                <p className="text-xs text-foreground/60">Dashboard</p>
+                <h2 className="text-base sm:text-lg font-bold text-enhanced-strong">Flomad Studios</h2>
+                <p className="text-xs text-foreground/60 text-enhanced-readable">Dashboard</p>
               </div>
               <button
                 className="p-2 hover:bg-muted rounded-md"
@@ -139,7 +139,7 @@ export default function DashboardLayout({
             </div>
           </div>
           
-          <div className="p-4 md:p-8 max-w-7xl">
+          <div className="p-3 sm:p-4 md:p-8 max-w-7xl">
             {children}
           </div>
         </main>

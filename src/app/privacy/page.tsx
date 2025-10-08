@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ArrowLeft, Shield, Eye, Database, UserCheck, Lock, Globe } from 'lucide-react';
 import GlassCard from '@/components/ui/GlassCard';
 import GlassButton from '@/components/ui/GlassButton';
-import Section from '@/components/ui/Section';
+
 
 export const metadata = {
   title: "Privacy Policy | Flomad Studios",
@@ -13,31 +13,31 @@ export default function PrivacyPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <Section backdrop="intense" className="py-24 md:py-32">
+      <section className="py-16 sm:py-20 md:py-24 lg:py-32">
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-          <GlassCard className="p-8 md:p-12" variant="primary" blur="xl">
-            <Shield className="w-16 h-16 text-accent mx-auto mb-6" />
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-heading">
+          <GlassCard className="p-6 sm:p-8 md:p-12" variant="primary" blur="xl">
+            <Shield className="w-12 h-12 sm:w-16 sm:h-16 text-accent mx-auto mb-4 sm:mb-6" />
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 text-heading text-enhanced-strong">
               Privacy <span className="bg-gradient-to-r from-purple-400 to-sky-400 bg-clip-text text-transparent">Policy</span>
             </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto text-foreground/70 leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto text-foreground/70 leading-relaxed text-enhanced-readable">
               Your privacy matters to us. Learn how we collect, use, and protect your information.
             </p>
-            <p className="text-sm text-muted-foreground mt-4">
+            <p className="text-xs sm:text-sm text-muted-foreground mt-3 sm:mt-4">
               Last updated: December 2024
             </p>
           </GlassCard>
         </div>
-      </Section>
+      </section>
 
       {/* Privacy Policy Content */}
-      <Section backdrop="subtle" className="py-20 md:py-32">
+      <section className="py-16 sm:py-20 md:py-24 lg:py-32">
         <div className="relative z-10 max-w-4xl mx-auto px-4">
           
           {/* Overview */}
-          <GlassCard className="p-8 mb-12" variant="primary" blur="lg">
-            <h2 className="text-3xl font-bold text-heading mb-6">Overview</h2>
-            <p className="text-foreground/70 text-lg leading-relaxed">
+          <GlassCard className="p-6 sm:p-8 mb-8 sm:mb-12" variant="primary" blur="lg">
+            <h2 className="text-2xl sm:text-3xl font-bold text-heading mb-4 sm:mb-6 text-enhanced-strong">Overview</h2>
+            <p className="text-foreground/70 text-base sm:text-lg leading-relaxed text-enhanced-readable">
               At Flomad Studios, we respect your privacy and are committed to protecting your personal data. 
               This privacy policy explains how we collect, use, store, and share information about you when you 
               use our services, visit our website, or interact with us.
@@ -344,7 +344,7 @@ export default function PrivacyPage() {
             </GlassButton>
           </div>
         </div>
-      </Section>
+      </section>
     </main>
   );
 }

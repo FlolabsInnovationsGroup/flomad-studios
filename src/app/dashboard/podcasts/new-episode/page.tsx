@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { Upload, Headphones, Folder } from 'lucide-react';
 import GlassCard from '@/components/ui/GlassCard';
 import GlassButton from '@/components/ui/GlassButton';
-import Section from '@/components/ui/Section';
+
 import Loading from '@/components/ui/Loading';
 
 export const metadata = {
@@ -13,7 +13,7 @@ export const metadata = {
 export default function NewPodcastEpisodePage() {
   return (
     <main className="min-h-screen">
-      <Section className="py-12">
+      <section className="py-12">
         <div className="max-w-4xl mx-auto px-4">
           
           {/* Page Header */}
@@ -350,7 +350,7 @@ export default function NewPodcastEpisodePage() {
             </div>
           </Suspense>
         </div>
-      </Section>
+      </section>
     </main>
   );
 }

@@ -9,7 +9,7 @@ import Footer from '@/components/layout/Footer';
 import ErrorBoundary from "@/components/ErrorBoundary";
 import AnimatedCursor from "@/components/ui/AnimatedCursor";
 import ScrollToTop from "@/components/ui/ScrollToTop";
-import BackgroundEffects from "@/components/ui/BackgroundEffects";
+import SkyBackground from "@/components/ui/SkyBackground";
 import NoTooltip from '@/components/ui/NoTooltip';
 
 export const metadata = defaultMetadata;
@@ -75,7 +75,7 @@ export default function RootLayout({
           `
         }} />
       </head>
-      <body className={cn('min-h-screen bg-background text-foreground antialiased font-sans transition-colors duration-300')}>
+      <body className={cn('min-h-screen text-foreground antialiased font-sans transition-colors duration-300')}>
         <ErrorBoundary>
           <AuthProvider>
             <ThemeProvider>
@@ -86,13 +86,13 @@ export default function RootLayout({
                     <AnimatedCursor />
                   </div>
                   
-                  {/* Enhanced background effects - Temporarily disabled */}
-                  <div className="hidden">
-                    <BackgroundEffects />
+                  {/* Enhanced sky background with clouds and detailed effects */}
+                  <div className="fixed inset-0 z-[-20]">
+                    <SkyBackground />
                   </div>
                   
-                  {/* Subtle overlay for better readability */}
-                  <div className="fixed inset-0 z-[-10] bg-white/5 dark:bg-black/10 backdrop-blur-[1px]" />
+                  {/* Subtle text readability overlay - preserves sky beauty while ensuring text contrast */}
+                  <div className="fixed inset-0 z-[-19] bg-white/[0.02] dark:bg-black/[0.08] backdrop-blur-[0.5px]" />
                   
                   <Header />
                   {children}

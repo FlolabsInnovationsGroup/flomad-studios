@@ -91,12 +91,12 @@ export default function LoginPage() {
                     <p className="text-sm text-primary">Creator Dashboard</p>
                   </div>
                 </Link>
-                <h2 className="text-3xl font-bold text-heading mb-2">Welcome Back</h2>
-                <p className="text-foreground/70">Sign in to access your creator dashboard</p>
+                <h2 className="text-2xl sm:text-3xl font-bold text-heading mb-1 sm:mb-2 text-enhanced-strong">Welcome Back</h2>
+                <p className="text-sm sm:text-base text-foreground/70 text-enhanced-readable">Sign in to access your creator dashboard</p>
               </div>
 
               {/* Login Form */}
-              <GlassCard className="p-8" variant="primary" blur="xl">
+              <GlassCard className="p-6 sm:p-8" variant="primary" blur="xl">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {error && (
                     <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3">

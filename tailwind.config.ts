@@ -234,6 +234,7 @@ const config: Config = {
   },
   // Add useful plugins
   plugins: [
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     require("@tailwindcss/typography"), // Adds better text utilities
   ],
 };

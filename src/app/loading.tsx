@@ -1,12 +1,11 @@
-import Section from '@/components/ui/Section';
 import Card from '@/components/ui/Card';
 
 export default function HomeLoading() {
   return (
     <main className="space-y-24 fade-in">
       {/* Hero Skeleton */}
-      <Section className="bg-gradient-to-br from-primary/10 to-secondary/10 animate-pulse">
-        <div className="text-center">
+      <section className="bg-gradient-to-br from-primary/10 to-secondary/10 animate-pulse py-16">
+        <div className="text-center container mx-auto px-6">
           <div className="h-12 w-64 bg-white/20 rounded-md mx-auto mb-4" />
           <div className="h-6 w-96 bg-white/20 rounded-md mx-auto mb-6" />
           <div className="flex flex-wrap justify-center gap-4">
@@ -14,20 +13,20 @@ export default function HomeLoading() {
             <div className="h-10 w-32 bg-white/20 rounded-md" />
           </div>
         </div>
-      </Section>
+      </section>
 
       {/* About Preview Skeleton */}
-      <Section>
-        <div className="text-center">
+      <section className="py-16">
+        <div className="text-center container mx-auto px-6">
           <div className="h-8 w-48 bg-background-surface rounded-md mx-auto mb-4" />
           <div className="h-6 w-96 bg-background-surface rounded-md mx-auto mb-6" />
           <div className="h-10 w-32 bg-background-surface rounded-md mx-auto" />
         </div>
-      </Section>
+      </section>
 
       {/* Creative Areas Skeleton */}
-      <Section className="bg-background-surface">
-        <div className="text-center">
+      <section className="bg-background-surface py-16">
+        <div className="text-center container mx-auto px-6">
           <div className="h-8 w-64 bg-background rounded-md mx-auto mb-10" />
           <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 max-w-6xl mx-auto">
             {[1, 2, 3, 4, 5].map((i) => (
@@ -38,16 +37,16 @@ export default function HomeLoading() {
             ))}
           </div>
         </div>
-      </Section>
+      </section>
 
       {/* Join CTA Skeleton */}
-      <Section className="bg-gradient-to-br from-primary/10 to-secondary/10 animate-pulse">
-        <div className="text-center">
+      <section className="bg-gradient-to-br from-primary/10 to-secondary/10 animate-pulse py-16">
+        <div className="text-center container mx-auto px-6">
           <div className="h-8 w-64 bg-white/20 rounded-md mx-auto mb-4" />
           <div className="h-6 w-96 bg-white/20 rounded-md mx-auto mb-6" />
           <div className="h-10 w-32 bg-white/20 rounded-md mx-auto" />
         </div>
-      </Section>
+      </section>
     </main>
   );
 } 

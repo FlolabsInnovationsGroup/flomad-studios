@@ -5,7 +5,7 @@ import { Music, Search, Filter, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
-import Section from '@/components/ui/Section';
+
 import PosterImage from '@/components/ui/PosterImage';
 
 interface Podcast {
@@ -113,7 +113,7 @@ export default function PodcastsPage() {
   return (
     <main className="fade-in">
       {/* Hero */}
-      <Section className="relative overflow-hidden py-24 md:py-32">
+      <section className="relative overflow-hidden py-24 md:py-32">
         <div className="creative-gradient absolute inset-0 opacity-20" />
         <div className="absolute top-20 left-10 w-32 h-32 bg-radial-gradient-primary rounded-full animate-pulse opacity-60" />
         <div className="absolute bottom-20 right-10 w-24 h-24 bg-radial-gradient-secondary rounded-full animate-pulse opacity-40" />
@@ -126,10 +126,10 @@ export default function PodcastsPage() {
             </p>
           </div>
         </div>
-      </Section>
+      </section>
 
       {/* Content */}
-      <Section className="py-16 md:py-24">
+      <section className="py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4">
         
         <div className="mb-8">
@@ -297,7 +297,7 @@ export default function PodcastsPage() {
           </div>
         )}
         </div>
-      </Section>
+      </section>
     </main>
   );
 }

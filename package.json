@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "prisma generate && next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "postinstall": "prisma generate",
     "health-check": "node scripts/health-check.js",
     "pre-deploy": "npm run lint && npm run health-check && npm run build"

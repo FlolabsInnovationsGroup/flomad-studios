@@ -95,69 +95,87 @@ export default function BackgroundEffects() {
     );
   }
 
-  // Don't render complex effects on mobile
-  if (isMobile) {
-    return null;
-  }
+  // Render simplified effects on mobile, full effects on desktop
+  const renderSimplified = isMobile;
 
   return (
     <div className="fixed inset-0 z-[-20] pointer-events-none overflow-hidden">
-      {/* Primary atmospheric layers */}
+      {/* Primary atmospheric layers - Always render */}
       <div className="mesh-gradient"></div>
       <div className="sky-atmosphere"></div>
 
-      {/* Enhanced Aurora ribbons with better daytime effects */}
+      {/* Sun/Moon elements */}
+      <div className="sun-moon-container">
+        {/* Sun for light mode */}
+        <div className="sun-element block dark:hidden">
+          <div />
+        </div>
+        
+        {/* Moon for dark mode */}
+        <div className="moon-element hidden dark:block">
+          <div>
+            {/* Moon craters */}
+            <div className="moon-crater-1"></div>
+            <div className="moon-crater-2"></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Enhanced Aurora ribbons - Always render but simplify animation on mobile */}
       <motion.div
         className="aurora-band aurora-band--day"
-        animate={{
+        animate={renderSimplified ? {} : {
           backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
           opacity: [0.28, 0.42, 0.32],
         }}
-        transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
+        transition={renderSimplified ? {} : { duration: 16, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
         className="aurora-band aurora-band--day-secondary"
-        animate={{
+        animate={renderSimplified ? {} : {
           backgroundPosition: ['100% 50%', '0% 50%', '100% 50%'],
           opacity: [0.22, 0.35, 0.25],
         }}
-        transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut', repeatType: 'mirror' }}
+        transition={renderSimplified ? {} : { duration: 20, repeat: Infinity, ease: 'easeInOut', repeatType: 'mirror' }}
       />
       
-      {/* Additional atmospheric layer for daytime depth */}
-      <motion.div
-        className="aurora-band"
-        style={{
-          top: '25%',
-          height: '35%',
-          background: 'linear-gradient(125deg, rgba(255, 255, 255, 0.18) 0%, rgba(173, 216, 230, 0.25) 45%, rgba(255, 248, 220, 0.15) 100%)',
-          opacity: 0,
-        }}
-        animate={{
-          backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-          opacity: [0, 0.3, 0.15, 0.25, 0],
-        }}
-        transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut' }}
-      />
+      {/* Additional atmospheric layer for daytime depth - Skip animation on mobile */}
+      {!renderSimplified && (
+        <motion.div
+          className="aurora-band"
+          style={{
+            top: '25%',
+            height: '35%',
+            background: 'linear-gradient(125deg, rgba(255, 255, 255, 0.18) 0%, rgba(173, 216, 230, 0.25) 45%, rgba(255, 248, 220, 0.15) 100%)',
+            opacity: 0.2,
+          }}
+          animate={{
+            backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+            opacity: [0.15, 0.3, 0.15, 0.25, 0.2],
+          }}
+          transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut' }}
+        />
+      )}
+      
       <motion.div
         className="aurora-band aurora-band--night"
-        animate={{
+        animate={renderSimplified ? {} : {
           backgroundPosition: ['0% 50%', '120% 50%', '-20% 50%'],
           opacity: [0.32, 0.52, 0.38],
         }}
-        transition={{ duration: 24, repeat: Infinity, ease: 'easeInOut' }}
+        transition={renderSimplified ? {} : { duration: 24, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
         className="aurora-band aurora-band--night-secondary"
-        animate={{
+        animate={renderSimplified ? {} : {
           backgroundPosition: ['120% 50%', '-10% 50%', '120% 50%'],
           opacity: [0.18, 0.34, 0.22],
         }}
-        transition={{ duration: 28, repeat: Infinity, ease: 'easeInOut', repeatType: 'mirror' }}
+        transition={renderSimplified ? {} : { duration: 28, repeat: Infinity, ease: 'easeInOut', repeatType: 'mirror' }}
       />
 
-      {/* Enhanced floating elements with theme-aware backgrounds */}
-      {backgroundElements.map((element, index) => (
+      {/* Enhanced floating elements - Only on desktop */}
+      {!renderSimplified && backgroundElements.map((element, index) => (
         <motion.div
           key={index}
           className={`floating-element ${element.className}`}
