@@ -1,4 +1,4 @@
-// Global type declarations for FlomadStudios
+// Global type declarations for FloStudios.ai
 
 declare module '*.css' {
   const content: { [className: string]: string };

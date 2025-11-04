@@ -5,8 +5,8 @@ import GlassButton from '@/components/ui/GlassButton';
 
 
 export const metadata = {
-  title: "Privacy Policy | Flomad Studios",
-  description: "Learn how Flomad Studios protects your privacy and handles your personal information.",
+  title: "Privacy Policy | FloStudios.ai",
+  description: "Learn how FloStudios.ai protects your privacy and handles your personal information.",
 };
 
 export default function PrivacyPage() {
@@ -38,7 +38,7 @@ export default function PrivacyPage() {
           <GlassCard className="p-6 sm:p-8 mb-8 sm:mb-12" variant="primary" blur="lg">
             <h2 className="text-2xl sm:text-3xl font-bold text-heading mb-4 sm:mb-6 text-enhanced-strong">Overview</h2>
             <p className="text-foreground/70 text-base sm:text-lg leading-relaxed text-enhanced-readable">
-              At Flomad Studios, we respect your privacy and are committed to protecting your personal data. 
+              At FloStudios.ai, we respect your privacy and are committed to protecting your personal data. 
               This privacy policy explains how we collect, use, store, and share information about you when you 
               use our services, visit our website, or interact with us.
             </p>
@@ -318,7 +318,7 @@ export default function PrivacyPage() {
               <div>
                 <h3 className="text-lg font-semibold text-heading mb-2">Mailing Address</h3>
                 <p className="text-foreground/70">
-                  Flomad Studios<br />
+                  FloStudios.ai<br />
                   c/o Flomad Labs<br />
                   [Address to be provided]
                 </p>

@@ -11,6 +11,7 @@ import AnimatedCursor from "@/components/ui/AnimatedCursor";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import SkyBackground from "@/components/ui/SkyBackground";
 import NoTooltip from '@/components/ui/NoTooltip';
+import { OrganizationSchema, WebSiteSchema } from '@/components/seo/StructuredData';
 
 export const metadata = defaultMetadata;
 
@@ -76,6 +77,28 @@ export default function RootLayout({
         }} />
       </head>
       <body className={cn('min-h-screen text-foreground antialiased font-sans transition-colors duration-300')}>
+        {/* Structured Data for SEO and LLMO */}
+        <OrganizationSchema
+          name="FloStudios.ai"
+          url="https://www.flostudios.ai"
+          logo="https://www.flostudios.ai/images/flomadlogo.svg"
+          description="AI-focused creative learning division of Flomad Labs R&D, empowering the next generation through experiential learning in AI, robotics, and emerging technologies."
+          sameAs={[
+            'https://www.linkedin.com/company/flomad-labs-r-d',
+            'https://www.youtube.com/@FlomadLabs',
+            'https://twitter.com/flostudiosai',
+            'https://instagram.com/flostudiosai'
+          ]}
+          contactPoint={{
+            email: 'studios@flolabsrd.com',
+            contactType: 'Customer Service'
+          }}
+        />
+        <WebSiteSchema
+          name="FloStudios.ai"
+          url="https://www.flostudios.ai"
+          description="AI-powered creative learning platform for students and creators"
+        />
         <ErrorBoundary>
           <AuthProvider>
             <ThemeProvider>

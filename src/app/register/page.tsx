@@ -129,14 +129,14 @@ export default function RegisterPage() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/images/flomadlogo.svg"
-                    alt="Flomad Studios Logo"
+                    alt="FloStudios.ai Logo"
                     width={48}
                     height={48}
                     className="transition-transform hover:scale-105"
                   />
                   <div className="text-left">
-                    <h1 className="text-2xl font-bold text-heading">Flomad Studios</h1>
-                    <p className="text-sm text-primary">Join Our Creative Community</p>
+                    <h1 className="text-2xl font-bold text-heading">FloStudios.ai</h1>
+                    <p className="text-sm text-primary">Join Our AI-Powered Creative Community</p>
                   </div>
                 </Link>
                 <h2 className="text-3xl font-bold text-heading mb-2">Create Your Account</h2>

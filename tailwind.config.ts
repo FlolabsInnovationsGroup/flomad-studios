@@ -34,7 +34,7 @@ const config: Config = {
         },
         ring: "hsl(var(--ring))",
         input: "hsl(var(--input))",
-        // Flomad brand colors - Professional sky-inspired palette
+        // FloStudios.ai brand colors - Professional sky-inspired palette with AI focus
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

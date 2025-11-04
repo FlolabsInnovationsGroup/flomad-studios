@@ -24,10 +24,10 @@ interface VideoWithUser {
   } | null;
 }
 
-export const metadata: Metadata = {
-  title: 'Videos | Flomad Studios',
-  description: 'Watch our latest video content, tutorials, case studies and creative showcases.'
-};
+import { videosMetadata } from '@/lib/seo';
+import { BreadcrumbSchema } from '@/components/seo/StructuredData';
+
+export const metadata = videosMetadata;
 
 // Force dynamic rendering to prevent prerendering errors when database is unavailable
 export const dynamic = 'force-dynamic';

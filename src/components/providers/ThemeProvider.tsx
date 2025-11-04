@@ -102,7 +102,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       enableSystem={true}
       disableTransitionOnChange={false}
       themes={['light', 'dark']}
-      storageKey="flomad-theme"
+      storageKey="flo-theme"
     >
       {children}
     </NextThemesProvider>

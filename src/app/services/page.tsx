@@ -1,11 +1,9 @@
-
 import ServiceCard from '@/components/ui/ServiceCard';
 import Button from '@/components/ui/Button';
+import { servicesMetadata } from '@/lib/seo';
+import { BreadcrumbSchema } from '@/components/seo/StructuredData';
 
-export const metadata = {
-  title: "Our Services | Flomad Studios",
-  description: "Learn about our technology content creation services - from AI research documentation to robotics project storytelling.",
-};
+export const metadata = servicesMetadata;
 
 export default function ServicesPage() {
   return (
@@ -62,6 +60,77 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Industry Verticals */}
+      <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-sky-50/30 via-blue-50/20 to-transparent dark:from-slate-900/30 dark:via-slate-800/20 dark:to-transparent">
+        <div className="relative z-10 max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="glass p-6 sm:p-8 border border-border/60 inline-block">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-heading text-enhanced-strong">Innovation Across Industries</h2>
+              <p className="text-lg sm:text-xl text-foreground/80 text-enhanced-readable max-w-3xl">
+                Our experiential learning programs span four key verticals, preparing students 
+                to tackle real-world challenges with AI and robotics solutions.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            {[
+              {
+                emoji: "🎓",
+                title: "Education",
+                description: "Experiential learning programs combining AI tools, hands-on projects, and industry mentorship. Students build real platforms like CAIPO and MoodChanger while earning GetRecruitedToday credentials.",
+                examples: ["AI Learning Platforms", "Student Project Incubation", "Research Documentation", "Educational Content Creation"]
+              },
+              {
+                emoji: "🏥",
+                title: "Healthcare",
+                description: "AI-driven health innovations improving patient outcomes and wellness. Our MoodChanger platform demonstrates how AI can revolutionize mental health tracking for people, athletes, and even pets.",
+                examples: ["MoodChanger AI", "Wellness Tracking", "Mental Health Tech", "Patient Experience Design"]
+              },
+              {
+                emoji: "✈️",
+                title: "Travel",
+                description: "AI-powered travel planning and personalized experiences. Flo Travel uses machine learning to create custom itineraries, recommend destinations, and optimize journeys based on individual preferences.",
+                examples: ["Flo Travel Platform", "AI Trip Planning", "Destination Recommendations", "Travel Content Creation"]
+              },
+              {
+                emoji: "🚀",
+                title: "Space",
+                description: "Space sector innovation and exploration technology. Preparing the next generation for careers in space tech through projects focused on AI applications in aerospace, satellite systems, and robotics.",
+                examples: ["Space Tech Education", "Satellite Systems", "Aerospace AI Applications", "Robotics for Space"]
+              }
+            ].map((vertical) => (
+              <div key={vertical.title} className="glass p-6 hover:scale-105 transition-all duration-300 border border-border/60 flex flex-col">
+                <div className="text-5xl mb-4">{vertical.emoji}</div>
+                <h3 className="text-2xl font-bold mb-3 text-heading text-enhanced-strong">{vertical.title}</h3>
+                <p className="text-sm text-foreground/70 mb-4 text-enhanced-readable flex-grow">
+                  {vertical.description}
+                </p>
+                <div className="space-y-2 pt-4 border-t border-border/40">
+                  <p className="text-xs font-semibold text-foreground/60 uppercase tracking-wide">Key Areas:</p>
+                  {vertical.examples.map((example) => (
+                    <div key={example} className="flex items-start gap-2 text-xs text-foreground/60">
+                      <span className="text-sky-500 mt-0.5">▸</span>
+                      <span>{example}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12 sm:mt-16">
+            <div className="glass p-6 sm:p-8 border border-border/60 inline-block max-w-3xl">
+              <p className="text-base sm:text-lg text-foreground/70 text-enhanced-readable">
+                <strong className="text-foreground">Cross-Vertical Approach:</strong> Our students gain exposure to multiple 
+                industries, building transferable AI and robotics skills that apply across sectors. This holistic approach 
+                ensures graduates are versatile, adaptable, and ready for the future of work.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Process Section */}
       <section className="py-16 sm:py-20 md:py-24">
         <div className="relative z-10 max-w-6xl mx-auto px-4">
@@ -111,7 +180,7 @@ export default function ServicesPage() {
               Let&apos;s collaborate on your next project and bring your creative vision to life.
             </p>
             <Button className="bg-sky-500/20 hover:bg-sky-500/30 border border-sky-400/30 text-sky-700 dark:text-sky-300 hover:text-sky-600 dark:hover:text-sky-200 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4" asChild>
-              <a href="https://flomad.international" target="_blank" rel="noopener noreferrer">Apply to Join</a>
+              <a href="https://flolabs.international/internships/" target="_blank" rel="noopener noreferrer">Apply to GetRecruitedToday</a>
             </Button>
           </div>
         </div>

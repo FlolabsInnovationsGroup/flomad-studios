@@ -81,14 +81,14 @@ export default function LoginPage() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/images/flomadlogo.svg"
-                    alt="Flomad Studios Logo"
+                    alt="FloStudios.ai Logo"
                     width={48}
                     height={48}
                     className="transition-transform hover:scale-105"
                   />
                   <div className="text-left">
-                    <h1 className="text-2xl font-bold text-heading">Flomad Studios</h1>
-                    <p className="text-sm text-primary">Creator Dashboard</p>
+                    <h1 className="text-2xl font-bold text-heading">FloStudios.ai</h1>
+                    <p className="text-sm text-primary">AI Creator Dashboard</p>
                   </div>
                 </Link>
                 <h2 className="text-2xl sm:text-3xl font-bold text-heading mb-1 sm:mb-2 text-enhanced-strong">Welcome Back</h2>

@@ -1,10 +1,10 @@
-# Flomad Studios
+# FloStudios.ai
 
-A modern content platform for managing and showcasing videos, podcasts, and blog posts with a beautiful sky blue to yellow gradient theme.
+An AI-powered creative learning platform for managing and showcasing videos, podcasts, and blog posts with a beautiful sky blue to yellow gradient theme.
 
 ## Project Overview
 
-Flomad Studios is a comprehensive content management platform designed for creators to upload, manage, and publish various types of content. The platform includes:
+FloStudios.ai is a comprehensive AI-enhanced content management platform designed for creators to upload, manage, and publish various types of content with cutting-edge AI learning experiences. The platform includes:
 
 - **User-friendly dashboard** for content management
 - **Video upload and management** system with thumbnail selection
@@ -19,7 +19,7 @@ Flomad Studios is a comprehensive content management platform designed for creat
 
 **Default Admin Credentials:**
 
-- Email: `admin@flomadstudios.com`
+- Email: `admin@flostudios.ai`
 - Password: `admin123`
 
 **Important:** Change these credentials immediately after first login for security.
@@ -151,7 +151,7 @@ src/
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/yourusername/flomadstudios.git
+   git clone https://github.com/FlomadLabsRD/flomad-studios.git
    cd flomadstudios
    ```
 
@@ -227,9 +227,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For support and questions:
 
-- 📧 Email: [admin@flomadstudios.com](mailto:admin@flomadstudios.com)
+- 📧 Email: [admin@flostudios.ai](mailto:admin@flostudios.ai)
 - 📖 Documentation: [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md)
-- 🐛 Issues: [GitHub Issues](https://github.com/yourusername/flomadstudios/issues)
+- 🐛 Issues: [GitHub Issues](https://github.com/FlomadLabsRD/flomad-studios/issues)
 
 ---
 

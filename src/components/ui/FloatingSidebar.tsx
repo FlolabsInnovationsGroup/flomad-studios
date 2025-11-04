@@ -199,7 +199,7 @@ const FloatingSidebar: React.FC<FloatingSidebarProps> = ({ className }) => {
                   animate={isCollapsed ? 'collapsed' : 'expanded'}
                   className="text-center text-xs text-muted-foreground"
                 >
-                  Flomad Studios v1.0
+                  FloStudios.ai v1.0
                 </motion.div>
               )}
             </div>

@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: VideoPageProps): Promise<Meta
   }
 
   return {
-    title: `${video.title} | Flomad Studios`,
+    title: `${video.title} | FloStudios.ai`,
     description: video.description,
   };
 }

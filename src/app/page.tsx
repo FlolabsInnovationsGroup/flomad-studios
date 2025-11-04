@@ -5,7 +5,11 @@ import EnhancedHero from '@/components/ui/EnhancedHero';
 import { EnhancedGrid, FeatureCard } from '@/components/ui/EnhancedGrid';
 import { SkyButton, GhostButton } from '@/components/ui/EnhancedButton';
 import Link from 'next/link';
-import { Play, Users, Mic, Video, Book, GraduationCap, Heart, ArrowRight, Rocket, Lightbulb } from 'lucide-react';
+import { Play, Users, Mic, Video, Book, GraduationCap, Heart, ArrowRight, Rocket, Lightbulb, Cpu, Plane, Bot } from 'lucide-react';
+import { homeMetadata } from '@/lib/seo';
+import { BreadcrumbSchema } from '@/components/seo/StructuredData';
+
+export const metadata = homeMetadata;
 
 export default function HomePage() {
   return (
@@ -15,9 +19,9 @@ export default function HomePage() {
 
       {/* Enhanced Hero Section */}
       <EnhancedHero
-        subtitle="Digital Design Studio"
-        title="Flomad Studios"
-        description="The creative division of Flomad Labs R&D, where we create content and experiences for cutting-edge technology projects in AI, robotics, and emerging tech platforms."
+        subtitle="AI-Powered Creative Learning"
+        title="FloStudios.ai"
+        description="Where AI meets creativity. A learning-focused division of Flomad Labs R&D, creating AI-enhanced content and experiences for cutting-edge technology education in artificial intelligence, robotics, and emerging tech platforms."
         primaryAction={{
           label: "Let's Talk",
           href: '/contact'
@@ -212,11 +216,11 @@ export default function HomePage() {
             <GlassCard className="inline-block px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8 glow-effect" variant="accent" blur="md">
               <div className="flex items-center gap-2">
                 <Mic className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400" />
-                <span className="text-xs sm:text-sm font-semibold text-foreground">THE FLOMAD FREQUENCY</span>
+                <span className="text-xs sm:text-sm font-semibold text-foreground">THE FLO FREQUENCY</span>
               </div>
             </GlassCard>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground text-enhanced-strong mb-4 sm:mb-6 px-2">
-              Our Podcast <span className="gradient-text-sky">Coming Soon</span>
+              Our AI-Powered Podcast <span className="gradient-text-sky">Coming Soon</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto px-4">
               Deep conversations about AI, robotics, creativity, and the future of technology. 
@@ -235,9 +239,9 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-foreground mb-2">The Flomad Frequency</h3>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">The Flo Frequency</h3>
                   <p className="text-foreground/70 mb-4">
-                    Technology conversations that matter. From AI breakthroughs to creative innovation.
+                    AI-powered conversations exploring technology, creativity, and the future of learning.
                   </p>
                   <GlassButton variant="secondary" size="sm" className="w-full">
                     <Link href="/podcasts" className="flex items-center justify-center gap-2">
@@ -282,6 +286,76 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Student Work Showcase */}
+      <section className="relative py-16 sm:py-24 md:py-32 z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 sm:mb-16 md:mb-20 slide-up">
+            <GlassCard className="inline-block px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8 glow-effect" variant="secondary" blur="md">
+              <div className="flex items-center gap-2">
+                <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
+                <span className="text-xs sm:text-sm font-semibold text-foreground">STUDENT IMPACT</span>
+              </div>
+            </GlassCard>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 sm:mb-8 text-enhanced-strong px-2">
+              Built by <span className="gradient-text-sky">Flo Students</span>
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl text-foreground max-w-4xl mx-auto leading-relaxed px-4">
+              Real-world AI and robotics projects developed through our experiential learning programs. 
+              These platforms are live products serving real users—built by students, for the future.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            <a href="https://caipo.ai" target="_blank" rel="noopener noreferrer" className="block group" aria-label="Visit CAIPO.ai - AI Productivity Assistant">
+              <FeatureCard
+                title="CAIPO.ai"
+                description="Wearable AI productivity assistant that helps professionals optimize their workflow and manage tasks through intelligent automation and voice commands."
+                icon={<Cpu className="w-12 h-12 text-amber-400" />}
+              />
+            </a>
+            <a href="https://moodchanger.ai" target="_blank" rel="noopener noreferrer" className="block group" aria-label="Visit MoodChanger.ai - AI Mood Management">
+              <FeatureCard
+                title="MoodChanger.ai"
+                description="AI-powered mood management platform serving people, athletes, and pets with personalized wellness tracking and emotional intelligence insights."
+                icon={<Heart className="w-12 h-12 text-pink-400" />}
+              />
+            </a>
+            <a href="https://flomadtravel.com" target="_blank" rel="noopener noreferrer" className="block group" aria-label="Visit Flo Travel - AI Travel Planning">
+              <FeatureCard
+                title="Flo Travel"
+                description="AI-driven travel planning platform that creates personalized itineraries, recommends destinations, and optimizes travel experiences using machine learning."
+                icon={<Plane className="w-12 h-12 text-blue-400" />}
+              />
+            </a>
+            <a href="https://robocollective.ai" target="_blank" rel="noopener noreferrer" className="block group" aria-label="Visit RoboCollective - Robot Marketplace">
+              <FeatureCard
+                title="RoboCollective"
+                description="Revolutionary robot marketplace and dealership franchise platform connecting buyers with the latest robotics technology and automation solutions."
+                icon={<Bot className="w-12 h-12 text-purple-400" />}
+              />
+            </a>
+          </div>
+
+          <div className="text-center mt-12 sm:mt-16">
+            <GlassCard className="inline-block p-6 sm:p-8" variant="primary" blur="lg">
+              <p className="text-lg sm:text-xl font-semibold text-foreground mb-4">
+                Want to build the next big thing?
+              </p>
+              <p className="text-foreground/70 mb-6 max-w-2xl">
+                Join our experiential learning program and work on real AI and robotics projects 
+                that make an impact. Get recruited today while building your portfolio.
+              </p>
+              <GlassButton variant="primary" size="lg" className="glow-effect">
+                <a href="https://flolabs.international/internships/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <Rocket className="w-5 h-5" />
+                  Apply to GetRecruitedToday
+                </a>
+              </GlassButton>
+            </GlassCard>
+          </div>
+        </div>
+      </section>
+
       {/* Ecosystem Ribbon */}
       <section className="relative py-16 bg-gradient-to-r from-sky-50/50 via-blue-50/30 to-emerald-50/50 dark:from-slate-900/50 dark:via-slate-800/30 dark:to-slate-900/50 z-10">
         <div className="max-w-7xl mx-auto px-6">
@@ -290,7 +364,7 @@ export default function HomePage() {
               Part of the <span className="text-primary">Flomad Labs Ecosystem</span>
             </h3>
             <p className="text-foreground/70 max-w-2xl mx-auto">
-              Flomad Studios works alongside other innovative platforms in the Flomad Labs network
+              FloStudios.ai works alongside other innovative platforms in the Flomad Labs network
             </p>
           </div>
 
@@ -361,7 +435,7 @@ export default function HomePage() {
             Get in touch to start the conversation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center max-w-lg sm:max-w-none mx-auto">
-            <Link href="https://flomad.international" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+            <Link href="https://flolabs.international/internships/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
               <SkyButton 
                 size="lg" 
                 className="w-full sm:w-auto"
@@ -371,7 +445,7 @@ export default function HomePage() {
               </SkyButton>
             </Link>
 
-            <Link href="https://flomad.international" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+            <Link href="https://flolabs.international/internships/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
               <GhostButton 
                 size="lg"
                 className="w-full sm:w-auto"

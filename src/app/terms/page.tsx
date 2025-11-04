@@ -5,8 +5,8 @@ import GlassButton from '@/components/ui/GlassButton';
 
 
 export const metadata = {
-  title: "Terms of Service | Flomad Studios",
-  description: "Read the terms and conditions for using Flomad Studios' services and platform.",
+  title: "Terms of Service | FloStudios.ai",
+  description: "Read the terms and conditions for using FloStudios.ai's services and platform.",
 };
 
 export default function TermsPage() {
@@ -43,7 +43,7 @@ export default function TermsPage() {
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-2">Important Notice</h3>
                   <p className="text-gray-300 leading-relaxed">
-                    By accessing or using Flomad Studios&rsquo; services, you agree to be bound by these Terms of Service. 
+                    By accessing or using FloStudios.ai&rsquo;s services, you agree to be bound by these Terms of Service. 
                     Please read them carefully. If you do not agree to these terms, you may not use our services.
                   </p>
                 </div>
@@ -66,7 +66,7 @@ export default function TermsPage() {
               <div className="border-l-4 border-sky-400/30 pl-4">
                 <h3 className="text-lg font-semibold text-white mb-2">&ldquo;Services&rdquo;</h3>
                 <p className="text-gray-300">
-                  Refers to all websites, applications, platforms, content, and services provided by Flomad Studios, 
+                  Refers to all websites, applications, platforms, content, and services provided by FloStudios.ai, 
                   including but not limited to our creative platform, community features, and educational programs.
                 </p>
               </div>
@@ -89,8 +89,8 @@ export default function TermsPage() {
 
               <div className="border-l-4 border-amber-400/30 pl-4">
                 <h3 className="text-lg font-semibold text-white mb-2">&ldquo;Flomad Ecosystem&rdquo;</h3>
-                <p className="text-gray-300">
-                  Refers to Flomad Studios and its affiliated companies, including Flomad Labs and Flomad International.
+                <p className="text-gray-300 text-sm">
+                  Refers to FloStudios.ai and its affiliated companies, including Flomad Labs and Flomad International.
                 </p>
               </div>
             </div>
@@ -205,7 +205,7 @@ export default function TermsPage() {
               <div>
                 <h3 className="text-xl font-semibold text-white mb-3">Our Content</h3>
                 <p className="text-gray-300">
-                  All content provided by Flomad Studios, including but not limited to text, graphics, logos, 
+                  All content provided by FloStudios.ai, including but not limited to text, graphics, logos, 
                   software, and design elements, is owned by us or our licensors and is protected by copyright, 
                   trademark, and other intellectual property laws.
                 </p>
@@ -246,7 +246,7 @@ export default function TermsPage() {
                 <h3 className="text-lg font-semibold text-white mb-2">Community Features</h3>
                 <p className="text-gray-300">
                   Access to community features may require additional verification, adherence to community guidelines, 
-                  or participation requirements as determined by Flomad Studios.
+                  or participation requirements as determined by FloStudios.ai.
                 </p>
               </div>
             </div>
@@ -268,7 +268,7 @@ export default function TermsPage() {
               <div className="bg-black/20 p-4 rounded-lg">
                 <h3 className="text-lg font-semibold text-white mb-2">Limitation of Liability</h3>
                 <p className="text-gray-300">
-                  To the maximum extent permitted by law, Flomad Studios shall not be liable for any indirect, 
+                  To the maximum extent permitted by law, FloStudios.ai shall not be liable for any indirect, 
                   incidental, special, or consequential damages arising from your use of our Services.
                 </p>
               </div>
@@ -284,7 +284,7 @@ export default function TermsPage() {
               <div className="bg-black/20 p-4 rounded-lg">
                 <h3 className="text-lg font-semibold text-white mb-2">Indemnification</h3>
                 <p className="text-gray-300">
-                  You agree to indemnify and hold harmless Flomad Studios from any claims, damages, or expenses 
+                  You agree to indemnify and hold harmless FloStudios.ai from any claims, damages, or expenses 
                   arising from your use of our Services or violation of these terms.
                 </p>
               </div>

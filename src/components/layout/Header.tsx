@@ -45,7 +45,7 @@ export default function Header() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/flomadlogo.svg"
-                alt="Flomad Studios Logo"
+                alt="FloStudios.ai Logo"
                 width={40}
                 height={40}
                 className="transition-transform group-hover:scale-105 drop-shadow-sm"
@@ -55,7 +55,7 @@ export default function Header() {
             {/* Brand Text */}
             <div className="relative">
               <span className="text-xl font-bold text-foreground drop-shadow-sm">
-                Flomad Studios
+                FloStudios.ai
               </span>
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-sky-400 via-emerald-400 to-amber-400 group-hover:w-full transition-all duration-300"></span>
             </div>

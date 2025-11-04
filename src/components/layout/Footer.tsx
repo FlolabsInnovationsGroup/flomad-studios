@@ -7,10 +7,10 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold mb-6 gradient-text">Flomad Studios</h3>
+            <h3 className="text-2xl font-bold mb-6 gradient-text">FloStudios.ai</h3>
             <p className="footer-text mb-6">
-              A creative division of Flomad Labs R&D, empowering the next generation of content creators, 
-              storytellers, and digital innovators. Part of the Flomad ecosystem.
+              An AI-focused creative learning division of Flomad Labs R&D, empowering the next generation of content creators, 
+              storytellers, and digital innovators with cutting-edge AI technology and innovative learning experiences.
             </p>
             <div className="mb-6">
               <p className="text-sm text-foreground/70 mb-4">Part of the Flomad Network:</p>
@@ -97,10 +97,7 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm copyright-text mb-4 md:mb-0 tracking-wide leading-relaxed text-center md:text-left">
-            © {new Date().getFullYear()} Flomad Studios. A division of Flomad Labs R&D. All rights reserved.
-          </p>
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-center items-center">
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 text-sm">
             <Link href="/privacy" className="footer-link copyright-text py-2 px-2 -mx-2 rounded transition-all hover:bg-primary/10 tracking-wide text-center sm:text-left">
               Privacy Policy

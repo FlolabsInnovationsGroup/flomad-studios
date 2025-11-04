@@ -2,13 +2,11 @@ import Link from 'next/link';
 import { ArrowRight, Users, Lightbulb, Zap, Heart, Video, Mic, BookOpen, Calendar } from 'lucide-react';
 import GlassCard from '@/components/ui/GlassCard';
 import GlassButton from '@/components/ui/GlassButton';
-
 import { cn } from '@/lib/utils';
+import { joinMetadata } from '@/lib/seo';
+import { BreadcrumbSchema } from '@/components/seo/StructuredData';
 
-export const metadata = {
-  title: "Join Flomad Studios | Creative Learning at Flomad Labs R&D",
-  description: "Learn creative skills by working on real technology projects at Flomad Labs R&D. Gain hands-on experience in content creation, podcasting, video production for AI, robotics, and emerging tech.",
-};
+export const metadata = joinMetadata;
 
 const variantStyles = {
   primary: {

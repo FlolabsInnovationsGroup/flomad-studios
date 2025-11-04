@@ -1,14 +1,14 @@
 import { Metadata } from 'next';
 
 export const siteConfig = {
-  name: 'Flomad Studios',
-  description: 'Creative content, podcasts, videos, and more.',
-  url: 'https://www.flomadstudios.com',
-  ogImage: 'https://www.flomadstudios.com/og.jpg',
+  name: 'FloStudios.ai',
+  description: 'AI-powered creative learning, podcasts, videos, and innovative content for the next generation of technology.',
+  url: 'https://www.flostudios.ai',
+  ogImage: 'https://www.flostudios.ai/og.jpg',
   links: {
-    twitter: 'https://twitter.com/flomadstudios',
-    instagram: 'https://instagram.com/flomadstudios',
-    youtube: 'https://youtube.com/flomadstudios',
+    twitter: 'https://twitter.com/flostudiosai',
+    instagram: 'https://instagram.com/flostudiosai',
+    youtube: 'https://youtube.com/flostudiosai',
   },
 };
 
@@ -19,9 +19,9 @@ export const defaultMetadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: ['creative', 'content', 'podcasts', 'videos', 'studio', 'media'],
-  authors: [{ name: 'Flomad Studios' }],
-  creator: 'Flomad Studios',
+  keywords: ['ai', 'artificial intelligence', 'creative', 'content', 'podcasts', 'videos', 'studio', 'media', 'learning', 'technology'],
+  authors: [{ name: 'FloStudios.ai' }],
+  creator: 'FloStudios.ai',
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -51,7 +51,7 @@ export const defaultMetadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: '@flomadstudios',
+    creator: '@flostudiosai',
   },
   robots: {
     index: true,

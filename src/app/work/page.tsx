@@ -1,13 +1,11 @@
-
 import Button from '@/components/ui/Button';
 import CaseStudyCard from '@/components/ui/CaseStudyCard';
 import GlassCard from '@/components/ui/GlassCard';
 import { ExternalLink, Palette, Code, Presentation, Globe } from 'lucide-react';
+import { workMetadata } from '@/lib/seo';
+import { BreadcrumbSchema } from '@/components/seo/StructuredData';
 
-export const metadata = {
-  title: "Our Work | Flomad Studios",
-  description: "Explore our portfolio of websites, presentations, and digital experiences designed for the Flomad Labs ecosystem.",
-};
+export const metadata = workMetadata;
 
 export default function WorkPage() {
   return (
@@ -249,7 +247,7 @@ export default function WorkPage() {
               Join our creative learning program and help create content for the next generation of technology at Flomad Labs R&D.
             </p>
             <Button className="bg-sky-500/20 hover:bg-sky-500/30 border border-sky-400/30 text-sky-700 dark:text-sky-300 hover:text-sky-600 dark:hover:text-sky-200 text-lg px-8 py-4 transition-all duration-300" asChild>
-              <a href="https://flomad.international" target="_blank" rel="noopener noreferrer">Apply to Join</a>
+              <a href="https://flolabs.international/internships/" target="_blank" rel="noopener noreferrer">Apply to GetRecruitedToday</a>
             </Button>
           </div>
         </div>

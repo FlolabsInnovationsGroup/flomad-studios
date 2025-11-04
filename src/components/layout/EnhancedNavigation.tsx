@@ -114,7 +114,7 @@ export default function EnhancedNavigation() {
               </motion.div>
               <div className="hidden sm:block">
                 <div className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Flomad Studios
+                  FloStudios.ai
                 </div>
                 <div className="text-xs text-gray-500 dark:text-gray-400">
                   Creative Division
