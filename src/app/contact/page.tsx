@@ -17,7 +17,7 @@ export default function ContactPage() {
               Get in <span className="bg-gradient-to-r from-sky-600 to-emerald-600 dark:from-sky-400 dark:to-emerald-400 bg-clip-text text-transparent">Touch</span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto text-foreground/70 leading-relaxed text-enhanced-readable">
-              Connect with us through Flo Labs International or Flomad Labs R&D for inquiries about our programs and services.
+              Connect with us through FloLabs International or FloLabs Innovations Group for inquiries about our programs and services.
             </p>
           </GlassCard>
         </div>
@@ -28,7 +28,7 @@ export default function ContactPage() {
         <div className="relative z-10 max-w-5xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
             
-            {/* Flo Labs International */}
+            {/* FloLabs International */}
             <GlassCard className="p-8 sm:p-10" variant="primary" blur="lg">
               <div className="flex items-start gap-4 mb-6">
                 <div className="p-3 bg-primary/15 rounded-lg flex-shrink-0">
@@ -36,7 +36,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h2 className="text-2xl sm:text-3xl font-bold text-heading mb-2 text-enhanced-strong">
-                    Flo Labs International
+                    FloLabs International
                   </h2>
                   <p className="text-foreground/70 text-enhanced-readable">
                     Experiential Learning & Internships
@@ -69,7 +69,7 @@ export default function ContactPage() {
               <div className="space-y-3">
                 <GlassButton variant="primary" size="lg" glow className="w-full">
                   <a 
-                    href="https://flolabs.international/internships/" 
+                    href="https://www.flolabs.international/internships/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 w-full"
@@ -81,19 +81,19 @@ export default function ContactPage() {
                 
                 <GlassButton variant="secondary" size="md" className="w-full">
                   <a 
-                    href="https://flolabs.international" 
+                    href="https://www.flolabs.international/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 w-full"
                   >
-                    Visit Flo Labs International
+                    Visit FloLabs International
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 </GlassButton>
               </div>
             </GlassCard>
 
-            {/* Flomad Labs R&D */}
+            {/* FloLabs Innovations Group */}
             <GlassCard className="p-8 sm:p-10" variant="primary" blur="lg">
               <div className="flex items-start gap-4 mb-6">
                 <div className="p-3 bg-secondary/15 rounded-lg flex-shrink-0">
@@ -101,7 +101,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h2 className="text-2xl sm:text-3xl font-bold text-heading mb-2 text-enhanced-strong">
-                    Flomad Labs R&D
+                    FloLabs Innovations Group
                   </h2>
                   <p className="text-foreground/70 text-enhanced-readable">
                     Corporate & Partnership Inquiries
@@ -144,12 +144,12 @@ export default function ContactPage() {
                 
                 <GlassButton variant="ghost" size="md" className="w-full">
                   <a 
-                    href="https://flolabsrd.com" 
+                    href="https://www.flolabsinnovations.com/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 w-full"
                   >
-                    Visit Flomad Labs R&D
+                    Visit FloLabs Innovations Group
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 </GlassButton>

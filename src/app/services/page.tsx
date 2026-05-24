@@ -180,7 +180,7 @@ export default function ServicesPage() {
               Let&apos;s collaborate on your next project and bring your creative vision to life.
             </p>
             <Button className="bg-sky-500/20 hover:bg-sky-500/30 border border-sky-400/30 text-sky-700 dark:text-sky-300 hover:text-sky-600 dark:hover:text-sky-200 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4" asChild>
-              <a href="https://flolabs.international/internships/" target="_blank" rel="noopener noreferrer">Apply to GetRecruitedToday</a>
+              <a href="https://www.flolabs.international/internships/" target="_blank" rel="noopener noreferrer">Apply to GetRecruitedToday</a>
             </Button>
           </div>
         </div>

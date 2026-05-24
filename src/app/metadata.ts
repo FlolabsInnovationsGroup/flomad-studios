@@ -1,16 +1,24 @@
 import { Metadata } from 'next';
+import { buildOgImageUrl } from '@/lib/og-image';
 
 export const siteConfig = {
   name: 'FloStudios.ai',
   description: 'AI-powered creative learning, podcasts, videos, and innovative content for the next generation of technology.',
   url: 'https://www.flostudios.ai',
-  ogImage: 'https://www.flostudios.ai/og.jpg',
+  subtitle: 'AI-Powered Creative Learning',
   links: {
     twitter: 'https://twitter.com/flostudiosai',
     instagram: 'https://instagram.com/flostudiosai',
     youtube: 'https://youtube.com/flostudiosai',
   },
 };
+
+const ogImageUrl = `${siteConfig.url}${buildOgImageUrl({
+  title: siteConfig.name,
+  description: siteConfig.description,
+  subtitle: siteConfig.subtitle,
+  variant: 'hero',
+})}`;
 
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -39,7 +47,7 @@ export const defaultMetadata: Metadata = {
     siteName: siteConfig.name,
     images: [
       {
-        url: siteConfig.ogImage,
+        url: ogImageUrl,
         width: 1200,
         height: 630,
         alt: siteConfig.name,
@@ -50,7 +58,7 @@ export const defaultMetadata: Metadata = {
     card: 'summary_large_image',
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [siteConfig.ogImage],
+    images: [ogImageUrl],
     creator: '@flostudiosai',
   },
   robots: {

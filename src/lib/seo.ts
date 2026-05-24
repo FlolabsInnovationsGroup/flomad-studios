@@ -5,12 +5,14 @@
  */
 
 import { Metadata } from 'next';
+import { buildOgImageUrl } from './og-image';
 
 interface EnhancedMetadataProps {
   title: string;
   description: string;
   path: string;
-  image?: string;
+  subtitle?: string;
+  variant?: 'hero' | 'page';
   type?: 'website' | 'article' | 'video.other' | 'profile';
   publishedTime?: string;
   modifiedTime?: string;
@@ -23,7 +25,8 @@ export function generateEnhancedMetadata({
   title,
   description,
   path,
-  image = '/og-image.png',
+  subtitle,
+  variant = 'page',
   type = 'website',
   publishedTime,
   modifiedTime,
@@ -33,7 +36,7 @@ export function generateEnhancedMetadata({
 }: EnhancedMetadataProps): Metadata {
   const baseUrl = 'https://www.flostudios.ai';
   const url = `${baseUrl}${path}`;
-  const imageUrl = image.startsWith('http') ? image : `${baseUrl}${image}`;
+  const imageUrl = `${baseUrl}${buildOgImageUrl({ title, description, subtitle, variant })}`;
 
   const metadata: Metadata = {
     title,
@@ -113,8 +116,10 @@ export function generateEnhancedMetadata({
 export const homeMetadata = generateEnhancedMetadata({
   title: 'FloStudios.ai | AI-Powered Creative Learning Platform',
   description:
-    'FloStudios.ai is the AI-focused creative learning division of Flomad Labs R&D. Learn through hands-on projects in AI, robotics, and emerging technologies. Create podcasts, videos, and digital content while mastering cutting-edge AI tools.',
+    'Where AI meets creativity. A learning-focused division of FloLabs Innovations Group, creating AI-enhanced content and experiences for cutting-edge technology education in artificial intelligence, robotics, and emerging tech platforms.',
   path: '/',
+  subtitle: 'AI-Powered Creative Learning',
+  variant: 'hero',
   tags: [
     'AI learning platform',
     'creative education',
@@ -128,7 +133,7 @@ export const homeMetadata = generateEnhancedMetadata({
 export const aboutMetadata = generateEnhancedMetadata({
   title: 'About FloStudios.ai | AI Creative Learning Division',
   description:
-    'Learn about FloStudios.ai - the AI-focused creative learning division of Flomad Labs R&D. We empower emerging talent through experiential learning with AI, brainwriting, LLMs, and hands-on projects in cutting-edge technology.',
+    'Learn about FloStudios.ai - the AI-focused creative learning division of FloLabs Innovations Group. We empower emerging talent through experiential learning with AI, brainwriting, LLMs, and hands-on projects in cutting-edge technology.',
   path: '/about',
   tags: [
     'about us',
@@ -192,7 +197,7 @@ export const podcastsMetadata = generateEnhancedMetadata({
 export const contactMetadata = generateEnhancedMetadata({
   title: 'Contact FloStudios.ai | Get In Touch',
   description:
-    'Contact FloStudios.ai to learn about AI-powered creative learning programs, internships, and collaboration opportunities. Part of the Flomad Labs R&D ecosystem.',
+    'Contact FloStudios.ai to learn about AI-powered creative learning programs, internships, and collaboration opportunities. Part of the FloLabs Innovations Group ecosystem.',
   path: '/contact',
   tags: ['contact', 'get in touch', 'inquiries', 'collaboration'],
 });

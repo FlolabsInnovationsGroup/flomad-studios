@@ -57,11 +57,11 @@ export default function WorkPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             <CaseStudyCard
-              title="Flomad Labs R&D"
+              title="FloLabs Innovations Group"
               description="Corporate website showcasing AI & robotics research with modern design, professional portfolio presentation, and service highlights."
               category="Corporate Website"
               image="/images/flomadlabs.png"
-              url="https://flomadlabs.com"
+              url="https://www.flolabsinnovations.com/"
               status="live"
               tools={["Next.js", "Figma", "Tailwind CSS", "TypeScript", "Vercel"]}
               features={["Responsive Design", "SEO Optimized", "Performance Focused", "Modern UI/UX"]}
@@ -85,11 +85,11 @@ export default function WorkPage() {
             />
 
             <CaseStudyCard
-              title="Flomad International"
+              title="FloLabs International"
               description="Educational platform for AI & robotics programs featuring course catalogs, application systems, and student resources."
               category="Educational Website"
               image="/images/flomadinternational.png"
-              url="https://flomad.international"
+              url="https://www.flolabs.international/"
               status="live"
               tools={["WordPress", "Figma", "Canva", "Custom Plugins", "MySQL"]}
               features={["Course Catalog", "Application System", "Student Portal", "Program Info"]}
@@ -118,7 +118,7 @@ export default function WorkPage() {
             />
 
             <CaseStudyCard
-              title="Flomad Studios"
+              title="FloStudios.ai"
               description="This very website - our own portfolio and creative studio showcase built with modern web technologies."
               category="Portfolio Website"
               image="/images/flomadstudios.png"
@@ -244,10 +244,10 @@ export default function WorkPage() {
           <div className="glass p-12 md:p-16 rounded-2xl border border-border/60">
             <h2 className="text-4xl md:text-6xl font-bold mb-6 text-heading">Interested in This Work?</h2>
             <p className="text-xl max-w-2xl mx-auto mb-10 text-foreground/80">
-              Join our creative learning program and help create content for the next generation of technology at Flomad Labs R&D.
+              Join our creative learning program and help create content for the next generation of technology at FloLabs Innovations Group.
             </p>
             <Button className="bg-sky-500/20 hover:bg-sky-500/30 border border-sky-400/30 text-sky-700 dark:text-sky-300 hover:text-sky-600 dark:hover:text-sky-200 text-lg px-8 py-4 transition-all duration-300" asChild>
-              <a href="https://flolabs.international/internships/" target="_blank" rel="noopener noreferrer">Apply to GetRecruitedToday</a>
+              <a href="https://www.flolabs.international/internships/" target="_blank" rel="noopener noreferrer">Apply to GetRecruitedToday</a>
             </Button>
           </div>
         </div>

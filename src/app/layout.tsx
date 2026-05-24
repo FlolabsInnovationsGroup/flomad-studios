@@ -82,7 +82,7 @@ export default function RootLayout({
           name="FloStudios.ai"
           url="https://www.flostudios.ai"
           logo="https://www.flostudios.ai/images/flomadlogo.svg"
-          description="AI-focused creative learning division of Flomad Labs R&D, empowering the next generation through experiential learning in AI, robotics, and emerging technologies."
+          description="AI-focused creative learning division of FloLabs Innovations Group, empowering the next generation through experiential learning in AI, robotics, and emerging technologies."
           sameAs={[
             'https://www.linkedin.com/company/flomad-labs-r-d',
             'https://www.youtube.com/@FlomadLabs',

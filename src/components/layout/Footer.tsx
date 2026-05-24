@@ -9,28 +9,28 @@ export default function Footer() {
           <div className="md:col-span-2">
             <h3 className="text-2xl font-bold mb-6 gradient-text">FloStudios.ai</h3>
             <p className="footer-text mb-6">
-              An AI-focused creative learning division of Flomad Labs R&D, empowering the next generation of content creators, 
+              An AI-focused creative learning division of FloLabs Innovations Group, empowering the next generation of content creators, 
               storytellers, and digital innovators with cutting-edge AI technology and innovative learning experiences.
             </p>
             <div className="mb-6">
-              <p className="text-sm text-foreground/70 mb-4">Part of the Flomad Network:</p>
+              <p className="text-sm text-foreground/70 mb-4">Part of the FloLabs Network:</p>
               <div className="flex flex-col space-y-3 text-sm">
                 <a 
-                  href="https://flomadlabs.com" 
+                  href="https://www.flolabsinnovations.com/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="footer-link flex items-center text-blue-600 dark:text-primary hover:text-blue-800 dark:hover:text-primary/80 py-3 px-4 rounded-lg transition-all hover:bg-blue-50 dark:hover:bg-primary/10 border border-transparent hover:border-blue-200 dark:hover:border-primary/20"
                 >
-                  <span className="tracking-wide font-medium flex-1 mr-3">Flomad Labs R&D</span>
+                  <span className="tracking-wide font-medium flex-1 mr-3">FloLabs Innovations Group</span>
                   <ExternalLink className="h-4 w-4 flex-shrink-0 opacity-70" />
                 </a>
                 <a 
-                  href="https://flomad.international" 
+                  href="https://www.flolabs.international/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="footer-link flex items-center text-blue-600 dark:text-primary hover:text-blue-800 dark:hover:text-primary/80 py-3 px-4 rounded-lg transition-all hover:bg-blue-50 dark:hover:bg-primary/10 border border-transparent hover:border-blue-200 dark:hover:border-primary/20"
                 >
-                  <span className="tracking-wide font-medium flex-1 mr-3">Flomad International</span>
+                  <span className="tracking-wide font-medium flex-1 mr-3">FloLabs International</span>
                   <ExternalLink className="h-4 w-4 flex-shrink-0 opacity-70" />
                 </a>
               </div>

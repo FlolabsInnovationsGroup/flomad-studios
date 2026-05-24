@@ -178,6 +178,8 @@ function checkSEOFiles() {
                        checkFile('public/favicon.svg', 'favicon.svg');
   
   // Check for og images
+  checkFile('src/app/opengraph-image.tsx', 'Dynamic OpenGraph image') ||
+  checkFile('src/app/api/og/route.tsx', 'OpenGraph API route') ||
   checkFile('public/og.jpg', 'OpenGraph image') ||
   checkFile('public/og.png', 'OpenGraph image');
 }

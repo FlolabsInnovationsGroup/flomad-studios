@@ -2,12 +2,13 @@ import Link from 'next/link';
 import { ArrowLeft, Shield, Eye, Database, UserCheck, Lock, Globe } from 'lucide-react';
 import GlassCard from '@/components/ui/GlassCard';
 import GlassButton from '@/components/ui/GlassButton';
+import { generateEnhancedMetadata } from '@/lib/seo';
 
-
-export const metadata = {
-  title: "Privacy Policy | FloStudios.ai",
-  description: "Learn how FloStudios.ai protects your privacy and handles your personal information.",
-};
+export const metadata = generateEnhancedMetadata({
+  title: 'Privacy Policy | FloStudios.ai',
+  description: 'Learn how FloStudios.ai protects your privacy and handles your personal information.',
+  path: '/privacy',
+});
 
 export default function PrivacyPage() {
   return (
@@ -151,9 +152,9 @@ export default function PrivacyPage() {
 
             <div className="space-y-4">
               <div className="bg-background/85 dark:bg-background-muted/80 border border-border/60 p-4 rounded-lg">
-                <h3 className="text-lg font-semibold text-heading mb-2">Within Flomad Ecosystem</h3>
+                <h3 className="text-lg font-semibold text-heading mb-2">Within FloLabs Ecosystem</h3>
                 <p className="text-foreground/70">
-                  With other Flomad companies (Flomad Labs, Flomad International) for legitimate business purposes 
+                  With other FloLabs companies (FloLabs Innovations Group, FloLabs International) for legitimate business purposes 
                   and to provide integrated services.
                 </p>
               </div>
@@ -319,7 +320,7 @@ export default function PrivacyPage() {
                 <h3 className="text-lg font-semibold text-heading mb-2">Mailing Address</h3>
                 <p className="text-foreground/70">
                   FloStudios.ai<br />
-                  c/o Flomad Labs<br />
+                  c/o FloLabs Innovations Group<br />
                   [Address to be provided]
                 </p>
               </div>

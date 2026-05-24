@@ -21,7 +21,7 @@ export default function HomePage() {
       <EnhancedHero
         subtitle="AI-Powered Creative Learning"
         title="FloStudios.ai"
-        description="Where AI meets creativity. A learning-focused division of Flomad Labs R&D, creating AI-enhanced content and experiences for cutting-edge technology education in artificial intelligence, robotics, and emerging tech platforms."
+        description="Where AI meets creativity. A learning-focused division of FloLabs Innovations Group, creating AI-enhanced content and experiences for cutting-edge technology education in artificial intelligence, robotics, and emerging tech platforms."
         primaryAction={{
           label: "Let's Talk",
           href: '/contact'
@@ -47,18 +47,18 @@ export default function HomePage() {
               Websites & <span className="text-foreground font-extrabold">Digital Experiences</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-foreground max-w-4xl mx-auto leading-relaxed px-4">
-              Real projects we&apos;ve designed and developed for the Flomad Labs ecosystem, from AI platforms to robotics marketplaces.
+              Real projects we&apos;ve designed and developed for the FloLabs Innovations Group ecosystem, from AI platforms to robotics marketplaces.
             </p>
           </div>
 
           {/* Portfolio Grid - Enhanced mobile responsive */}
           <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
             <CaseStudyCard
-              title="Flomad Labs R&D"
+              title="FloLabs Innovations Group"
               description="Main company website showcasing AI & robotics research with modern design and professional portfolio presentation."
               category="Corporate Website"
               image="/images/flomadlabs.png"
-              url="https://flomadlabs.com"
+              url="https://www.flolabsinnovations.com/"
               status="live"
               tools={["Next.js", "Figma", "Tailwind CSS", "TypeScript"]}
               features={["Responsive Design", "SEO Optimized", "Performance Focused"]}
@@ -81,11 +81,11 @@ export default function HomePage() {
             />
 
             <CaseStudyCard
-              title="Flomad International"
+              title="FloLabs International"
               description="Educational platform for AI & robotics programs with course information and application system."
               category="Educational Website"
               image="/images/flomadinternational.png"
-              url="https://flomad.international"
+              url="https://www.flolabs.international/"
               status="live"
               tools={["WordPress", "Figma", "Canva", "Custom Plugins"]}
               features={["Course Catalog", "Application System", "Student Portal"]}
@@ -297,7 +297,7 @@ export default function HomePage() {
               </div>
             </GlassCard>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 sm:mb-8 text-enhanced-strong px-2">
-              Built by <span className="gradient-text-sky">Flo Students</span>
+              Built by <span className="gradient-text-sky">Flearners</span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-foreground max-w-4xl mx-auto leading-relaxed px-4">
               Real-world AI and robotics projects developed through our experiential learning programs. 
@@ -346,7 +346,7 @@ export default function HomePage() {
                 that make an impact. Get recruited today while building your portfolio.
               </p>
               <GlassButton variant="primary" size="lg" className="glow-effect">
-                <a href="https://flolabs.international/internships/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <a href="https://www.flolabs.international/internships/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <Rocket className="w-5 h-5" />
                   Apply to GetRecruitedToday
                 </a>
@@ -361,29 +361,29 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Part of the <span className="text-primary">Flomad Labs Ecosystem</span>
+              Part of the <span className="text-primary">FloLabs Ecosystem</span>
             </h3>
             <p className="text-foreground/70 max-w-2xl mx-auto">
-              FloStudios.ai works alongside other innovative platforms in the Flomad Labs network
+              FloStudios.ai works alongside other innovative platforms in the FloLabs Innovations Group network
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-4 lg:gap-6">
             {[
               {
-                name: "Flomad Labs",
+                name: "FloLabs Innovations Group",
                 description: "AI & Robotics R&D",
-                url: "https://flomadlabs.com",
+                url: "https://www.flolabsinnovations.com/",
                 color: "bg-blue-100/80 dark:bg-blue-500/10 border-blue-500/50 dark:border-blue-400/30 hover:bg-blue-200/80 dark:hover:bg-blue-500/20 text-blue-900 dark:text-blue-100"
               },
               {
-                name: "Flomad International", 
+                name: "FloLabs International", 
                 description: "Education Programs",
-                url: "https://flomad.international",
+                url: "https://www.flolabs.international/",
                 color: "bg-emerald-100/80 dark:bg-emerald-500/10 border-emerald-600/50 dark:border-emerald-400/30 hover:bg-emerald-200/80 dark:hover:bg-emerald-500/20 text-emerald-900 dark:text-emerald-100"
               },
               {
-                name: "Flomad Travel",
+                name: "Flo Travel",
                 description: "AI-Powered Travel",
                 url: "https://flomadtravel.com",
                 color: "bg-indigo-100/80 dark:bg-purple-500/10 border-indigo-600/50 dark:border-purple-400/30 hover:bg-indigo-200/80 dark:hover:bg-purple-500/20 text-indigo-900 dark:text-purple-100"
@@ -435,7 +435,7 @@ export default function HomePage() {
             Get in touch to start the conversation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center max-w-lg sm:max-w-none mx-auto">
-            <Link href="https://flolabs.international/internships/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+            <Link href="https://www.flolabs.international/internships/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
               <SkyButton 
                 size="lg" 
                 className="w-full sm:w-auto"
@@ -445,7 +445,7 @@ export default function HomePage() {
               </SkyButton>
             </Link>
 
-            <Link href="https://flolabs.international/internships/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+            <Link href="https://www.flolabs.international/internships/" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
               <GhostButton 
                 size="lg"
                 className="w-full sm:w-auto"

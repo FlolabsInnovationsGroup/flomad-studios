@@ -60,7 +60,7 @@ export default function DashboardLayout({
         {/* Sidebar - Hidden on mobile, shown on desktop */}
         <aside className="hidden md:block w-64 h-screen border-r border-border bg-card overflow-y-auto fixed">
           <div className="p-6 border-b border-border">
-            <h2 className="text-xl font-bold text-enhanced-strong">Flomad Studios</h2>
+            <h2 className="text-xl font-bold text-enhanced-strong">FloStudios.ai</h2>
             <p className="text-sm text-foreground/60 mt-1 text-enhanced-readable">Content Dashboard</p>
           </div>
 
@@ -120,7 +120,7 @@ export default function DashboardLayout({
           <div className="md:hidden bg-card border-b border-border p-3 sm:p-4 sticky top-0 z-50">
             <div className="flex items-center justify-between">
               <div>
-                <h2 className="text-base sm:text-lg font-bold text-enhanced-strong">Flomad Studios</h2>
+                <h2 className="text-base sm:text-lg font-bold text-enhanced-strong">FloStudios.ai</h2>
                 <p className="text-xs text-foreground/60 text-enhanced-readable">Dashboard</p>
               </div>
               <button

@@ -2,12 +2,13 @@ import Link from 'next/link';
 import { ArrowLeft, FileText, AlertTriangle, Users, Gavel, Shield, ExternalLink } from 'lucide-react';
 import GlassCard from '@/components/ui/GlassCard';
 import GlassButton from '@/components/ui/GlassButton';
+import { generateEnhancedMetadata } from '@/lib/seo';
 
-
-export const metadata = {
-  title: "Terms of Service | FloStudios.ai",
+export const metadata = generateEnhancedMetadata({
+  title: 'Terms of Service | FloStudios.ai',
   description: "Read the terms and conditions for using FloStudios.ai's services and platform.",
-};
+  path: '/terms',
+});
 
 export default function TermsPage() {
   return (
@@ -88,9 +89,9 @@ export default function TermsPage() {
               </div>
 
               <div className="border-l-4 border-amber-400/30 pl-4">
-                <h3 className="text-lg font-semibold text-white mb-2">&ldquo;Flomad Ecosystem&rdquo;</h3>
+                <h3 className="text-lg font-semibold text-white mb-2">&ldquo;FloLabs Ecosystem&rdquo;</h3>
                 <p className="text-gray-300 text-sm">
-                  Refers to FloStudios.ai and its affiliated companies, including Flomad Labs and Flomad International.
+                  Refers to FloStudios.ai and its affiliated companies, including FloLabs Innovations Group and FloLabs International.
                 </p>
               </div>
             </div>
@@ -384,8 +385,8 @@ export default function TermsPage() {
                   <Link href="/contact" className="text-emerald-300 hover:text-emerald-200 transition-colors flex items-center gap-1">
                     Contact Us <ExternalLink className="w-3 h-3" />
                   </Link>
-                  <a href="https://flomadlabs.com" className="text-emerald-300 hover:text-emerald-200 transition-colors flex items-center gap-1">
-                    Flomad Labs <ExternalLink className="w-3 h-3" />
+                  <a href="https://www.flolabsinnovations.com/" className="text-emerald-300 hover:text-emerald-200 transition-colors flex items-center gap-1">
+                    FloLabs Innovations Group <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>
               </div>

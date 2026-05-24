@@ -6,8 +6,8 @@ import GlassButton from '@/components/ui/GlassButton';
 import Loading from '@/components/ui/Loading';
 
 export const metadata = {
-  title: "New Podcast Episode | Dashboard | Flomad Studios",
-  description: "Create and upload a new podcast episode to your Flomad Studios dashboard.",
+  title: "New Podcast Episode | Dashboard | FloStudios.ai",
+  description: "Create and upload a new podcast episode to your FloStudios.ai dashboard.",
 };
 
 export default function NewPodcastEpisodePage() {

@@ -36,10 +36,10 @@ export default function JoinPage() {
         <div className="relative z-10 text-center max-w-5xl mx-auto px-4">
           <GlassCard className="p-8 md:p-12 mb-8 border border-border/60" variant="primary" blur="xl">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-heading">
-              Learn Creative Skills at <span className="bg-gradient-to-r from-sky-600 to-emerald-600 dark:from-sky-400 dark:to-emerald-400 bg-clip-text text-transparent">Flomad Labs R&D</span>
+              Learn Creative Skills at <span className="bg-gradient-to-r from-sky-600 to-emerald-600 dark:from-sky-400 dark:to-emerald-400 bg-clip-text text-transparent">FloLabs Innovations Group</span>
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl mx-auto text-foreground/70 leading-relaxed mb-8">
-              Where emerging creatives work on real technology projects. As the creative division of Flomad Labs R&D, you&rsquo;ll create content for AI research, robotics projects, and emerging technology initiatives.
+              Where emerging creatives work on real technology projects. As the creative division of FloLabs Innovations Group, you&rsquo;ll create content for AI research, robotics projects, and emerging technology initiatives.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <GlassButton variant="primary" size="lg" glow className="group">
@@ -64,7 +64,7 @@ export default function JoinPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-heading mb-6">
-              Why FlomadStudios is Different
+              Why FloStudios.ai is Different
             </h2>
             <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
               We&rsquo;re the creative division of a technology R&D company, which means you&rsquo;ll work on content for AI, robotics, and emerging tech projects - not typical marketing materials.
@@ -76,13 +76,13 @@ export default function JoinPage() {
               {
                 icon: Users,
                 title: "Technology R&D Environment",
-                description: "Work within Flomad Labs R&D on real technology projects. Create content for AI research, robotics development, and emerging tech initiatives - not traditional client work.",
+                description: "Work within FloLabs Innovations Group on real technology projects. Create content for AI research, robotics development, and emerging tech initiatives - not traditional client work.",
                 variant: 'primary' as VariantKey,
               },
               {
                 icon: Zap,
                 title: "Real Project Experience",
-                description: "No busywork or theoretical exercises. You'll work on actual content that supports live research and development projects at Flomad Labs.",
+                description: "No busywork or theoretical exercises. You'll work on actual content that supports live research and development projects at FloLabs Innovations Group.",
                 variant: 'secondary' as VariantKey,
               },
               {
@@ -131,7 +131,7 @@ export default function JoinPage() {
               {
                 icon: Mic,
                 title: "Podcast Production",
-                description: "Master the art of audio storytelling through our flagship show 'The Flomad Frequency' and other podcast projects.",
+                description: "Master the art of audio storytelling through our flagship show 'The Flo Frequency' and other podcast projects.",
                 skills: ["Audio Editing", "Interview Techniques", "Show Production", "Sound Design", "Distribution"],
                 variant: 'secondary' as VariantKey,
               },
@@ -258,7 +258,7 @@ export default function JoinPage() {
               },
               {
                 question: "Is this a paid program?",
-                answer: "Flomad Studios operates as an experiential learning program. While positions aren't traditionally paid, you gain real-world experience, portfolio pieces, and mentorship that's invaluable for your career."
+                answer: "FloStudios.ai operates as an experiential learning program. While positions aren't traditionally paid, you gain real-world experience, portfolio pieces, and mentorship that's invaluable for your career."
               },
               {
                 question: "How much time commitment is expected?",
@@ -269,8 +269,8 @@ export default function JoinPage() {
                 answer: "Yes! We&rsquo;re a remote-first studio with creators around the world. All you need is reliable internet and enthusiasm for creating."
               },
               {
-                question: "What's the connection to Flomad Labs?",
-                answer: "Flomad Studios is the creative content division of Flomad Labs R&D. You'll be part of a larger ecosystem focused on innovation in AI, robotics, and emerging technologies."
+                question: "What's the connection to FloLabs Innovations Group?",
+                answer: "FloStudios.ai is the creative content division of FloLabs Innovations Group. You'll be part of a larger ecosystem focused on innovation in AI, robotics, and emerging technologies."
               }
             ].map((faq, index) => (
               <GlassCard key={index} className="p-8" variant="primary" blur="lg">

@@ -235,7 +235,7 @@ Location: After Portfolio Showcase section
 
 **Content to Add:**
 ```
-Section: "Built by Flo Students"
+Section: "Built by Flearners"
 - CAIPO.ai: "Wearable AI productivity assistant developed by our students"
 - MoodChanger.ai: "AI mood management for people, athletes, and pets"
 - Flo Travel: "AI-powered travel planning platform"

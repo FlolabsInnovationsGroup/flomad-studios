@@ -14,7 +14,7 @@ export const metadata = generateEnhancedMetadata({
 const faqs = [
   {
     question: "What is FloStudios.ai?",
-    answer: "FloStudios.ai is the AI-focused creative learning division of Flomad Labs R&D. We provide experiential learning programs where students work on real AI and robotics projects like CAIPO, MoodChanger, Flo Travel, and RoboCollective. Our approach combines hands-on project work, AI tools, expert mentorship, and industry best practices to prepare the next generation of technology innovators."
+    answer: "FloStudios.ai is the AI-focused creative learning division of FloLabs Innovations Group. We provide experiential learning programs where students work on real AI and robotics projects like CAIPO, MoodChanger, Flo Travel, and RoboCollective. Our approach combines hands-on project work, AI tools, expert mentorship, and industry best practices to prepare the next generation of technology innovators."
   },
   {
     question: "How is FloStudios.ai different from traditional education?",
@@ -46,7 +46,7 @@ const faqs = [
   },
   {
     question: "Will I get credit or recognition for my work?",
-    answer: "Absolutely! All student work is properly attributed. You'll build a public portfolio showcasing your contributions to real platforms. Projects like CAIPO, MoodChanger, and Flo Travel proudly highlight that they were 'Built by Flo Students,' and you'll have tangible work to show future employers."
+    answer: "Absolutely! All student work is properly attributed. You'll build a public portfolio showcasing your contributions to real platforms. Projects like CAIPO, MoodChanger, and Flo Travel proudly highlight that they were 'Built by Flearners,' and you'll have tangible work to show future employers."
   },
   {
     question: "What is The Flo Frequency?",
@@ -54,7 +54,7 @@ const faqs = [
   },
   {
     question: "What learning methodology do you use?",
-    answer: "Our methodology includes: (1) Brainwriting exercises for collaborative ideation, (2) Advanced AI tools (LLMs) for enhanced productivity, (3) Recorded meetings for review and reflection, (4) Expert mentorship from Flomad Labs professionals, (5) Hands-on projects on real platforms, and (6) Project-based learning where concepts are immediately applied."
+    answer: "Our methodology includes: (1) Brainwriting exercises for collaborative ideation, (2) Advanced AI tools (LLMs) for enhanced productivity, (3) Recorded meetings for review and reflection, (4) Expert mentorship from FloLabs Innovations Group professionals, (5) Hands-on projects on real platforms, and (6) Project-based learning where concepts are immediately applied."
   },
   {
     question: "What industries do you work in?",
@@ -66,11 +66,11 @@ const faqs = [
   },
   {
     question: "How do I apply to join?",
-    answer: "Visit flolabs.international/internships/ to apply for the GetRecruitedToday program. We'll discuss your interests, skills, and goals, then match you to appropriate projects and learning opportunities. The application process is straightforward and designed to understand how we can best support your growth."
+    answer: "Visit www.flolabs.international/internships/ to apply for the GetRecruitedToday program. We'll discuss your interests, skills, and goals, then match you to appropriate projects and learning opportunities. The application process is straightforward and designed to understand how we can best support your growth."
   },
   {
     question: "What kind of support and mentorship is available?",
-    answer: "You'll have direct access to industry professionals and researchers from Flomad Labs who provide guidance, feedback, and insights into emerging technologies. All sessions are recorded, and you can review materials anytime. We also have a collaborative community of fellow students working on similar challenges."
+    answer: "You'll have direct access to industry professionals and researchers from FloLabs Innovations Group who provide guidance, feedback, and insights into emerging technologies. All sessions are recorded, and you can review materials anytime. We also have a collaborative community of fellow students working on similar challenges."
   }
 ];
 
@@ -170,7 +170,7 @@ export default function FAQPage() {
                 </Link>
               </GlassButton>
               <GlassButton variant="secondary" size="lg">
-                <a href="https://flolabs.international/internships/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                <a href="https://www.flolabs.international/internships/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <GraduationCap className="w-5 h-5" />
                   Apply to GetRecruitedToday
                 </a>
