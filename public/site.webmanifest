@@ -1,0 +1,17 @@
+{
+  "name": "FloStudios",
+  "short_name": "FloStudios",
+  "description": "Where AI meets creativity. AI-enhanced learning, content, and experiences for education in artificial intelligence, robotics, and emerging tech.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b141a",
+  "theme_color": "#1CA9E1",
+  "icons": [
+    {
+      "src": "/flostudios-logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
