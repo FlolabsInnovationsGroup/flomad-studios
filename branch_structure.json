@@ -1,0 +1,33 @@
+{
+  "default_branch": "main",
+  "branches": [
+    "dependabot/npm_and_yarn/multi-4b10dec7ea",
+    "dependabot/npm_and_yarn/nanoid-3.3.18",
+    "dependabot/npm_and_yarn/uuid-14.0.0",
+    "enhanced-sky-background",
+    "google-feature",
+    "main",
+    "update-contact-page-links",
+    "vercel/react-server-components-cve-vu-mexn0a"
+  ],
+  "parent": {
+    "dependabot/npm_and_yarn/multi-4b10dec7ea": "main",
+    "dependabot/npm_and_yarn/nanoid-3.3.18": "main",
+    "dependabot/npm_and_yarn/uuid-14.0.0": "main",
+    "enhanced-sky-background": "main",
+    "google-feature": "main",
+    "main": null,
+    "update-contact-page-links": "main",
+    "vercel/react-server-components-cve-vu-mexn0a": "main"
+  },
+  "order": [
+    "main",
+    "dependabot/npm_and_yarn/multi-4b10dec7ea",
+    "dependabot/npm_and_yarn/nanoid-3.3.18",
+    "dependabot/npm_and_yarn/uuid-14.0.0",
+    "enhanced-sky-background",
+    "google-feature",
+    "update-contact-page-links",
+    "vercel/react-server-components-cve-vu-mexn0a"
+  ]
+}
