@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import NewsletterForm from "@/components/NewsletterForm";
+import { PreferredSourceFooterLink } from "@/components/PreferredSource";
 
 type Link = { name: string; href: string; external?: boolean };
 
@@ -139,12 +140,15 @@ export default function Footer() {
             <NewsletterForm />
 
             <h4 className="footer-h">Social Media</h4>
-            <div className="footer-socials">
-              {SOCIALS.map((s) => (
-                <a key={s.name} className="footer-social" href={s.href} aria-label={s.name} {...ext}>
-                  {s.icon}
-                </a>
-              ))}
+            <div className="footer-connect">
+              <div className="footer-socials">
+                {SOCIALS.map((s) => (
+                  <a key={s.name} className="footer-social" href={s.href} aria-label={s.name} {...ext}>
+                    {s.icon}
+                  </a>
+                ))}
+              </div>
+              <PreferredSourceFooterLink />
             </div>
           </div>
 
