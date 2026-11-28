@@ -13,13 +13,15 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <Hero />
-      <Work />
-      <Services />
-      <Podcast />
-      <StudentImpact />
-      <Ecosystem />
-      <FinalCTA />
+      <main id="main">
+        <Hero />
+        <Work />
+        <Services />
+        <Podcast />
+        <StudentImpact />
+        <Ecosystem />
+        <FinalCTA />
+      </main>
       <Footer />
       <SiteEffects />
     </>

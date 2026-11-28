@@ -1,0 +1,41 @@
+# FloStudios
+
+> FloStudios (https://www.flostudios.ai) is where AI meets creativity: a learning-focused division of FloLabs Innovations Group, creating AI-enhanced content and experiences for cutting-edge technology education in artificial intelligence, robotics, and emerging tech platforms.
+
+FloStudios is a FloLabs Innovations Group project (https://www.flolabsinnovations.com/). The site is a single page with sections for its work, services, the Connecting the Dots video series, student impact, and the FloLabs network.
+
+## Services
+
+- Web Design & Development: Creating modern, responsive websites that effectively represent your brand and engage visitors.
+- Brand Identity Design: Developing visual identity systems that help your business stand out and connect with customers.
+- Digital Content Creation: Producing engaging video, audio, and visual content to tell your brand's story across platforms.
+- Digital Strategy: Planning and implementing digital solutions that align with your business goals and growth objectives.
+- Creative Consultation: Providing expert guidance on digital projects, from concept development to final implementation.
+- Ongoing Support: Maintaining and evolving your digital presence with updates, improvements, and new features.
+
+## Projects
+
+- [MoodChanger](https://www.moodchanger.ai/): An AI-powered platform designed to enhance emotional well-being with personalized insights and practical guidance.
+- [CAIPO](https://www.caipo.ai/): A wearable AI system focused on capturing moments, organizing notes, and improving productivity workflows.
+- [Flo Travel](https://www.flomadtravel.com/): AI-powered travel planning for flights, hotels, reservations, and activities in one connected experience.
+- [Innovation Bootcamp University](https://www.bootcampuniversity.org/): A cooperative education initiative that helps learners move from foundational training to paid, real-world tech project experience.
+- [TARRL](https://tarrl.org/): The official portal for FloLabs' Texas Advanced Robotics Research Lab (TARRL).
+- [FloLabs Innovations Group](https://www.flolabsinnovations.com/): A global platform showcasing FloLabs initiatives, partnerships, and AI/technology innovation.
+- [MoodChanger for Pets](https://www.moodchanger.ai/): An AI-driven pet wellness platform combining wearables, environment data, and behavior insights.
+- [RoboCollective](https://www.robocollective.ai/): A major initiative focused on intelligent systems, human-robot interaction, and robotics commercialization.
+- [Hephaestus International](https://hephaestus.international/): An experiential learning institute focused on innovation, education, and advanced technology development.
+- [FloLabs International](https://www.flolabs.international/): A global hub highlighting FloLabs' mission, projects, and collaboration opportunities.
+- [FloBrain](https://www.flobrain.ai/) (coming soon): An AI-native initiative focused on knowledge workflows, intelligent assistants, and practical team productivity systems.
+- [Legal & Ethics Ventures Institute](https://www.legalethicsventuresinstitute.com/): A remote-first, hands-on institute for legal, ethics, and AI venture projects with real-world execution.
+- [Space Ventures Institute](https://www.spaceventuresinstitute.com/): A remote-first experiential venture institute connecting talent to real space economy projects.
+- [Cosmos Intelligence](http://cosmosintelligence.org/): An open research and product initiative using AI to study cosmic-scale structure, signals, and information patterns across public space data.
+- [Athletic Performance Intelligence](https://www.athleticperformanceintelligence.com/)
+
+## Video series
+
+- [Connecting the Dots](https://www.youtube.com/@flolabsinnovation): A FloLabs original series. An ongoing video series documenting the people, decisions, experiments, and ideas behind FloLabs.
+
+## Contact and programs
+
+- Programs and internships: https://www.flolabs.international/internships
+- Social profiles (FloLabs Innovations Group): [YouTube](https://www.youtube.com/@flolabsinnovation), [LinkedIn](https://www.linkedin.com/company/flolabs-innovation/), [Instagram](https://www.instagram.com/flolabsinnovations/), [Facebook](https://www.facebook.com/people/Flo-Labs-RD/61572285432918/), [TikTok](https://www.tiktok.com/@flomadlabs), [Reddit](https://www.reddit.com/user/FloLabs_Innovations/)

@@ -59,7 +59,9 @@ export default function Ecosystem() {
       <div className="wrap eco-wrap">
         <div className="eco-head reveal">
           <h2 className="section-title eco-rotate-title">
+            <span className="text-rotate-sr-only">The FloLabs Innovations Group network</span>
             <RotatingText
+              srLabel={false}
               texts={NETWORK_NAMES}
               mainClassName="eco-rotate"
               splitLevelClassName="eco-rotate-split"

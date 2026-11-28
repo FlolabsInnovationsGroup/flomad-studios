@@ -38,6 +38,8 @@ export type RotatingTextProps = {
   mainClassName?: string;
   splitLevelClassName?: string;
   elementLevelClassName?: string;
+  /** Render a visually hidden copy of the current text for assistive tech (default true). */
+  srLabel?: boolean;
 };
 
 type SegmenterCtor = new (
@@ -73,6 +75,7 @@ const RotatingText = forwardRef<RotatingTextHandle, RotatingTextProps>((props, r
     mainClassName,
     splitLevelClassName,
     elementLevelClassName,
+    srLabel = true,
     ...rest
   } = props;
 
@@ -165,7 +168,7 @@ const RotatingText = forwardRef<RotatingTextHandle, RotatingTextProps>((props, r
 
   return (
     <motion.span className={cn("text-rotate", mainClassName)} {...rest} layout transition={transition}>
-      <span className="text-rotate-sr-only">{texts[currentTextIndex]}</span>
+      {srLabel && <span className="text-rotate-sr-only">{texts[currentTextIndex]}</span>}
       <AnimatePresence mode={animatePresenceMode} initial={animatePresenceInitial}>
         <motion.span
           key={currentTextIndex}

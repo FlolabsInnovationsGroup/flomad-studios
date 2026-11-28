@@ -5,7 +5,7 @@ const PROJECTS: ProjectCardProps[] = [
   {
     accent: "#FDE035",
     pattern: "rays",
-    media: { kind: "image", src: "/assets/carousel/moodchanger.png", alt: "MoodChanger app", variant: "product" },
+    media: { kind: "image", src: "/assets/carousel/moodchanger.png", alt: "MoodChanger AI wellbeing app", variant: "product" },
     status: { label: "Live", kind: "live" },
     kicker: "AI Wellbeing Platform",
     title: "MoodChanger",
@@ -25,7 +25,7 @@ const PROJECTS: ProjectCardProps[] = [
   {
     accent: "#0AA573",
     pattern: "rays",
-    media: { kind: "image", src: "/assets/carousel/flotravel.png", alt: "Flo Travel", variant: "product" },
+    media: { kind: "image", src: "/assets/carousel/flotravel.png", alt: "Flo Travel: passenger airplane in flight", variant: "product" },
     status: { label: "Live", kind: "live" },
     kicker: "AI Travel Platform",
     title: "Flo Travel",
@@ -35,7 +35,7 @@ const PROJECTS: ProjectCardProps[] = [
   {
     accent: "#13A7CB",
     pattern: "dots",
-    media: { kind: "image", src: "/assets/carousel/bootcamp.png", alt: "Graduation cap", variant: "product" },
+    media: { kind: "image", src: "/assets/carousel/bootcamp.png", alt: "Innovation Bootcamp University graduation cap", variant: "product" },
     status: { label: "Live", kind: "live" },
     kicker: "Education Initiative",
     title: "Innovation Bootcamp University",
@@ -45,7 +45,7 @@ const PROJECTS: ProjectCardProps[] = [
   {
     accent: "#002868",
     pattern: "rings",
-    media: { kind: "image", src: "/assets/carousel/tarrl.png", alt: "TARRL robot", variant: "product" },
+    media: { kind: "image", src: "/assets/carousel/tarrl.png", alt: "TARRL robotics research lab robot", variant: "product" },
     status: { label: "Live", kind: "live" },
     kicker: "Robotics Research Lab",
     title: "TARRL",
@@ -55,7 +55,7 @@ const PROJECTS: ProjectCardProps[] = [
   {
     accent: "#387CEA",
     pattern: "dots",
-    media: { kind: "image", src: "/flolabs-logo.png", alt: "FloLabs mark", variant: "logo" },
+    media: { kind: "image", src: "/flolabs-logo.png", alt: "FloLabs Innovations Group logo", variant: "logo" },
     status: { label: "Live", kind: "live" },
     kicker: "Corporate Platform",
     title: "FloLabs Innovations Group",
@@ -65,7 +65,7 @@ const PROJECTS: ProjectCardProps[] = [
   {
     accent: "#8B5A2B",
     pattern: "rings",
-    media: { kind: "image", src: "/assets/pets-card.png", alt: "A cat and dog resting together", variant: "photo" },
+    media: { kind: "image", src: "/assets/pets-card.png", alt: "MoodChanger for Pets: a cat and dog resting together", variant: "photo" },
     status: { label: "Live", kind: "live" },
     kicker: "Pet Wellness Platform",
     title: "MoodChanger for Pets",
@@ -75,7 +75,7 @@ const PROJECTS: ProjectCardProps[] = [
   {
     accent: "#00DBFF",
     pattern: "rays",
-    media: { kind: "image", src: "/assets/robocollective-card.png", alt: "RoboCollective", variant: "product" },
+    media: { kind: "image", src: "/assets/robocollective-card.png", alt: "RoboCollective humanoid robot", variant: "product" },
     status: { label: "Live", kind: "live" },
     kicker: "Robotics Initiative",
     title: "RoboCollective",
@@ -85,7 +85,7 @@ const PROJECTS: ProjectCardProps[] = [
   {
     accent: "#1269C7",
     pattern: "dots",
-    media: { kind: "image", src: "/assets/carousel/hepheastus.png", alt: "Hephaestus mark", variant: "product" },
+    media: { kind: "image", src: "/assets/carousel/hepheastus.png", alt: "Hephaestus International: statue of Hephaestus at the anvil", variant: "product" },
     status: { label: "Live", kind: "live" },
     kicker: "Experiential Institute",
     title: "Hephaestus International",
@@ -125,7 +125,7 @@ const PROJECTS: ProjectCardProps[] = [
   {
     accent: "#F23D3D",
     pattern: "dots",
-    media: { kind: "image", src: "/assets/carousel/legal.webp", alt: "Legal & Ethics Ventures Institute", variant: "product" },
+    media: { kind: "image", src: "/assets/carousel/legal.webp", alt: "Legal & Ethics Ventures Institute: scales of justice", variant: "product" },
     status: { label: "Live", kind: "live" },
     kicker: "Legal & Ethics Institute",
     title: "Legal & Ethics Ventures Institute",
@@ -135,7 +135,7 @@ const PROJECTS: ProjectCardProps[] = [
   {
     accent: "#2962FF",
     pattern: "rays",
-    media: { kind: "image", src: "/assets/carousel/spaceventures.png", alt: "Space Ventures rocket", variant: "product" },
+    media: { kind: "image", src: "/assets/carousel/spaceventures.png", alt: "Space Ventures Institute rocket", variant: "product" },
     status: { label: "Live", kind: "live" },
     kicker: "Venture Institute",
     title: "Space Ventures Institute",
@@ -146,7 +146,7 @@ const PROJECTS: ProjectCardProps[] = [
     // TODO: no accent supplied for Cosmos Intelligence — placeholder pending confirmation
     accent: "#5A4FCF",
     pattern: "rings",
-    media: { kind: "image", src: "/assets/carousel/cosmos.png", alt: "Saturn planet with rings", variant: "product" },
+    media: { kind: "image", src: "/assets/carousel/cosmos.png", alt: "Cosmos Intelligence: Saturn with its rings", variant: "product" },
     status: { label: "Live", kind: "live" },
     kicker: "Research Initiative",
     title: "Cosmos Intelligence",

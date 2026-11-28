@@ -1,4 +1,5 @@
 import FaultyTerminal from "@/components/FaultyTerminal";
+import { SOCIAL_URLS } from "@/lib/site";
 
 const INSIDE = [
   "Leadership discussions",
@@ -74,7 +75,7 @@ export default function Podcast() {
 
             <a
               className="btn btn-primary ctd-cta"
-              href="https://www.youtube.com/@FloLabsInnovation"
+              href={SOCIAL_URLS.youtube}
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -5,7 +5,7 @@ export default function Nav() {
     <nav className="nav" id="nav">
       <div className="wrap nav-inner">
         <a className="brand" href="#top">
-          <img className="logo-img" src="/flostudios-logo.svg" alt="FloStudios logo" />
+          <img className="logo-img" src="/flostudios-logo.svg" alt="" />
           FloStudios
         </a>
         <div className="nav-links" id="navLinks">

@@ -1,14 +1,11 @@
 import type { MetadataRoute } from "next";
-
-const siteUrl = "https://www.flostudios.ai";
+import { CONTENT_UPDATED, SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: siteUrl,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
+      url: SITE_URL,
+      lastModified: CONTENT_UPDATED,
     },
   ];
 }
